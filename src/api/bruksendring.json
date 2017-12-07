@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "Bruksendring"
+  },
+  "schema": [
+    {
+      "id": "start",
+      "type": "Page",
+      "heading": "Bruksendring?",
+      "children": [
+        {
+          "id": "regulation",
+          "property": "regulation",
+          "type": "Radio",
+          "heading": "Er det en bruksendring?",
+          "options": [
+            {
+              "id": "regulation.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "regulation.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hooray",
+      "type": "Result",
+      "heading": "Resultatsiden heading",
+      "errorheading": "Error heading",
+      "lead": "<p>Fancy result lead</p>",
+      "errorlead": "Fancy error lead.",
+      "exporter": "dataExport",
+      "children": [
+        {
+          "id": "somesum",
+          "property": "somesum",
+          "type": "Sum",
+          "values": ["arealBebyggelseSomSkalRives", "propertyArea", "nonSettlementArea"],
+          "heading": "SUM",
+          "optional": true,
+          "text": "Dette er en sum av noe slag"
+        }
+      ]
+    }
+  ]
+}
