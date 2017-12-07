@@ -6,25 +6,63 @@
     {
       "id": "start",
       "type": "Page",
-      "heading": "Bruksendring?",
+      "heading": "Jeg skal gjøre om rom i en:",
       "children": [
         {
-          "id": "regulation",
-          "property": "regulation",
+          "id": "houseType",
+          "property": "houseType",
           "type": "Radio",
-          "heading": "Er det en bruksendring?",
+          "heading": "Jeg skal gjøre om rom i en:",
           "options": [
             {
-              "id": "regulation.yes",
+              "id": "houseType.enebolig",
               "type": "Answer",
-              "heading": "Ja",
-              "value": "yes"
+              "heading": "Enebolig",
+              "value": "enebolig",
+              "image": {
+                "url": "/img/enebolig.png",
+                "alt": "Enebolig"
+              }
             },
             {
-              "id": "regulation.no",
+              "id": "houseType.multibolig",
               "type": "Answer",
-              "heading": "Nei",
-              "value": "no"
+              "heading": "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig",
+              "value": "multibolig",
+              "image": {
+                "url": "/img/multibolig.png",
+                "alt": "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig"
+              }
+            },
+            {
+              "id": "houseType.leilighet",
+              "type": "Answer",
+              "heading": "Leilighet",
+              "value": "leilighet",
+              "image": {
+                "url": "/img/leilighet.png",
+                "alt": "Leilighet"
+              }
+            },
+            {
+              "id": "houseType.garasje",
+              "type": "Answer",
+              "heading": "Frittliggende garasje",
+              "value": "garasje",
+              "image": {
+                "url": "/img/garasje.png",
+                "alt": "Frittliggende garasje"
+              }
+            },
+            {
+              "id": "houseType.bod",
+              "type": "Answer",
+              "heading": "Frittliggende bod eller lekestue",
+              "value": "bod",
+              "image": {
+                "url": "/img/bod.png",
+                "alt": "Frittliggende bod eller lekestue"
+              }
             }
           ]
         }
