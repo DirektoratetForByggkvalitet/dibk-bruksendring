@@ -6,7 +6,7 @@
     {
       "id": "start",
       "type": "Page",
-      "heading": "Jeg skal gjøre om rom i en:",
+      "heading": "Rommet du skal endre",
       "children": [
         {
           "id": "houseType",
@@ -65,28 +65,141 @@
               }
             }
           ]
+        },
+        {
+          "id": "commonArea",
+          "property": "commonArea",
+          "type": "Radio",
+          "heading": "Kommer endringene dine til å påvirke fellesarealet?",
+          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "options": [
+            {
+              "id": "commonArea.yes",
+              "type": "Answer",
+              "text": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "commonArea.no",
+              "type": "Answer",
+              "text": "Nei",
+              "value": "no"
+            }
+          ],
+          "hidden": {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "houseType",
+                "operator": "neq",
+                "value": "multibolig"
+              },
+              {
+                "field": "houseType",
+                "operator": "neq",
+                "value": "leilighet"
+              }
+            ]
+          }
+        },
+        {
+          "id": "roomHeight",
+          "property": "roomHeight",
+          "type": "Radio",
+          "heading": "Er det 2 meter eller høyere under taket i rommet du vil endre?",
+          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "options": [
+            {
+              "id": "roomHeight.yes",
+              "type": "Answer",
+              "text": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "roomHeight.no",
+              "type": "Answer",
+              "text": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "roomNow",
+          "property": "roomNow",
+          "type": "Radio",
+          "heading": "Hva er rommet ditt nå?",
+          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "options": [
+            {
+              "id": "roomNow.mainPart",
+              "type": "Answer",
+              "text": "<h3>Hoveddel</h3><p>Rommet jeg vil endre er nå en del av hoveddel, altså godkjent som oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
+              "value": "main"
+            },
+            {
+              "id": "roomNow.secondaryPart",
+              "type": "Answer",
+              "text": "<h3>Tilleggsdel</h3><p>Rommet jeg vil endre er nå del av tilleggsdel, altså godkjent som enten bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
+              "value": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "roomMain",
+          "property": "roomMain",
+          "type": "Group",
+          "heading": "Rommet etter endringen",
+          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "children": [
+            {
+              "id": "roomMainChange",
+              "property": "roomMain.change",
+              "type": "Radio",
+              "heading": "Hva vil du endre rommet til?",
+              "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+              "options": [
+                {
+                  "id": "roomMainChange.mainPart",
+                  "type": "Answer",
+                  "text": "<h2>Hoveddel</h2><p>Rommet jeg vil endre er nå en del av hoveddel, altså godkjent som oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
+                  "value": "yes"
+                },
+                {
+                  "id": "roomMainChange.secondaryPart",
+                  "type": "Answer",
+                  "text": "<h2>Tilleggsdel</h2><p>Rommet jeg vil endre er nå del av tilleggsdel, altså godkjent som enten bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
+                  "value": "no"
+                }
+              ]
+            }
+          ],
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "roomNow",
+                "operator": "not"
+              },
+              {
+                "field": "roomNow",
+                "operator": "neq",
+                "value": "main"
+              }
+            ]
+          }
         }
       ]
     },
     {
       "id": "hooray",
       "type": "Result",
-      "heading": "Resultatsiden heading",
-      "errorheading": "Error heading",
-      "lead": "<p>Fancy result lead</p>",
-      "errorlead": "Fancy error lead.",
-      "exporter": "dataExport",
-      "children": [
-        {
-          "id": "somesum",
-          "property": "somesum",
-          "type": "Sum",
-          "values": ["arealBebyggelseSomSkalRives", "propertyArea", "nonSettlementArea"],
-          "heading": "SUM",
-          "optional": true,
-          "text": "Dette er en sum av noe slag"
-        }
-      ]
+      "heading": "Okei, du får lov!",
+      "errorheading": "Du har ikke svart på alle spørsmålene",
+      "lead":
+        "<p><strong>Så bra for deg!</strong><br />Sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine.</p>",
+      "errorlead":
+        "Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.",
+      "exporter": "dataExport"
     }
   ]
 }
