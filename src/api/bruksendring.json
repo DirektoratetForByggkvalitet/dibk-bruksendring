@@ -27,11 +27,13 @@
             {
               "id": "houseType.multibolig",
               "type": "Answer",
-              "heading": "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig",
+              "heading":
+                "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig",
               "value": "multibolig",
               "image": {
                 "url": "/img/multibolig.png",
-                "alt": "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig"
+                "alt":
+                  "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig"
               }
             },
             {
@@ -63,6 +65,53 @@
                 "url": "/img/bod.png",
                 "alt": "Frittliggende bod eller lekestue"
               }
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "houseType",
+                    "operator": "eq",
+                    "value": "leilighet"
+                  },
+                  {
+                    "field": "houseType",
+                    "operator": "eq",
+                    "value": "multibolig"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "id": "commonArea",
+                  "property": "commonArea",
+                  "type": "Radio",
+                  "heading":
+                    "Kommer endringene dine til å påvirke fellesarealet?",
+                  "text":
+                    "Endringene dine påvirker fellesarealet hvis du gjør om loftsbod eller kjellerbod, eller hvis du skal legge rør, luftekanaler eller noe annet utenfor leiligheten din.<img src=\"/img/fellesareal.png\" alt=\"Endringer i fellesareal\" />",
+                  "options": [
+                    {
+                      "id": "commonArea.yes",
+                      "type": "Answer",
+                      "text": "Ja, det blir endringer i fellesarealene.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "commonArea.no",
+                      "type": "Answer",
+                      "text": "Nei, endringene blir kun inne i boligen min.",
+                      "value": "no"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -106,19 +155,19 @@
           "id": "roomHeight",
           "property": "roomHeight",
           "type": "Radio",
-          "heading": "Er det 2 meter eller høyere under taket i rommet du vil endre?",
-          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "heading": "Er rommet du vil endre på 2 meter eller høyere?",
+          "text": "<img src=\"/img/minst2meter.png\" alt=\"Minst 2 meter\" />",
           "options": [
             {
               "id": "roomHeight.yes",
               "type": "Answer",
-              "text": "Ja",
+              "text": "Ja, rommet er 2 meter eller høyere",
               "value": "yes"
             },
             {
               "id": "roomHeight.no",
               "type": "Answer",
-              "text": "Nei",
+              "text": "Nei, rommet er lavere enn 2 meter",
               "value": "no"
             }
           ]
@@ -128,65 +177,341 @@
           "property": "roomNow",
           "type": "Radio",
           "heading": "Hva er rommet ditt nå?",
-          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
+          "text":
+            "<p>Finn fram nyeste godkjente plantegning av boligen din. Den kan du få gratis av din kommune. En plantegning viser hva et rom faktisk er godkjent som, og kan se for eksempel slik ut:</p><img src=\"/img/plan.jpg\" alt=\"Plan\" /><p>Vi deler boliger inn i hoveddel og tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.</p>",
           "options": [
             {
               "id": "roomNow.mainPart",
               "type": "Answer",
-              "text": "<h3>Hoveddel</h3><p>Rommet jeg vil endre er nå en del av hoveddel, altså godkjent som oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
+              "text":
+                "<img src=\"/img/hoveddel.png\" alt=\"Hoveddel\" /><h3>Hoveddel</h3><p>Rommet jeg vil endre er nå en del av hoveddel, altså godkjent som oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
               "value": "main"
             },
             {
               "id": "roomNow.secondaryPart",
               "type": "Answer",
-              "text": "<h3>Tilleggsdel</h3><p>Rommet jeg vil endre er nå del av tilleggsdel, altså godkjent som enten bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
+              "text":
+                "<img src=\"/img/tilleggsdel.png\" alt=\"Tilleggsdel\" /><h3>Tilleggsdel</h3><p>Rommet jeg vil endre er nå del av tilleggsdel, altså godkjent som enten bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
               "value": "secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a2",
+      "type": "Page",
+      "heading": "A2 Rommet etter endringen",
+      "children": [
+        {
+          "id": "roomMainChange",
+          "property": "roomMain.change",
+          "type": "Radio",
+          "heading": "Hva vil du endre rommet til?",
+          "options": [
+            {
+              "id": "roomMainChange.mainPart",
+              "type": "Answer",
+              "heading": "Hoveddel",
+              "text":
+                "<p>Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
+              "value": "yes"
+            },
+            {
+              "id": "roomMainChange.secondaryPart",
+              "type": "Answer",
+              "heading": "Tilleggsdel",
+              "text":
+                "<p>Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
+              "value": "no"
             }
           ]
         },
         {
-          "id": "roomMain",
-          "property": "roomMain",
-          "type": "Group",
-          "heading": "Rommet etter endringen",
-          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
-          "children": [
+          "id": "a2.access",
+          "property": "a2.access",
+          "type": "Radio",
+          "heading": "Hvordan kommer du deg til rommet etter endringen?",
+          "options": [
             {
-              "id": "roomMainChange",
-              "property": "roomMain.change",
-              "type": "Radio",
-              "heading": "Hva vil du endre rommet til?",
-              "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
-              "options": [
-                {
-                  "id": "roomMainChange.mainPart",
-                  "type": "Answer",
-                  "text": "<h2>Hoveddel</h2><p>Rommet jeg vil endre er nå en del av hoveddel, altså godkjent som oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
-                  "value": "yes"
-                },
-                {
-                  "id": "roomMainChange.secondaryPart",
-                  "type": "Answer",
-                  "text": "<h2>Tilleggsdel</h2><p>Rommet jeg vil endre er nå del av tilleggsdel, altså godkjent som enten bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
-                  "value": "no"
-                }
-              ]
+              "id": "roomMainChange.mainPart",
+              "type": "Answer",
+              "heading": "Hoveddel",
+              "text":
+                "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+              "value": "yes"
+            },
+            {
+              "id": "roomMainChange.secondaryPart",
+              "type": "Answer",
+              "heading": "Tilleggsdel",
+              "text":
+                "<p>Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
+              "value": "no"
             }
-          ],
-          "hidden": {
-            "type": "or",
-            "clauses": [
-              {
-                "field": "roomNow",
-                "operator": "not"
-              },
-              {
-                "field": "roomNow",
-                "operator": "neq",
-                "value": "main"
-              }
-            ]
-          }
+          ]
+        },
+        {
+          "id": "a2.toilet",
+          "property": "a2.toilet",
+          "type": "Radio",
+          "heading": "Tilgang til toalett og håndvask",
+          "options": [
+            {
+              "id": "a2.toilet.yes1",
+              "type": "Answer",
+              "heading":
+                "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+              "value": "yes1"
+            },
+            {
+              "id": "a2.toilet.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            },
+            {
+              "id": "a2.toilet.yes2",
+              "type": "Answer",
+              "heading":
+                "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+              "value": "yes2"
+            }
+          ]
+        },
+        {
+          "id": "a2.bedorsofa",
+          "property": "a2.bedorsofa",
+          "type": "Radio",
+          "heading":
+            "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+          "options": [
+            {
+              "id": "a2.bedorsofa.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "a2.bedorsofa.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "type": "Page",
+      "heading": "B2 Rommet etter endringen",
+      "children": [
+        {
+          "id": "b2.change",
+          "property": "b2.change",
+          "type": "Radio",
+          "heading": "Hva vil du endre rommet til?",
+          "options": [
+            {
+              "id": "b2.change.mainPart",
+              "type": "Answer",
+              "heading": "Hoveddel",
+              "text":
+                "<p>Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
+              "value": "yes"
+            },
+            {
+              "id": "b2.change.secondaryPart",
+              "type": "Answer",
+              "heading": "Tilleggsdel",
+              "text":
+                "<p>Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "b2.access",
+          "property": "b2.access",
+          "type": "Radio",
+          "heading": "Hvordan kommer du deg til rommet etter endringen?",
+          "options": [
+            {
+              "id": "b2.access.rest",
+              "type": "Answer",
+              "text":
+                "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+              "value": "yes"
+            },
+            {
+              "id": "b2.access.secondaryPart",
+              "type": "Answer",
+              "text":
+                "<p>Leilighet, flermannsbolig: Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.</p>",
+              "value": "yes1"
+            },
+            {
+              "id": "b2.access.secondaryPart2",
+              "type": "Answer",
+              "text":
+                "<p>Enebolig: Jeg kan kun komme til rommet fra inngangsdør utenfra.</p>",
+              "value": "yes2"
+            }
+          ]
+        },
+        {
+          "id": "b2.toilet",
+          "property": "b2.toilet",
+          "type": "Radio",
+          "heading": "Tilgang til toalett og håndvask",
+          "options": [
+            {
+              "id": "b2.toilet.yes1",
+              "type": "Answer",
+              "heading":
+                "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+              "value": "yes1"
+            },
+            {
+              "id": "b2.toilet.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            },
+            {
+              "id": "b2.toilet.yes2",
+              "type": "Answer",
+              "heading":
+                "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+              "value": "yes2"
+            }
+          ]
+        },
+        {
+          "id": "b2.bedorsofa",
+          "property": "b2.bedorsofa",
+          "type": "Radio",
+          "heading":
+            "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+          "options": [
+            {
+              "id": "b2.bedorsofa.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "b2.bedorsofa.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DEL 2",
+      "type": "Page",
+      "heading": "DEL 2 3 - [MÅ FINNE PÅ GODT NAVN FOR DENNE SEKSJONEN]",
+      "children": [
+        {
+          "id": "del2.year",
+          "property": "del2.year",
+          "type": "Radio",
+          "heading": "3.2 Når ble det søkt om å bygge boligen din?",
+          "options": [
+            {
+              "id": "del2.year.before",
+              "type": "Answer",
+              "heading": "Før 1. juli 2011",
+              "value": "before"
+            },
+            {
+              "id": "del2.year.before",
+              "type": "Answer",
+              "heading": "Etter 30. juni 2011",
+              "value": "after"
+            }
+          ]
+        },
+        {
+          "id": "del2.application",
+          "property": "del2.application",
+          "type": "Radio",
+          "heading":
+            "3.3 Er det søkt om en hovedombygging etter 30. juni 2011? ",
+          "options": [
+            {
+              "id": "del2.application.after",
+              "type": "Answer",
+              "heading":
+                "Ja, det har blitt søkt om en hovedombygging etter 30. juni 2011",
+              "value": "after"
+            },
+            {
+              "id": "del2.application.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "del2.adjacent",
+          "property": "del2.adjacent",
+          "type": "Radio",
+          "heading":
+            "3.5 Ligger rommet over, under eller inntil et rom som er hoveddel?",
+          "options": [
+            {
+              "id": "del2.adjacent.yes",
+              "type": "Answer",
+              "heading":
+                "Ja, rommet ligger vegg-i-vegg, over eller under et rom som er hoveddel i dag.",
+              "value": "yes"
+            },
+            {
+              "id": "del2.adjacent.no",
+              "type": "Answer",
+              "heading":
+                "Nei, rommet grenser kun mot tilleggsdel eller andre boliger",
+              "value": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "del4",
+      "type": "Page",
+      "heading": "DEL 4",
+      "children": [
+        {
+          "id": "del4",
+          "property": "del4",
+          "type": "Radio",
+          "heading":
+            "4.1 Ligger boligen din i et flom- eller skredutsatt område?",
+          "options": [
+            {
+              "id": "del4",
+              "type": "Answer",
+              "heading": "Hoveddel",
+              "text":
+                "<p>Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
+              "value": "yes"
+            },
+            {
+              "id": "del4",
+              "type": "Answer",
+              "heading": "Tilleggsdel",
+              "text":
+                "<p>Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
+              "value": "no"
+            }
+          ]
         }
       ]
     },
