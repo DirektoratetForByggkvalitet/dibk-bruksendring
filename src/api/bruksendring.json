@@ -12,7 +12,7 @@
           "id": "houseType",
           "property": "houseType",
           "type": "Radio",
-          "heading": "Jeg skal gjøre om rom i en:",
+          "heading": "Jeg skal gjøre om rom i en",
           "options": [
             {
               "id": "houseType.enebolig",
@@ -116,40 +116,88 @@
           ]
         },
         {
-          "id": "commonArea",
-          "property": "commonArea",
-          "type": "Radio",
-          "heading": "Kommer endringene dine til å påvirke fellesarealet?",
-          "text": "<p><span style=\"color:deeppink\">INFOTEKST</span></p>",
-          "options": [
+          "type": "Branch",
+          "branches": [
             {
-              "id": "commonArea.yes",
-              "type": "Answer",
-              "text": "Ja",
-              "value": "yes"
-            },
-            {
-              "id": "commonArea.no",
-              "type": "Answer",
-              "text": "Nei",
-              "value": "no"
-            }
-          ],
-          "hidden": {
-            "type": "and",
-            "clauses": [
-              {
-                "field": "houseType",
-                "operator": "neq",
-                "value": "multibolig"
+              "test": {
+                "type": "and",
+                "clauses": [
+                  {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "leilighet"
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "multibolig"
+                      }
+                    ]
+                  },
+                  {
+                    "field": "commonArea",
+                    "operator": "eq",
+                    "value": "yes"
+                  }
+                ]
               },
-              {
+              "children": [
+                {
+                  "id": "changesToCommonArea",
+                  "type": "Result",
+                  "heading": "Du vil gjøre en endring i fellesarealet",
+                  "lead":
+                    "<p>Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren! HER MÅ VI LEGGE INN MER RELEVANT TEKST - HENT FRA \"NY BOENHET\"-RESULTATSIDE</p>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
                 "field": "houseType",
-                "operator": "neq",
-                "value": "leilighet"
-              }
-            ]
-          }
+                "operator": "eq",
+                "value": "garasje"
+              },
+              "children": [
+                {
+                  "id": "changesToGarasje",
+                  "type": "Result",
+                  "heading":
+                    "Har du tenkt gjøre om garasjen slik at noen kan bo eller sove der?",
+                  "lead":
+                    "<p>Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det.Skal du gjøre om garasjen til bod? Hvis du kun gjør innvendige endringer i garasjen trenger du ikke å søke, og du kan ta i bruk garasjen din som bod med en gang. Skal du gjøre andre endringer? Ta kontakt med kommunen din for å finne ut om du må søke.</p>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "houseType",
+                "operator": "eq",
+                "value": "bod"
+              },
+              "children": [
+                {
+                  "id": "changesToBod",
+                  "type": "Result",
+                  "heading": "Frittliggende bod eller lekestue",
+                  "lead":
+                    "<p>Skal du gjøre om bygningen slik at noen kan bo eller sove der? Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det. Skal du gjøre om bygningen fra lekestue til bod eller omvendt? Hvis du kun gjør innvendinge endringer trenger du ikke å søke, og du kan ta i bruk lekestuen som bod eller omvendt med en gang. Skal du gjøre om boden eller lekestuen til noe annet? Ta kontakt med kommunen din for å finne ut om du må søke.</p>"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "roomHeight",
@@ -169,6 +217,27 @@
               "type": "Answer",
               "text": "Nei, rommet er lavere enn 2 meter",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "roomHeight",
+                "operator": "eq",
+                "value": "no"
+              },
+              "children": [
+                {
+                  "id": "roomHeightLessThan2",
+                  "type": "Result",
+                  "heading": "Rommet er lavere enn to meter",
+                  "lead":
+                    "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Kan du øke romhøyden? Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent.  Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil. Takk for at du brukte veilederen! HER FØLER FOLK SEG HJELPESLØSE. HVA KAN DE GJØRE? KAN DET LIKEVEL BLI GODKJENT SOM EN BOD/VASKEROM, DET ER JO IKKE BOLIG.</p>"
+                }
+              ]
             }
           ]
         },
@@ -516,7 +585,7 @@
       ]
     },
     {
-      "id": "hooray",
+      "id": "hoorays",
       "type": "Result",
       "heading": "Okei, du får lov!",
       "errorheading": "Du har ikke svart på alle spørsmålene",
