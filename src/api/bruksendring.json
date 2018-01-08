@@ -264,6 +264,92 @@
               "value": "secondary"
             }
           ]
+        },
+        {
+          "id": "roomMainChange",
+          "property": "roomMain.change",
+          "type": "Radio",
+          "heading": "Hva vil du endre rommet til?",
+          "options": [
+            {
+              "id": "roomMainChange.mainPart",
+              "type": "Answer",
+              "heading": "Hoveddel",
+              "text":
+                "<p>Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
+              "value": "yes"
+            },
+            {
+              "id": "roomMainChange.secondaryPart",
+              "type": "Answer",
+              "heading": "Tilleggsdel",
+              "text":
+                "<p>Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "roomNow",
+                    "operator": "eq",
+                    "value": "main"
+                  },
+                  {
+                    "field": "roomMain.change",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "id": "hoveddeltiltilleggsdel",
+                  "type": "Result",
+                  "heading": "Fra hoveddel til tilleggsdel",
+                  "lead":
+                    "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke.  Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Ønsker du få rommet godkjent som tilleggsdel? Da må du søke kommunen.  Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "roomNow",
+                    "operator": "eq",
+                    "value": "secondary"
+                  },
+                  {
+                    "field": "roomMain.change",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "id": "tilleggsdeltiltilleggsdel",
+                  "type": "Result",
+                  "heading": "Fra tilleggsdel til tilleggsdel",
+                  "lead":
+                    "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke.  VI MÅ FÅ FRAM BEDRE AT DE SLIPPER Å SØKE! Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -282,30 +368,6 @@
               "type": "Page",
               "heading": "A2 Rommet etter endringen",
               "children": [
-                {
-                  "id": "roomMainChange",
-                  "property": "roomMain.change",
-                  "type": "Radio",
-                  "heading": "Hva vil du endre rommet til?",
-                  "options": [
-                    {
-                      "id": "roomMainChange.mainPart",
-                      "type": "Answer",
-                      "heading": "Hoveddel",
-                      "text":
-                        "<p>Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
-                      "value": "yes"
-                    },
-                    {
-                      "id": "roomMainChange.secondaryPart",
-                      "type": "Answer",
-                      "heading": "Tilleggsdel",
-                      "text":
-                        "<p>Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
-                      "value": "no"
-                    }
-                  ]
-                },
                 {
                   "id": "a2.access",
                   "property": "a2.access",
@@ -401,30 +463,6 @@
               "type": "Page",
               "heading": "B2 Rommet etter endringen",
               "children": [
-                {
-                  "id": "b2.change",
-                  "property": "b2.change",
-                  "type": "Radio",
-                  "heading": "Hva vil du endre rommet til?",
-                  "options": [
-                    {
-                      "id": "b2.change.mainPart",
-                      "type": "Answer",
-                      "heading": "Hoveddel",
-                      "text":
-                        "<p>Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
-                      "value": "yes"
-                    },
-                    {
-                      "id": "b2.change.secondaryPart",
-                      "type": "Answer",
-                      "heading": "Tilleggsdel",
-                      "text":
-                        "<p>Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
-                      "value": "no"
-                    }
-                  ]
-                },
                 {
                   "id": "b2.access",
                   "property": "b2.access",
