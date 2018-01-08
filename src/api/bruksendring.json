@@ -656,96 +656,234 @@
       "branches": [
         {
           "test": {
-            "field": "roomNow",
-            "operator": "eq",
-            "value": "secondary"
+            "type": "and",
+            "clauses": [
+              {
+                "field": "roomNow",
+                "operator": "eq",
+                "value": "secondary"
+              },
+              {
+                "field": "houseType",
+                "operator": "eq",
+                "value": "enebolig"
+              }
+            ]
           },
           "children": [
             {
-              "id": "b2",
+              "id": "b245",
               "type": "Page",
               "heading": "B2 Rommet etter endringen",
               "children": [
                 {
-                  "id": "b2.access",
-                  "property": "b2.access",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading":
                     "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
-                      "id": "b2.access.rest",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
                         "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.secondaryPart",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Leilighet, flermannsbolig: Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.</p>",
-                      "value": "yes1"
-                    },
-                    {
-                      "id": "b2.access.secondaryPart2",
-                      "type": "Answer",
-                      "text":
-                        "<p>Enebolig: Jeg kan kun komme til rommet fra inngangsdør utenfra.</p>",
+                        "<p>Jeg kan kun komme til rommet fra inngangsdør utenfra.</p>",
                       "value": "yes2"
-                    }
-                  ]
-                },
-                {
-                  "id": "b2.toilet",
-                  "property": "b2.toilet",
-                  "type": "Radio",
-                  "heading": "Tilgang til toalett og håndvask",
-                  "options": [
-                    {
-                      "id": "b2.toilet.yes1",
-                      "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
-                      "value": "yes1"
-                    },
-                    {
-                      "id": "b2.toilet.no",
-                      "type": "Answer",
-                      "heading": "Nei",
-                      "value": "no"
-                    },
-                    {
-                      "id": "b2.toilet.yes2",
-                      "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
-                      "value": "yes2"
-                    }
-                  ]
-                },
-                {
-                  "id": "b2.bedorsofa",
-                  "property": "b2.bedorsofa",
-                  "type": "Radio",
-                  "heading":
-                    "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
-                  "options": [
-                    {
-                      "id": "b2.bedorsofa.yes",
-                      "type": "Answer",
-                      "heading": "Ja",
-                      "value": "yes"
-                    },
-                    {
-                      "id": "b2.bedorsofa.no",
-                      "type": "Answer",
-                      "heading": "Nei",
-                      "value": "no"
                     }
                   ]
                 }
               ]
+            },
+            {
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "b2.access.enebolig",
+                    "operator": "eq",
+                    "value": "yes2"
+                  },
+                  "children": [
+                    {
+                      "id": "b2.toilet.enebolig",
+                      "property": "b2.toilet.enebolig",
+                      "type": "Radio",
+                      "heading": "Tilgang til toalett og håndvask",
+                      "options": [
+                        {
+                          "id": "b2.toilet.enebolig.yes1",
+                          "type": "Answer",
+                          "heading":
+                            "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                          "value": "yes1"
+                        },
+                        {
+                          "id": "b2.toilet.enebolig.no",
+                          "type": "Answer",
+                          "heading": "Nei",
+                          "value": "no"
+                        },
+                        {
+                          "id": "b2.toilet.enebolig.yes2",
+                          "type": "Answer",
+                          "heading":
+                            "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                          "value": "yes2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Branch",
+      "branches": [
+        {
+          "test": {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "roomNow",
+                "operator": "eq",
+                "value": "secondary"
+              },
+              {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "houseType",
+                    "operator": "eq",
+                    "value": "leilighet"
+                  },
+                  {
+                    "field": "houseType",
+                    "operator": "eq",
+                    "value": "multibolig"
+                  }
+                ]
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "b237",
+              "type": "Page",
+              "heading": "B2-2 Rommet etter endringen",
+              "children": [
+                {
+                  "id": "b2.access.multi",
+                  "property": "b2.access.multi",
+                  "type": "Radio",
+                  "heading":
+                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "options": [
+                    {
+                      "id": "b2.access.multi.yes",
+                      "type": "Answer",
+                      "text":
+                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.multi.yes2",
+                      "type": "Answer",
+                      "text":
+                        "<p>Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.</p>",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "type": "Branch",
+                  "branches": [
+                    {
+                      "test": {
+                        "field": "b2.access.multi",
+                        "operator": "eq",
+                        "value": "yes2"
+                      },
+                      "children": [
+                        {
+                          "id": "b2.toilet.multi",
+                          "property": "b2.toilet.multi",
+                          "type": "Radio",
+                          "heading": "Tilgang til toalett og håndvask",
+                          "options": [
+                            {
+                              "id": "b2.toilet.multi.yes1",
+                              "type": "Answer",
+                              "heading":
+                                "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                              "value": "yes1"
+                            },
+                            {
+                              "id": "b2.toilet.multi.no",
+                              "type": "Answer",
+                              "heading": "Nei",
+                              "value": "no"
+                            },
+                            {
+                              "id": "b2.toilet.multi.yes2",
+                              "type": "Answer",
+                              "heading":
+                                "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                              "value": "yes2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Branch",
+      "branches": [
+        {
+          "test": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "b2.toilet",
+                "operator": "eq",
+                "value": "yes2"
+              },
+              {
+                "field": "b2.toilet.enebolig",
+                "operator": "eq",
+                "value": "yes2"
+              },
+              {
+                "field": "b2.toilet.multi",
+                "operator": "eq",
+                "value": "yes2"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "b2.toilet.result",
+              "type": "Result",
+              "heading": "Du må søke om lov til å endre rommet",
+              "lead":
+                "<p>Du har svart at du vil endre en bod til et toalett/bad, og at dette blir det eneste rommet som er hoveddel i denne delen av boligen. Du må derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Det er mange regler som gjelder for bygging av bad og våtrom. Det er lurt å bruke fagfolk som sikrer at de blir fulgt.  Se gjerne våre spørsmål og svar om bruksendring: https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/ For å søke om endringen kan du bruke dette søknadsskjemaet: https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</p>"
             }
           ]
         }
