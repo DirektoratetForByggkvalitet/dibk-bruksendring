@@ -250,14 +250,14 @@
             "<p>Finn fram nyeste godkjente plantegning av boligen din. Den kan du få gratis av din kommune. En plantegning viser hva et rom faktisk er godkjent som, og kan se for eksempel slik ut:</p><img src=\"/img/plan.jpg\" alt=\"Plan\" /><p>Vi deler boliger inn i hoveddel og tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.</p>",
           "options": [
             {
-              "id": "roomNow.mainPart",
+              "id": "roomNow.main",
               "type": "Answer",
               "text":
                 "<img src=\"/img/hoveddel.png\" alt=\"Hoveddel\" /><h3>Hoveddel</h3><p>Rommet jeg vil endre er nå en del av hoveddel, altså godkjent som oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
               "value": "main"
             },
             {
-              "id": "roomNow.secondaryPart",
+              "id": "roomNow.secondary",
               "type": "Answer",
               "text":
                 "<img src=\"/img/tilleggsdel.png\" alt=\"Tilleggsdel\" /><h3>Tilleggsdel</h3><p>Rommet jeg vil endre er nå del av tilleggsdel, altså godkjent som enten bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
@@ -266,26 +266,26 @@
           ]
         },
         {
-          "id": "roomMainChange",
-          "property": "roomMain.change",
+          "id": "roomChange",
+          "property": "roomChange",
           "type": "Radio",
           "heading": "Hva vil du endre rommet til?",
           "options": [
             {
-              "id": "roomMainChange.mainPart",
+              "id": "roomChange.main",
               "type": "Answer",
               "heading": "Hoveddel",
               "text":
                 "<p>Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
-              "value": "yes"
+              "value": "main"
             },
             {
-              "id": "roomMainChange.secondaryPart",
+              "id": "roomChange.secondary",
               "type": "Answer",
               "heading": "Tilleggsdel",
               "text":
                 "<p>Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
-              "value": "no"
+              "value": "secondary"
             }
           ]
         },
@@ -302,9 +302,9 @@
                     "value": "main"
                   },
                   {
-                    "field": "roomMain.change",
+                    "field": "roomChange",
                     "operator": "eq",
-                    "value": "no"
+                    "value": "secondary"
                   }
                 ]
               },
@@ -314,7 +314,7 @@
                   "type": "Result",
                   "heading": "Fra hoveddel til tilleggsdel",
                   "lead":
-                    "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke.  Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Ønsker du få rommet godkjent som tilleggsdel? Da må du søke kommunen.  Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>"
+                    "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Ønsker du få rommet godkjent som tilleggsdel? Da må du søke kommunen.  Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p>"
                 }
               ]
             }
@@ -333,9 +333,9 @@
                     "value": "secondary"
                   },
                   {
-                    "field": "roomMain.change",
+                    "field": "roomChange",
                     "operator": "eq",
-                    "value": "no"
+                    "value": "secondary"
                   }
                 ]
               },
@@ -354,327 +354,39 @@
       ]
     },
     {
-      "type": "Branch",
-      "branches": [
+      "id": "page2",
+      "type": "Page",
+      "heading": "Rommet etter endringen",
+      "children": [
         {
-          "test": {
-            "field": "roomNow",
-            "operator": "eq",
-            "value": "main"
-          },
-          "children": [
+          "type": "Branch",
+          "branches": [
             {
-              "id": "a2",
-              "type": "Page",
-              "heading": "A2 Rommet etter endringen",
-              "children": [
-                {
-                  "id": "a2.access",
-                  "property": "a2.access",
-                  "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
-                  "options": [
-                    {
-                      "id": "roomMainChange.mainPart",
-                      "type": "Answer",
-                      "heading": "Hoveddel",
-                      "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
-                      "value": "yes"
-                    },
-                    {
-                      "id": "roomMainChange.secondaryPart",
-                      "type": "Answer",
-                      "heading": "Tilleggsdel",
-                      "text":
-                        "<p>Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
-                      "value": "no"
-                    }
-                  ]
-                },
-                {
-                  "type": "Branch",
-                  "branches": [
-                    {
-                      "test": {
-                        "type": "and",
-                        "clauses": [
-                          {
-                            "field": "a2.access",
-                            "operator": "eq",
-                            "value": "yes"
-                          },
-                          {
-                            "field": "roomNow",
-                            "operator": "eq",
-                            "value": "main"
-                          }
-                        ]
-                      },
-                      "children": [
-                        {
-                          "id": "youhaveaccess",
-                          "type": "Result",
-                          "heading": "Du er i mål!",
-                          "lead":
-                            "<p>Du har svart at rommet er godkjent som hoveddel, og at du fortsatt ønsker å bruke det som hoveddel. Beholder du rommet som det er, står du fritt til å endre bruken fra for eksempel soverom til stue uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "Branch",
-                  "branches": [
-                    {
-                      "test": {
-                        "type": "and",
-                        "clauses": [
-                          {
-                            "field": "a2.access",
-                            "operator": "eq",
-                            "value": "no"
-                          },
-                          {
-                            "field": "roomNow",
-                            "operator": "eq",
-                            "value": "main"
-                          }
-                        ]
-                      },
-                      "children": [
-                        {
-                          "id": "a2.toilet",
-                          "property": "a2.toilet",
-                          "type": "Radio",
-                          "heading": "Tilgang til toalett og håndvask",
-                          "options": [
-                            {
-                              "id": "a2.toilet.yes1",
-                              "type": "Answer",
-                              "heading":
-                                "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
-                              "value": "yes1"
-                            },
-                            {
-                              "id": "a2.toilet.no",
-                              "type": "Answer",
-                              "heading": "Nei",
-                              "value": "no"
-                            },
-                            {
-                              "id": "a2.toilet.yes2",
-                              "type": "Answer",
-                              "heading":
-                                "Ja, men toalettet blir det eneste rommet som er hoveddel.",
-                              "value": "yes2"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "Branch",
-                  "branches": [
-                    {
-                      "test": {
-                        "type": "and",
-                        "clauses": [
-                          {
-                            "field": "a2.toilet",
-                            "operator": "eq",
-                            "value": "no"
-                          },
-                          {
-                            "field": "roomNow",
-                            "operator": "eq",
-                            "value": "main"
-                          }
-                        ]
-                      },
-                      "children": [
-                        {
-                          "id": "a2.toilet.no.result",
-                          "type": "Result",
-                          "heading": "Du må søke - ta neste del av veiviseren!",
-                          "lead":
-                            "<p>Endringen du ønsker å gjøre er søknadspliktig. Du må derfor søke kommunen om lov til å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Noen rom er enklere å endre enn andre. For å få oversikt over om det også gjelder ditt rom, bør du fortsette på veiviseren her: TA RESTEN AV VEIVISEREN HER: https://goo.gl/mWuYB5</p>"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "Branch",
-                  "branches": [
-                    {
-                      "test": {
-                        "type": "and",
-                        "clauses": [
-                          {
-                            "field": "a2.toilet",
-                            "operator": "eq",
-                            "value": "yes2"
-                          },
-                          {
-                            "field": "roomNow",
-                            "operator": "eq",
-                            "value": "main"
-                          }
-                        ]
-                      },
-                      "children": [
-                        {
-                          "id": "a2.toilet.yes2.result",
-                          "type": "Result",
-                          "heading": "Du må søke om lov til å endre rommet",
-                          "lead":
-                            "<p>Du har svart at du vil endre en bod til et toalett/bad, og at dette blir det eneste rommet som er hoveddel i denne delen av boligen. Du må derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Det er mange regler som gjelder for bygging av bad og våtrom. Det er lurt å bruke fagfolk som sikrer at de blir fulgt. Se gjerne våre spørsmål og svar om bruksendring: https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/ For å søke om endringen kan du bruke dette søknadsskjemaet: https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</p>"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "Branch",
-                  "branches": [
-                    {
-                      "test": {
-                        "type": "and",
-                        "clauses": [
-                          {
-                            "field": "a2.toilet",
-                            "operator": "eq",
-                            "value": "yes1"
-                          },
-                          {
-                            "field": "roomNow",
-                            "operator": "eq",
-                            "value": "main"
-                          }
-                        ]
-                      },
-                      "children": [
-                        {
-                          "id": "a2.bedorsofa",
-                          "property": "a2.bedorsofa",
-                          "type": "Radio",
-                          "heading":
-                            "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
-                          "options": [
-                            {
-                              "id": "a2.bedorsofa.yes",
-                              "type": "Answer",
-                              "heading": "Ja",
-                              "value": "yes"
-                            },
-                            {
-                              "id": "a2.bedorsofa.no",
-                              "type": "Answer",
-                              "heading": "Nei",
-                              "value": "no"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "Branch",
-                  "branches": [
-                    {
-                      "test": {
-                        "type": "and",
-                        "clauses": [
-                          {
-                            "field": "a2.bedorsofa",
-                            "operator": "eq",
-                            "value": "yes"
-                          },
-                          {
-                            "field": "roomNow",
-                            "operator": "eq",
-                            "value": "main"
-                          }
-                        ]
-                      },
-                      "children": [
-                        {
-                          "id": "a2.bedorsofa.yes.result",
-                          "type": "Result",
-                          "heading": "Det kan hende du får en ny boenhet",
-                          "lead":
-                            "<p>Endringene du planlegger gjør at det kanskje oppstår en ny boenhet. Dette skjer når en del av din bolig kan brukes som en separat bolig med separat inngangsdør. Her anbefaler vi deg å be om en forhåndskonferanse med kommunen din. Her kan du legge fram planene dine og høre hvilke muligheter du har. Hvis du får en ny boenhet er det lovpålagt å bruke profesjonelle foretak både til å sende inn byggesøknaden og til å utføre dette arbeidet. I tillegg må du følge alle byggeregler for nye boliger, og andre krav din kommune kan stille.</p>"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "Branch",
-                  "branches": [
-                    {
-                      "test": {
-                        "type": "and",
-                        "clauses": [
-                          {
-                            "field": "a2.bedorsofa",
-                            "operator": "eq",
-                            "value": "no"
-                          },
-                          {
-                            "field": "roomNow",
-                            "operator": "eq",
-                            "value": "main"
-                          }
-                        ]
-                      },
-                      "children": [
-                        {
-                          "id": "a2.bedorsofa.no.result",
-                          "type": "Result",
-                          "heading": "Du må søke om lov til å endre rommet",
-                          "lead":
-                            "<p>Tilleggsdel til hoveddel -> Egen inngangdør -> Bad/toalett men ikke plass til seng Du har svart  at du får toalett og minst ett rom til som er hoveddel, men at det ikke er plass til sofa eller seng i denne delen av boligen. Du skal derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Bruk dette søknadsskjemaet: https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf Veiviser: Hvilke byggeregler gjelder ditt rom? Rommet må oppfylle visse minimumskrav for dagslys, brannsikkerhet og lydisolasjon. Bruk vår veiviser (LENKE SOM IKKE FINNES ENNÅ) for å finne ut hvilke byggeregler som gjelder for akkurat ditt rom. Resultatet er basert på dine svar om at: - Du vil endre rommet fra tilleggsdel til hoveddel - Det blir mulig å komme seg til rommet innvendig, fra resten av boligen din - Du får plass til toalett/vask men ikke plass til seng Resultatet er basert på dine svar om at: - Du vil endre rommet fra hoveddel til hoveddel - Det blir kun mulig å komme seg til rommet fra fellesareal eller inngangsdør utenfra - Rommet skal bli et bad eller toalett med håndvask</p>"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "Branch",
-      "branches": [
-        {
-          "test": {
-            "type": "and",
-            "clauses": [
-              {
-                "field": "roomNow",
-                "operator": "eq",
-                "value": "secondary"
+              "test": {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "roomNow",
+                    "operator": "eq",
+                    "value": "main"
+                  },
+                  {
+                    "field": "roomChange",
+                    "operator": "eq",
+                    "value": "main"
+                  },
+                  {
+                    "field": "b2.access.enebolig",
+                    "operator": "eq",
+                    "value": "yes2"
+                  },
+                  {
+                    "field": "b2.toilet.enebolig",
+                    "operator": "eq",
+                    "value": "yes2"
+                  }
+                ]
               },
-              {
-                "field": "houseType",
-                "operator": "eq",
-                "value": "enebolig"
-              }
-            ]
-          },
-          "children": [
-            {
-              "id": "b245",
-              "type": "Page",
-              "heading": "B2 Rommet etter endringen",
               "children": [
                 {
                   "id": "b2.access.enebolig",
@@ -694,300 +406,223 @@
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme til rommet fra inngangsdør utenfra.</p>",
+                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
                       "value": "yes2"
                     }
                   ]
+                },
+                {
+                  "id": "b2.toilet.enebolig",
+                  "property": "b2.toilet.enebolig",
+                  "type": "Radio",
+                  "heading": "Tilgang til toalett og håndvask",
+                  "options": [
+                    {
+                      "id": "b2.toilet.enebolig.yes1",
+                      "type": "Answer",
+                      "heading":
+                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "value": "yes1"
+                    },
+                    {
+                      "id": "b2.toilet.enebolig.no",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    },
+                    {
+                      "id": "b2.toilet.enebolig.yes2",
+                      "type": "Answer",
+                      "heading":
+                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "toiletonlynewhovedel13",
+                  "type": "Result",
+                  "heading": "Du må søke om lov til å endre rommet",
+                  "lead":
+                    "<p>Du har svart at du vil endre en bod til et toalett/bad, og at dette blir det eneste rommet som er hoveddel i denne delen av boligen. Du må derfor søke kommunen om lov til å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Det er mange regler som gjelder for bygging av bad og våtrom. Det er lurt å bruke fagfolk som sikrer at de blir fulgt. Se gjerne våre spørsmål og svar om bruksendring: https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/ For å søke om endringen kan du bruke dette søknadsskjemaet: https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</p>"
                 }
               ]
             },
             {
-              "type": "Branch",
-              "branches": [
-                {
-                  "test": {
-                    "field": "b2.access.enebolig",
-                    "operator": "eq",
-                    "value": "yes2"
-                  },
-                  "children": [
-                    {
-                      "id": "b2.toilet.enebolig",
-                      "property": "b2.toilet.enebolig",
-                      "type": "Radio",
-                      "heading": "Tilgang til toalett og håndvask",
-                      "options": [
-                        {
-                          "id": "b2.toilet.enebolig.yes1",
-                          "type": "Answer",
-                          "heading":
-                            "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
-                          "value": "yes1"
-                        },
-                        {
-                          "id": "b2.toilet.enebolig.no",
-                          "type": "Answer",
-                          "heading": "Nei",
-                          "value": "no"
-                        },
-                        {
-                          "id": "b2.toilet.enebolig.yes2",
-                          "type": "Answer",
-                          "heading":
-                            "Ja, men toalettet blir det eneste rommet som er hoveddel.",
-                          "value": "yes2"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "Branch",
-      "branches": [
-        {
-          "test": {
-            "type": "and",
-            "clauses": [
-              {
-                "field": "roomNow",
-                "operator": "eq",
-                "value": "secondary"
-              },
-              {
-                "type": "or",
+              "test": {
+                "type": "and",
                 "clauses": [
                   {
-                    "field": "houseType",
+                    "field": "roomNow",
                     "operator": "eq",
-                    "value": "leilighet"
+                    "value": "main"
                   },
                   {
-                    "field": "houseType",
+                    "field": "roomChange",
                     "operator": "eq",
-                    "value": "multibolig"
+                    "value": "main"
+                  },
+                  {
+                    "field": "b2.access.enebolig",
+                    "operator": "eq",
+                    "value": "yes"
                   }
                 ]
-              }
-            ]
-          },
-          "children": [
-            {
-              "id": "b237",
-              "type": "Page",
-              "heading": "B2-2 Rommet etter endringen",
+              },
               "children": [
                 {
-                  "id": "b2.access.multi",
-                  "property": "b2.access.multi",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading":
                     "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
-                      "id": "b2.access.multi.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
                         "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.multi.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.</p>",
+                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
                       "value": "yes2"
                     }
                   ]
                 },
                 {
-                  "type": "Branch",
-                  "branches": [
+                  "id": "changesToCommonArea",
+                  "type": "Result",
+                  "heading": "Du er i mål!",
+                  "lead":
+                    "<p>Du har svart at rommet er godkjent som hoveddel, og at du fortsatt ønsker å bruke det som hoveddel. Beholder du rommet som det er, står du fritt til å endre bruken fra for eksempel soverom til stue uten å søke. Du kan gjøre mindre endringer på rommmet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering. Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p>"
+                }
+              ]
+            },
+            {
+              "test": {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "roomNow",
+                    "operator": "eq",
+                    "value": "main"
+                  },
+                  {
+                    "field": "roomChange",
+                    "operator": "eq",
+                    "value": "main"
+                  },
+                  {
+                    "field": "b2.access.enebolig",
+                    "operator": "eq",
+                    "value": "yes2"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading":
+                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "options": [
                     {
-                      "test": {
-                        "field": "b2.access.multi",
-                        "operator": "eq",
-                        "value": "yes2"
-                      },
-                      "children": [
-                        {
-                          "id": "b2.toilet.multi",
-                          "property": "b2.toilet.multi",
-                          "type": "Radio",
-                          "heading": "Tilgang til toalett og håndvask",
-                          "options": [
-                            {
-                              "id": "b2.toilet.multi.yes1",
-                              "type": "Answer",
-                              "heading":
-                                "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
-                              "value": "yes1"
-                            },
-                            {
-                              "id": "b2.toilet.multi.no",
-                              "type": "Answer",
-                              "heading": "Nei",
-                              "value": "no"
-                            },
-                            {
-                              "id": "b2.toilet.multi.yes2",
-                              "type": "Answer",
-                              "heading":
-                                "Ja, men toalettet blir det eneste rommet som er hoveddel.",
-                              "value": "yes2"
-                            }
-                          ]
-                        }
-                      ]
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text":
+                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text":
+                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.toilet.enebolig",
+                  "property": "b2.toilet.enebolig",
+                  "type": "Radio",
+                  "heading": "Tilgang til toalett og håndvask",
+                  "options": [
+                    {
+                      "id": "b2.toilet.enebolig.yes1",
+                      "type": "Answer",
+                      "heading":
+                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "value": "yes1"
+                    },
+                    {
+                      "id": "b2.toilet.enebolig.no",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    },
+                    {
+                      "id": "b2.toilet.enebolig.yes2",
+                      "type": "Answer",
+                      "heading":
+                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "value": "yes2"
                     }
                   ]
                 }
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "Branch",
-      "branches": [
-        {
-          "test": {
-            "type": "or",
-            "clauses": [
-              {
-                "field": "b2.toilet",
-                "operator": "eq",
-                "value": "yes2"
-              },
-              {
-                "field": "b2.toilet.enebolig",
-                "operator": "eq",
-                "value": "yes2"
-              },
-              {
-                "field": "b2.toilet.multi",
-                "operator": "eq",
-                "value": "yes2"
-              }
-            ]
-          },
-          "children": [
-            {
-              "id": "b2.toilet.result",
-              "type": "Result",
-              "heading": "Du må søke om lov til å endre rommet",
-              "lead":
-                "<p>Du har svart at du vil endre en bod til et toalett/bad, og at dette blir det eneste rommet som er hoveddel i denne delen av boligen. Du må derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Det er mange regler som gjelder for bygging av bad og våtrom. Det er lurt å bruke fagfolk som sikrer at de blir fulgt.  Se gjerne våre spørsmål og svar om bruksendring: https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/ For å søke om endringen kan du bruke dette søknadsskjemaet: https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</p>"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "DEL 2",
-      "type": "Page",
-      "heading": "DEL 2 3 - [MÅ FINNE PÅ GODT NAVN FOR DENNE SEKSJONEN]",
-      "children": [
-        {
-          "id": "del2.year",
-          "property": "del2.year",
-          "type": "Radio",
-          "heading": "3.2 Når ble det søkt om å bygge boligen din?",
-          "options": [
-            {
-              "id": "del2.year.before",
-              "type": "Answer",
-              "heading": "Før 1. juli 2011",
-              "value": "before"
-            },
-            {
-              "id": "del2.year.before",
-              "type": "Answer",
-              "heading": "Etter 30. juni 2011",
-              "value": "after"
-            }
-          ]
         },
         {
-          "id": "del2.application",
-          "property": "del2.application",
-          "type": "Radio",
-          "heading":
-            "3.3 Er det søkt om en hovedombygging etter 30. juni 2011? ",
-          "options": [
+          "type": "Branch",
+          "branches": [
             {
-              "id": "del2.application.after",
-              "type": "Answer",
-              "heading":
-                "Ja, det har blitt søkt om en hovedombygging etter 30. juni 2011",
-              "value": "after"
-            },
-            {
-              "id": "del2.application.no",
-              "type": "Answer",
-              "heading": "Nei",
-              "value": "no"
-            }
-          ]
-        },
-        {
-          "id": "del2.adjacent",
-          "property": "del2.adjacent",
-          "type": "Radio",
-          "heading":
-            "3.5 Ligger rommet over, under eller inntil et rom som er hoveddel?",
-          "options": [
-            {
-              "id": "del2.adjacent.yes",
-              "type": "Answer",
-              "heading":
-                "Ja, rommet ligger vegg-i-vegg, over eller under et rom som er hoveddel i dag.",
-              "value": "yes"
-            },
-            {
-              "id": "del2.adjacent.no",
-              "type": "Answer",
-              "heading":
-                "Nei, rommet grenser kun mot tilleggsdel eller andre boliger",
-              "value": "no"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "del4",
-      "type": "Page",
-      "heading": "DEL 4",
-      "children": [
-        {
-          "id": "del4",
-          "property": "del4",
-          "type": "Radio",
-          "heading":
-            "4.1 Ligger boligen din i et flom- eller skredutsatt område?",
-          "options": [
-            {
-              "id": "del4",
-              "type": "Answer",
-              "heading": "Hoveddel",
-              "text":
-                "<p>Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
-              "value": "yes"
-            },
-            {
-              "id": "del4",
-              "type": "Answer",
-              "heading": "Tilleggsdel",
-              "text":
-                "<p>Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
-              "value": "no"
+              "test": {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "roomNow",
+                    "operator": "eq",
+                    "value": "main"
+                  },
+                  {
+                    "field": "roomChange",
+                    "operator": "eq",
+                    "value": "main"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading":
+                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text":
+                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text":
+                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
+                      "value": "yes2"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
