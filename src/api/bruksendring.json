@@ -12,7 +12,7 @@
           "id": "houseType",
           "property": "houseType",
           "type": "Radio",
-          "heading": "Jeg skal gjøre om rom i en",
+          "heading": "Jeg skal gjøre om rom i:",
           "options": [
             {
               "id": "houseType.enebolig",
