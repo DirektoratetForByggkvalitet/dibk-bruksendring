@@ -252,15 +252,27 @@
             {
               "id": "roomNow.main",
               "type": "Answer",
+              "image": {
+                "url":
+                  "/img/hoveddel.png",
+                "alt": "Hoveddel"
+              },
+              "heading": "Hoveddel",
               "text":
-                "<img src=\"/img/hoveddel.png\" alt=\"Hoveddel\" /><h3>Hoveddel</h3><p>Rommet jeg vil endre er nå en del av hoveddel, altså godkjent som oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
+                "Rommet jeg vil endre er nå en del av hoveddel, altså godkjent som oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.",
               "value": "main"
             },
             {
               "id": "roomNow.secondary",
               "type": "Answer",
+              "image": {
+                "url":
+                  "/img/tilleggsdel.png",
+                "alt": "Tilleggsdel"
+              },
+              "heading": "Tilleggsdel",
               "text":
-                "<img src=\"/img/tilleggsdel.png\" alt=\"Tilleggsdel\" /><h3>Tilleggsdel</h3><p>Rommet jeg vil endre er nå del av tilleggsdel, altså godkjent som enten bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
+                "Rommet jeg vil endre er nå del av tilleggsdel, altså godkjent som enten bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.",
               "value": "secondary"
             }
           ]
@@ -276,7 +288,7 @@
               "type": "Answer",
               "heading": "Hoveddel",
               "text":
-                "<p>Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.</p>",
+                "Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.",
               "value": "main"
             },
             {
@@ -284,7 +296,7 @@
               "type": "Answer",
               "heading": "Tilleggsdel",
               "text":
-                "<p>Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.</p>",
+                "Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.",
               "value": "secondary"
             }
           ]
@@ -404,7 +416,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -517,7 +529,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -625,7 +637,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -726,7 +738,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -813,7 +825,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -949,7 +961,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1024,7 +1036,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1093,14 +1105,14 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra..</p>",
+                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1207,14 +1219,14 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.</p>",
+                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1316,14 +1328,14 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.</p>",
+                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1418,14 +1430,14 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.</p>",
+                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1506,14 +1518,14 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.</p>",
+                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1589,14 +1601,14 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.</p>",
+                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1643,14 +1655,14 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra..</p>",
+                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1719,14 +1731,14 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]</p>",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.</p>",
+                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
