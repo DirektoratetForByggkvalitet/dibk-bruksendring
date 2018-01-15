@@ -411,7 +411,7 @@
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -524,7 +524,7 @@
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -632,7 +632,7 @@
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -733,7 +733,7 @@
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -820,7 +820,7 @@
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -902,7 +902,7 @@
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -956,7 +956,7 @@
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -1031,7 +1031,7 @@
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
                       "text":
-                        "<p>Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.</p>",
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
