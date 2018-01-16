@@ -73,6 +73,41 @@
           "branches": [
             {
               "test": {
+                "field": "houseType",
+                "operator": "eq",
+                "value": "enebolig"
+              },
+              "children": [
+                {
+                  "id": "eneboligToMulti",
+                  "property": "eneboligToMulti",
+                  "type": "Radio",
+                  "heading": "Er det flere boenheter i boligen?",
+                  "options": [
+                    {
+                      "id": "eneboligToMulti.yes",
+                      "type": "Answer",
+                      "text":
+                        "Ja (må forsikre om at de endrer på rom i sin boenhet) (må behandles som tomannsbolig, gi en beskjed)",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "eneboligToMulti.no",
+                      "type": "Answer",
+                      "text": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
                 "type": "or",
                 "clauses": [
                   {
@@ -84,6 +119,21 @@
                     "field": "houseType",
                     "operator": "eq",
                     "value": "multibolig"
+                  },
+                  {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ]
               },
