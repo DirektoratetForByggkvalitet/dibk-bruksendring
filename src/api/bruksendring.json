@@ -253,8 +253,7 @@
               "id": "roomNow.main",
               "type": "Answer",
               "image": {
-                "url":
-                  "/img/hoveddel.png",
+                "url": "/img/hoveddel.png",
                 "alt": "Hoveddel"
               },
               "heading": "Hoveddel",
@@ -266,8 +265,7 @@
               "id": "roomNow.secondary",
               "type": "Answer",
               "image": {
-                "url":
-                  "/img/tilleggsdel.png",
+                "url": "/img/tilleggsdel.png",
                 "alt": "Tilleggsdel"
               },
               "heading": "Tilleggsdel",
@@ -1105,7 +1103,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1134,7 +1132,7 @@
                     {
                       "id": "b2.toilet.enebolig.no",
                       "type": "Answer",
-                      "heading": "Nei [DEL 2]",
+                      "heading": "Nei",
                       "value": "no"
                     },
                     {
@@ -1219,7 +1217,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1248,7 +1246,7 @@
                     {
                       "id": "b2.toilet.enebolig.no",
                       "type": "Answer",
-                      "heading": "Nei [DEL 2]",
+                      "heading": "Nei",
                       "value": "no"
                     },
                     {
@@ -1328,7 +1326,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1357,7 +1355,7 @@
                     {
                       "id": "b2.toilet.enebolig.no",
                       "type": "Answer",
-                      "heading": "Nei [DEL 2]",
+                      "heading": "Nei",
                       "value": "no"
                     },
                     {
@@ -1430,7 +1428,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1459,7 +1457,7 @@
                     {
                       "id": "b2.toilet.enebolig.no",
                       "type": "Answer",
-                      "heading": "Nei [DEL 2]",
+                      "heading": "Nei",
                       "value": "no"
                     },
                     {
@@ -1470,13 +1468,6 @@
                       "value": "yes2"
                     }
                   ]
-                },
-                {
-                  "id": "toiletonlynewhovedel13",
-                  "type": "Result",
-                  "heading": "Du må søke - ta neste del av veiviseren!",
-                  "lead":
-                    "<p>Endringen du ønsker å gjøre er søknadspliktig. Du må derfor søke kommunen om lov til å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Noen rom er enklere å endre enn andre. For å få oversikt over om det også gjelder ditt rom, bør du fortsette på veiviseren her: TA RESTEN AV VEIVISEREN HER: https://goo.gl/mWuYB5</p>"
                 }
               ]
             },
@@ -1518,7 +1509,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1547,7 +1538,7 @@
                     {
                       "id": "b2.toilet.enebolig.no",
                       "type": "Answer",
-                      "heading": "Nei [DEL 2]",
+                      "heading": "Nei",
                       "value": "no"
                     },
                     {
@@ -1601,7 +1592,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1612,13 +1603,6 @@
                       "value": "yes2"
                     }
                   ]
-                },
-                {
-                  "id": "changesToCommonArea",
-                  "type": "Result",
-                  "heading": "Du er i mål!",
-                  "lead":
-                    "<p>Du har svart at rommet er godkjent som hoveddel, og at du fortsatt ønsker å bruke det som hoveddel. Beholder du rommet som det er, står du fritt til å endre bruken fra for eksempel soverom til stue uten å søke. Du kan gjøre mindre endringer på rommmet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering. Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p>"
                 }
               ]
             },
@@ -1655,7 +1639,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1684,7 +1668,7 @@
                     {
                       "id": "b2.toilet.enebolig.no",
                       "type": "Answer",
-                      "heading": "Nei [DEL 2]",
+                      "heading": "Nei",
                       "value": "no"
                     },
                     {
@@ -1731,7 +1715,7 @@
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
                       "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min. [OVER TIL DEL 2]",
+                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1740,6 +1724,72 @@
                       "text":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Branch",
+      "branches": [
+        {
+          "test": {
+            "type": "and",
+            "clauses": [
+              {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "b2.access.enebolig",
+                    "operator": "eq",
+                    "value": "yes"
+                  },
+                  {
+                    "field": "b2.toilet.enebolig",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              },
+              {
+                "field": "roomNow",
+                "operator": "eq",
+                "value": "secondary"
+              },
+              {
+                "field": "roomChange",
+                "operator": "eq",
+                "value": "main"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "del2",
+              "type": "Page",
+              "heading": "3 - [MÅ FINNE PÅ GODT NAVN FOR DENNE SEKSJONEN]",
+              "children": [
+                {
+                  "id": "buildApplicationYear",
+                  "property": "buildApplicationYear",
+                  "type": "Radio",
+                  "heading": "Når ble det søkt om å bygge boligen din?",
+                  "options": [
+                    {
+                      "id": "buildApplicationYearBefore",
+                      "type": "Answer",
+                      "heading": "Før 1. juli 2011",
+                      "value": "before"
+                    },
+                    {
+                      "id": "buildApplicationYearAfter",
+                      "type": "Answer",
+                      "heading": "Fra og med 1. juli 2011",
+                      "value": "after"
                     }
                   ]
                 }
