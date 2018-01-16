@@ -1772,12 +1772,16 @@
               "id": "del2",
               "type": "Page",
               "heading": "3 - [MÅ FINNE PÅ GODT NAVN FOR DENNE SEKSJONEN]",
+              "lead":
+                "Denne delen av veiviseren skal gi deg en pekepinn på om bruksendringen du ønsker å gjøre er innenfor lovverket. Da slipper du eventuelt å bruke tid på en søknad til kommunen for en bruk av rommet som ikke er lovlig.",
               "children": [
                 {
                   "id": "buildApplicationYear",
                   "property": "buildApplicationYear",
                   "type": "Radio",
                   "heading": "Når ble det søkt om å bygge boligen din?",
+                  "text":
+                    "En gang i tiden er det blitt søkt om å sette opp boligen din til kommunen. Tidspunktet for søknaden er med og bestemmer hvilket regelverk som gjelder for deg. Er du i tvil kan du spørre kommunen din.",
                   "options": [
                     {
                       "id": "buildApplicationYearBefore",
@@ -1792,6 +1796,72 @@
                       "value": "after"
                     }
                   ]
+                },
+                {
+                  "id": "buildtAfter2011",
+                  "type": "Result",
+                  "heading": "Søkt om å bygge fra og med 1. juli 2011",
+                  "lead":
+                    "<p>Siden det er søkt om å bygge boligen din etter 30. juni, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p>",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "buildApplicationYear",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "buildApplicationYear",
+                        "operator": "eq",
+                        "value": "before"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "hovedombyggingYear",
+                  "property": "hovedombyggingYear",
+                  "type": "Radio",
+                  "heading":
+                    "Er det søkt om en hovedombygging fra og med 1. juli. 2011??",
+                  "text":
+                    "<p>En hovedombygging er oppgradering av hele bygningen slik at den fremstår som ny. Å bare pusse opp badet eller kjøkkenet er for eksempel ikke en hovedombygging.</p><p>Er du i tvil kan du spørre kommunen om det er søkt om en hovedombygging av bygningen din.</p>",
+                  "options": [
+                    {
+                      "id": "hovedombyggingYearAfter",
+                      "type": "Answer",
+                      "heading":
+                        "Ja, det har blitt søkt om en hovedombygging fra og med 1. juli 2011?",
+                      "value": "after"
+                    },
+                    {
+                      "id": "hovedombyggingYearBefore",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "before"
+                    }
+                  ]
+                },
+                {
+                  "id": "hovedombyggingYearAfterResult",
+                  "type": "Result",
+                  "heading": "Du har hatt en hovedombygging",
+                  "lead":
+                    "<p>Siden det er søkt om hovedombygging av boligen din etter 30. juni, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p>",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "hovedombyggingYear",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "hovedombyggingYear",
+                        "operator": "eq",
+                        "value": "before"
+                      }
+                    ]
+                  }
                 }
               ]
             }
