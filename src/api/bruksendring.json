@@ -1823,7 +1823,7 @@
                   "property": "hovedombyggingYear",
                   "type": "Radio",
                   "heading":
-                    "Er det søkt om en hovedombygging fra og med 1. juli. 2011??",
+                    "Er det søkt om en hovedombygging fra og med 1. juli. 2011?",
                   "text":
                     "<p>En hovedombygging er oppgradering av hele bygningen slik at den fremstår som ny. Å bare pusse opp badet eller kjøkkenet er for eksempel ikke en hovedombygging.</p><p>Er du i tvil kan du spørre kommunen om det er søkt om en hovedombygging av bygningen din.</p>",
                   "options": [
@@ -1859,6 +1859,51 @@
                         "field": "hovedombyggingYear",
                         "operator": "eq",
                         "value": "before"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "divisionOrMerger",
+                  "property": "divisionOrMerger",
+                  "type": "Radio",
+                  "heading":
+                    "Er det søkt om en oppdeling eller sammenslåing av boligen din etter 30. juni 2011?",
+                  "text":
+                    "<p>Det som er boligen din i dag, er den et resultat av at:</p><ul><li>to boliger har blitt slått sammen til en bolig</li><li>en bolig har blitt delt opp i to mindre boliger</li></ul>",
+                  "options": [
+                    {
+                      "id": "divisionOrMergerYes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "divisionOrMergerNo",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "divisionOrMergerResult",
+                  "type": "Result",
+                  "heading":
+                    "Du har en bolig som har blitt delt opp eller sammenslått etter 30. juni 2011",
+                  "lead":
+                    "<p>Siden det er søkt om en oppdeling eller sammenslåing etter 30. juni, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p>",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "divisionOrMerger",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "divisionOrMerger",
+                        "operator": "eq",
+                        "value": "no"
                       }
                     ]
                   }
