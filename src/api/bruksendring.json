@@ -2010,6 +2010,80 @@
       ]
     },
     {
+      "id": "del3",
+      "type": "Page",
+      "heading": "Boligen din",
+      "hidden": {
+        "type": "or",
+        "clauses": [
+          {
+            "field": "overUnderNextTooHovedRoom",
+            "operator": "not"
+          },
+          {
+            "field": "overUnderNextTooHovedRoom",
+            "operator": "eq",
+            "value": "no"
+          }
+        ]
+      },
+      "lead":
+        "<p>Du har sagt du vil bruksendre et rom som:<p><ul><li>er søkt oppført før 1. juli 2011</li><li>ligger inntil hoveddel fra før</li></ul><p>På grunn av dette, trenger du kun å følge noen utvalgte tekniske krav. For å finne ut om det er mulig for rommet å oppfylle kravene, kan du ta resten av veiviseren.</p><p>Har du tenkt til å bruke en fagperson til å gjøre jobben? Da kan du si til fagpersonen at hun/han kan følge de forenklede reglene for bruksendring. Disse finnes i byggteknisk forskrift (TEK17) <a href=\"https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/1/1-2/\">paragraf 1-2 åttende ledd</a>",
+      "children": [
+        {
+          "id": "naturalDisasterArea",
+          "property": "naturalDisasterArea",
+          "type": "Radio",
+          "heading": "Ligger boligen din i et flom- eller skredutsatt område?",
+          "text":
+            "<p>Det er ditt ansvar å sørge for at bygningen plasseres på sikker grunn. Du må derfor undersøke om det er fare for ras, flom, stormflo og skred, inklusive kvikkleireskred, der du skal bygge.<p></p>Er du i tvil om grunnen er sikker, må du kontakte kommunen.</p><img src=\"/img/ras.jpeg\" alt=\"Ras\">",
+          "options": [
+            {
+              "id": "naturalDisasterAreaYes",
+              "type": "Answer",
+              "heading":
+                "Ja, jeg skal bygge i et område som er flom- eller rasutsatt, eller hvor grunnen ikke er sikker",
+              "value": "yes"
+            },
+            {
+              "id": "naturalDisasterAreaNo",
+              "type": "Answer",
+              "heading":
+                "Nei, jeg skal ikke bygge i et flom- eller rasutsatt område eller område med usikker grunn",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "naturalDisasterAreaYesError",
+          "type": "Error",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "naturalDisasterArea",
+                "operator": "not"
+              },
+              {
+                "field": "naturalDisasterArea",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "naturalDisasterAreaYesError.msg",
+              "type": "Text",
+              "warning": true,
+              "heading":
+                "Siden området er flom- eller rasutsatt er det ikke sikkert tekniske krav til sikkerhet er oppfylt. Snakk med kommunen for å finne ut om du kan bruksendre et rom i området på tross av flom- eller rasfaren."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "hoorays",
       "type": "Result",
       "heading": "Okei, du får lov!",
