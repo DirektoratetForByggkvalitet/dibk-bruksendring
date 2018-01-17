@@ -2080,6 +2080,81 @@
                 "Siden området er flom- eller rasutsatt er det ikke sikkert tekniske krav til sikkerhet er oppfylt. Snakk med kommunen for å finne ut om du kan bruksendre et rom i området på tross av flom- eller rasfaren."
             }
           ]
+        },
+        {
+          "id": "alreadyApprovedMainPart",
+          "property": "alreadyApprovedMainPart",
+          "type": "Radio",
+          "heading":
+            "Er det godkjent hoveddel i etasjen rommet ligger i fra før?",
+          "text":
+            "Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.  Hoveddelen må være lovlig og godkjent.",
+          "options": [
+            {
+              "id": "alreadyApprovedMainPartYes",
+              "type": "Answer",
+              "heading":
+                "Ja, rommet jeg vil bruksendre ligger i en etasje hvor det finnes enten oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, kontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.",
+              "value": "yes",
+              "image": {
+                "url": "/img/12.png",
+                "alt": "Room"
+              }
+            },
+            {
+              "id": "alreadyApprovedMainPartNo",
+              "type": "Answer",
+              "heading":
+                "Nei, rommet jeg vil bruksendre ligger i en etasje hvor det kun finnes rom som er tilleggsdel, som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.",
+              "value": "no",
+              "image": {
+                "url": "/img/13.png",
+                "alt": "Room"
+              }
+            }
+          ]
+        },
+        {
+          "id": "basementOrAttic",
+          "property": "basementOrAttic",
+          "type": "Radio",
+          "heading":
+            "Ligger rommet du skal endre, i en kjeller eller på et loft?",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "alreadyApprovedMainPart",
+                "operator": "not"
+              },
+              {
+                "field": "alreadyApprovedMainPart",
+                "operator": "eq",
+                "value": "yes"
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "basementOrAtticBasement",
+              "type": "Answer",
+              "heading":
+                "Ja, i en kjeller eller underetasje (helt eller delvis under bakkenivå)",
+              "value": "basement"
+            },
+            {
+              "id": "basementOrAtticAttic",
+              "type": "Answer",
+              "heading": "Ja, på et loft",
+              "value": "attic"
+            },
+            {
+              "id": "basementOrAtticNo",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
         }
       ]
     },
