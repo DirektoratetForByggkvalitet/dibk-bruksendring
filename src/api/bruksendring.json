@@ -2159,6 +2159,123 @@
       ]
     },
     {
+      "id": "del3.5etasje",
+      "type": "Page",
+      "heading": "Etasjer i boligen",
+      "hidden": {
+        "type": "or",
+        "clauses": [
+          {
+            "field": "basementOrAttic",
+            "operator": "not"
+          },
+          {
+            "field": "basementOrAttic",
+            "operator": "eq",
+            "value": "no"
+          }
+        ]
+      },
+      "children": [
+        {
+          "id": "levels",
+          "property": "levels",
+          "type": "Radio",
+          "heading":
+            "Inkludert eventuelle kjellere og loft, hvor mange etasjer har boligen din?",
+          "options": [
+            {
+              "id": "levels2",
+              "type": "Answer",
+              "heading": "2",
+              "value": "2"
+            },
+            {
+              "id": "levels3",
+              "type": "Answer",
+              "heading": "3",
+              "value": "3"
+            },
+            {
+              "id": "levels4",
+              "type": "Answer",
+              "heading": "4",
+              "value": "4"
+            },
+            {
+              "id": "levels5",
+              "type": "Answer",
+              "heading": "5 eller flere",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "id": "escapeAtGroundFloor",
+          "property": "escapeAtGroundFloor",
+          "type": "Radio",
+          "heading":
+            "Har alle boenhetene i bygningen utgangsdør som går rett ut på bakken?",
+          "text":
+            "<p>Har alle boenhetene en dør som går rett fra boligen og rett ut på bakken? Det kan være en liten utvendig trapp på maksimalt 1,5 meter fra dørstokken og ned til bakken fra døren.</p><p>Her er det viktig å tenke på alle boenheter, også eventuelle hybler og utleieboliger i bygningen du bor.</p>",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "levels",
+                "operator": "not"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "2"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "4"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "5"
+              },
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "houseType",
+                    "operator": "eq",
+                    "value": "enebolig"
+                  },
+                  {
+                    "field": "eneboligToMulti",
+                    "operator": "eq",
+                    "value": "yes"
+                  }
+                ]
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "escapeAtGroundFloorYes",
+              "type": "Answer",
+              "heading": "Ja, alle har minst én utgang rett ut på bakken",
+              "value": "yes"
+            },
+            {
+              "id": "escapeAtGroundFloorNo",
+              "type": "Answer",
+              "heading":
+                "Nei, minst én boenhet/leilighet må gå gjennom innvendig eller utvendig trapp",
+              "value": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "hoorays",
       "type": "Result",
       "heading": "Okei, du får lov!",
