@@ -2729,6 +2729,119 @@
       ]
     },
     {
+      "id": "window",
+      "type": "Page",
+      "heading": "Vindu på rommet",
+      "children": [
+        {
+          "id": "windowInRoom",
+          "property": "windowInRoom",
+          "type": "Radio",
+          "heading":
+            "Har du eller kan du sette inn et vindu mot friluft som kan åpnes fra rommet du vil endre?",
+          "text": "De fleste rom må ha et vindu for lys, luft og som rømningsvei.",
+          "options": [
+            {
+              "id": "windowInRoomYes",
+              "type": "Answer",
+              "heading": "Ja, rommet har et vindu mot friluft som kan åpnes",
+              "value": "yes"
+            },
+            {
+              "id": "windowInRoomYesWill",
+              "type": "Answer",
+              "heading": "Ja, det vil bli satt inn et vindu i rommet mot friluft som kan åpnes",
+              "value": "yeswill"
+            },
+            {
+              "id": "windowInRoomNo",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "noWindowError",
+          "type": "Error",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "windowInRoom",
+                "operator": "not"
+              },
+              {
+                "field": "windowInRoom",
+                "operator": "eq",
+                "value": "yes"
+              },
+              {
+                "field": "windowInRoom",
+                "operator": "eq",
+                "value": "yeswill"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "noWindowError.msg",
+              "type": "Text",
+              "warning": true,
+              "heading":
+                "Hvis rommet ikke har et vindu kan ikke veilederen ta stilling til om krav til lys, ventilasjon, inneklima og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
+            }
+          ]
+        },
+        {
+          "id": "bigWindow",
+          "property": "bigWindow",
+          "type": "Radio",
+          "heading": "Blir åpningen på vinduet stor nok?",
+          "image": {
+            "url": "/img/bigWindow.png",
+            "alt": "Dimensjoner på vinduer"
+          },
+          "text":
+            "<p>Med stor nok mener vi:</p><ul><li>minst 50 cm bred (men da må høyden være minst 100 cm)</li><li>minst 60 cm høy (men da må bredden være minst 90 cm)</li><li>høyden og bredden må være minst 150 cm til sammen</li></ul><p>Det forutsetter at vinduet kan åpnes helt opp, og at vinduet er hengslet på siden eller i toppen. Om du skal ha en annen type vindu, må du passe på at vinduet er godkjent som rømningsvindu.</p><p>Målingen av vinduet må gjøres på innsiden av innerkarmen på vinduet.</p>",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "windowInRoom",
+                "operator": "not"
+              },
+              {
+                "field": "windowInRoom",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "bigWindowYes",
+              "type": "Answer",
+              "heading": "Ja, åpningen er stor nok i dag",
+              "value": "yes"
+            },
+            {
+              "id": "bigWindowYesWill",
+              "type": "Answer",
+              "heading": "Ja, åpningen blir stor nok i vinduet jeg skal sette inn",
+              "value": "yeswill"
+            },
+            {
+              "id": "windowInRoomNo",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "hoorays",
       "type": "Result",
       "heading": "Okei, du får lov!",
