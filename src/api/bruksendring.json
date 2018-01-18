@@ -3227,6 +3227,76 @@
               ]
             }
           ]
+        },
+        {
+          "id": "luftventil",
+          "property": "luftventil",
+          "type": "Radio",
+          "heading": "Har du eller skal du sette inn en lufteventil i rommet, i tillegg til vindu?",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "windowInRoom",
+                "operator": "not"
+              },
+              {
+                "field": "windowInRoom",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "luftventilYes",
+              "type": "Answer",
+              "heading": "Ja, rommet har allerede eller det skal settes inn lufteventil på rommet",
+              "value": "yes"
+            },
+            {
+              "id": "luftventilNo",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "luftventilError",
+          "type": "Error",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "windowInRoom",
+                "operator": "not"
+              },
+              {
+                "field": "windowInRoom",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "luftventil",
+                "operator": "not"
+              },
+              {
+                "field": "luftventil",
+                "operator": "eq",
+                "value": "yes"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "luftventilError.msg",
+              "type": "Text",
+              "warning": true,
+              "heading":
+                "Når det ikke er lufteventil kan ikke veilederen vurdere om krav til ventilasjon er oppfylt."
+            }
+          ]
         }
       ]
     },
