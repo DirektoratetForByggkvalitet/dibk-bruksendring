@@ -27,13 +27,11 @@
             {
               "id": "houseType.multibolig",
               "type": "Answer",
-              "heading":
-                "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig",
+              "heading": "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig",
               "value": "multibolig",
               "image": {
                 "url": "/img/multibolig.png",
-                "alt":
-                  "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig"
+                "alt": "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig"
               }
             },
             {
@@ -142,8 +140,7 @@
                   "id": "commonArea",
                   "property": "commonArea",
                   "type": "Radio",
-                  "heading":
-                    "Kommer endringene dine til å påvirke fellesarealet?",
+                  "heading": "Kommer endringene dine til å påvirke fellesarealet?",
                   "text":
                     "Endringene dine påvirker fellesarealet hvis du gjør om loftsbod eller kjellerbod, eller hvis du skal legge rør, luftekanaler eller noe annet utenfor leiligheten din.<img src=\"/img/fellesareal.png\" alt=\"Endringer i fellesareal\" />",
                   "options": [
@@ -219,8 +216,7 @@
                 {
                   "id": "changesToGarasje",
                   "type": "Result",
-                  "heading":
-                    "Har du tenkt gjøre om garasjen slik at noen kan bo eller sove der?",
+                  "heading": "Har du tenkt gjøre om garasjen slik at noen kan bo eller sove der?",
                   "lead":
                     "<p>Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det.Skal du gjøre om garasjen til bod? Hvis du kun gjør innvendige endringer i garasjen trenger du ikke å søke, og du kan ta i bruk garasjen din som bod med en gang. Skal du gjøre andre endringer? Ta kontakt med kommunen din for å finne ut om du må søke.</p>"
                 }
@@ -457,14 +453,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -485,8 +479,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -498,8 +491,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -570,14 +562,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -598,8 +588,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -611,8 +600,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -678,14 +666,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -706,8 +692,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -719,8 +704,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -779,14 +763,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -807,8 +789,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -820,8 +801,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -866,14 +846,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -894,8 +872,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -907,8 +884,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -948,8 +924,7 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -1002,14 +977,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1030,8 +1003,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -1043,8 +1015,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -1077,14 +1048,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1146,14 +1115,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1169,14 +1136,12 @@
                   "id": "b2.toilet.enebolig",
                   "property": "b2.toilet.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
+                  "heading": "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
                   "options": [
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -1188,8 +1153,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -1260,14 +1224,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1283,14 +1245,12 @@
                   "id": "b2.toilet.enebolig",
                   "property": "b2.toilet.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
+                  "heading": "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
                   "options": [
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -1302,8 +1262,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -1369,14 +1328,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1392,14 +1349,12 @@
                   "id": "b2.toilet.enebolig",
                   "property": "b2.toilet.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
+                  "heading": "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
                   "options": [
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -1411,8 +1366,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -1471,14 +1425,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1494,14 +1446,12 @@
                   "id": "b2.toilet.enebolig",
                   "property": "b2.toilet.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
+                  "heading": "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
                   "options": [
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -1513,8 +1463,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -1552,14 +1501,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1575,14 +1522,12 @@
                   "id": "b2.toilet.enebolig",
                   "property": "b2.toilet.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
+                  "heading": "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
                   "options": [
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -1594,8 +1539,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -1635,14 +1579,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1682,14 +1624,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1705,14 +1645,12 @@
                   "id": "b2.toilet.enebolig",
                   "property": "b2.toilet.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
+                  "heading": "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
                   "options": [
                     {
                       "id": "b2.toilet.enebolig.yes",
                       "type": "Answer",
-                      "heading":
-                        "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
+                      "heading": "Ja, det blir toalett og minst ett annet rom som er hoveddel.",
                       "value": "yes"
                     },
                     {
@@ -1724,8 +1662,7 @@
                     {
                       "id": "b2.toilet.enebolig.yes2",
                       "type": "Answer",
-                      "heading":
-                        "Ja, men toalettet blir det eneste rommet som er hoveddel.",
+                      "heading": "Ja, men toalettet blir det eneste rommet som er hoveddel.",
                       "value": "yes2"
                     }
                   ]
@@ -1758,14 +1695,12 @@
                   "id": "b2.access.enebolig",
                   "property": "b2.access.enebolig",
                   "type": "Radio",
-                  "heading":
-                    "Hvordan kommer du deg til rommet etter endringen?",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
-                        "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
@@ -1872,8 +1807,7 @@
                   "id": "hovedombyggingYear",
                   "property": "hovedombyggingYear",
                   "type": "Radio",
-                  "heading":
-                    "Er det søkt om en hovedombygging fra og med 1. juli. 2011?",
+                  "heading": "Er det søkt om en hovedombygging fra og med 1. juli. 2011?",
                   "text":
                     "<p>En hovedombygging er oppgradering av hele bygningen slik at den fremstår som ny. Å bare pusse opp badet eller kjøkkenet er for eksempel ikke en hovedombygging.</p><p>Er du i tvil kan du spørre kommunen om det er søkt om en hovedombygging av bygningen din.</p>",
                   "options": [
@@ -1962,8 +1896,7 @@
                   "id": "overUnderNextTooHovedRoom",
                   "property": "overUnderNextTooHovedRoom",
                   "type": "Radio",
-                  "heading":
-                    "Ligger rommet over, under eller inntil et rom som er hoveddel?",
+                  "heading": "Ligger rommet over, under eller inntil et rom som er hoveddel?",
                   "text":
                     "<p>Er det et rom som er godkjent som hoveddel enten rett over,  under eller ved siden av rommet du vil endre på?</p><p>Hoveddel i en bolig er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring, som en bod.</p><p>(Legge til noe a laVi snakket her om rom som tilhører boligen din, sånn for ikke å forvirre om dette med naboer).</p>",
                   "options": [
@@ -2085,8 +2018,7 @@
           "id": "alreadyApprovedMainPart",
           "property": "alreadyApprovedMainPart",
           "type": "Radio",
-          "heading":
-            "Er det godkjent hoveddel i etasjen rommet ligger i fra før?",
+          "heading": "Er det godkjent hoveddel i etasjen rommet ligger i fra før?",
           "text":
             "Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.  Hoveddelen må være lovlig og godkjent.",
           "options": [
@@ -2118,8 +2050,7 @@
           "id": "basementOrAttic",
           "property": "basementOrAttic",
           "type": "Radio",
-          "heading":
-            "Ligger rommet du skal endre, i en kjeller eller på et loft?",
+          "heading": "Ligger rommet du skal endre, i en kjeller eller på et loft?",
           "hidden": {
             "type": "or",
             "clauses": [
@@ -2138,8 +2069,7 @@
             {
               "id": "basementOrAtticBasement",
               "type": "Answer",
-              "heading":
-                "Ja, i en kjeller eller underetasje (helt eller delvis under bakkenivå)",
+              "heading": "Ja, i en kjeller eller underetasje (helt eller delvis under bakkenivå)",
               "value": "basement"
             },
             {
@@ -2181,8 +2111,7 @@
           "id": "levels",
           "property": "levels",
           "type": "Radio",
-          "heading":
-            "Inkludert eventuelle kjellere og loft, hvor mange etasjer har boligen din?",
+          "heading": "Inkludert eventuelle kjellere og loft, hvor mange etasjer har boligen din?",
           "options": [
             {
               "id": "levels2",
@@ -2214,8 +2143,7 @@
           "id": "escapeAtGroundFloor",
           "property": "escapeAtGroundFloor",
           "type": "Radio",
-          "heading":
-            "Har alle boenhetene i bygningen utgangsdør som går rett ut på bakken?",
+          "heading": "Har alle boenhetene i bygningen utgangsdør som går rett ut på bakken?",
           "text":
             "<p>Har alle boenhetene en dør som går rett fra boligen og rett ut på bakken? Det kan være en liten utvendig trapp på maksimalt 1,5 meter fra dørstokken og ned til bakken fra døren.</p><p>Her er det viktig å tenke på alle boenheter, også eventuelle hybler og utleieboliger i bygningen du bor.</p>",
           "hidden": {
@@ -2251,7 +2179,7 @@
                   {
                     "field": "eneboligToMulti",
                     "operator": "eq",
-                    "value": "yes"
+                    "value": "no"
                   }
                 ]
               }
@@ -2289,6 +2217,21 @@
                 "field": "escapeAtGroundFloor",
                 "operator": "eq",
                 "value": "yes"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "2"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "4"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "5"
               }
             ]
           },
@@ -2321,6 +2264,21 @@
                 "field": "bothBasementAndAttic",
                 "operator": "eq",
                 "value": "yes"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "2"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "4"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "5"
               }
             ]
           },
@@ -2358,6 +2316,21 @@
                         "field": "bothBasementAndAttic",
                         "operator": "eq",
                         "value": "no"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "2"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "4"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "5"
                       }
                     ]
                   },
@@ -2394,6 +2367,21 @@
                         "field": "bothBasementAndAttic",
                         "operator": "eq",
                         "value": "no"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "2"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "4"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "5"
                       }
                     ]
                   },
@@ -2403,11 +2391,338 @@
                       "type": "Text",
                       "warning": true,
                       "heading":
-                        "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje.Du må derfor avklare om kjelleren din regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
+                        "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om kjelleren din regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
                     }
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "id": "bothBasementAndAttic4",
+          "property": "bothBasementAndAttic4",
+          "type": "Radio",
+          "heading": "Har du både kjeller og loft i bygningen du bor i?",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "levels",
+                "operator": "not"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "2"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "3"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "5"
+              },
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "houseType",
+                    "operator": "eq",
+                    "value": "enebolig"
+                  },
+                  {
+                    "field": "eneboligToMulti",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "bothBasementAndAttic4Yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "bothBasementAndAttic4No",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "bothBasementAndAttic4Error",
+          "type": "Error",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "bothBasementAndAttic4",
+                "operator": "not"
+              },
+              {
+                "field": "bothBasementAndAttic4",
+                "operator": "eq",
+                "value": "yes"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "2"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "3"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "5"
+              },
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "houseType",
+                    "operator": "eq",
+                    "value": "enebolig"
+                  },
+                  {
+                    "field": "eneboligToMulti",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "bothBasementAndAttic4Error.msg",
+              "type": "Text",
+              "warning": true,
+              "heading":
+                "Du får en ekstra tellende etasje på grunn av endringen. Dette gjør at krav til brannsikkerhet må vurderes på nytt for boligen. Veiviseren kan dessverre ikke hjelpe deg med dette."
+            }
+          ]
+        },
+        {
+          "id": "escapeAtGroundFloor4",
+          "property": "escapeAtGroundFloor4",
+          "type": "Radio",
+          "heading": "Har alle boenhetene i bygningen utgangsdør som går rett ut på bakken?",
+          "text":
+            "<p>Har alle boenhetene en dør som går rett fra boligen og rett ut på bakken? Det kan være en liten utvendig trapp på maksimalt 1,5 meter fra dørstokken og ned til bakken fra døren.</p><p>Her er det viktig å tenke på alle boenheter, også eventuelle hybler og utleieboliger i bygningen du bor.</p>",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "levels",
+                "operator": "not"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "2"
+              },
+              {
+                "field": "bothBasementAndAttic4",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "3"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "5"
+              },
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "houseType",
+                    "operator": "eq",
+                    "value": "enebolig"
+                  },
+                  {
+                    "field": "eneboligToMulti",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "escapeAtGroundFloor4Yes",
+              "type": "Answer",
+              "heading": "Ja, alle har minst én utgang rett ut på bakken",
+              "value": "yes"
+            },
+            {
+              "id": "escapeAtGroundFloor4No",
+              "type": "Answer",
+              "heading":
+                "Nei, minst én boenhet/leilighet må gå gjennom innvendig eller utvendig trapp",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "basementOrAttic",
+                "operator": "eq",
+                "value": "basement"
+              },
+              "children": [
+                {
+                  "id": "escapeAtGroundFloor4NoErrorBasement",
+                  "type": "Error",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "escapeAtGroundFloor4",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "escapeAtGroundFloor4",
+                        "operator": "eq",
+                        "value": "yes"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "2"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "3"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "5"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "escapeAtGroundFloor4NoErrorBasement.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje.Du må derfor avklare om loftet ditt regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "test": {
+                "field": "basementOrAttic",
+                "operator": "eq",
+                "value": "attic"
+              },
+              "children": [
+                {
+                  "id": "escapeAtGroundFloor4NoErrorAttic",
+                  "type": "Error",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "escapeAtGroundFloor4",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "escapeAtGroundFloor4",
+                        "operator": "eq",
+                        "value": "yes"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "2"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "3"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "5"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "escapeAtGroundFloor4NoErrorAttic.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om kjelleren din regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fiveFloorsError",
+          "type": "Error",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "levels",
+                "operator": "not"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "2"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "3"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "4"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "fiveFloorsError.msg",
+              "type": "Text",
+              "warning": true,
+              "heading":
+                "Bygningen din har for mange etasjer til at veiviseren kan hjelpe deg til å vurdere branntekniske krav."
             }
           ]
         }
