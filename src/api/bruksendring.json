@@ -2960,6 +2960,90 @@
                         "For å kunne rømme ut av et vindu må det maks være én meter opp fra vinduet. Det kan eventuelt tilrettelegges for noe å klatre opp på, som en kasse."
                     }
                   ]
+                },
+                {
+                  "id": "escapeBasementOutside",
+                  "property": "escapeBasementOutside",
+                  "type": "Radio",
+                  "heading": "Er det enkelt å komme seg ut av vinduet fra utsiden?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "escapeBasement",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "windowInRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "alreadyApprovedMainPart",
+                        "operator": "eq",
+                        "value": "yes"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "escapeBasementOutsideYes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "escapeBasementOutsideNo",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "escapeBasementOutsideError",
+                  "type": "Error",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "windowInRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "windowInRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "alreadyApprovedMainPart",
+                        "operator": "eq",
+                        "value": "yes"
+                      },
+                      {
+                        "field": "escapeBasement",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "escapeBasementOutside",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "escapeBasementOutside",
+                        "operator": "eq",
+                        "value": "yes"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "escapeBasementOutsideError.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Når det ikke er mulig å komme seg ut av vinduet kan ikke veiviseren vurder om krav til rømning er oppfylt."
+                    }
+                  ]
                 }
               ]
             },
@@ -3053,6 +3137,90 @@
                       "warning": true,
                       "heading":
                         "For å kunne rømme ut av et vindu må det maks være én meter opp fra vinduet. Det kan eventuelt tilrettelegges for noe å klatre opp på, som en kasse."
+                    }
+                  ]
+                },
+                {
+                  "id": "escapeAtticOutside",
+                  "property": "escapeAtticOutside",
+                  "type": "Radio",
+                  "heading": "Er det enkelt å komme seg ut av vinduet fra utsiden?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "escapeAttic",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "windowInRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "alreadyApprovedMainPart",
+                        "operator": "eq",
+                        "value": "yes"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "escapeAtticOutsideYes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "escapeAtticOutsideNo",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "escapeAtticOutsideError",
+                  "type": "Error",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "windowInRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "windowInRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "alreadyApprovedMainPart",
+                        "operator": "eq",
+                        "value": "yes"
+                      },
+                      {
+                        "field": "escapeAttic",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "escapeAtticOutside",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "escapeAtticOutside",
+                        "operator": "eq",
+                        "value": "yes"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "escapeAtticOutsideError.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "Vinduet er for høyt til at veilederen kan vurdere om krav til rømning er oppfylt."
                     }
                   ]
                 }
