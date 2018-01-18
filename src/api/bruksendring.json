@@ -2744,14 +2744,9 @@
             {
               "id": "windowInRoomYes",
               "type": "Answer",
-              "heading": "Ja, rommet har et vindu mot friluft som kan åpnes",
+              "heading":
+                "Ja, rommet har eller det vil bli satt inn et vindu mot friluft som kan åpnes",
               "value": "yes"
-            },
-            {
-              "id": "windowInRoomYesWill",
-              "type": "Answer",
-              "heading": "Ja, det vil bli satt inn et vindu i rommet mot friluft som kan åpnes",
-              "value": "yeswill"
             },
             {
               "id": "windowInRoomNo",
@@ -2775,11 +2770,6 @@
                 "field": "windowInRoom",
                 "operator": "eq",
                 "value": "yes"
-              },
-              {
-                "field": "windowInRoom",
-                "operator": "eq",
-                "value": "yeswill"
               }
             ]
           },
@@ -2822,20 +2812,251 @@
             {
               "id": "bigWindowYes",
               "type": "Answer",
-              "heading": "Ja, åpningen er stor nok i dag",
+              "heading": "Ja, åpningen er eller blir stor nok",
               "value": "yes"
             },
             {
-              "id": "bigWindowYesWill",
-              "type": "Answer",
-              "heading": "Ja, åpningen blir stor nok i vinduet jeg skal sette inn",
-              "value": "yeswill"
-            },
-            {
-              "id": "windowInRoomNo",
+              "id": "bigWindowNo",
               "type": "Answer",
               "heading": "Nei",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "bigWindowError",
+          "type": "Error",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "bigWindow",
+                "operator": "not"
+              },
+              {
+                "field": "bigWindow",
+                "operator": "eq",
+                "value": "yes"
+              },
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "bigWindow",
+                    "operator": "eq",
+                    "value": "no"
+                  },
+                  {
+                    "field": "windowInRoom",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "bigWindowError.msg",
+              "type": "Text",
+              "warning": true,
+              "heading":
+                "Hvis rommet ikke har et stort nok vindu kan ikke veilederen ta stilling til om krav til lys og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "basementOrAttic",
+                "operator": "eq",
+                "value": "basement"
+              },
+              "children": [
+                {
+                  "id": "escapeBasement",
+                  "property": "escapeBasement",
+                  "type": "Radio",
+                  "heading": "Er det lett å rømme fra innsiden av rommet?",
+                  "image": {
+                    "url": "/img/lysgrav.png",
+                    "alt": "Lysgrav"
+                  },
+                  "text":
+                    "<p>Er det enkelt å komme seg ut av vinduet fra innsiden?</p><p>For at det skal være mulig å rømme ut av vinduet:</p><ul><li>kan det maksimalt være 1 meter opp fra gulvet til undersiden av karmen på vinduet</li><li>må vinduer som er helt eller delvis gravd ned under bakkenivå, i lysgrav, være enkle å komme ut av</li><li>må det være sikret at lysgraven aldri blir fylt av snø om vinteren, med for eksempel varmekabler (måking holder ikke)</li></ul>",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "windowInRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "windowInRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "alreadyApprovedMainPart",
+                        "operator": "eq",
+                        "value": "yes"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "escapeBasementYes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "escapeBasementNo",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "escapeBasementError",
+                  "type": "Error",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "windowInRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "windowInRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "alreadyApprovedMainPart",
+                        "operator": "eq",
+                        "value": "yes"
+                      },
+                      {
+                        "field": "escapeBasement",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "escapeBasement",
+                        "operator": "eq",
+                        "value": "yes"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "escapeBasementError.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "For å kunne rømme ut av et vindu må det maks være én meter opp fra vinduet. Det kan eventuelt tilrettelegges for noe å klatre opp på, som en kasse."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "test": {
+                "field": "basementOrAttic",
+                "operator": "eq",
+                "value": "attic"
+              },
+              "children": [
+                {
+                  "id": "escapeAttic",
+                  "property": "escapeAttic",
+                  "type": "Radio",
+                  "heading": "Er det lett å rømme fra innsiden av rommet?",
+                  "image": {
+                    "url": "/img/heigth.png",
+                    "alt": "Høyde på vindu"
+                  },
+                  "text":
+                    "<p>Er det enkelt å komme seg ut av vinduet fra innsiden?</p><p>For at det skal være mulig å rømme ut av vinduet:</p><ul><li>kan det maksimalt være 1 meter opp fra gulvet til undersiden av karmen på vinduet</li><li>kan det være maksimalt 5 meter fra nedre karm til bakken</li></ul>",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "windowInRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "windowInRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "alreadyApprovedMainPart",
+                        "operator": "eq",
+                        "value": "yes"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "escapeAtticYes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "escapeAtticNo",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "escapeAtticError",
+                  "type": "Error",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "windowInRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "windowInRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "alreadyApprovedMainPart",
+                        "operator": "eq",
+                        "value": "yes"
+                      },
+                      {
+                        "field": "escapeAttic",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "escapeAttic",
+                        "operator": "eq",
+                        "value": "yes"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "escapeAtticError.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading":
+                        "For å kunne rømme ut av et vindu må det maks være én meter opp fra vinduet. Det kan eventuelt tilrettelegges for noe å klatre opp på, som en kasse."
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
