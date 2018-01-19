@@ -282,7 +282,7 @@
                   "type": "Result",
                   "heading": "Rommet er lavere enn to meter",
                   "lead":
-                    "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Kan du øke romhøyden? Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent.  Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil. Takk for at du brukte veilederen! HER FØLER FOLK SEG HJELPESLØSE. HVA KAN DE GJØRE? KAN DET LIKEVEL BLI GODKJENT SOM EN BOD/VASKEROM, DET ER JO IKKE BOLIG.</p>"
+                    "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Kan du øke romhøyden? Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent.  Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil. Takk for at du brukte veilederen!</p>"
                 }
               ]
             }
@@ -3164,7 +3164,8 @@
                   "property": "escapeAtticOutside",
                   "type": "Radio",
                   "heading": "Er det enkelt å komme seg ut av vinduet fra utsiden?",
-                  "text": "Det kan være maksimalt 5 meter fra nedre karm av vinduet og til bakken på utsiden av vinduet.",
+                  "text":
+                    "Det kan være maksimalt 5 meter fra nedre karm av vinduet og til bakken på utsiden av vinduet.",
                   "hidden": {
                     "type": "or",
                     "clauses": [
