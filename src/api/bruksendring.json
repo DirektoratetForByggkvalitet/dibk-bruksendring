@@ -81,13 +81,13 @@
                   "property": "eneboligToMulti",
                   "type": "Radio",
                   "heading": "Er det flere boenheter i boligen?",
-                  "text": "hei",
+                  "text": "Om du har en hybel eller utleiedel i eneboligen din, har du for eksempel flere boenheter.",
                   "options": [
                     {
                       "id": "eneboligToMulti.yes",
                       "type": "Answer",
                       "text":
-                        "Ja (må forsikre om at de endrer på rom i sin boenhet) (må behandles som tomannsbolig, gi en beskjed)",
+                        "Ja",
                       "value": "yes"
                     },
                     {
