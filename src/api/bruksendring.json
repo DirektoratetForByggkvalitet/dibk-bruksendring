@@ -3082,7 +3082,7 @@
                     "alt": "Høyde på vindu"
                   },
                   "text":
-                    "<p>Er det enkelt å komme seg ut av vinduet fra innsiden?</p><p>For at det skal være mulig å rømme ut av vinduet:</p><ul><li>kan det maksimalt være 1 meter opp fra gulvet til undersiden av karmen på vinduet</li><li>kan det være maksimalt 5 meter fra nedre karm til bakken</li></ul>",
+                    "<p>Er det enkelt å komme seg ut av vinduet fra innsiden?</p><p>For at det skal være mulig å rømme ut av vinduet kan det maksimalt være 1 meter opp fra gulvet til undersiden av karmen på vinduet.</p>",
                   "hidden": {
                     "type": "or",
                     "clauses": [
@@ -3163,6 +3163,7 @@
                   "property": "escapeAtticOutside",
                   "type": "Radio",
                   "heading": "Er det enkelt å komme seg ut av vinduet fra utsiden?",
+                  "text": "Det kan være maksimalt 5 meter fra nedre karm av vinduet og til bakken på utsiden av vinduet.",
                   "hidden": {
                     "type": "or",
                     "clauses": [
