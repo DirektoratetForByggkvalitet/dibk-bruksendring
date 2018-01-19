@@ -2896,7 +2896,7 @@
                   "id": "escapeBasement",
                   "property": "escapeBasement",
                   "type": "Radio",
-                  "heading": "Er det lett å rømme fra innsiden av rommet?",
+                  "heading": "Er det lett å rømme ut av rommet?",
                   "image": {
                     "url": "/img/lysgrav.png",
                     "alt": "Lysgrav"
