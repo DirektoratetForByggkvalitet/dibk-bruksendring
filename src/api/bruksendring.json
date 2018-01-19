@@ -2982,7 +2982,8 @@
                   "id": "escapeBasementOutside",
                   "property": "escapeBasementOutside",
                   "type": "Radio",
-                  "heading": "Er det enkelt å komme seg ut av vinduet fra utsiden?",
+                  "heading": "Er det enkelt å komme seg ut av vinduet gjennom lysgraven?",
+                  "text": "For at rømningsmuligheten skal være god nok, må lysgraven være stor nok til at det er mulig å rømme ut av den."
                   "hidden": {
                     "type": "or",
                     "clauses": [
