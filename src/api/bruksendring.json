@@ -2982,7 +2982,7 @@
                   "id": "escapeBasementOutside",
                   "property": "escapeBasementOutside",
                   "type": "Radio",
-                  "heading": "Er det enkelt å komme seg ut av vinduet gjennom lysgraven?",
+                  "heading": "Er det enkelt å komme seg ut av vinduet?",
                   "image": {
                     "url": "/img/lysgrav.png",
                     "alt": "Lysgrav"
