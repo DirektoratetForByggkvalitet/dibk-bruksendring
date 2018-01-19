@@ -2983,7 +2983,8 @@
                   "property": "escapeBasementOutside",
                   "type": "Radio",
                   "heading": "Er det enkelt å komme seg ut av vinduet gjennom lysgraven?",
-                  "text": "For at rømningsmuligheten skal være god nok, må lysgraven være stor nok til at det er mulig å rømme ut av den."
+                  "text":
+                    "For at rømningsmuligheten skal være god nok, må lysgraven være stor nok til at det er mulig å rømme ut av den.",
                   "hidden": {
                     "type": "or",
                     "clauses": [
@@ -3324,7 +3325,97 @@
       "id": "security",
       "property": "security",
       "type": "Page",
-      "children": []
+      "heading": "Sikkerhet",
+      "children": [
+        {
+          "id": "measureRadon",
+          "property": "measureRadon",
+          "type": "Radio",
+          "heading": "Har du målt radon-nivået i boligen din?",
+          "options": [
+            {
+              "id": "measureRadonYes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "measureRadonNo",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "measureRadonError",
+          "property": "measureRadonError",
+          "type": "Error",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "measureRadon",
+                "operator": "not"
+              },
+              {
+                "field": "measureRadon",
+                "operator": "eq",
+                "value": "yes"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "measureRadonError.msg",
+              "type": "Text",
+              "warning": true,
+              "text":
+                "<p>Du oppgir at du ikke har målt radonnivået i boligen din. Det er ikke et krav at du skal gjøre det, men vi anbefaler at du gjør det fordi høye radon-nivåer er helseskadelig.</p><p>Radon-gassene kommer fra bakken, derfor er det spesielt viktig å ha kontroll på radonnivået i boligen din om du skal endre noe i kjelleren din.</p>"
+            }
+          ]
+        },
+        {
+          "id": "radon",
+          "property": "radon",
+          "type": "Radio",
+          "heading": "Hva var radonnivået i boligen din?",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "measureRadon",
+                "operator": "not"
+              },
+              {
+                "field": "measureRadon",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "radon100",
+              "type": "Answer",
+              "text": "Under 100 Bq/m<sup>3</sup>",
+              "value": "100"
+            },
+            {
+              "id": "radon200",
+              "type": "Answer",
+              "text": "100-200 Bq/m<sup>3</sup>",
+              "value": "200"
+            },
+            {
+              "id": "radon201",
+              "type": "Answer",
+              "text": "Over 200 Bq/m<sup>3</sup>",
+              "value": "201"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "hoorays",
