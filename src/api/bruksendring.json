@@ -3283,6 +3283,7 @@
         },
         {
           "id": "luftventilError",
+          "property": "luftventilError",
           "type": "Error",
           "hidden": {
             "type": "or",
@@ -3318,6 +3319,12 @@
           ]
         }
       ]
+    },
+    {
+      "id": "security",
+      "property": "security",
+      "type": "Page",
+      "children": []
     },
     {
       "id": "hoorays",
