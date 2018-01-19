@@ -81,13 +81,13 @@
                   "property": "eneboligToMulti",
                   "type": "Radio",
                   "heading": "Er det flere boenheter i boligen?",
-                  "text": "Om du har en hybel eller utleiedel i eneboligen din, har du for eksempel flere boenheter.",
+                  "text":
+                    "Om du har en hybel eller utleiedel i eneboligen din, har du for eksempel flere boenheter.",
                   "options": [
                     {
                       "id": "eneboligToMulti.yes",
                       "type": "Answer",
-                      "text":
-                        "Ja",
+                      "text": "Ja",
                       "value": "yes"
                     },
                     {
@@ -309,7 +309,8 @@
           "property": "roomNow",
           "type": "Radio",
           "heading": "Hva er rommet ditt nå?",
-          "text": "<p>Vi deler boliger inn i hoveddel og tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.</p>",
+          "text":
+            "<p>Vi deler boliger inn i hoveddel og tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.</p>",
           "options": [
             {
               "id": "roomNow.main",
