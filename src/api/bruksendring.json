@@ -81,6 +81,7 @@
                   "property": "eneboligToMulti",
                   "type": "Radio",
                   "heading": "Er det flere boenheter i boligen?",
+                  "text": "hei",
                   "options": [
                     {
                       "id": "eneboligToMulti.yes",
