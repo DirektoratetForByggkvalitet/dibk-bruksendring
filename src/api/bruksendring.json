@@ -198,7 +198,7 @@
                   "type": "Result",
                   "heading": "Du vil gjøre en endring i fellesarealet",
                   "lead":
-                    "<p>Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren! HER MÅ VI LEGGE INN MER RELEVANT TEKST - HENT FRA \"NY BOENHET\"-RESULTATSIDE</p>"
+                    "Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren!"
                 }
               ]
             }
@@ -911,7 +911,7 @@
                   "type": "Result",
                   "heading": "Du må søke om lov til å endre rommet",
                   "lead":
-                    "<p>Du har svart at du vil endre en bod til et toalett/bad, og at dette blir det eneste rommet som er hoveddel i denne delen av boligen. Du må derfor søke kommunen om lov til å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Det er mange regler som gjelder for bygging av bad og våtrom. Det er lurt å bruke fagfolk som sikrer at de blir fulgt. Se gjerne våre spørsmål og svar om bruksendring: https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/ For å søke om endringen kan du bruke dette søknadsskjemaet: https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</p>"
+                    "<p>Du har svart at du vil endre en bod til et toalett/bad, og at dette blir det eneste rommet som er hoveddel i denne delen av boligen. Du må derfor søke kommunen om lov til å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Det er mange regler som gjelder for bygging av bad og våtrom. Det er lurt å bruke fagfolk som sikrer at de blir fulgt. Se gjerne våre spørsmål og svar om bruksendring: <a href=\"https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/\">https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/</a> For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p>"
                 }
               ]
             },
@@ -1566,7 +1566,7 @@
                   "type": "Result",
                   "heading": "Du må søke om lov til å endre rommet",
                   "lead":
-                    "<p>Du har svart at du vil endre en bod til et toalett/bad, og at dette blir det eneste rommet som er hoveddel i denne delen av boligen. Du må derfor søke kommunen om lov til å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Det er mange regler som gjelder for bygging av bad og våtrom. Det er lurt å bruke fagfolk som sikrer at de blir fulgt. Se gjerne våre spørsmål og svar om bruksendring: https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/ For å søke om endringen kan du bruke dette søknadsskjemaet: https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</p>"
+                    "<p>Du har svart at du vil endre en bod til et toalett/bad, og at dette blir det eneste rommet som er hoveddel i denne delen av boligen. Du må derfor søke kommunen om lov til å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Det er mange regler som gjelder for bygging av bad og våtrom. Det er lurt å bruke fagfolk som sikrer at de blir fulgt. Se gjerne våre spørsmål og svar om bruksendring: <a href=\"https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/\">https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/</a> For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p>"
                 }
               ]
             },
@@ -1773,7 +1773,7 @@
             {
               "id": "del2",
               "type": "Page",
-              "heading": "3 - [MÅ FINNE PÅ GODT NAVN FOR DENNE SEKSJONEN]",
+              "heading": "Regelverk for boligen",
               "lead":
                 "Denne delen av veiviseren skal gi deg en pekepinn på om bruksendringen du ønsker å gjøre er innenfor lovverket. Da slipper du eventuelt å bruke tid på en søknad til kommunen for en bruk av rommet som ikke er lovlig.",
               "children": [
