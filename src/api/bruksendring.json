@@ -2676,6 +2676,11 @@
                         "value": "yes"
                       },
                       {
+                        "field": "bothBasementAndAttic4",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
                         "field": "levels",
                         "operator": "eq",
                         "value": "2"
