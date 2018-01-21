@@ -3419,6 +3419,27 @@
               "value": "201"
             }
           ]
+        },
+        {
+          "id": "warmRoom",
+          "property": "warmRoom",
+          "type": "Radio",
+          "heading": "Vil rommet kunne holde minst 19 grader gjennom vinteren?",
+          "options": [
+            {
+              "id": "warmRoomYes",
+              "type": "Answer",
+              "text":
+                "Ja, rommet er godt nok isolert eller jeg skal isolere rommet så det vil holde minst 19 grader gjennom vinteren",
+              "value": "yes"
+            },
+            {
+              "id": "warmRoomYes",
+              "type": "Answer",
+              "text": "Nei, rommet blir kaldere enn 19 grader om vinteren",
+              "value": "no"
+            }
+          ]
         }
       ]
     },
