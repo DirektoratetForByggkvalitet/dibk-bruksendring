@@ -2124,8 +2124,32 @@
             {
               "id": "basementOrAtticNo",
               "type": "Answer",
-              "heading": "Nei",
+              "heading": "Nei, ingen av delene",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "basementOrAttic",
+                "operator": "eq",
+                "value": "no"
+              },
+              "children": [
+                {
+                  "id": "basementOrAtticNoResult",
+                  "type": "Result",
+                  "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+                  "errorheading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+                  "lead":
+                    "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ.",
+                  "errorlead":
+                    "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ."
+                }
+              ]
             }
           ]
         }
