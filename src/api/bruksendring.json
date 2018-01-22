@@ -1914,7 +1914,7 @@
                   "type": "Radio",
                   "heading": "Ligger rommet over, under eller inntil et rom som er hoveddel?",
                   "text":
-                    "<p>Er det et rom som er godkjent som hoveddel enten rett over,  under eller ved siden av rommet du vil endre på?</p><p>Hoveddel i en bolig er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring, som en bod.</p><p>(Legge til noe a laVi snakket her om rom som tilhører boligen din, sånn for ikke å forvirre om dette med naboer).</p>",
+                    "<p>Er det et rom som er godkjent som hoveddel enten rett over,  under eller ved siden av rommet du vil endre på?</p><p>Hoveddel i en bolig er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring, som en bod.</p>",
                   "options": [
                     {
                       "id": "overUnderNextTooHovedRoomYes",
