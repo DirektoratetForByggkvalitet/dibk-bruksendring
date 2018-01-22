@@ -2852,7 +2852,7 @@
           "property": "windowInRoom",
           "type": "Radio",
           "heading":
-            "Har du eller kan du sette inn et vindu mot friluft som kan åpnes fra rommet du vil endre?",
+            "Har du eller skal du sette inn et vindu mot friluft som kan åpnes fra rommet du vil endre?",
           "hidden": {
             "field": "roomNow",
             "operator": "not"
