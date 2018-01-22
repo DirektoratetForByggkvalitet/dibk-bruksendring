@@ -2911,7 +2911,7 @@
             "alt": "Dimensjoner på vinduer"
           },
           "text":
-            "<p>Med stor nok mener vi:</p><ul><li>minst 50 cm bred (men da må høyden være minst 100 cm)</li><li>minst 60 cm høy (men da må bredden være minst 90 cm)</li><li>høyden og bredden må være minst 150 cm til sammen</li></ul><p>Det forutsetter at vinduet kan åpnes helt opp, og at vinduet er hengslet på siden eller i toppen. Om du skal ha en annen type vindu, må du passe på at vinduet er godkjent som rømningsvindu.</p><p>Målingen av vinduet må gjøres på innsiden av innerkarmen på vinduet.</p>",
+            "<p>Høyden og bredden må være minst 150 cm til sammen og i tillegg må:</p><ul><li>minst 50 cm bred (men da må høyden være minst 100 cm)</li><li>minst 60 cm høy (men da må bredden være minst 90 cm)</li></ul><p>Det forutsetter at vinduet kan åpnes helt opp, og at vinduet er hengslet på siden eller i toppen. Om du skal ha en annen type vindu, må du passe på at vinduet er godkjent som rømningsvindu.</p><p>Målingen av vinduet må gjøres på innsiden av innerkarmen på vinduet.</p>",
           "hidden": {
             "type": "or",
             "clauses": [
