@@ -3365,9 +3365,10 @@
           ]
         },
         {
-          "id": "measureRadonError",
-          "property": "measureRadonError",
-          "type": "Error",
+          "id": "measureRadonText",
+          "property": "measureRadonText",
+          "type": "Group",
+          "simple": true,
           "hidden": {
             "type": "or",
             "clauses": [
@@ -3384,9 +3385,8 @@
           },
           "children": [
             {
-              "id": "measureRadonError.msg",
+              "id": "mesuredRadonText",
               "type": "Text",
-              "warning": true,
               "heading":
                 "Du oppgir at du ikke har målt radonnivået i boligen din. Det er ikke et krav at du skal gjøre det, men vi anbefaler at du gjør det fordi høye radon-nivåer er helseskadelig. Radon-gassene kommer fra bakken, derfor er det spesielt viktig å ha kontroll på radonnivået i boligen din om du skal endre noe i kjelleren din."
             }
