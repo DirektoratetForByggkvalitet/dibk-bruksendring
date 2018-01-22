@@ -3341,6 +3341,10 @@
           "property": "measureRadon",
           "type": "Radio",
           "heading": "Har du målt radon-nivået i boligen din?",
+          "hidden": {
+            "field": "windowInRoom",
+            "operator": "not"
+          },
           "options": [
             {
               "id": "measureRadonYes",
@@ -3540,6 +3544,10 @@
           "property": "warmRoom",
           "type": "Radio",
           "heading": "Vil rommet kunne holde minst 19 grader gjennom vinteren?",
+          "hidden": {
+            "field": "windowInRoom",
+            "operator": "not"
+          },
           "options": [
             {
               "id": "warmRoomYes",
