@@ -3425,6 +3425,70 @@
           ]
         },
         {
+          "id": "radonFeedbackGroup100",
+          "type": "Group",
+          "simple": true,
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "radon",
+                "operator": "not"
+              },
+              {
+                "field": "radon",
+                "operator": "eq",
+                "value": "201"
+              },
+              {
+                "field": "radon",
+                "operator": "eq",
+                "value": "200"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "radon100Text",
+              "type": "Text",
+              "heading":
+                "Randonnivået er greit - under 100 Bq/m<sup>3</sup> er det ikke nødvendig å gjøre tiltak mot radon."
+            }
+          ]
+        },
+        {
+          "id": "radonFeedbackGroup200",
+          "type": "Group",
+          "simple": true,
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "radon",
+                "operator": "not"
+              },
+              {
+                "field": "radon",
+                "operator": "eq",
+                "value": "201"
+              },
+              {
+                "field": "radon",
+                "operator": "eq",
+                "value": "100"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "radon200Text",
+              "type": "Text",
+              "heading":
+                "Radonnivået er litt høyt og du bør sette igang tiltak mot radon. Det er ikke et krav at du gjør dette før bruksendring, men vær klar over at en bruksendring kan gjøre radonproblemet verre."
+            }
+          ]
+        },
+        {
           "id": "radonError",
           "type": "Error",
           "hidden": {
