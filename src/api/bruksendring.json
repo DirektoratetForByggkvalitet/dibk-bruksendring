@@ -1198,9 +1198,9 @@
                 {
                   "id": "thereisroomforbedorsofa14",
                   "type": "Result",
-                  "heading": "Du er i mål!",
+                  "heading": "Du må søke om lov til å endre rommet",
                   "lead":
-                    "<p>Du har svart at det blir bad/toalett og minst ett annet rom som er hoveddel i denne delen av boligen, men at det ikke er plass til sofa/seng i noen av rommene som er hoveddel.</p><p>Du kan gjøre mindre endringer på rommet uten å søke, som å:</p><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><p>Vil du gjøre andre endringer på rommet?</p><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p><p>Er det plass til seng i ett av rommene som er hoveddel?</p><p>Da må du endre svaret ditt på forrige spørsmål, for å få riktig informasjon om søknadstype og søknadsplikt.</p><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra hoveddel til hoveddel</li><li>Det blir ikke mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Får toalett/vask men ikke plass til seng</li></ul><p>Har du svart riktig?</p><p>Bruk vår veiviser for å finne ut hvilke byggeregler du må følge for å få rommet lovlig.</p>"
+                    "<p>Du har svart  at du får toalett og minst ett rom til som er hoveddel, men at det ikke er plass til sofa eller seng i denne delen av boligen. Du skal derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Bruk dette søknadsskjemaet:</p><a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra tilleggsdel til hoveddel</li><li>Det blir mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Du får plass til toalett/vask men ikke plass til seng</li></ul>"
                 }
               ]
             },
