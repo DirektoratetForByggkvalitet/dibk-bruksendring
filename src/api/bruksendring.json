@@ -2146,6 +2146,11 @@
             "field": "basementOrAttic",
             "operator": "eq",
             "value": "no"
+          },
+          {
+            "field": "alreadyApprovedMainPart",
+            "operator": "eq",
+            "value": "yes"
           }
         ]
       },
