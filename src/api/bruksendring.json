@@ -3425,6 +3425,38 @@
           ]
         },
         {
+          "id": "radonError",
+          "type": "Error",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "radon",
+                "operator": "not"
+              },
+              {
+                "field": "radon",
+                "operator": "eq",
+                "value": "100"
+              },
+              {
+                "field": "radon",
+                "operator": "eq",
+                "value": "200"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "radonError.msg",
+              "type": "Text",
+              "warning": true,
+              "heading":
+                "Radonnivået er høyere enn tillatt. Du må gjøre tiltak som senker radonnivået til under 200 Bq/m<sup>3</sup> før du bruksendrer."
+            }
+          ]
+        },
+        {
           "id": "warmRoom",
           "property": "warmRoom",
           "type": "Radio",
