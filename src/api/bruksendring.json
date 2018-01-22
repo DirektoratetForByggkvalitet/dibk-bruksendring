@@ -2183,6 +2183,43 @@
           ]
         },
         {
+          "id": "levels2FeedbackGroup",
+          "property": "levels2FeedbackGroup",
+          "type": "Group",
+          "simple": true,
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "levels",
+                "operator": "not"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "3"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "4"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "5"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "levels2FeedbackText",
+              "type": "Text",
+              "heading": "Siden du bare har to etasjer er krav til brannsikkerhet oppfylt."
+            }
+          ]
+        },
+        {
           "id": "escapeAtGroundFloor",
           "property": "escapeAtGroundFloor",
           "type": "Radio",
