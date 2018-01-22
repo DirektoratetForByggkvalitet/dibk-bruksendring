@@ -3599,10 +3599,10 @@
     {
       "id": "hoorays",
       "type": "Result",
-      "heading": "Okei, du får lov!",
+      "heading": "Resultatsiden",
       "errorheading": "Du har ikke svart på alle spørsmålene",
       "lead":
-        "<p><strong>Så bra for deg!</strong><br />Sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine.</p>",
+        "Sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine.</p>",
       "errorlead":
         "Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.",
       "exporter": "dataExport"
