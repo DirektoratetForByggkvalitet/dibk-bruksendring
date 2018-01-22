@@ -3445,6 +3445,52 @@
               "value": "no"
             }
           ]
+        },
+        {
+          "id": "warmRoomError",
+          "type": "Error",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "warmRoom",
+                "operator": "not"
+              },
+              {
+                "field": "warmRoom",
+                "operator": "eq",
+                "value": "yes"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "warmRoomError.msg",
+              "type": "Text",
+              "warning": true,
+              "heading":
+                "Rommet blir for kaldt til å bruke det til boligrom. Du må isolere rommet mer hvis du skal bruksendre."
+            }
+          ]
+        },
+        {
+          "id": "warmRoomText",
+          "type": "Text",
+          "heading": "Rommet blir godt nok isolert",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "warmRoom",
+                "operator": "not"
+              },
+              {
+                "field": "warmRoom",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          }
         }
       ]
     },
