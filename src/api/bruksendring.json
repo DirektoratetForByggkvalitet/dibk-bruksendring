@@ -2063,6 +2063,33 @@
           ]
         },
         {
+          "id": "alreadyApprovedMainPartFeedbackGroup",
+          "property": "alreadyApprovedMainPartFeedbackGroup",
+          "type": "Group",
+          "simple": true,
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "alreadyApprovedMainPart",
+                "operator": "not"
+              },
+              {
+                "field": "alreadyApprovedMainPart",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "alreadyApprovedMainPartFeedbackText",
+              "type": "Text",
+              "heading": "Siden det er hoveddel fra før er krav til brannsikkerhet oppfylt."
+            }
+          ]
+        },
+        {
           "id": "basementOrAttic",
           "property": "basementOrAttic",
           "type": "Radio",
