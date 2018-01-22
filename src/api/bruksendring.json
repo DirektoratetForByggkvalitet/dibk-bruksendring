@@ -3545,19 +3545,19 @@
             {
               "id": "radon100",
               "type": "Answer",
-              "text": "Under 100 Bq/m<sup>3</sup>",
+              "heading": "Under 100 Bq/m<sup>3</sup>",
               "value": "100"
             },
             {
               "id": "radon200",
               "type": "Answer",
-              "text": "100-200 Bq/m<sup>3</sup>",
+              "heading": "100-200 Bq/m<sup>3</sup>",
               "value": "200"
             },
             {
               "id": "radon201",
               "type": "Answer",
-              "text": "Over 200 Bq/m<sup>3</sup>",
+              "heading": "Over 200 Bq/m<sup>3</sup>",
               "value": "201"
             }
           ]
