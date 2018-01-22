@@ -303,7 +303,6 @@
             }
           ]
         },
-
         {
           "id": "roomNow",
           "property": "roomNow",
@@ -3474,9 +3473,9 @@
           ]
         },
         {
-          "id": "warmRoomText",
-          "type": "Text",
-          "heading": "Rommet blir godt nok isolert",
+          "id": "warmRoomFeedbackGroup",
+          "type": "Group",
+          "simple": true,
           "hidden": {
             "type": "or",
             "clauses": [
@@ -3490,7 +3489,14 @@
                 "value": "no"
               }
             ]
-          }
+          },
+          "children": [
+            {
+              "id": "warmRoomText",
+              "type": "Text",
+              "heading": "Rommet blir godt nok isolert"
+            }
+          ]
         }
       ]
     },
