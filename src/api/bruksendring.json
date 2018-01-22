@@ -3379,8 +3379,8 @@
               "id": "measureRadonError.msg",
               "type": "Text",
               "warning": true,
-              "text":
-                "<p>Du oppgir at du ikke har målt radonnivået i boligen din. Det er ikke et krav at du skal gjøre det, men vi anbefaler at du gjør det fordi høye radon-nivåer er helseskadelig.</p><p>Radon-gassene kommer fra bakken, derfor er det spesielt viktig å ha kontroll på radonnivået i boligen din om du skal endre noe i kjelleren din.</p>"
+              "heading":
+                "Du oppgir at du ikke har målt radonnivået i boligen din. Det er ikke et krav at du skal gjøre det, men vi anbefaler at du gjør det fordi høye radon-nivåer er helseskadelig. Radon-gassene kommer fra bakken, derfor er det spesielt viktig å ha kontroll på radonnivået i boligen din om du skal endre noe i kjelleren din."
             }
           ]
         },
@@ -3444,6 +3444,11 @@
                 "field": "radon",
                 "operator": "eq",
                 "value": "200"
+              },
+              {
+                "field": "measureRadon",
+                "operator": "eq",
+                "value": "no"
               }
             ]
           },
@@ -3476,6 +3481,11 @@
                 "field": "radon",
                 "operator": "eq",
                 "value": "100"
+              },
+              {
+                "field": "measureRadon",
+                "operator": "eq",
+                "value": "no"
               }
             ]
           },
@@ -3507,6 +3517,11 @@
                 "field": "radon",
                 "operator": "eq",
                 "value": "200"
+              },
+              {
+                "field": "measureRadon",
+                "operator": "eq",
+                "value": "no"
               }
             ]
           },
