@@ -3265,7 +3265,8 @@
           "id": "luftventil",
           "property": "luftventil",
           "type": "Radio",
-          "heading": "Har du eller skal du sette inn en lufteventil i rommet, i tillegg til vindu?",
+          "heading":
+            "AHar du eller skal du sette inn en lufteventil i rommet, i tillegg til vindu?",
           "hidden": {
             "type": "or",
             "clauses": [
@@ -3292,6 +3293,43 @@
               "type": "Answer",
               "heading": "Nei",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "luftventilFeedbackGroup",
+          "property": "luftventilFeedbackGroup",
+          "type": "Group",
+          "simple": true,
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "luftventil",
+                "operator": "not"
+              },
+              {
+                "field": "luftventil",
+                "operator": "eq",
+                "value": "no"
+              },
+              {
+                "field": "windowInRoom",
+                "operator": "not"
+              },
+              {
+                "field": "windowInRoom",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "luftventilFeedbackText",
+              "type": "Text",
+              "heading":
+                "Siden du både har en lufteventil og et vindu er kravene til ventilasjon oppfylt. "
             }
           ]
         },
@@ -3365,8 +3403,8 @@
           ]
         },
         {
-          "id": "measureRadonText",
-          "property": "measureRadonText",
+          "id": "measureRadonGroup",
+          "property": "measureRadonGroup",
           "type": "Group",
           "simple": true,
           "hidden": {
