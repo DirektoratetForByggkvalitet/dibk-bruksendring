@@ -3292,8 +3292,7 @@
           "id": "luftventil",
           "property": "luftventil",
           "type": "Radio",
-          "heading":
-            "AHar du eller skal du sette inn en lufteventil i rommet, i tillegg til vindu?",
+          "heading": "Har du eller skal du sette inn en lufteventil i rommet, i tillegg til vindu?",
           "hidden": {
             "type": "or",
             "clauses": [
