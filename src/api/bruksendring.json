@@ -2760,6 +2760,10 @@
           "type": "Radio",
           "heading":
             "Har du eller kan du sette inn et vindu mot friluft som kan åpnes fra rommet du vil endre?",
+          "hidden": {
+            "field": "roomNow",
+            "operator": "not"
+          },
           "text": "De fleste rom må ha et vindu for lys, luft og som rømningsvei.",
           "options": [
             {
