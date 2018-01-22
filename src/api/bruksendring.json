@@ -3439,7 +3439,7 @@
               "value": "yes"
             },
             {
-              "id": "warmRoomYes",
+              "id": "warmRoomNo",
               "type": "Answer",
               "text": "Nei, rommet blir kaldere enn 19 grader om vinteren",
               "value": "no"
