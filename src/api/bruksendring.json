@@ -2988,6 +2988,147 @@
           "branches": [
             {
               "test": {
+                "field": "alreadyApprovedMainPart",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "children": [
+                {
+                  "id": "floorInfoGroup",
+                  "property": "floorInfoGroup",
+                  "type": "Group",
+                  "simple": true,
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "windowInRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "bigWindow",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "bigWindow",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "windowInRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "floorInfo",
+                      "type": "Text",
+                      "heading":
+                        "Siden vi ikke vet hvor i bygningne rommet ditt ligger, må vi nå stille deg noen spørsmål om hvor lett det er å rømme fra vinduet"
+                    }
+                  ]
+                },
+                {
+                  "id": "escapeUnkownFloor",
+                  "property": "escapeUnkownFloor",
+                  "type": "Radio",
+                  "heading": "Vil det bli mulig å rømme ut av vinduet?",
+                  "image": {
+                    "url": "/img/combi.png",
+                    "alt": "Lysgrav eller høyde på loft"
+                  },
+                  "text":
+                    "<p>Er det enkelt å komme seg ut av vinduet fra innsiden?</p><p>For at det skal være mulig å rømme ut av vinduet kan det maksimalt være 1 meter opp fra gulvet til undersiden av karmen på vinduet</p><p>For at rømningsmuligheten skal være god nok nok rommet ligger i en kjeller, må lysgraven være stor nok til at det er mulig å rømme ut av den.<ul><li>Vinduer som er helt eller delvis gravd ned under bakkenivå, i lysgrav, må være enkle å komme ut av</li><li>Det må være sikret at lysgraven aldri blir fylt av snø om vinteren, med for eksempel varmekabler (måking holder ikke)</li></ul></p><p>Det kan være maksimalt 5 meter fra nedre karm av vinduet og til bakken på utsiden av vinduet.</p>",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "windowInRoom",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "windowInRoom",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "bigWindow",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "escapeUnkownFloorYes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "escapeUnkownFloorNo",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "escapeUnkownFloorError",
+                  "type": "Error",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "bigWindow",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "escapeUnkownFloor",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "escapeUnkownFloor",
+                        "operator": "eq",
+                        "value": "yes"
+                      },
+                      {
+                        "field": "bigWindow",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "bigWindow",
+                            "operator": "eq",
+                            "value": "no"
+                          },
+                          {
+                            "field": "windowInRoom",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "escapeUnkownFloorError.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "heading": "Kravene for å kunne rømme ut av vinduet er ikke oppfylt."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "test": {
                 "field": "basementOrAttic",
                 "operator": "eq",
                 "value": "basement"
