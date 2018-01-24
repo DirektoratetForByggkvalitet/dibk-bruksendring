@@ -425,7 +425,7 @@
                   "type": "Result",
                   "heading": "Fra tilleggsdel til tilleggsdel",
                   "lead":
-                    "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke.  VI MÅ FÅ FRAM BEDRE AT DE SLIPPER Å SØKE! Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>"
+                    "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>"
                 }
               ]
             }
@@ -524,6 +524,75 @@
                   "id": "a2.bedorsofa",
                   "property": "a2.bedorsofa",
                   "type": "Radio",
+                  "image": {
+                    "url": "/img/templeilighet.png",
+                    "alt": "Leilighet"
+                  },
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "heading":
+                    "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                  "options": [
+                    {
+                      "id": "a2.bedorsofa.yes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "a2.bedorsofa.no",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "a2.bedorsofa",
+                  "property": "a2.bedorsofa",
+                  "type": "Radio",
+                  "image": {
+                    "url": "/img/tempenebolig.png",
+                    "alt": "Enebolig"
+                  },
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
                   "heading":
                     "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
                   "options": [
@@ -635,6 +704,75 @@
                   "type": "Radio",
                   "heading":
                     "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                  "image": {
+                    "url": "/img/tempenebolig.png",
+                    "alt": "Enebolig"
+                  },
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "a2.bedorsofa.yes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "a2.bedorsofa.no",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "a2.bedorsofa",
+                  "property": "a2.bedorsofa",
+                  "type": "Radio",
+                  "image": {
+                    "url": "/img/templeilighet.png",
+                    "alt": "Leilighet"
+                  },
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "heading":
+                    "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
                   "options": [
                     {
                       "id": "a2.bedorsofa.yes",
@@ -739,6 +877,75 @@
                   "type": "Radio",
                   "heading":
                     "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                  "image": {
+                    "url": "/img/tempenebolig.png",
+                    "alt": "Enebolig"
+                  },
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "a2.bedorsofa.yes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "a2.bedorsofa.no",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "a2.bedorsofa",
+                  "property": "a2.bedorsofa",
+                  "type": "Radio",
+                  "heading":
+                    "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                  "image": {
+                    "url": "/img/templeilighet.png",
+                    "alt": "Leilighet"
+                  },
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
                   "options": [
                     {
                       "id": "a2.bedorsofa.yes",
@@ -831,11 +1038,12 @@
                   ]
                 },
                 {
-                  "id": "toiletonlynewhovedel13",
+                  "id": "bodtiltoalettResult",
+                  "property": "bodtiltoalettResult",
                   "type": "Result",
-                  "heading": "Du må søke - ta neste del av veiviseren!",
+                  "heading": "Du må søke om lov til å endre rommet",
                   "lead":
-                    "<p>Endringen du ønsker å gjøre er søknadspliktig. Du må derfor søke kommunen om lov til å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Noen rom er enklere å endre enn andre. For å få oversikt over om det også gjelder ditt rom, bør du fortsette på veiviseren her: TA RESTEN AV VEIVISEREN HER: https://goo.gl/mWuYB5</p>"
+                    "<p>Du har svart at du vil endre en bod til et toalett/bad, og at dette blir det eneste rommet som er hoveddel i denne delen av boligen. Du må derfor søke kommunen om lov til å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Det er mange regler som gjelder for bygging av bad og våtrom. Det er lurt å bruke fagfolk som sikrer at de blir fulgt. Se gjerne våre spørsmål og svar om bruksendring: <a href=\"https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/\">https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/</a> For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p>"
                 }
               ]
             },
@@ -916,9 +1124,9 @@
                 {
                   "id": "toiletonlynewhovedel13",
                   "type": "Result",
-                  "heading": "Du må søke om lov til å endre rommet",
+                  "heading": "Du må søke om lov til å endre rommet!",
                   "lead":
-                    "<p>Du har svart at du vil endre en bod til et toalett/bad, og at dette blir det eneste rommet som er hoveddel i denne delen av boligen. Du må derfor søke kommunen om lov til å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring. Det er mange regler som gjelder for bygging av bad og våtrom. Det er lurt å bruke fagfolk som sikrer at de blir fulgt. Se gjerne våre spørsmål og svar om bruksendring: <a href=\"https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/\">https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/</a> For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p>"
+                    "<p>Du har svart at du vil endre en bod til et toalett/bad, og at dette blir det eneste rommet som er hoveddel i denne delen av boligen. Du må derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Det er mange regler som gjelder for bygging av bad og våtrom. Det er lurt å bruke fagfolk som sikrer at de blir fulgt.</p><p>Se gjerne våre spørsmål og svar om bruksendring: <a href=\"https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/\">https://dibk.no/bygge-selv/bruksendring-i-boliger---sporsmal-og-svar/</a><p>For å søke om endringen kan du bruke dette søknadsskjemaet:</p><a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a>"
                 }
               ]
             },
@@ -1188,6 +1396,75 @@
                   "type": "Radio",
                   "heading":
                     "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                  "image": {
+                    "url": "/img/tempenebolig.png",
+                    "alt": "Enebolig"
+                  },
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "a2.bedorsofa.yes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "a2.bedorsofa.no",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "a2.bedorsofa",
+                  "property": "a2.bedorsofa",
+                  "type": "Radio",
+                  "heading":
+                    "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                  "image": {
+                    "url": "/img/templeilighet.png",
+                    "alt": "Leilighet"
+                  },
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
                   "options": [
                     {
                       "id": "a2.bedorsofa.yes",
@@ -1297,6 +1574,75 @@
                   "type": "Radio",
                   "heading":
                     "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                  "image": {
+                    "url": "/img/templeilighet.png",
+                    "alt": "Leilighet"
+                  },
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "a2.bedorsofa.yes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "a2.bedorsofa.no",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "a2.bedorsofa",
+                  "property": "a2.bedorsofa",
+                  "type": "Radio",
+                  "heading":
+                    "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                  "image": {
+                    "url": "/img/tempenebolig.png",
+                    "alt": "Enebolig"
+                  },
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
                   "options": [
                     {
                       "id": "a2.bedorsofa.yes",
@@ -1401,6 +1747,75 @@
                   "type": "Radio",
                   "heading":
                     "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                  "image": {
+                    "url": "/img/tempenebolig.png",
+                    "alt": "Enebolig"
+                  },
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "options": [
+                    {
+                      "id": "a2.bedorsofa.yes",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "a2.bedorsofa.no",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "no"
+                    }
+                  ]
+                },
+                {
+                  "id": "a2.bedorsofa",
+                  "property": "a2.bedorsofa",
+                  "type": "Radio",
+                  "heading":
+                    "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                  "image": {
+                    "url": "/img/templeilighet.png",
+                    "alt": "Leilighet"
+                  },
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
                   "options": [
                     {
                       "id": "a2.bedorsofa.yes",
