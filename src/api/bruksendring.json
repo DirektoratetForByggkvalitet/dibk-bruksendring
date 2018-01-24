@@ -81,6 +81,10 @@
                   "property": "eneboligToMulti",
                   "type": "Radio",
                   "heading": "Er det flere boenheter i boligen?",
+                  "image": {
+                    "url": "/img/1b@2x.png",
+                    "alt": "Hus med hybel"
+                  },
                   "text":
                     "Om du har en hybel eller utleiedel i eneboligen din, har du for eksempel flere boenheter.",
                   "options": [
@@ -142,6 +146,10 @@
                   "property": "commonArea",
                   "type": "Radio",
                   "heading": "Kommer endringene dine til å påvirke fellesarealet?",
+                  "image": {
+                    "url": "/img/3b@2x.png",
+                    "alt": "Hus"
+                  },
                   "text":
                     "Endringene dine påvirker fellesarealet hvis du gjør om loftsbod eller kjellerbod, eller hvis du skal legge rør, luftekanaler eller noe annet utenfor leiligheten din.<img src=\"/img/fellesareal.png\" alt=\"Endringer i fellesareal\" />",
                   "options": [
