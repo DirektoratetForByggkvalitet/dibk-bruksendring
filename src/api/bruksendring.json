@@ -2130,6 +2130,38 @@
           ]
         },
         {
+          "id": "atticLoadError",
+          "type": "Error",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "basementOrAttic",
+                "operator": "not"
+              },
+              {
+                "field": "basementOrAttic",
+                "operator": "eq",
+                "value": "basement"
+              },
+              {
+                "field": "basementOrAttic",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "atticLoadError.msg",
+              "type": "Text",
+              "warning": true,
+              "heading":
+                "Du må sjekke om gulvet på loftet tåler den nye belastningen. Dette er dessverre for komplisert til at veiviseren kan hjelpe deg med det."
+            }
+          ]
+        },
+        {
           "type": "Branch",
           "branches": [
             {
@@ -3026,7 +3058,7 @@
                       "id": "floorInfo",
                       "type": "Text",
                       "heading":
-                        "Siden vi ikke vet hvor i bygningne rommet ditt ligger, må vi nå stille deg noen spørsmål om hvor lett det er å rømme fra vinduet"
+                        "Siden vi ikke vet hvor i bygningne rommet ditt ligger, må vi nå stille deg spørsmål om hvor lett det er å rømme fra vinduet."
                     }
                   ]
                 },
