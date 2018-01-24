@@ -1780,6 +1780,10 @@
                   "id": "buildApplicationYear",
                   "property": "buildApplicationYear",
                   "type": "Radio",
+                  "image": {
+                    "url": "/img/9a@2x.png",
+                    "alt": "Kalender"
+                  },
                   "heading": "Når ble det søkt om å bygge boligen din?",
                   "text":
                     "En gang i tiden er det blitt søkt om å sette opp boligen din til kommunen. Tidspunktet for søknaden er med og bestemmer hvilket regelverk som gjelder for deg. Er du i tvil kan du spørre kommunen din.",
@@ -1824,6 +1828,10 @@
                   "property": "hovedombyggingYear",
                   "type": "Radio",
                   "heading": "Er det søkt om en hovedombygging fra og med 1. juli. 2011?",
+                  "image": {
+                    "url": "/img/9b@2x.png",
+                    "alt": "Kalender"
+                  },
                   "text":
                     "<p>En hovedombygging er oppgradering av hele bygningen slik at den fremstår som ny. Å bare pusse opp badet eller kjøkkenet er for eksempel ikke en hovedombygging.</p><p>Er du i tvil kan du spørre kommunen om det er søkt om en hovedombygging av bygningen din.</p>",
                   "options": [
@@ -1984,6 +1992,10 @@
           "property": "naturalDisasterArea",
           "type": "Radio",
           "heading": "Ligger boligen din i et flom- eller skredutsatt område?",
+          "image": {
+            "url": "/img/12b@2x.png",
+            "alt": "Fareskilt med utropstegn"
+          },
           "text":
             "<p>Det er ditt ansvar å sørge for at bygningen plasseres på sikker grunn. Du må derfor undersøke om det er fare for ras, flom, stormflo og skred, inklusive kvikkleireskred, der du skal bygge.<p></p>Er du i tvil om grunnen er sikker, må du kontakte kommunen.</p><img src=\"/img/ras.jpeg\" alt=\"Ras\">",
           "options": [
@@ -2094,6 +2106,10 @@
           "property": "basementOrAttic",
           "type": "Radio",
           "heading": "Ligger rommet du skal endre, i en kjeller eller på et loft?",
+          "image": {
+            "url": "/img/13a@2x.png",
+            "alt": "Loft eller kjeller illustrert"
+          },
           "hidden": {
             "type": "or",
             "clauses": [
@@ -3018,7 +3034,7 @@
           "type": "Radio",
           "heading": "Blir åpningen på vinduet stor nok?",
           "image": {
-            "url": "/img/bigWindow.png",
+            "url": "/img/14a@2x.png",
             "alt": "Dimensjoner på vinduer"
           },
           "text":
@@ -3727,6 +3743,10 @@
           "property": "measureRadon",
           "type": "Radio",
           "heading": "Har du målt radon-nivået i boligen din?",
+          "image": {
+            "url": "/img/20a@2x.png",
+            "alt": "Hus med radioaktivitetssymbol"
+          },
           "hidden": {
             "field": "windowInRoom",
             "operator": "not"
@@ -3779,6 +3799,10 @@
           "property": "radon",
           "type": "Radio",
           "heading": "Hva var radonnivået i boligen din?",
+          "image": {
+            "url": "/img/20b@2x.png",
+            "alt": "Hus med radioaktivitetssymbol"
+          },
           "hidden": {
             "type": "or",
             "clauses": [
@@ -3797,19 +3821,19 @@
             {
               "id": "radon100",
               "type": "Answer",
-              "heading": "Under 100 Bq/m<sup>3</sup>",
+              "text": "Under 100 Bq/m<sup>3</sup>",
               "value": "100"
             },
             {
               "id": "radon200",
               "type": "Answer",
-              "heading": "100-200 Bq/m<sup>3</sup>",
+              "text": "100-200 Bq/m<sup>3</sup>",
               "value": "200"
             },
             {
               "id": "radon201",
               "type": "Answer",
-              "heading": "Over 200 Bq/m<sup>3</sup>",
+              "text": "Over 200 Bq/m<sup>3</sup>",
               "value": "201"
             }
           ]
@@ -3930,6 +3954,10 @@
           "property": "warmRoom",
           "type": "Radio",
           "heading": "Vil rommet kunne holde minst 19 grader gjennom vinteren?",
+          "image": {
+            "url": "/img/21a@2x.png",
+            "alt": "Hus med gradestokk på 19 grader"
+          },
           "hidden": {
             "field": "windowInRoom",
             "operator": "not"
