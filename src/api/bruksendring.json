@@ -101,6 +101,180 @@
                       "value": "no"
                     }
                   ]
+                },
+                {
+                  "id": "hvilkenBoenhet",
+                  "property": "hvilkenBoenhet",
+                  "type": "Radio",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "heading": "Hvilken boenhet skal du gjøre noe med?",
+                  "options": [
+                    {
+                      "id": "hvilkenBoenhet.own",
+                      "type": "Answer",
+                      "text": "Kun den delen jeg selv bor i",
+                      "value": "own"
+                    },
+                    {
+                      "id": "hvilkenBoenhet.other",
+                      "type": "Answer",
+                      "text": "Kun utleiedelen eller hybelen",
+                      "value": "other"
+                    },
+                    {
+                      "id": "hvilkenBoenhet.both",
+                      "type": "Answer",
+                      "text": "Både delen jeg bor i og utleiedel/hybel",
+                      "value": "both"
+                    }
+                  ]
+                },
+                {
+                  "id": "egenBoenhetInfoGroup",
+                  "property": "egenBoenhetInfoGroup",
+                  "type": "Group",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "hvilkenBoenhet",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "hvilkenBoenhet",
+                        "operator": "eq",
+                        "value": "other"
+                      },
+                      {
+                        "field": "hvilkenBoenhet",
+                        "operator": "eq",
+                        "value": "both"
+                      },
+                      {
+                        "type": "or",
+                        "clauses": [
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "not"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "egenBoenhetInfo",
+                      "property": "egenBoenhetInfo",
+                      "type": "Text",
+                      "text":
+                        "På resten av spørsmålene må du svare med utgangspunkt i den delen du selv bor i, og ikke resten av boligen (hybel/utleiedel)."
+                    }
+                  ]
+                },
+                {
+                  "id": "andreBoenhetInfoGroup",
+                  "property": "andreBoenhetInfoGroup",
+                  "type": "Group",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "hvilkenBoenhet",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "hvilkenBoenhet",
+                        "operator": "eq",
+                        "value": "own"
+                      },
+                      {
+                        "field": "hvilkenBoenhet",
+                        "operator": "eq",
+                        "value": "both"
+                      },
+                      {
+                        "type": "or",
+                        "clauses": [
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "not"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "andreBoenhetInfo",
+                      "property": "andreBoenhetInfo",
+                      "type": "Text",
+                      "text":
+                        "På resten av spørsmålene skal du svare med utgangspunkt i utleiedelen/hybelen og ikke resten av boligen."
+                    }
+                  ]
+                },
+                {
+                  "id": "beggeBoenhetInfo",
+                  "property": "beggeBoenhetInfo",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "hvilkenBoenhet",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "hvilkenBoenhet",
+                        "operator": "eq",
+                        "value": "own"
+                      },
+                      {
+                        "field": "hvilkenBoenhet",
+                        "operator": "eq",
+                        "value": "other"
+                      },
+                      {
+                        "type": "or",
+                        "clauses": [
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "not"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "Error",
+                  "text":
+                    "Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel."
                 }
               ]
             }
