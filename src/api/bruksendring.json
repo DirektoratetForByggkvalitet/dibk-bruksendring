@@ -1,6 +1,7 @@
 {
   "meta": {
-    "title": "Bruksendring"
+    "title": "Bruksendring",
+    "name": "bruksendring"
   },
   "schema": [
     {
