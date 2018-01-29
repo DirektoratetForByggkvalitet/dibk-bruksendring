@@ -2282,12 +2282,7 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "Branch",
-          "branches": [
+            },
             {
               "test": {
                 "type": "and",
