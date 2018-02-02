@@ -673,6 +673,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -685,6 +704,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -854,6 +922,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -866,6 +953,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1030,6 +1166,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -1042,6 +1197,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1196,6 +1400,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -1208,6 +1431,56 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1283,6 +1556,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -1295,6 +1587,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1364,6 +1705,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -1377,6 +1737,56 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text":
+                        "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1420,6 +1830,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -1432,6 +1861,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1491,6 +1969,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -1503,6 +2000,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1558,6 +2104,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -1570,6 +2135,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1739,6 +2353,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -1751,6 +2384,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1915,6 +2597,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -1927,6 +2628,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -2081,6 +2831,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -2093,6 +2862,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -2157,6 +2975,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -2169,6 +3006,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -2238,6 +3124,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -2250,6 +3155,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -2283,6 +3237,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -2295,6 +3268,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -2349,6 +3371,25 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "houseType",
+                        "operator": "eq",
+                        "value": "enebolig"
+                      },
+                      {
+                        "field": "eneboligToMulti",
+                        "operator": "eq",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/templeilighet2.png",
+                    "alt": "Leilighet"
+                  },
                   "options": [
                     {
                       "id": "b2.access.enebolig.yes",
@@ -2361,6 +3402,55 @@
                       "type": "Answer",
                       "text":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "value": "yes2"
+                    }
+                  ]
+                },
+                {
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
+                  "type": "Radio",
+                  "heading": "Hvordan kommer du deg til rommet etter endringen?",
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "houseType",
+                            "operator": "eq",
+                            "value": "enebolig"
+                          },
+                          {
+                            "field": "eneboligToMulti",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      {
+                        "field": "houseType",
+                        "operator": "neq",
+                        "value": "enebolig"
+                      }
+                    ]
+                  },
+                  "image": {
+                    "url": "/img/tempenebolig2.png",
+                    "alt": "Enebolig"
+                  },
+                  "options": [
+                    {
+                      "id": "b2.access.enebolig.yes",
+                      "type": "Answer",
+                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "value": "yes"
+                    },
+                    {
+                      "id": "b2.access.enebolig.yes2",
+                      "type": "Answer",
+                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
