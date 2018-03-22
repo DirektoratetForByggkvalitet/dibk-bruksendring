@@ -236,47 +236,26 @@
                         "På resten av spørsmålene skal du svare med utgangspunkt i utleiedelen/hybelen og ikke resten av boligen."
                     }
                   ]
-                },
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "hvilkenBoenhet",
+                "operator": "eq",
+                "value": "both"
+              },
+              "children": [
                 {
-                  "id": "beggeBoenhetInfo",
-                  "property": "beggeBoenhetInfo",
-                  "hidden": {
-                    "type": "or",
-                    "clauses": [
-                      {
-                        "field": "hvilkenBoenhet",
-                        "operator": "not"
-                      },
-                      {
-                        "field": "hvilkenBoenhet",
-                        "operator": "eq",
-                        "value": "own"
-                      },
-                      {
-                        "field": "hvilkenBoenhet",
-                        "operator": "eq",
-                        "value": "other"
-                      },
-                      {
-                        "type": "or",
-                        "clauses": [
-                          {
-                            "field": "eneboligToMulti",
-                            "operator": "not"
-                          },
-                          {
-                            "field": "eneboligToMulti",
-                            "operator": "eq",
-                            "value": "no"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  "type": "Error",
-                  "warning": true,
-                  "text":
-                    "Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel."
+                  "id": "nocat",
+                  "type": "Result",
+                  "heading": "Du kan ikke ha katt 😿",
+                  "lead": "Du liker jo ikke katter engang! DISKVALIFISERT!"
                 }
               ]
             }
@@ -494,7 +473,6 @@
             {
               "id": "roomDescription",
               "type": "Text",
-
               "text":
                 "<p>Finn fram nyeste godkjente plantegning av boligen din. Den kan du få gratis av din kommune. En plantegning viser hva et rom faktisk er godkjent som, og kan se for eksempel slik ut:</p><img src=\"/img/plan.jpg\" alt=\"Plan\" />"
             }
@@ -1440,7 +1418,6 @@
                   "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
-
                   "hidden": {
                     "type": "or",
                     "clauses": [
