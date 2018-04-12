@@ -92,13 +92,13 @@
                     {
                       "id": "eneboligToMulti.yes",
                       "type": "Answer",
-                      "text": "Ja",
+                      "heading": "Ja",
                       "value": "yes"
                     },
                     {
                       "id": "eneboligToMulti.no",
                       "type": "Answer",
-                      "text": "Nei",
+                      "heading": "Nei",
                       "value": "no"
                     }
                   ]
@@ -126,19 +126,19 @@
                     {
                       "id": "hvilkenBoenhet.own",
                       "type": "Answer",
-                      "text": "Kun den delen jeg selv bor i",
+                      "heading": "Kun den delen jeg selv bor i",
                       "value": "own"
                     },
                     {
                       "id": "hvilkenBoenhet.other",
                       "type": "Answer",
-                      "text": "Kun utleiedelen eller hybelen",
+                      "heading": "Kun utleiedelen eller hybelen",
                       "value": "other"
                     },
                     {
                       "id": "hvilkenBoenhet.both",
                       "type": "Answer",
-                      "text": "Både delen jeg bor i og utleiedel/hybel",
+                      "heading": "Både delen jeg bor i og utleiedel/hybel",
                       "value": "both"
                     }
                   ]
@@ -311,14 +311,48 @@
                     {
                       "id": "commonArea.yes",
                       "type": "Answer",
-                      "text": "Ja, det blir endringer i fellesarealene.",
+                      "heading": "Ja, det blir endringer i fellesarealene.",
                       "value": "yes"
                     },
                     {
                       "id": "commonArea.no",
                       "type": "Answer",
-                      "text": "Nei, endringene blir kun inne i boligen min.",
+                      "heading": "Nei, endringene blir kun inne i boligen min.",
                       "value": "no"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "commonArea",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "children": [
+                {
+                  "id": "commonAreaError",
+                  "type": "Error",
+                  "heading": "Gå vekk"
+                },
+                {
+                  "id": "commonAreaResult",
+                  "type": "Result",
+                  "heading": "feil",
+                  "children": [
+                    {
+                      "id": "commonAreaResultText",
+                      "type": "Text",
+                      "text": "Feilfeilfeil",
+                      "warning": true,
+                      "lead": "Du kan ikke endre på huset ditt",
+                      "errorheading": "Frittliggende bod eller lekestue"
                     }
                   ]
                 }
@@ -429,13 +463,13 @@
             {
               "id": "roomHeight.yes",
               "type": "Answer",
-              "text": "Ja, rommet er 2 meter eller høyere",
+              "heading": "Ja, rommet er 2 meter eller høyere",
               "value": "yes"
             },
             {
               "id": "roomHeight.no",
               "type": "Answer",
-              "text": "Nei, rommet er lavere enn 2 meter",
+              "heading": "Nei, rommet er lavere enn 2 meter",
               "value": "no"
             }
           ]
@@ -589,6 +623,7 @@
                   }
                 ]
               },
+
               "children": [
                 {
                   "id": "tilleggsdeltiltilleggsdel",
@@ -609,7 +644,7 @@
     {
       "id": "page2",
       "type": "Page",
-      "heading": "Rommet etter endringen",
+      "heading": "Rommet etter endring",
       "children": [
         {
           "type": "Branch",
@@ -647,8 +682,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -672,16 +707,16 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
-                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "heading":
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -724,13 +759,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -896,8 +931,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -921,16 +956,16 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
-                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "heading":
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -973,13 +1008,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1140,8 +1175,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -1165,16 +1200,16 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
-                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "heading":
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -1217,13 +1252,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1374,8 +1409,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -1399,16 +1434,16 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
-                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "heading":
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -1451,13 +1486,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1529,8 +1564,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -1554,16 +1589,16 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
-                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "heading":
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -1606,13 +1641,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1678,8 +1713,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -1703,17 +1738,17 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
+                      "heading":
                         "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
-                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "heading":
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -1756,14 +1791,14 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text":
+                      "heading":
                         "<p>Jeg kommer meg til rommet innvendig fra resten av boligen min.</p>",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1803,8 +1838,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -1828,16 +1863,16 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
-                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "heading":
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -1880,13 +1915,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -1942,8 +1977,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -1967,16 +2002,16 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
-                        "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+                      "heading":
+                        "Jeg kan kun komme meg til rommet gjennom en annen inngangsdør enn resten av boligen.",
                       "value": "yes2"
                     }
                   ]
@@ -2019,13 +2054,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -2039,7 +2074,8 @@
     {
       "id": "page3",
       "type": "Page",
-      "heading": "Rommet etter endringen",
+      "heading": "Rommet etter endring",
+      "lead": "Rommet etter endringen",
       "children": [
         {
           "type": "Branch",
@@ -2077,8 +2113,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -2102,15 +2138,15 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
+                      "heading":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
@@ -2154,13 +2190,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -2326,8 +2362,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -2351,15 +2387,15 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
+                      "heading":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
@@ -2403,13 +2439,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -2570,8 +2606,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -2595,15 +2631,15 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
+                      "heading":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
@@ -2647,13 +2683,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -2804,8 +2840,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -2829,15 +2865,15 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
+                      "heading":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
@@ -2881,13 +2917,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -2948,8 +2984,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -2973,15 +3009,15 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
+                      "heading":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
@@ -3025,13 +3061,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -3097,8 +3133,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -3122,15 +3158,15 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
+                      "heading":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
@@ -3174,13 +3210,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -3210,8 +3246,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -3235,15 +3271,15 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
+                      "heading":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
@@ -3287,13 +3323,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -3344,8 +3380,8 @@
               },
               "children": [
                 {
-                  "id": "b2.access.leilighet",
-                  "property": "b2.access.leilighet",
+                  "id": "b2.access.enebolig",
+                  "property": "b2.access.enebolig",
                   "type": "Radio",
                   "heading": "Hvordan kommer du deg til rommet etter endringen?",
                   "hidden": {
@@ -3369,15 +3405,15 @@
                   },
                   "options": [
                     {
-                      "id": "b2.access.leilighet.yes",
+                      "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
-                      "id": "b2.access.leilighet.yes2",
+                      "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text":
+                      "heading":
                         "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
                       "value": "yes2"
                     }
@@ -3421,13 +3457,13 @@
                     {
                       "id": "b2.access.enebolig.yes",
                       "type": "Answer",
-                      "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+                      "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
                       "value": "yes"
                     },
                     {
                       "id": "b2.access.enebolig.yes2",
                       "type": "Answer",
-                      "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+                      "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
                       "value": "yes2"
                     }
                   ]
@@ -3754,8 +3790,9 @@
             {
               "id": "naturalDisasterAreaYesError.msg",
               "type": "Text",
+              
               "warning": true,
-              "heading":
+              "text":
                 "Siden området er flom- eller rasutsatt er det ikke sikkert tekniske krav til sikkerhet er oppfylt. Snakk med kommunen for å finne ut om du kan bruksendre et rom i området på tross av flom- eller rasfaren."
             }
           ]
@@ -3815,7 +3852,7 @@
             {
               "id": "alreadyApprovedMainPartFeedbackText",
               "type": "Text",
-              "heading": "Siden det er hoveddel fra før er krav til brannsikkerhet oppfylt."
+              "text": "Siden det er hoveddel fra før er krav til brannsikkerhet oppfylt."
             }
           ]
         },
@@ -3891,7 +3928,7 @@
               "id": "atticLoadError.msg",
               "type": "Text",
               "warning": true,
-              "heading":
+              "text":
                 "Du må sjekke om gulvet på loftet tåler den nye belastningen. Dette er dessverre for komplisert til at veiviseren kan hjelpe deg med det."
             }
           ]
@@ -4011,7 +4048,7 @@
             {
               "id": "levels2FeedbackText",
               "type": "Text",
-              "heading": "Siden du bare har to etasjer er krav til brannsikkerhet oppfylt."
+              "text": "Siden du bare har to etasjer er krav til brannsikkerhet oppfylt."
             }
           ]
         },
@@ -4074,6 +4111,324 @@
               "heading":
                 "Nei, minst én boenhet/leilighet må gå gjennom innvendig eller utvendig trapp",
               "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "bothBasementAndAttic",
+          "property": "bothBasementAndAttic",
+          "type": "Radio",
+          "heading": "Har du både kjeller og loft i bygningen du bor i?",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "escapeAtGroundFloor",
+                "operator": "not"
+              },
+              {
+                "field": "escapeAtGroundFloor",
+                "operator": "eq",
+                "value": "yes"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "2"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "4"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "5"
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "bothBasementAndAtticYes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "bothBasementAndAtticNo",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "bothBasementAndAtticErrorNo",
+          "type": "Error",
+          "warning": true,
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "bothBasementAndAttic",
+                "operator": "not"
+              },
+              {
+                "field": "bothBasementAndAttic",
+                "operator": "eq",
+                "value": "yes"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "2"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "4"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "5"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "bothBasementAndAtticErrorNo.msg",
+              "type": "Text",
+              "warning": true,
+              "text":
+                "Du får en ekstra tellende etasje på grunn av endringen. Dette gjør at krav til brannsikkerhet må vurderes på nytt for boligen. Veiviseren kan dessverre ikke hjelpe deg med dette."
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "basementOrAttic",
+                "operator": "eq",
+                "value": "basement"
+              },
+              "children": [
+                {
+                  "id": "bothBasementAndAtticErrorYesBasement",
+                  "type": "Error",
+                  "warning": true,
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "bothBasementAndAttic",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "bothBasementAndAttic",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "2"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "4"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "5"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "bothBasementAndAtticErrorYesBasement.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "text":
+                        "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om loftet ditt regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette.  "
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "test": {
+                "field": "basementOrAttic",
+                "operator": "eq",
+                "value": "attic"
+              },
+              "children": [
+                {
+                  "id": "bothBasementAndAtticErrorYesAttic",
+                  "type": "Error",
+                  "warning": true,
+                  "hidden": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "bothBasementAndAttic",
+                        "operator": "not"
+                      },
+                      {
+                        "field": "bothBasementAndAttic",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "2"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "4"
+                      },
+                      {
+                        "field": "levels",
+                        "operator": "eq",
+                        "value": "5"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "bothBasementAndAtticErrorYesAttic.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "text":
+                        "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om kjelleren din regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bothBasementAndAttic4",
+          "property": "bothBasementAndAttic4",
+          "type": "Radio",
+          "heading": "Har du både kjeller og loft i bygningen du bor i?",
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "levels",
+                "operator": "not"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "2"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "3"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "5"
+              },
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "houseType",
+                    "operator": "eq",
+                    "value": "enebolig"
+                  },
+                  {
+                    "field": "eneboligToMulti",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            ]
+          },
+          "options": [
+            {
+              "id": "bothBasementAndAttic4Yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "bothBasementAndAttic4No",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "bothBasementAndAttic4Error",
+          "type": "Error",
+          "warning": true,
+          "hidden": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "bothBasementAndAttic4",
+                "operator": "not"
+              },
+              {
+                "field": "bothBasementAndAttic4",
+                "operator": "eq",
+                "value": "yes"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "2"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "3"
+              },
+              {
+                "field": "levels",
+                "operator": "eq",
+                "value": "5"
+              },
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "houseType",
+                    "operator": "eq",
+                    "value": "enebolig"
+                  },
+                  {
+                    "field": "eneboligToMulti",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "bothBasementAndAttic4Error.msg",
+              "type": "Text",
+              "warning": true,
+              "text":
+                "Du får en ekstra tellende etasje på grunn av endringen. Dette gjør at krav til brannsikkerhet må vurderes på nytt for boligen. Veiviseren kan dessverre ikke hjelpe deg med dette."
             }
           ]
         },
@@ -4219,7 +4574,7 @@
               "id": "escapeAtGroundFloor4IsYesAtticError.msg",
               "type": "Text",
               "warning": true,
-              "heading":
+              "text":
                 "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om kjelleren din regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
             }
           ]
@@ -4272,7 +4627,7 @@
                       "id": "escapeAtGroundFloor4NoErrorBasement.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om loftet ditt regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
                     }
                   ]
@@ -4329,7 +4684,7 @@
                       "id": "escapeAtGroundFloor4NoErrorAttic.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Du får en ekstra tellende etasje på grunn av endringen. Dette gjør at krav til brannsikkerhet må vurderes på nytt for boligen. Veiviseren kan dessverre ikke hjelpe deg med dette ."
                     }
                   ]
@@ -4371,7 +4726,7 @@
               "id": "fiveFloorsError.msg",
               "type": "Text",
               "warning": true,
-              "heading":
+              "text":
                 "Bygningen din har for mange etasjer til at veiviseren kan hjelpe deg til å vurdere branntekniske krav."
             }
           ]
@@ -4433,7 +4788,7 @@
               "id": "noWindowError.msg",
               "type": "Text",
               "warning": true,
-              "heading":
+              "text":
                 "Hvis rommet ikke har et vindu kan ikke veilederen ta stilling til om krav til lys, ventilasjon, inneklima og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
             }
           ]
@@ -4516,7 +4871,7 @@
               "id": "bigWindowError.msg",
               "type": "Text",
               "warning": true,
-              "heading":
+              "text":
                 "Hvis rommet ikke har et stort nok vindu kan ikke veilederen ta stilling til om krav til lys og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
             }
           ]
@@ -4563,7 +4918,7 @@
                     {
                       "id": "floorInfo",
                       "type": "Text",
-                      "heading":
+                      "text":
                         "Siden vi ikke vet hvor i bygningne rommet ditt ligger, må vi nå stille deg spørsmål om hvor lett det er å rømme fra vinduet."
                     }
                   ]
@@ -4660,7 +5015,7 @@
                       "id": "escapeUnkownFloorError.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading": "Kravene for å kunne rømme ut av vinduet er ikke oppfylt."
+                      "text": "Kravene for å kunne rømme ut av vinduet er ikke oppfylt."
                     }
                   ]
                 }
@@ -4755,7 +5110,7 @@
                       "id": "escapeBasementError.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "For å kunne rømme ut av et vindu må det maks være én meter opp fra vinduet. Det kan eventuelt tilrettelegges for noe å klatre opp på."
                     }
                   ]
@@ -4846,7 +5201,7 @@
                       "id": "escapeBasementOutsideError.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Når det ikke er mulig å komme seg ut av vinduet kan ikke veiviseren vurder om krav til rømning er oppfylt."
                     }
                   ]
@@ -4942,7 +5297,7 @@
                       "id": "escapeAtticError.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "For å kunne rømme ut av et vindu må det maks være én meter opp fra vinduet. Det kan eventuelt tilrettelegges for noe å klatre opp på, som en kasse."
                     }
                   ]
@@ -5029,7 +5384,7 @@
                       "id": "escapeAtticOutsideError.msg",
                       "type": "Text",
                       "warning": true,
-                      "heading":
+                      "text":
                         "Vinduet er for høyt til at veilederen kan vurdere om krav til rømning er oppfylt."
                     }
                   ]
@@ -5104,7 +5459,7 @@
             {
               "id": "luftventilFeedbackText",
               "type": "Text",
-              "heading":
+              "text":
                 "Siden du både har en lufteventil og et vindu er kravene til ventilasjon oppfylt. "
             }
           ]
@@ -5142,7 +5497,7 @@
               "id": "luftventilError.msg",
               "type": "Text",
               "warning": true,
-              "heading":
+              "text":
                 "Når det ikke er lufteventil kan ikke veilederen vurdere om krav til ventilasjon er oppfylt."
             }
           ]
@@ -5206,7 +5561,7 @@
             {
               "id": "mesuredRadonText",
               "type": "Text",
-              "heading":
+              "text":
                 "Du oppgir at du ikke har målt radonnivået i boligen din. Det er ikke et krav at du skal gjøre det, men vi anbefaler at du gjør det fordi høye radon-nivåer er helseskadelig. Radon-gassene kommer fra bakken, derfor er det spesielt viktig å ha kontroll på radonnivået i boligen din om du skal endre noe i kjelleren din."
             }
           ]
@@ -5238,19 +5593,19 @@
             {
               "id": "radon100",
               "type": "Answer",
-              "text": "Under 100 Bq/m<sup>3</sup>",
+              "heading": "Under 100 Bq/m<sup>3</sup>",
               "value": "100"
             },
             {
               "id": "radon200",
               "type": "Answer",
-              "text": "100-200 Bq/m<sup>3</sup>",
+              "heading": "100-200 Bq/m<sup>3</sup>",
               "value": "200"
             },
             {
               "id": "radon201",
               "type": "Answer",
-              "text": "Over 200 Bq/m<sup>3</sup>",
+              "heading": "Over 200 Bq/m<sup>3</sup>",
               "value": "201"
             }
           ]
@@ -5287,7 +5642,7 @@
             {
               "id": "radon100Text",
               "type": "Text",
-              "heading":
+              "text":
                 "Randonnivået er greit - under 100 Bq/m<sup>3</sup> er det ikke nødvendig å gjøre tiltak mot radon."
             }
           ]
@@ -5324,7 +5679,7 @@
             {
               "id": "radon200Text",
               "type": "Text",
-              "heading":
+              "text":
                 "Radonnivået er litt høyt og du bør sette igang tiltak mot radon. Det er ikke et krav at du gjør dette før bruksendring, men vær klar over at en bruksendring kan gjøre radonproblemet verre."
             }
           ]
@@ -5362,7 +5717,7 @@
               "id": "radonError.msg",
               "type": "Text",
               "warning": true,
-              "heading":
+              "text":
                 "Radonnivået er høyere enn tillatt. Du må gjøre tiltak som senker radonnivået til under 200 Bq/m<sup>3</sup> før du bruksendrer."
             }
           ]
@@ -5384,14 +5739,14 @@
             {
               "id": "warmRoomYes",
               "type": "Answer",
-              "text":
+              "heading":
                 "Ja, rommet er godt nok isolert eller jeg skal isolere rommet så det vil holde minst 19 grader gjennom vinteren",
               "value": "yes"
             },
             {
               "id": "warmRoomNo",
               "type": "Answer",
-              "text": "Nei, rommet blir kaldere enn 19 grader om vinteren",
+              "heading": "Nei, rommet blir kaldere enn 19 grader om vinteren",
               "value": "no"
             }
           ]
@@ -5419,7 +5774,7 @@
               "id": "warmRoomError.msg",
               "type": "Text",
               "warning": true,
-              "heading":
+              "text":
                 "Rommet blir for kaldt til å bruke det til boligrom. Du må isolere rommet mer hvis du skal bruksendre."
             }
           ]
@@ -5446,7 +5801,7 @@
             {
               "id": "warmRoomText",
               "type": "Text",
-              "heading": "Rommet blir godt nok isolert"
+              "text": "Rommet blir godt nok isolert"
             }
           ]
         }
@@ -5458,9 +5813,9 @@
       "heading": "Resultatsiden",
       "errorheading": "Du har ikke svart på alle spørsmålene",
       "lead":
-        "<p>Sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine.</p>",
+        "Sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine.</p>",
       "errorlead":
-        "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
+        "Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.",
       "exporter": "dataExport"
     }
   ]
