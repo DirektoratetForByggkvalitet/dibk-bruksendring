@@ -1110,13 +1110,60 @@
                           "value": "no"
                         }
                       ]
+                    },
+                    {
+                      "id": "temporaryIdForFloorMessage",
+                      "type": "Text",
+                      "heading": "Fint og flott! Her må Elise fylle noe tekst.",
+                      "hidden": {
+                        "field": "escapeAtGroundFloor",
+                        "operator": "neq",
+                        "value": "yes"
+                      }
+                    },
+                    {
+                      "id": "fireSafetyReconsidered",
+                      "type": "Error",
+                      "warning": true,
+                      "hidden": {
+                        "field": "escapeAtGroundFloor",
+                        "operator": "neq",
+                        "value": "no"
+                      },
+                      "children": [
+                        {
+                          "id": "fireSafetyReconsideredText",
+                          "heading":
+                            "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om kjelleren din regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette.",
+                          "type": "Text"
+                        }
+                      ]
                     }
                   ]
                 }
               ]
+            },
+            {
+              "id": "extraFloorWarning",
+              "type": "Error",
+              "warning": true,
+              "hidden": {
+                "field": "numberOfLevels",
+                "operator": "neq",
+                "value": "4"
+              },
+              "children": [
+                {
+                  "id": "extraFloorWarningText",
+                  "type": "Text",
+                  "heading":
+                    "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om loftet ditt regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
+                }
+              ]
             }
           ]
-        }
+        },
+        {}
       ]
     },
     {
