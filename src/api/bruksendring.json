@@ -137,9 +137,9 @@
               "id": "multiEnebolig",
               "property": "multiEnebolig",
               "type": "Radio",
-              "hidden": {
+              "show": {
                 "field": "houseType",
-                "operator": "neq",
+                "operator": "eq",
                 "value": "enebolig"
               },
               "heading": "Er det flere boenheter i boligen?",
@@ -168,7 +168,7 @@
               "id": "hvilkenBoenhet",
               "property": "hvilkenBoenhet",
               "type": "Radio",
-              "hidden": {
+              "hide": {
                 "type": "or",
                 "clauses": [
                   {
@@ -208,17 +208,17 @@
             {
               "id": "hvilkenBoenhetBothResult",
               "type": "Result",
-              "hidden": {
+              "show": {
                 "type": "or",
                 "clauses": [
                   {
                     "field": "hvilkenBoenhet",
-                    "operator": "neq",
+                    "operator": "eq",
                     "value": "both"
                   },
                   {
                     "field": "$computed.multiUnitHouse",
-                    "operator": "neq",
+                    "operator": "eq",
                     "value": false
                   }
                 ]
@@ -231,9 +231,9 @@
               "id": "commonArea",
               "property": "commonArea",
               "type": "Radio",
-              "hidden": {
+              "show": {
                 "field": "$computed.multiUnitHouse",
-                "operator": "neq",
+                "operator": "eq",
                 "value": true
               },
               "heading": "Kommer endringene dine til å påvirke fellesarealet?",
@@ -263,9 +263,9 @@
         {
           "id": "changesToCommonArea",
           "type": "Result",
-          "hidden": {
+          "show": {
             "field": "commonArea",
-            "operator": "neq",
+            "operator": "eq",
             "value": "yes"
           },
           "heading": "Du vil gjøre en endring i fellesarealet",
@@ -300,9 +300,9 @@
           "id": "roomHeightLessThan2",
           "type": "Result",
 
-          "hidden": {
+          "show": {
             "field": "roomHeight",
-            "operator": "neq",
+            "operator": "eq",
             "value": "no"
           },
 
@@ -376,7 +376,7 @@
               ]
             },
             {
-              "id": "hoveddeltiltilleggsdel",
+              "id": "mainToSecondary",
               "type": "Result",
               "heading": "Fra hoveddel til tilleggsdel",
               "errorheading": "Fra hoveddel til tilleggsdel",
@@ -384,14 +384,14 @@
                 "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Ønsker du få rommet godkjent som tilleggsdel? Da må du søke kommunen.  Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p>",
               "errorlead":
                 "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Ønsker du få rommet godkjent som tilleggsdel? Da må du søke kommunen.  Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p>",
-              "hidden": {
+              "show": {
                 "field": "$computed.mainToSecondary",
                 "operator": "eq",
-                "value": false
+                "value": true
               }
             },
             {
-              "id": "tilleggsdeltiltilleggsdel",
+              "id": "secondaryToSecondary",
               "type": "Result",
               "heading": "Fra tilleggsdel til tilleggsdel",
               "errorheading": "Fra tilleggsdel til tilleggsdel",
@@ -399,10 +399,10 @@
                 "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>",
               "errorlead":
                 "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>",
-              "hidden": {
+              "show": {
                 "field": "$computed.secondaryToSecondary",
                 "operator": "eq",
-                "value": false
+                "value": true
               }
             }
           ]
@@ -435,10 +435,10 @@
               "type": "Answer",
               "text": "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
               "value": "outside",
-              "hidden": {
+              "show": {
                 "field": "$computed.multiUnitHouse",
                 "operator": "eq",
-                "value": false
+                "value": true
               }
             },
             {
@@ -446,10 +446,10 @@
               "type": "Answer",
               "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
               "value": "outside",
-              "hidden": {
+              "show": {
                 "field": "$computed.multiUnitHouse",
                 "operator": "eq",
-                "value": true
+                "value": false
               }
             }
           ]
@@ -701,9 +701,9 @@
                       "property": "mainReconstructionYear",
                       "type": "Radio",
                       "heading": "Er det søkt om en hovedombygging fra og med 1. juli. 2011?",
-                      "hidden": {
+                      "show": {
                         "field": "buildApplicationYear",
-                        "operator": "neq",
+                        "operator": "eq",
                         "value": "after"
                       },
                       "image": {
@@ -732,9 +732,9 @@
                       "id": "divisionOrMerger",
                       "property": "divisionOrMerger",
                       "type": "Radio",
-                      "hidden": {
+                      "show": {
                         "field": "mainReconstructionYear",
-                        "operator": "neq",
+                        "operator": "eq",
                         "value": "no"
                       },
                       "heading":
@@ -760,9 +760,9 @@
                       "id": "overUnderNextTooHovedRoom",
                       "property": "overUnderNextTooHovedRoom",
                       "type": "Radio",
-                      "hidden": {
+                      "show": {
                         "field": "divisionOrMerger",
-                        "operator": "neq",
+                        "operator": "eq",
                         "value": "no"
                       },
                       "heading": "Ligger rommet over, under eller inntil et rom som er hoveddel?",
@@ -793,27 +793,27 @@
                         "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
                       "errorlead":
                         "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
-                      "hidden": {
+                      "show": {
                         "type": "or",
                         "clauses": [
                           {
                             "field": "buildApplicationYear",
-                            "operator": "neq",
+                            "operator": "eq",
                             "value": "after"
                           },
                           {
                             "field": "mainReconstructionYear",
-                            "operator": "neq",
+                            "operator": "eq",
                             "value": "yes"
                           },
                           {
                             "field": "divisionOrMerger",
-                            "operator": "neq",
+                            "operator": "eq",
                             "value": "yes"
                           },
                           {
                             "field": "overUnderNextTooHovedRoom",
-                            "operator": "neq",
+                            "operator": "eq",
                             "value": "no"
                           }
                         ]
@@ -867,9 +867,9 @@
           "type": "Error",
           "warning": true,
 
-          "hidden": {
+          "show": {
             "field": "naturalDisasterArea",
-            "operator": "neq",
+            "operator": "eq",
             "value": "yes"
           },
 
@@ -929,9 +929,9 @@
                 "alt": "Loft eller kjeller illustrert"
               },
 
-              "hidden": {
+              "show": {
                 "field": "alreadyApprovedMainPart",
-                "operator": "neq",
+                "operator": "eq",
                 "value": "no"
               },
 
@@ -960,9 +960,9 @@
             {
               "id": "noAtticResult",
               "type": "Result",
-              "hidden": {
+              "show": {
                 "field": "basementOrAttic",
-                "operator": "neq",
+                "operator": "eq",
                 "value": "no"
               },
               "children": [
@@ -982,9 +982,9 @@
               "id": "atticLoadError",
               "type": "Error",
               "warning": true,
-              "hidden": {
+              "show": {
                 "field": "basementOrAttic",
-                "operator": "neq",
+                "operator": "eq",
                 "value": "attic"
               },
               "children": [
@@ -1007,6 +1007,7 @@
       "heading": "Sikkerhet og miljø",
       "children": [
         {
+          "id": "safetyAndEnvironment",
           "type": "Group",
           "simple": true,
           "children": [
@@ -1014,9 +1015,9 @@
               "id": "numberOfLevels",
               "property": "numberOfLevels",
               "type": "Radio",
-              "hidden": {
+              "show": {
                 "field": "alreadyApprovedMainPart",
-                "operator": "neq",
+                "operator": "eq",
                 "value": "no"
               },
               "heading":
@@ -1052,9 +1053,9 @@
               "id": "fireSafetyError",
               "property": "fireSafetyError",
               "type": "Error",
-              "hidden": {
+              "show": {
                 "field": "numberOfLevels",
-                "operator": "lt",
+                "operator": "gte",
                 "value": "5"
               },
               "children": [
@@ -1115,9 +1116,9 @@
                       "id": "temporaryIdForFloorMessage",
                       "type": "Text",
                       "heading": "Fint og flott! Her må Elise fylle noe tekst.",
-                      "hidden": {
+                      "show": {
                         "field": "escapeAtGroundFloor",
-                        "operator": "neq",
+                        "operator": "eq",
                         "value": "yes"
                       }
                     },
@@ -1125,9 +1126,9 @@
                       "id": "fireSafetyReconsidered",
                       "type": "Error",
                       "warning": true,
-                      "hidden": {
+                      "show": {
                         "field": "escapeAtGroundFloor",
-                        "operator": "neq",
+                        "operator": "eq",
                         "value": "no"
                       },
                       "children": [
@@ -1147,9 +1148,9 @@
               "id": "extraFloorWarning",
               "type": "Error",
               "warning": true,
-              "hidden": {
+              "show": {
                 "field": "numberOfLevels",
-                "operator": "neq",
+                "operator": "eq",
                 "value": "4"
               },
               "children": [
@@ -1163,7 +1164,490 @@
             }
           ]
         },
-        {}
+        {
+          "id": "canInstallWindow",
+          "type": "Group",
+          "simple": true,
+          "children": [
+            {
+              "id": "canInstallWindowRadio",
+              "property": "canInstallWindowRadio",
+              "type": "Radio",
+              "heading":
+                "Har du eller skal du sette inn et vindu mot friluft som kan åpnes fra rommet du vil endre?",
+              "text": "De fleste rom må ha et vindu for lys, luft og som rømningsvei.",
+              "options": [
+                {
+                  "id": "canInstallWindowRadio.yes",
+                  "type": "Answer",
+                  "heading":
+                    "Ja, rommet har eller det vil bli satt inn et vindu mot friluft som kan åpnes",
+                  "value": "yes"
+                },
+                {
+                  "id": "canInstallWindowRadio.no",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "no"
+                }
+              ]
+            },
+            {
+              "id": "noWindowError",
+              "type": "Error",
+              "warning": true,
+              "show": {
+                "field": "canInstallWindowRadio",
+                "operator": "eq",
+                "value": "no"
+              },
+              "children": [
+                {
+                  "id": "noWindowError.text",
+                  "type": "Text",
+                  "heading":
+                    "Hvis rommet ikke har et vindu kan ikke veilederen ta stilling til om krav til lys, ventilasjon, inneklima og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
+                }
+              ]
+            },
+            {
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "canInstallWindowRadio",
+                    "operator": "eq",
+                    "value": "yes"
+                  },
+                  "children": [
+                    {
+                      "id": "bigWindow",
+                      "property": "bigWindow",
+                      "type": "Radio",
+                      "heading": "Blir åpningen på vinduet stor nok?",
+                      "image": {
+                        "url": "/img/14a@2x.png",
+                        "alt": "Dimensjoner på vinduer"
+                      },
+                      "text":
+                        "<p>Høyden og bredden må være minst 150 cm til sammen og i tillegg må:</p><ul><li>minst 50 cm bred (men da må høyden være minst 100 cm)</li><li>minst 60 cm høy (men da må bredden være minst 90 cm)</li></ul><p>Det forutsetter at vinduet kan åpnes helt opp, og at vinduet er hengslet på siden eller i toppen. Om du skal ha en annen type vindu, må du passe på at vinduet er godkjent som rømningsvindu.</p><p>Målingen av vinduet må gjøres på innsiden av innerkarmen på vinduet.</p>",
+                      "options": [
+                        {
+                          "id": "bigWindowYes",
+                          "type": "Answer",
+                          "heading": "Ja, åpningen er eller blir stor nok",
+                          "value": "yes"
+                        },
+                        {
+                          "id": "bigWindowNo",
+                          "type": "Answer",
+                          "heading": "Nei",
+                          "value": "no"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "bigWindowError",
+                      "type": "Error",
+                      "warning": true,
+                      "show": {
+                        "field": "bigWindow",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      "children": [
+                        {
+                          "id": "bigWindowError.msg",
+                          "type": "Text",
+                          "heading":
+                            "Hvis rommet ikke har et stort nok vindu kan ikke veilederen ta stilling til om krav til lys og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
+                        }
+                      ]
+                    },
+                    {
+                      "id": "escapeUnkownFloor",
+                      "property": "escapeUnkownFloor",
+                      "type": "Radio",
+                      "heading": "Vil det bli mulig å rømme ut av vinduet?",
+                      "image": {
+                        "url": "/img/combi.png",
+                        "alt": "Lysgrav eller høyde på loft"
+                      },
+                      "text":
+                        "<p>Er det enkelt å komme seg ut av vinduet fra innsiden?</p><p>For at det skal være mulig å rømme ut av vinduet kan det maksimalt være 1 meter opp fra gulvet til undersiden av karmen på vinduet</p><p>For at rømningsmuligheten skal være god nok nok rommet ligger i en kjeller, må lysgraven være stor nok til at det er mulig å rømme ut av den.<ul><li>Vinduer som er helt eller delvis gravd ned under bakkenivå, i lysgrav, må være enkle å komme ut av</li><li>Det må være sikret at lysgraven aldri blir fylt av snø om vinteren, med for eksempel varmekabler (måking holder ikke)</li></ul></p><p>Det kan være maksimalt 5 meter fra nedre karm av vinduet og til bakken på utsiden av vinduet.</p>",
+                      "show": {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "bigWindow",
+                            "operator": "eq",
+                            "value": "yes"
+                          },
+                          {
+                            "field": "alreadyApprovedMainPart",
+                            "operator": "eq",
+                            "value": "no"
+                          }
+                        ]
+                      },
+                      "options": [
+                        {
+                          "id": "escapeUnkownFloorYes",
+                          "type": "Answer",
+                          "heading": "Ja",
+                          "value": "yes"
+                        },
+                        {
+                          "id": "escapeUnkownFloorNo",
+                          "type": "Answer",
+                          "heading": "Nei",
+                          "value": "no"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "maxOneMeterToWindowWarning",
+                      "type": "Error",
+                      "warning": true,
+                      "show": {
+                        "field": "escapeUnkownFloor",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      "children": [
+                        {
+                          "id": "maxOneMeterToWindowWarning.text",
+                          "type": "Text",
+                          "heading":
+                            "For å kunne rømme ut av et vindu må det maks være én meter opp fra vinduet. Det kan eventuelt tilrettelegges for noe å klatre opp på."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Branch",
+                      "branches": [
+                        {
+                          "test": {
+                            "type": "or",
+                            "clauses": [
+                              {
+                                "field": "basementOrAttic",
+                                "operator": "eq",
+                                "value": "basement"
+                              },
+                              {
+                                "field": "basementOrAttic",
+                                "operator": "eq",
+                                "value": "attic"
+                              }
+                            ]
+                          },
+                          "children": [
+                            {
+                              "id": "escapeBasementOutside",
+                              "property": "escapeBasementOutside",
+                              "type": "Radio",
+                              "heading": "Er det enkelt å komme seg ut av vinduet fra utsiden?",
+                              "image": {
+                                "url": "/img/lysgrav.png",
+                                "alt": "Lysgrav"
+                              },
+                              "text":
+                                "For at rømningsmuligheten skal være god nok, må lysgraven være stor nok til at det er mulig å rømme ut av den.<ul><li>må vinduer som er helt eller delvis gravd ned under bakkenivå, i lysgrav, være enkle å komme ut av</li><li>må det være sikret at lysgraven aldri blir fylt av snø om vinteren, med for eksempel varmekabler (måking holder ikke)</li></ul>",
+                              "options": [
+                                {
+                                  "id": "escapeBasementOutside.yes",
+                                  "type": "Answer",
+                                  "heading": "Ja",
+                                  "value": "yes"
+                                },
+                                {
+                                  "id": "escapeBasementOutside.no",
+                                  "type": "Answer",
+                                  "heading": "Nei",
+                                  "value": "no"
+                                }
+                              ]
+                            },
+                            {
+                              "id": "escapeWindowError",
+                              "type": "Error",
+                              "warning": true,
+                              "show": {
+                                "type": "and",
+                                "clauses": [
+                                  {
+                                    "field": "escapeBasementOutside",
+                                    "operator": "eq",
+                                    "value": "no"
+                                  },
+                                  {
+                                    "field": "basementOrAttic",
+                                    "operator": "eq",
+                                    "value": "attic"
+                                  }
+                                ]
+                              },
+                              "children": [
+                                {
+                                  "id": "escapeWindowError.text",
+                                  "type": "Text",
+                                  "heading":
+                                    "Vinduet er for høyt til at veilederen kan vurdere om krav til rømning er oppfylt."
+                                }
+                              ]
+                            },
+                            {
+                              "id": "escapeBasementOutsideError",
+                              "type": "Error",
+                              "warning": true,
+                              "show": {
+                                "type": "and",
+                                "clauses": [
+                                  {
+                                    "field": "escapeBasementOutside",
+                                    "operator": "eq",
+                                    "value": "no"
+                                  },
+                                  {
+                                    "field": "basementOrAttic",
+                                    "operator": "eq",
+                                    "value": "basement"
+                                  }
+                                ]
+                              },
+                              "children": [
+                                {
+                                  "id": "escapeBasementOutsideError.msg",
+                                  "type": "Text",
+                                  "warning": true,
+                                  "heading":
+                                    "Når det ikke er mulig å komme seg ut av vinduet kan ikke veiviseren vurder om krav til rømning er oppfylt."
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ventilation",
+                      "property": "ventilation",
+                      "type": "Radio",
+                      "heading":
+                        "Har du eller skal du sette inn en lufteventil i rommet, i tillegg til vindu?",
+                      "options": [
+                        {
+                          "id": "ventilation.yes",
+                          "type": "Answer",
+                          "heading":
+                            "Ja, rommet har allerede eller det skal settes inn lufteventil på rommet",
+                          "value": "yes"
+                        },
+                        {
+                          "id": "ventilation.no",
+                          "type": "Answer",
+                          "heading": "Nei",
+                          "value": "no"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ventilationError",
+                      "property": "ventilationError",
+                      "type": "Error",
+                      "warning": true,
+                      "show": {
+                        "field": "ventilation",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      "children": [
+                        {
+                          "id": "ventilationError.msg",
+                          "type": "Text",
+                          "heading":
+                            "Når det ikke er lufteventil kan ikke veilederen vurdere om krav til ventilasjon er oppfylt."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "radonGroup",
+          "type": "Group",
+          "simple": true,
+          "children": [
+            {
+              "id": "measureRadon",
+              "property": "measureRadon",
+              "type": "Radio",
+              "heading": "Har du målt radon-nivået i boligen din?",
+              "image": {
+                "url": "/img/20a@2x.png",
+                "alt": "Hus med radioaktivitetssymbol"
+              },
+              "options": [
+                {
+                  "id": "measureRadon.yes",
+                  "type": "Answer",
+                  "heading": "Ja",
+                  "value": "yes"
+                },
+                {
+                  "id": "measureRadon.no",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "no"
+                }
+              ]
+            },
+            {
+              "id": "mesuredRadonText",
+              "type": "Text",
+              "heading":
+                "Du oppgir at du ikke har målt radonnivået i boligen din. Det er ikke et krav at du skal gjøre det, men vi anbefaler at du gjør det fordi høye radon-nivåer er helseskadelig. Radon-gassene kommer fra bakken, derfor er det spesielt viktig å ha kontroll på radonnivået i boligen din om du skal endre noe i kjelleren din.",
+              "show": {
+                "field": "measureRadon",
+                "operator": "eq",
+                "value": "no"
+              }
+            },
+            {
+              "id": "radonMeasureBranch",
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "measureRadon",
+                    "operator": "eq",
+                    "value": "yes"
+                  },
+                  "children": [
+                    {
+                      "id": "radonLevel",
+                      "property": "radonLevel",
+                      "type": "Radio",
+                      "heading": "Hva var radonnivået i boligen din?",
+                      "image": {
+                        "url": "/img/20b@2x.png",
+                        "alt": "Hus med radioaktivitetssymbol"
+                      },
+                      "options": [
+                        {
+                          "id": "radonLevel.100",
+                          "type": "Answer",
+                          "text": "Under 100 Bq/m<sup>3</sup>",
+                          "value": "100"
+                        },
+                        {
+                          "id": "radonLevel.200",
+                          "type": "Answer",
+                          "text": "100-200 Bq/m<sup>3</sup>",
+                          "value": "200"
+                        },
+                        {
+                          "id": "radonLevel.201",
+                          "type": "Answer",
+                          "text": "Over 200 Bq/m<sup>3</sup>",
+                          "value": "201"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "radonInfo201",
+                      "type": "Error",
+                      "warning": true,
+                      "show": {
+                        "field": "radonLevel",
+                        "operator": "eq",
+                        "value": "201"
+                      },
+                      "children": [
+                        {
+                          "id": "radonError.msg",
+                          "type": "Text",
+                          "warning": true,
+                          "heading":
+                            "Radonnivået er høyere enn tillatt. Du må gjøre tiltak som senker radonnivået til under 200 Bq/m<sup>3</sup> før du bruksendrer."
+                        }
+                      ]
+                    },
+                    {
+                      "id": "radonInfo200",
+                      "type": "Text",
+                      "heading":
+                        "Radonnivået er litt høyt og du bør sette igang tiltak mot radon. Det er ikke et krav at du gjør dette før bruksendring, men vær klar over at en bruksendring kan gjøre radonproblemet verre.",
+                      "show": {
+                        "field": "radonLevel",
+                        "operator": "eq",
+                        "value": "200"
+                      }
+                    },
+                    {
+                      "id": "radonInfo100",
+                      "type": "Text",
+                      "heading":
+                        "Randonnivået er greit - under 100 Bq/m<sup>3</sup> er det ikke nødvendig å gjøre tiltak mot radon.",
+                      "show": {
+                        "field": "radonLevel",
+                        "operator": "eq",
+                        "value": "100"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "warmRoom",
+          "property": "warmRoom",
+          "type": "Radio",
+          "heading": "Vil rommet kunne holde minst 19 grader gjennom vinteren?",
+          "image": {
+            "url": "/img/21a@2x.png",
+            "alt": "Hus med gradestokk på 19 grader"
+          },
+          "options": [
+            {
+              "id": "warmRoomYes",
+              "type": "Answer",
+              "text":
+                "Ja, rommet er godt nok isolert eller jeg skal isolere rommet så det vil holde minst 19 grader gjennom vinteren",
+              "value": "yes"
+            },
+            {
+              "id": "warmRoomNo",
+              "type": "Answer",
+              "text": "Nei, rommet blir kaldere enn 19 grader om vinteren",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "warmRoomError",
+          "type": "Error",
+          "warning": true,
+          "show": {
+            "field": "warmRoom",
+            "operator": "eq",
+            "value": "no"
+          },
+          "children": [
+            {
+              "id": "warmRoomError.msg",
+              "type": "Text",
+              "heading":
+                "Rommet blir for kaldt til å bruke det til boligrom. Du må isolere rommet mer hvis du skal bruksendre."
+            }
+          ]
+        }
       ]
     },
     {
