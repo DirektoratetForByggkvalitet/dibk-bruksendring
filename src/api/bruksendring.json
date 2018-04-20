@@ -1002,6 +1002,124 @@
       ]
     },
     {
+      "id": "page5",
+      "type": "Page",
+      "heading": "Sikkerhet og miljø",
+      "children": [
+        {
+          "type": "Group",
+          "simple": true,
+          "children": [
+            {
+              "id": "numberOfLevels",
+              "property": "numberOfLevels",
+              "type": "Radio",
+              "hidden": {
+                "field": "alreadyApprovedMainPart",
+                "operator": "neq",
+                "value": "no"
+              },
+              "heading":
+                "Inkludert eventuelle kjellere og loft, hvor mange etasjer har boligen din?",
+              "options": [
+                {
+                  "id": "numberOfLevels.2",
+                  "type": "Answer",
+                  "heading": "2",
+                  "value": "2"
+                },
+                {
+                  "id": "numberOfLevels.3",
+                  "type": "Answer",
+                  "heading": "3",
+                  "value": "3"
+                },
+                {
+                  "id": "numberOfLevels.4",
+                  "type": "Answer",
+                  "heading": "4",
+                  "value": "4"
+                },
+                {
+                  "id": "numberOfLevels.5",
+                  "type": "Answer",
+                  "heading": "5 eller flere",
+                  "value": "5"
+                }
+              ]
+            },
+            {
+              "id": "fireSafetyError",
+              "property": "fireSafetyError",
+              "type": "Error",
+              "hidden": {
+                "field": "numberOfLevels",
+                "operator": "lt",
+                "value": "5"
+              },
+              "children": [
+                {
+                  "id": "fireSafetyErrorText",
+                  "type": "Text",
+                  "warning": true,
+                  "heading":
+                    "Bygningen din har for mange etasjer til at veiviseren kan hjelpe deg til å vurdere branntekniske krav."
+                }
+              ]
+            },
+            {
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "$computed.multiUnitHouse",
+                        "operator": "eq",
+                        "value": true
+                      },
+                      {
+                        "field": "numberOfLevels",
+                        "operator": "eq",
+                        "value": "3"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "escapeAtGroundFloor",
+                      "property": "escapeAtGroundFloor",
+                      "type": "Radio",
+                      "heading":
+                        "Har alle boenhetene i bygningen utgangsdør som går rett ut på bakken?",
+                      "text":
+                        "<p>Har alle boenhetene en dør som går rett fra boligen og rett ut på bakken? Det kan være en liten utvendig trapp på maksimalt 1,5 meter fra dørstokken og ned til bakken fra døren.</p><p>Her er det viktig å tenke på alle boenheter, også eventuelle hybler og utleieboliger i bygningen du bor.</p>",
+                      "options": [
+                        {
+                          "id": "escapeAtGroundFloorYes",
+                          "type": "Answer",
+                          "heading": "Ja, alle har minst én utgang rett ut på bakken",
+                          "value": "yes"
+                        },
+                        {
+                          "id": "escapeAtGroundFloorNo",
+                          "type": "Answer",
+                          "heading":
+                            "Nei, minst én boenhet/leilighet må gå gjennom innvendig eller utvendig trapp",
+                          "value": "no"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "hoorays",
       "type": "Result",
       "heading": "Resultatsiden",
