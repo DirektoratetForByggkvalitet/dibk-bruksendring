@@ -72,6 +72,7 @@
       "heading": "Rommet du skal endre",
       "children": [
         {
+          "id": "houseTypeGroup",
           "type": "Group",
           "simple": true,
           "children": [
@@ -153,13 +154,13 @@
                 {
                   "id": "multiEnebolig.yes",
                   "type": "Answer",
-                  "text": "Ja",
+                  "heading": "Ja",
                   "value": "yes"
                 },
                 {
                   "id": "multiEnebolig.no",
                   "type": "Answer",
-                  "text": "Nei",
+                  "heading": "Nei",
                   "value": "no"
                 }
               ]
@@ -188,19 +189,19 @@
                 {
                   "id": "hvilkenBoenhet.own",
                   "type": "Answer",
-                  "text": "Kun den delen jeg selv bor i",
+                  "heading": "Kun den delen jeg selv bor i",
                   "value": "own"
                 },
                 {
                   "id": "hvilkenBoenhet.other",
                   "type": "Answer",
-                  "text": "Kun utleiedelen eller hybelen",
+                  "heading": "Kun utleiedelen eller hybelen",
                   "value": "other"
                 },
                 {
                   "id": "hvilkenBoenhet.both",
                   "type": "Answer",
-                  "text": "Både delen jeg bor i og utleiedel/hybel",
+                  "heading": "Både delen jeg bor i og utleiedel/hybel",
                   "value": "both"
                 }
               ]
@@ -247,13 +248,13 @@
                 {
                   "id": "commonArea.yes",
                   "type": "Answer",
-                  "text": "Ja, det blir endringer i fellesarealene.",
+                  "heading": "Ja, det blir endringer i fellesarealene.",
                   "value": "yes"
                 },
                 {
                   "id": "commonArea.no",
                   "type": "Answer",
-                  "text": "Nei, endringene blir kun inne i boligen min.",
+                  "heading": "Nei, endringene blir kun inne i boligen min.",
                   "value": "no"
                 }
               ]
@@ -285,13 +286,13 @@
             {
               "id": "roomHeight.yes",
               "type": "Answer",
-              "text": "Ja, rommet er 2 meter eller høyere",
+              "heading": "Ja, rommet er 2 meter eller høyere",
               "value": "yes"
             },
             {
               "id": "roomHeight.no",
               "type": "Answer",
-              "text": "Nei, rommet er lavere enn 2 meter",
+              "heading": "Nei, rommet er lavere enn 2 meter",
               "value": "no"
             }
           ]
@@ -314,6 +315,7 @@
             "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Kan du øke romhøyden? Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent.  Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil. Takk for at du brukte veilederen!</p>"
         },
         {
+          "id": "roomNowGroup",
           "type": "Group",
           "simple": true,
           "children": [
@@ -427,13 +429,13 @@
             {
               "id": "roomAccessAfterChange.inside",
               "type": "Answer",
-              "text": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
+              "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
               "value": "inside"
             },
             {
               "id": "roomAccessAfterChange.commonAreaOrOutside",
               "type": "Answer",
-              "text": "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+              "heading": "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
               "value": "outside",
               "show": {
                 "field": "$computed.multiUnitHouse",
@@ -444,7 +446,7 @@
             {
               "id": "roomAccessAfterChange.outside",
               "type": "Answer",
-              "text": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
+              "heading": "Jeg kan kun komme til rommet fra inngangsdør utenfra.",
               "value": "outside",
               "show": {
                 "field": "$computed.multiUnitHouse",
@@ -455,18 +457,19 @@
           ]
         },
         {
+          "id": "roomAcceptedAsMainPartResult",
           "type": "Result",
-          "hidden": {
+          "show": {
             "type": "or",
             "clauses": [
               {
                 "field": "roomNow",
-                "operator": "neq",
+                "operator": "eq",
                 "value": "main"
               },
               {
                 "field": "roomAccessAfterChange",
-                "operator": "neq",
+                "operator": "eq",
                 "value": "inside"
               }
             ]
@@ -511,10 +514,10 @@
                 {
                   "id": "noToiletResultPage",
                   "type": "Result",
-                  "lead": "<p>Du må ha en dass</p>",
-                  "hidden": {
+                  "heading": "<p>Du må ha en dass</p>",
+                  "show": {
                     "field": "toiletDetachedHouse",
-                    "operator": "neq",
+                    "operator": "eq",
                     "value": "no"
                   }
                 },
@@ -541,10 +544,10 @@
                 {
                   "id": "toiletIsEntireMainPartResult",
                   "type": "Result",
-                  "lead": "<p>Du må søke</p>",
-                  "hidden": {
+                  "heading": "<p>Du må søke</p>",
+                  "show": {
                     "field": "toiletIsEntireMainPart",
-                    "operator": "neq",
+                    "operator": "eq",
                     "value": "yes"
                   }
                 },
@@ -577,17 +580,17 @@
                   "id": "bedOrSofaResult",
                   "type": "Result",
                   "heading": "Du må søke om lov til å endre rommet",
-                  "hidden": {
+                  "show": {
                     "type": "or",
                     "clauses": [
                       {
                         "field": "bedOrSofa",
-                        "operator": "neq",
+                        "operator": "eq",
                         "value": "no"
                       },
                       {
                         "field": "roomNow",
-                        "operator": "neq",
+                        "operator": "eq",
                         "value": "secondary"
                       }
                     ]
@@ -601,24 +604,24 @@
                 {
                   "id": "bedOrSofaResultGoal",
                   "type": "Result",
-                  "hidden": {
+                  "show": {
                     "type": "or",
                     "clauses": [
                       {
                         "field": "bedOrSofa",
-                        "operator": "neq",
+                        "operator": "eq",
                         "value": "no"
                       },
                       {
                         "field": "roomNow",
-                        "operator": "neq",
+                        "operator": "eq",
                         "value": "main"
                       }
                     ]
                   },
                   "heading": "Du er i mål!",
                   "errorheading": "Du er i mål!",
-                  "lead":
+                  "head":
                     "<p>Du har svart at det blir bad/toalett og minst ett annet rom som er hoveddel i denne delen av boligen, men at det ikke er plass til sofa/seng i noen av rommene som er hoveddel.</p><p>Du kan gjøre mindre endringer på rommet uten å søke, som å:</p><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><p>Vil du gjøre andre endringer på rommet?</p><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p><p>Er det plass til seng i ett av rommene som er hoveddel?</p><p>Da må du endre svaret ditt på forrige spørsmål, for å få riktig informasjon om søknadstype og søknadsplikt.</p><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra hoveddel til hoveddel</li><li>Det blir ikke mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Får toalett/vask men ikke plass til seng</li></ul><p>Har du svart riktig?</p><p>Bruk vår veiviser for å finne ut hvilke byggeregler du må følge for å få rommet lovlig.</p>",
                   "errorlead":
                     "<p>Du har svart at det blir bad/toalett og minst ett annet rom som er hoveddel i denne delen av boligen, men at det ikke er plass til sofa/seng i noen av rommene som er hoveddel.</p><p>Du kan gjøre mindre endringer på rommet uten å søke, som å:</p><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><p>Vil du gjøre andre endringer på rommet?</p><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p><p>Er det plass til seng i ett av rommene som er hoveddel?</p><p>Da må du endre svaret ditt på forrige spørsmål, for å få riktig informasjon om søknadstype og søknadsplikt.</p><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra hoveddel til hoveddel</li><li>Det blir ikke mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Får toalett/vask men ikke plass til seng</li></ul><p>Har du svart riktig?</p><p>Bruk vår veiviser for å finne ut hvilke byggeregler du må følge for å få rommet lovlig.</p>"
@@ -667,6 +670,7 @@
                 "Denne delen av veiviseren skal gi deg en pekepinn på om bruksendringen du ønsker å gjøre er innenfor lovverket. Da slipper du eventuelt å bruke tid på en søknad til kommunen for en bruk av rommet som ikke er lovlig.",
               "children": [
                 {
+                  "id": "buildApplicationYearGroup",
                   "type": "Group",
                   "simple": true,
                   "children": [
@@ -878,7 +882,7 @@
               "id": "naturalDisasterAreaYesError.msg",
               "type": "Text",
               "warning": true,
-              "heading":
+              "text":
                 "Siden området er flom- eller rasutsatt er det ikke sikkert tekniske krav til sikkerhet er oppfylt. Snakk med kommunen for å finne ut om du kan bruksendre et rom i området på tross av flom- eller rasfaren."
             }
           ]
@@ -916,6 +920,7 @@
           ]
         },
         {
+          "id": "basementOrAtticGroup",
           "type": "Group",
           "simple": true,
           "children": [
@@ -965,18 +970,12 @@
                 "operator": "eq",
                 "value": "no"
               },
-              "children": [
-                {
-                  "id": "basementOrAtticNoResult",
-                  "type": "Result",
-                  "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
-                  "errorheading": "Veiviseren dekker dessverre ikke ditt tilfelle",
-                  "lead":
-                    "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ.",
-                  "errorlead":
-                    "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ."
-                }
-              ]
+              "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+              "errorheading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+              "lead":
+                "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ.",
+              "errorlead":
+                "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ."
             },
             {
               "id": "atticLoadError",
@@ -992,7 +991,7 @@
                   "id": "atticLoadError.msg",
                   "type": "Text",
                   "warning": true,
-                  "heading":
+                  "text":
                     "Du må sjekke om gulvet på loftet tåler den nye belastningen. Dette er dessverre for komplisert til at veiviseren kan hjelpe deg med det."
                 }
               ]
@@ -1063,7 +1062,7 @@
                   "id": "fireSafetyErrorText",
                   "type": "Text",
                   "warning": true,
-                  "heading":
+                  "text":
                     "Bygningen din har for mange etasjer til at veiviseren kan hjelpe deg til å vurdere branntekniske krav."
                 }
               ]
@@ -1115,7 +1114,7 @@
                     {
                       "id": "temporaryIdForFloorMessage",
                       "type": "Text",
-                      "heading": "Fint og flott! Her må Elise fylle noe tekst.",
+                      "text": "Fint og flott! Her må Elise fylle noe tekst.",
                       "show": {
                         "field": "escapeAtGroundFloor",
                         "operator": "eq",
@@ -1134,7 +1133,7 @@
                       "children": [
                         {
                           "id": "fireSafetyReconsideredText",
-                          "heading":
+                          "text":
                             "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om kjelleren din regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette.",
                           "type": "Text"
                         }
@@ -1157,7 +1156,7 @@
                 {
                   "id": "extraFloorWarningText",
                   "type": "Text",
-                  "heading":
+                  "text":
                     "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om loftet ditt regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
                 }
               ]
@@ -1205,7 +1204,7 @@
                 {
                   "id": "noWindowError.text",
                   "type": "Text",
-                  "heading":
+                  "text":
                     "Hvis rommet ikke har et vindu kan ikke veilederen ta stilling til om krav til lys, ventilasjon, inneklima og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
                 }
               ]
@@ -1259,7 +1258,7 @@
                         {
                           "id": "bigWindowError.msg",
                           "type": "Text",
-                          "heading":
+                          "text":
                             "Hvis rommet ikke har et stort nok vindu kan ikke veilederen ta stilling til om krav til lys og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
                         }
                       ]
@@ -1318,7 +1317,7 @@
                         {
                           "id": "maxOneMeterToWindowWarning.text",
                           "type": "Text",
-                          "heading":
+                          "text":
                             "For å kunne rømme ut av et vindu må det maks være én meter opp fra vinduet. Det kan eventuelt tilrettelegges for noe å klatre opp på."
                         }
                       ]
@@ -1392,7 +1391,7 @@
                                 {
                                   "id": "escapeWindowError.text",
                                   "type": "Text",
-                                  "heading":
+                                  "text":
                                     "Vinduet er for høyt til at veilederen kan vurdere om krav til rømning er oppfylt."
                                 }
                               ]
@@ -1421,7 +1420,7 @@
                                   "id": "escapeBasementOutsideError.msg",
                                   "type": "Text",
                                   "warning": true,
-                                  "heading":
+                                  "text":
                                     "Når det ikke er mulig å komme seg ut av vinduet kan ikke veiviseren vurder om krav til rømning er oppfylt."
                                 }
                               ]
@@ -1466,7 +1465,7 @@
                         {
                           "id": "ventilationError.msg",
                           "type": "Text",
-                          "heading":
+                          "text":
                             "Når det ikke er lufteventil kan ikke veilederen vurdere om krav til ventilasjon er oppfylt."
                         }
                       ]
@@ -1509,7 +1508,7 @@
             {
               "id": "mesuredRadonText",
               "type": "Text",
-              "heading":
+              "text":
                 "Du oppgir at du ikke har målt radonnivået i boligen din. Det er ikke et krav at du skal gjøre det, men vi anbefaler at du gjør det fordi høye radon-nivåer er helseskadelig. Radon-gassene kommer fra bakken, derfor er det spesielt viktig å ha kontroll på radonnivået i boligen din om du skal endre noe i kjelleren din.",
               "show": {
                 "field": "measureRadon",
@@ -1541,19 +1540,19 @@
                         {
                           "id": "radonLevel.100",
                           "type": "Answer",
-                          "text": "Under 100 Bq/m<sup>3</sup>",
+                          "heading": "Under 100 Bq/m<sup>3</sup>",
                           "value": "100"
                         },
                         {
                           "id": "radonLevel.200",
                           "type": "Answer",
-                          "text": "100-200 Bq/m<sup>3</sup>",
+                          "heading": "100-200 Bq/m<sup>3</sup>",
                           "value": "200"
                         },
                         {
                           "id": "radonLevel.201",
                           "type": "Answer",
-                          "text": "Over 200 Bq/m<sup>3</sup>",
+                          "heading": "Over 200 Bq/m<sup>3</sup>",
                           "value": "201"
                         }
                       ]
@@ -1572,7 +1571,7 @@
                           "id": "radonError.msg",
                           "type": "Text",
                           "warning": true,
-                          "heading":
+                          "text":
                             "Radonnivået er høyere enn tillatt. Du må gjøre tiltak som senker radonnivået til under 200 Bq/m<sup>3</sup> før du bruksendrer."
                         }
                       ]
@@ -1580,7 +1579,7 @@
                     {
                       "id": "radonInfo200",
                       "type": "Text",
-                      "heading":
+                      "text":
                         "Radonnivået er litt høyt og du bør sette igang tiltak mot radon. Det er ikke et krav at du gjør dette før bruksendring, men vær klar over at en bruksendring kan gjøre radonproblemet verre.",
                       "show": {
                         "field": "radonLevel",
@@ -1591,7 +1590,7 @@
                     {
                       "id": "radonInfo100",
                       "type": "Text",
-                      "heading":
+                      "text":
                         "Randonnivået er greit - under 100 Bq/m<sup>3</sup> er det ikke nødvendig å gjøre tiltak mot radon.",
                       "show": {
                         "field": "radonLevel",
@@ -1618,14 +1617,14 @@
             {
               "id": "warmRoomYes",
               "type": "Answer",
-              "text":
+              "heading":
                 "Ja, rommet er godt nok isolert eller jeg skal isolere rommet så det vil holde minst 19 grader gjennom vinteren",
               "value": "yes"
             },
             {
               "id": "warmRoomNo",
               "type": "Answer",
-              "text": "Nei, rommet blir kaldere enn 19 grader om vinteren",
+              "heading": "Nei, rommet blir kaldere enn 19 grader om vinteren",
               "value": "no"
             }
           ]
@@ -1643,7 +1642,7 @@
             {
               "id": "warmRoomError.msg",
               "type": "Text",
-              "heading":
+              "text":
                 "Rommet blir for kaldt til å bruke det til boligrom. Du må isolere rommet mer hvis du skal bruksendre."
             }
           ]
