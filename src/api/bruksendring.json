@@ -667,7 +667,7 @@
                 "Denne delen av veiviseren skal gi deg en pekepinn på om bruksendringen du ønsker å gjøre er innenfor lovverket. Da slipper du eventuelt å bruke tid på en søknad til kommunen for en bruk av rommet som ikke er lovlig.",
               "children": [
                 {
-                  "type": "group",
+                  "type": "Group",
                   "simple": true,
                   "children": [
                     {
@@ -820,6 +820,180 @@
                       }
                     }
                   ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page4",
+      "type": "Page",
+      "heading": "Boligen din",
+      "lead":
+        "<p>Du har sagt du vil bruksendre et rom som:<p><ul><li>er søkt oppført før 1. juli 2011</li><li>ligger inntil hoveddel fra før</li></ul><p>På grunn av dette, trenger du kun å følge noen utvalgte tekniske krav. For å finne ut om det er mulig for rommet å oppfylle kravene, kan du ta resten av veiviseren.</p><p>Har du tenkt til å bruke en fagperson til å gjøre jobben? Da kan du si til fagpersonen at hun/han kan følge de forenklede reglene for bruksendring. Disse finnes i byggteknisk forskrift (TEK17) <a href=\"https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/1/1-2/\">paragraf 1-2 åttende ledd</a>",
+      "children": [
+        {
+          "id": "naturalDisasterArea",
+          "property": "naturalDisasterArea",
+          "type": "Radio",
+          "heading": "Ligger boligen din i et flom- eller skredutsatt område?",
+          "image": {
+            "url": "/img/12b@2x.png",
+            "alt": "Fareskilt med utropstegn"
+          },
+          "text":
+            "<p>Det er ditt ansvar å sørge for at bygningen plasseres på sikker grunn. Du må derfor undersøke om det er fare for ras, flom, stormflo og skred, inklusive kvikkleireskred, der du skal bygge.<p></p>Er du i tvil om grunnen er sikker, må du kontakte kommunen.</p><img src=\"/img/ras.jpeg\" alt=\"Ras\">",
+          "options": [
+            {
+              "id": "naturalDisasterArea.yes",
+              "type": "Answer",
+              "heading":
+                "Ja, jeg skal bygge i et område som er flom- eller rasutsatt, eller hvor grunnen ikke er sikker",
+              "value": "yes"
+            },
+            {
+              "id": "naturalDisasterArea.no",
+              "type": "Answer",
+              "heading":
+                "Nei, jeg skal ikke bygge i et flom- eller rasutsatt område eller område med usikker grunn",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "naturalDisasterAreaYesError",
+          "type": "Error",
+          "warning": true,
+
+          "hidden": {
+            "field": "naturalDisasterArea",
+            "operator": "neq",
+            "value": "yes"
+          },
+
+          "children": [
+            {
+              "id": "naturalDisasterAreaYesError.msg",
+              "type": "Text",
+              "warning": true,
+              "heading":
+                "Siden området er flom- eller rasutsatt er det ikke sikkert tekniske krav til sikkerhet er oppfylt. Snakk med kommunen for å finne ut om du kan bruksendre et rom i området på tross av flom- eller rasfaren."
+            }
+          ]
+        },
+        {
+          "id": "alreadyApprovedMainPart",
+          "property": "alreadyApprovedMainPart",
+          "type": "Radio",
+          "heading": "Er det godkjent hoveddel i etasjen rommet ligger i fra før?",
+          "text":
+            "Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.  Hoveddelen må være lovlig og godkjent.",
+          "options": [
+            {
+              "id": "alreadyApprovedMainPart.yes",
+              "type": "Answer",
+              "heading":
+                "Ja, rommet jeg vil bruksendre ligger i en etasje hvor det finnes enten oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.",
+              "value": "yes",
+              "image": {
+                "url": "/img/12.png",
+                "alt": "Room"
+              }
+            },
+            {
+              "id": "alreadyApprovedMainPart.no",
+              "type": "Answer",
+              "heading":
+                "Nei, rommet jeg vil bruksendre ligger i en etasje hvor det kun finnes rom som er tilleggsdel, som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.",
+              "value": "no",
+              "image": {
+                "url": "/img/13.png",
+                "alt": "Room"
+              }
+            }
+          ]
+        },
+        {
+          "type": "Group",
+          "simple": true,
+          "children": [
+            {
+              "id": "basementOrAttic",
+              "property": "basementOrAttic",
+              "type": "Radio",
+              "heading": "Ligger rommet du skal endre, i en kjeller eller på et loft?",
+              "image": {
+                "url": "/img/13a@2x.png",
+                "alt": "Loft eller kjeller illustrert"
+              },
+
+              "hidden": {
+                "field": "alreadyApprovedMainPart",
+                "operator": "neq",
+                "value": "no"
+              },
+
+              "options": [
+                {
+                  "id": "basementOrAttic.basement",
+                  "type": "Answer",
+                  "heading":
+                    "Ja, i en kjeller eller underetasje (helt eller delvis under bakkenivå)",
+                  "value": "basement"
+                },
+                {
+                  "id": "basementOrAttic.attic",
+                  "type": "Answer",
+                  "heading": "Ja, på et loft",
+                  "value": "attic"
+                },
+                {
+                  "id": "basementOrAttic.no",
+                  "type": "Answer",
+                  "heading": "Nei, ingen av delene",
+                  "value": "no"
+                }
+              ]
+            },
+            {
+              "id": "noAtticResult",
+              "type": "Result",
+              "hidden": {
+                "field": "basementOrAttic",
+                "operator": "neq",
+                "value": "no"
+              },
+              "children": [
+                {
+                  "id": "basementOrAtticNoResult",
+                  "type": "Result",
+                  "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+                  "errorheading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+                  "lead":
+                    "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ.",
+                  "errorlead":
+                    "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ."
+                }
+              ]
+            },
+            {
+              "id": "atticLoadError",
+              "type": "Error",
+              "warning": true,
+              "hidden": {
+                "field": "basementOrAttic",
+                "operator": "neq",
+                "value": "attic"
+              },
+              "children": [
+                {
+                  "id": "atticLoadError.msg",
+                  "type": "Text",
+                  "warning": true,
+                  "heading":
+                    "Du må sjekke om gulvet på loftet tåler den nye belastningen. Dette er dessverre for komplisert til at veiviseren kan hjelpe deg med det."
                 }
               ]
             }
