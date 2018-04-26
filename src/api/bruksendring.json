@@ -75,6 +75,7 @@
           "id": "houseTypeGroup",
           "type": "Group",
           "simple": false,
+          "heading": "Om din bolig",
           "children": [
             {
               "id": "houseType",
@@ -353,7 +354,7 @@
                               "id": "roomNow",
                               "property": "roomNow",
                               "type": "Radio",
-                              "heading": "Hva er rommet ditt nå?",
+                              "heading": "Hva slags del skal rommet endres til/fra?",
                               "text":
                                 "<p>Vi deler boliger inn i hoveddel og tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.</p>",
                               "options": [
