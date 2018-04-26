@@ -595,7 +595,7 @@
                       ]
                     },
                     "errorheading": "Du må søke om lov til å endre rommet",
-                    "lead": "<p>Du har svart  at du får toalett og minst ett rom til som er hoveddel, men at det ikke er plass til sofa eller seng i denne delen av boligen. Du skal derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Bruk dette søknadsskjemaet:</p><a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra tilleggsdel til hoveddel</li><li>Det blir mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Du får plass til toalett/vask men ikke plass til seng</li></ul>",
+                    "lead": "<p>Du har svart at du får toalett og minst ett rom til som er hoveddel, men at det ikke er plass til sofa eller seng i denne delen av boligen. Du skal derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Bruk dette søknadsskjemaet:</p><a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra tilleggsdel til hoveddel</li><li>Det blir mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Du får plass til toalett/vask men ikke plass til seng</li></ul>",
                     "errorlead": "<p>Du har svart  at du får toalett og minst ett rom til som er hoveddel, men at det ikke er plass til sofa eller seng i denne delen av boligen. Du skal derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Bruk dette søknadsskjemaet:</p><a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra tilleggsdel til hoveddel</li><li>Det blir mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Du får plass til toalett/vask men ikke plass til seng</li></ul>"
                   },
                   {
@@ -876,6 +876,11 @@
           "id": "basementOrAtticGroup",
           "type": "Group",
           "simple": true,
+          "show": {
+            "field": "alreadyApprovedMainPart",
+            "operator": "eq",
+            "value": "no"
+          },
           "children": [{
               "id": "basementOrAttic",
               "property": "basementOrAttic",
@@ -885,13 +890,6 @@
                 "url": "/img/13a@2x.png",
                 "alt": "Loft eller kjeller illustrert"
               },
-
-              "show": {
-                "field": "alreadyApprovedMainPart",
-                "operator": "eq",
-                "value": "no"
-              },
-
               "options": [{
                   "id": "basementOrAttic.basement",
                   "type": "Answer",
