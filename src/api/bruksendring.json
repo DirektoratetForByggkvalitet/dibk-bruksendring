@@ -74,7 +74,7 @@
         {
           "id": "houseTypeGroup",
           "type": "Group",
-          "simple": true,
+          "simple": false,
           "children": [
             {
               "id": "houseType",
