@@ -74,7 +74,8 @@
         {
           "id": "houseTypeGroup",
           "type": "Group",
-          "simple": true,
+          "simple": false,
+          "heading": "Om din bolig",
           "children": [
             {
               "id": "houseType",
@@ -229,26 +230,138 @@
                 "Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel."
             },
             {
-              "id": "roomChangeBranch",
+              "id": "commonArea",
+              "property": "commonArea",
+              "type": "Radio",
+              "show": {
+                "field": "$computed.multiUnitHouse",
+                "operator": "eq",
+                "value": true
+              },
+              "heading": "Kommer endringene dine til å påvirke fellesarealet?",
+              "image": {
+                "url": "/img/3b@2x.png",
+                "alt": "Hus"
+              },
+              "text":
+                "Endringene dine påvirker fellesarealet hvis du gjør om loftsbod eller kjellerbod, eller hvis du skal legge rør, luftekanaler eller noe annet utenfor leiligheten din.<img src=\"/img/fellesareal.png\" alt=\"Endringer i fellesareal\" />",
+              "options": [
+                {
+                  "id": "commonArea.yes",
+                  "type": "Answer",
+                  "heading": "Ja, det blir endringer i fellesarealene.",
+                  "value": "yes"
+                },
+                {
+                  "id": "commonArea.no",
+                  "type": "Answer",
+                  "heading": "Nei, endringene blir kun inne i boligen min.",
+                  "value": "no"
+                }
+              ]
+            },
+            {
+              "id": "changesToCommonArea",
+              "type": "Result",
+              "show": {
+                "field": "commonArea",
+                "operator": "eq",
+                "value": "yes"
+              },
+              "heading": "Du vil gjøre en endring i fellesarealet",
+              "errorheading": "Du vil gjøre en endring i fellesarealet",
+              "lead":
+                "Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren!",
+              "errorlead":
+                "Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren!"
+            },
+            {
+              "id": "roomHeight",
+              "property": "roomHeight",
+              "type": "Radio",
+              "heading": "Er rommet du vil endre på 2 meter eller høyere?",
+              "text": "<img src=\"/img/minst2meter.png\" alt=\"Minst 2 meter\" />",
+              "show": {
+                "field": "commonArea",
+                "operator": "eq",
+                "value": "no"
+              },
+              "options": [
+                {
+                  "id": "roomHeight.yes",
+                  "type": "Answer",
+                  "heading": "Ja, rommet er 2 meter eller høyere",
+                  "value": "yes"
+                },
+                {
+                  "id": "roomHeight.no",
+                  "type": "Answer",
+                  "heading": "Nei, rommet er lavere enn 2 meter",
+                  "value": "no"
+                }
+              ]
+            },
+            {
+              "id": "roomHeightLessThan2",
+              "type": "Result",
+
+              "show": {
+                "field": "roomHeight",
+                "operator": "eq",
+                "value": "no"
+              },
+
+              "heading": "Rommet er lavere enn to meter",
+              "errorheading": "Rommet er lavere enn to meter",
+              "lead":
+                "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Kan du øke romhøyden? Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent.  Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil. Takk for at du brukte veilederen!</p>",
+              "errorlead":
+                "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Kan du øke romhøyden? Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent.  Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil. Takk for at du brukte veilederen!</p>"
+            },
+            {
+              "id": "roomNowGroup",
               "type": "Branch",
+              "heading": "Hva slags del skal rommet endres til/fra?",
+              "text":
+                "<p>Vi deler boliger inn i hoveddel og tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.</p>",
               "branches": [
                 {
                   "test": {
-                    "type": "or",
-                    "clauses": [
-                      {
-                        "field": "hvilkenBoenhet",
-                        "operator": "eq",
-                        "value": "own"
-                      },
-                      {
-                        "field": "hvilkenBoenhet",
-                        "operator": "eq",
-                        "value": "other"
-                      }
-                    ]
+                    "field": "roomHeight",
+                    "operator": "eq",
+                    "value": "yes"
                   },
                   "children": [
+                    {
+                      "id": "roomNow",
+                      "property": "roomNow",
+                      "type": "Radio",
+                      "heading": "Hva er rommet ditt nå?",
+                      "options": [
+                        {
+                          "id": "roomNow.main",
+                          "type": "Answer",
+                          "image": {
+                            "url": "/img/hoveddel.png",
+                            "alt": "Hoveddel"
+                          },
+                          "heading": "Hoveddel",
+                          "text":
+                            "Rommet jeg vil endre er nå en del av hoveddel, altså godkjent som oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.",
+                          "value": "main"
+                        },
+                        {
+                          "field": "hvilkenBoenhet",
+                          "operator": "eq",
+                          "value": "own"
+                        },
+                        {
+                          "field": "hvilkenBoenhet",
+                          "operator": "eq",
+                          "value": "other"
+                        }
+                      ]
+                    },
                     {
                       "id": "commonArea",
                       "property": "commonArea",
