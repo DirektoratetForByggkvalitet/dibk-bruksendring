@@ -6,8 +6,7 @@
   "computed": {
     "multiUnitHouse": {
       "type": "or",
-      "clauses": [
-        {
+      "clauses": [{
           "field": "houseType",
           "operator": "eq",
           "value": "leilighet"
@@ -19,8 +18,7 @@
         },
         {
           "type": "and",
-          "clauses": [
-            {
+          "clauses": [{
               "field": "houseType",
               "operator": "eq",
               "value": "enebolig"
@@ -36,8 +34,7 @@
     },
     "mainToSecondary": {
       "type": "and",
-      "clauses": [
-        {
+      "clauses": [{
           "field": "roomNow",
           "operator": "eq",
           "value": "main"
@@ -51,8 +48,7 @@
     },
     "secondaryToSecondary": {
       "type": "and",
-      "clauses": [
-        {
+      "clauses": [{
           "field": "roomNow",
           "operator": "eq",
           "value": "secondary"
@@ -65,24 +61,20 @@
       ]
     }
   },
-  "schema": [
-    {
+  "schema": [{
       "id": "start",
       "type": "Page",
       "heading": "Rommet du skal endre",
-      "children": [
-        {
+      "children": [{
           "id": "houseTypeGroup",
           "type": "Group",
           "simple": true,
-          "children": [
-            {
+          "children": [{
               "id": "houseType",
               "property": "houseType",
               "type": "Radio",
               "heading": "Jeg skal gjøre om rom i:",
-              "options": [
-                {
+              "options": [{
                   "id": "houseType.enebolig",
                   "type": "Answer",
                   "heading": "Enebolig",
@@ -148,10 +140,8 @@
                 "url": "/img/1b@2x.png",
                 "alt": "Hus med hybel"
               },
-              "text":
-                "Om du har en hybel eller utleiedel i eneboligen din, har du for eksempel flere boenheter.",
-              "options": [
-                {
+              "text": "Om du har en hybel eller utleiedel i eneboligen din, har du for eksempel flere boenheter.",
+              "options": [{
                   "id": "multiEnebolig.yes",
                   "type": "Answer",
                   "heading": "Ja",
@@ -169,24 +159,22 @@
               "id": "hvilkenBoenhet",
               "property": "hvilkenBoenhet",
               "type": "Radio",
-              "hide": {
-                "type": "or",
-                "clauses": [
-                  {
+              "show": {
+                "type": "and",
+                "clauses": [{
                     "field": "houseType",
-                    "operator": "neq",
+                    "operator": "eq",
                     "value": "enebolig"
                   },
                   {
                     "field": "multiEnebolig",
                     "operator": "eq",
-                    "value": "no"
+                    "value": "yes"
                   }
                 ]
               },
               "heading": "Hvilken boenhet skal du gjøre noe med?",
-              "options": [
-                {
+              "options": [{
                   "id": "hvilkenBoenhet.own",
                   "type": "Answer",
                   "heading": "Kun den delen jeg selv bor i",
@@ -211,8 +199,7 @@
               "type": "Result",
               "show": {
                 "type": "or",
-                "clauses": [
-                  {
+                "clauses": [{
                     "field": "hvilkenBoenhet",
                     "operator": "eq",
                     "value": "both"
@@ -225,189 +212,200 @@
                 ]
               },
               "heading": "Veiviseren dekker ikke dette",
-              "lead":
-                "Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel."
-            },
-            {
-              "id": "commonArea",
-              "property": "commonArea",
-              "type": "Radio",
-              "show": {
-                "field": "$computed.multiUnitHouse",
-                "operator": "eq",
-                "value": true
-              },
-              "heading": "Kommer endringene dine til å påvirke fellesarealet?",
-              "image": {
-                "url": "/img/3b@2x.png",
-                "alt": "Hus"
-              },
-              "text":
-                "Endringene dine påvirker fellesarealet hvis du gjør om loftsbod eller kjellerbod, eller hvis du skal legge rør, luftekanaler eller noe annet utenfor leiligheten din.<img src=\"/img/fellesareal.png\" alt=\"Endringer i fellesareal\" />",
-              "options": [
+              "lead": "Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel."
+            }
+          ]
+        },
+        {
+          "id": "roomChangeBranch",
+          "type": "Branch",
+          "branches": [{
+            "test": {
+              "type": "or",
+              "clauses": [{
+                  "field": "hvilkenBoenhet",
+                  "operator": "eq",
+                  "value": "own"
+                },
                 {
-                  "id": "commonArea.yes",
-                  "type": "Answer",
-                  "heading": "Ja, det blir endringer i fellesarealene.",
+                  "field": "hvilkenBoenhet",
+                  "operator": "eq",
+                  "value": "other"
+                }
+              ]
+            },
+            "children": [{
+                "id": "commonArea",
+                "property": "commonArea",
+                "type": "Radio",
+                "show": {
+                  "field": "$computed.multiUnitHouse",
+                  "operator": "eq",
+                  "value": true
+                },
+                "heading": "Kommer endringene dine til å påvirke fellesarealet?",
+                "image": {
+                  "url": "/img/3b@2x.png",
+                  "alt": "Hus"
+                },
+                "text": "Endringene dine påvirker fellesarealet hvis du gjør om loftsbod eller kjellerbod, eller hvis du skal legge rør, luftekanaler eller noe annet utenfor leiligheten din.<img src=\"/img/fellesareal.png\" alt=\"Endringer i fellesareal\" />",
+                "options": [{
+                    "id": "commonArea.yes",
+                    "type": "Answer",
+                    "heading": "Ja, det blir endringer i fellesarealene.",
+                    "value": "yes"
+                  },
+                  {
+                    "id": "commonArea.no",
+                    "type": "Answer",
+                    "heading": "Nei, endringene blir kun inne i boligen min.",
+                    "value": "no"
+                  }
+                ]
+              },
+              {
+                "id": "changesToCommonArea",
+                "type": "Result",
+                "show": {
+                  "field": "commonArea",
+                  "operator": "eq",
                   "value": "yes"
                 },
-                {
-                  "id": "commonArea.no",
-                  "type": "Answer",
-                  "heading": "Nei, endringene blir kun inne i boligen min.",
+                "heading": "Du vil gjøre en endring i fellesarealet",
+                "errorheading": "Du vil gjøre en endring i fellesarealet",
+                "lead": "Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren!",
+                "errorlead": "Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren!"
+              },
+              {
+                "id": "roomHeight",
+                "property": "roomHeight",
+                "type": "Radio",
+                "heading": "Er rommet du vil endre på 2 meter eller høyere?",
+                "text": "<img src=\"/img/minst2meter.png\" alt=\"Minst 2 meter\" />",
+                "show": {
+                  "field": "commonArea",
+                  "operator": "eq",
                   "value": "no"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "changesToCommonArea",
-          "type": "Result",
-          "show": {
-            "field": "commonArea",
-            "operator": "eq",
-            "value": "yes"
-          },
-          "heading": "Du vil gjøre en endring i fellesarealet",
-          "errorheading": "Du vil gjøre en endring i fellesarealet",
-          "lead":
-            "Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren!",
-          "errorlead":
-            "Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren!"
-        },
-        {
-          "id": "roomHeight",
-          "property": "roomHeight",
-          "type": "Radio",
-          "heading": "Er rommet du vil endre på 2 meter eller høyere?",
-          "text": "<img src=\"/img/minst2meter.png\" alt=\"Minst 2 meter\" />",
-          "options": [
-            {
-              "id": "roomHeight.yes",
-              "type": "Answer",
-              "heading": "Ja, rommet er 2 meter eller høyere",
-              "value": "yes"
-            },
-            {
-              "id": "roomHeight.no",
-              "type": "Answer",
-              "heading": "Nei, rommet er lavere enn 2 meter",
-              "value": "no"
-            }
-          ]
-        },
-        {
-          "id": "roomHeightLessThan2",
-          "type": "Result",
-
-          "show": {
-            "field": "roomHeight",
-            "operator": "eq",
-            "value": "no"
-          },
-
-          "heading": "Rommet er lavere enn to meter",
-          "errorheading": "Rommet er lavere enn to meter",
-          "lead":
-            "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Kan du øke romhøyden? Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent.  Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil. Takk for at du brukte veilederen!</p>",
-          "errorlead":
-            "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Kan du øke romhøyden? Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent.  Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil. Takk for at du brukte veilederen!</p>"
-        },
-        {
-          "id": "roomNowGroup",
-          "type": "Group",
-          "simple": true,
-          "children": [
-            {
-              "id": "roomNow",
-              "property": "roomNow",
-              "type": "Radio",
-              "heading": "Hva er rommet ditt nå?",
-              "text":
-                "<p>Vi deler boliger inn i hoveddel og tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.</p>",
-              "options": [
-                {
-                  "id": "roomNow.main",
-                  "type": "Answer",
-                  "image": {
-                    "url": "/img/hoveddel.png",
-                    "alt": "Hoveddel"
-                  },
-                  "heading": "Hoveddel",
-                  "text":
-                    "Rommet jeg vil endre er nå en del av hoveddel, altså godkjent som oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.",
-                  "value": "main"
                 },
-                {
-                  "id": "roomNow.secondary",
-                  "type": "Answer",
-                  "image": {
-                    "url": "/img/tilleggsdel.png",
-                    "alt": "Tilleggsdel"
+                "options": [{
+                    "id": "roomHeight.yes",
+                    "type": "Answer",
+                    "heading": "Ja, rommet er 2 meter eller høyere",
+                    "value": "yes"
                   },
-                  "heading": "Tilleggsdel",
-                  "text":
-                    "Rommet jeg vil endre er nå del av tilleggsdel, altså godkjent som enten bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.",
-                  "value": "secondary"
-                }
-              ]
-            },
-            {
-              "id": "roomChange",
-              "property": "roomChange",
-              "type": "Radio",
-              "heading": "Hva vil du endre rommet til?",
-              "options": [
-                {
-                  "id": "roomChange.main",
-                  "type": "Answer",
-                  "heading": "Hoveddel",
-                  "text":
-                    "Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.",
-                  "value": "main"
+                  {
+                    "id": "roomHeight.no",
+                    "type": "Answer",
+                    "heading": "Nei, rommet er lavere enn 2 meter",
+                    "value": "no"
+                  }
+                ]
+              },
+              {
+                "id": "roomHeightLessThan2",
+                "type": "Result",
+
+                "show": {
+                  "field": "roomHeight",
+                  "operator": "eq",
+                  "value": "no"
                 },
-                {
-                  "id": "roomChange.secondary",
-                  "type": "Answer",
-                  "heading": "Tilleggsdel",
-                  "text":
-                    "Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.",
-                  "value": "secondary"
-                }
-              ]
-            },
-            {
-              "id": "mainToSecondary",
-              "type": "Result",
-              "heading": "Fra hoveddel til tilleggsdel",
-              "errorheading": "Fra hoveddel til tilleggsdel",
-              "lead":
-                "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Ønsker du få rommet godkjent som tilleggsdel? Da må du søke kommunen.  Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p>",
-              "errorlead":
-                "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Ønsker du få rommet godkjent som tilleggsdel? Da må du søke kommunen.  Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p>",
-              "show": {
-                "field": "$computed.mainToSecondary",
-                "operator": "eq",
-                "value": true
+
+                "heading": "Rommet er lavere enn to meter",
+                "errorheading": "Rommet er lavere enn to meter",
+                "lead": "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Kan du øke romhøyden? Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent.  Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil. Takk for at du brukte veilederen!</p>",
+                "errorlead": "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Kan du øke romhøyden? Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent.  Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil. Takk for at du brukte veilederen!</p>"
+              },
+              {
+                "id": "roomNowGroup",
+                "type": "Group",
+                "show": {
+                  "field": "roomHeight",
+                  "operator": "eq",
+                  "value": "yes"
+                },
+                "simple": true,
+                "children": [{
+                    "id": "roomNow",
+                    "property": "roomNow",
+                    "type": "Radio",
+                    "heading": "Hva er rommet ditt nå?",
+                    "text": "<p>Vi deler boliger inn i hoveddel og tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.</p>",
+                    "options": [{
+                        "id": "roomNow.main",
+                        "type": "Answer",
+                        "image": {
+                          "url": "/img/hoveddel.png",
+                          "alt": "Hoveddel"
+                        },
+                        "heading": "Hoveddel",
+                        "text": "Rommet jeg vil endre er nå en del av hoveddel, altså godkjent som oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.",
+                        "value": "main"
+                      },
+                      {
+                        "id": "roomNow.secondary",
+                        "type": "Answer",
+                        "image": {
+                          "url": "/img/tilleggsdel.png",
+                          "alt": "Tilleggsdel"
+                        },
+                        "heading": "Tilleggsdel",
+                        "text": "Rommet jeg vil endre er nå del av tilleggsdel, altså godkjent som enten bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.",
+                        "value": "secondary"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "roomChange",
+                    "property": "roomChange",
+                    "type": "Radio",
+                    "heading": "Hva vil du endre rommet til?",
+                    "options": [{
+                        "id": "roomChange.main",
+                        "type": "Answer",
+                        "heading": "Hoveddel",
+                        "text": "Rommet skal gjøres om til hoveddel, det vil si enten som oppholdsrom, stue, soverom, kjøkken, entré, bad, dusjrom, toalett, vaskerom, badstue, trimrom, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.",
+                        "value": "main"
+                      },
+                      {
+                        "id": "roomChange.secondary",
+                        "type": "Answer",
+                        "heading": "Tilleggsdel",
+                        "text": "Rommet skal gjøres om til tilleggsdel, det vil si enten som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.",
+                        "value": "secondary"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "mainToSecondary",
+                    "type": "Result",
+                    "heading": "Fra hoveddel til tilleggsdel",
+                    "errorheading": "Fra hoveddel til tilleggsdel",
+                    "lead": "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Ønsker du få rommet godkjent som tilleggsdel? Da må du søke kommunen.  Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p>",
+                    "errorlead": "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Ønsker du få rommet godkjent som tilleggsdel? Da må du søke kommunen.  Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p>",
+                    "show": {
+                      "field": "$computed.mainToSecondary",
+                      "operator": "eq",
+                      "value": true
+                    }
+                  },
+                  {
+                    "id": "secondaryToSecondary",
+                    "type": "Result",
+                    "heading": "Fra tilleggsdel til tilleggsdel",
+                    "errorheading": "Fra tilleggsdel til tilleggsdel",
+                    "lead": "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>",
+                    "errorlead": "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>",
+                    "show": {
+                      "field": "$computed.secondaryToSecondary",
+                      "operator": "eq",
+                      "value": true
+                    }
+                  }
+                ]
               }
-            },
-            {
-              "id": "secondaryToSecondary",
-              "type": "Result",
-              "heading": "Fra tilleggsdel til tilleggsdel",
-              "errorheading": "Fra tilleggsdel til tilleggsdel",
-              "lead":
-                "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>",
-              "errorlead":
-                "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke. Du kan gjøre mindre endringer på rommet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p>",
-              "show": {
-                "field": "$computed.secondaryToSecondary",
-                "operator": "eq",
-                "value": true
-              }
-            }
-          ]
+            ]
+          }]
         }
       ]
     },
@@ -415,8 +413,7 @@
       "id": "page2",
       "type": "Page",
       "heading": "Rommet etter endringen",
-      "children": [
-        {
+      "children": [{
           "id": "roomAccessAfterChange",
           "property": "roomAccessAfterChange",
           "type": "Radio",
@@ -425,8 +422,7 @@
             "url": "/img/templeilighet2.png",
             "alt": "Leilighet"
           },
-          "options": [
-            {
+          "options": [{
               "id": "roomAccessAfterChange.inside",
               "type": "Answer",
               "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
@@ -461,8 +457,7 @@
           "type": "Result",
           "show": {
             "type": "or",
-            "clauses": [
-              {
+            "clauses": [{
                 "field": "roomNow",
                 "operator": "eq",
                 "value": "main"
@@ -476,369 +471,323 @@
           },
           "heading": "Du er i mål!",
           "errorheading": "Du er i mål!",
-          "lead":
-            "<p>Du har svart at rommet er godkjent som hoveddel, og at du fortsatt ønsker å bruke det som hoveddel. Beholder du rommet som det er, står du fritt til å endre bruken fra for eksempel soverom til stue uten å søke. Du kan gjøre mindre endringer på rommmet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering. Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p>",
-          "errorlead":
-            "<p>Du har svart at rommet er godkjent som hoveddel, og at du fortsatt ønsker å bruke det som hoveddel. Beholder du rommet som det er, står du fritt til å endre bruken fra for eksempel soverom til stue uten å søke. Du kan gjøre mindre endringer på rommmet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering. Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p>"
+          "lead": "<p>Du har svart at rommet er godkjent som hoveddel, og at du fortsatt ønsker å bruke det som hoveddel. Beholder du rommet som det er, står du fritt til å endre bruken fra for eksempel soverom til stue uten å søke. Du kan gjøre mindre endringer på rommmet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering. Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p>",
+          "errorlead": "<p>Du har svart at rommet er godkjent som hoveddel, og at du fortsatt ønsker å bruke det som hoveddel. Beholder du rommet som det er, står du fritt til å endre bruken fra for eksempel soverom til stue uten å søke. Du kan gjøre mindre endringer på rommmet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering. Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p>"
         },
         {
           "type": "Branch",
-          "branches": [
-            {
-              "test": {
-                "field": "roomAccessAfterChange",
-                "operator": "eq",
-                "value": "outside"
-              },
-              "children": [
-                {
-                  "id": "toiletDetachedHouse",
-                  "property": "toiletDetachedHouse",
-                  "type": "Radio",
-                  "heading": "Tilgang til toalett og håndvask",
-                  "options": [
-                    {
-                      "id": "toiletDetachedHouse.yes",
-                      "type": "Answer",
-                      "heading": "Ja",
-                      "value": "yes"
-                    },
-                    {
-                      "id": "toiletDetachedHouse.no",
-                      "type": "Answer",
-                      "heading": "Nei",
-                      "value": "no"
-                    }
-                  ]
-                },
-                {
-                  "id": "noToiletResultPage",
-                  "type": "Result",
-                  "heading": "<p>Du må ha en dass</p>",
-                  "show": {
-                    "field": "toiletDetachedHouse",
-                    "operator": "eq",
+          "branches": [{
+            "test": {
+              "field": "roomAccessAfterChange",
+              "operator": "eq",
+              "value": "outside"
+            },
+            "children": [{
+                "id": "toiletDetachedHouse",
+                "property": "toiletDetachedHouse",
+                "type": "Radio",
+                "heading": "Tilgang til toalett og håndvask",
+                "options": [{
+                    "id": "toiletDetachedHouse.yes",
+                    "type": "Answer",
+                    "heading": "Ja",
+                    "value": "yes"
+                  },
+                  {
+                    "id": "toiletDetachedHouse.no",
+                    "type": "Answer",
+                    "heading": "Nei",
                     "value": "no"
                   }
-                },
-                {
-                  "id": "toiletIsEntireMainPart",
-                  "property": "toiletIsEntireMainPart",
-                  "type": "Radio",
-                  "heading": "Blir toalettet det eneste rommet som er hoveddel?",
-                  "options": [
-                    {
-                      "id": "toiletIsEntireMainPart.yes",
-                      "type": "Answer",
-                      "heading": "Ja",
-                      "value": "yes"
-                    },
-                    {
-                      "id": "toiletIsEntireMainPart.no",
-                      "type": "Answer",
-                      "heading": "Nei",
-                      "value": "no"
-                    }
-                  ]
-                },
-                {
-                  "id": "toiletIsEntireMainPartResult",
-                  "type": "Result",
-                  "heading": "<p>Du må søke</p>",
-                  "show": {
-                    "field": "toiletIsEntireMainPart",
-                    "operator": "eq",
-                    "value": "yes"
-                  }
-                },
-                {
-                  "id": "bedOrSofa",
-                  "property": "bedOrSofa",
-                  "type": "Radio",
-                  "heading":
-                    "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
-                  "image": {
-                    "url": "/img/tempenebolig.png",
-                    "alt": "Enebolig"
-                  },
-                  "options": [
-                    {
-                      "id": "bedOrSofa.yes",
-                      "type": "Answer",
-                      "heading": "Ja",
-                      "value": "yes"
-                    },
-                    {
-                      "id": "bedOrSofa.no",
-                      "type": "Answer",
-                      "heading": "Nei",
-                      "value": "no"
-                    }
-                  ]
-                },
-                {
-                  "id": "bedOrSofaResult",
-                  "type": "Result",
-                  "heading": "Du må søke om lov til å endre rommet",
-                  "show": {
-                    "type": "or",
-                    "clauses": [
-                      {
-                        "field": "bedOrSofa",
-                        "operator": "eq",
-                        "value": "no"
-                      },
-                      {
-                        "field": "roomNow",
-                        "operator": "eq",
-                        "value": "secondary"
-                      }
-                    ]
-                  },
-                  "errorheading": "Du må søke om lov til å endre rommet",
-                  "lead":
-                    "<p>Du har svart  at du får toalett og minst ett rom til som er hoveddel, men at det ikke er plass til sofa eller seng i denne delen av boligen. Du skal derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Bruk dette søknadsskjemaet:</p><a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra tilleggsdel til hoveddel</li><li>Det blir mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Du får plass til toalett/vask men ikke plass til seng</li></ul>",
-                  "errorlead":
-                    "<p>Du har svart  at du får toalett og minst ett rom til som er hoveddel, men at det ikke er plass til sofa eller seng i denne delen av boligen. Du skal derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Bruk dette søknadsskjemaet:</p><a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra tilleggsdel til hoveddel</li><li>Det blir mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Du får plass til toalett/vask men ikke plass til seng</li></ul>"
-                },
-                {
-                  "id": "bedOrSofaResultGoal",
-                  "type": "Result",
-                  "show": {
-                    "type": "or",
-                    "clauses": [
-                      {
-                        "field": "bedOrSofa",
-                        "operator": "eq",
-                        "value": "no"
-                      },
-                      {
-                        "field": "roomNow",
-                        "operator": "eq",
-                        "value": "main"
-                      }
-                    ]
-                  },
-                  "heading": "Du er i mål!",
-                  "errorheading": "Du er i mål!",
-                  "head":
-                    "<p>Du har svart at det blir bad/toalett og minst ett annet rom som er hoveddel i denne delen av boligen, men at det ikke er plass til sofa/seng i noen av rommene som er hoveddel.</p><p>Du kan gjøre mindre endringer på rommet uten å søke, som å:</p><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><p>Vil du gjøre andre endringer på rommet?</p><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p><p>Er det plass til seng i ett av rommene som er hoveddel?</p><p>Da må du endre svaret ditt på forrige spørsmål, for å få riktig informasjon om søknadstype og søknadsplikt.</p><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra hoveddel til hoveddel</li><li>Det blir ikke mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Får toalett/vask men ikke plass til seng</li></ul><p>Har du svart riktig?</p><p>Bruk vår veiviser for å finne ut hvilke byggeregler du må følge for å få rommet lovlig.</p>",
-                  "errorlead":
-                    "<p>Du har svart at det blir bad/toalett og minst ett annet rom som er hoveddel i denne delen av boligen, men at det ikke er plass til sofa/seng i noen av rommene som er hoveddel.</p><p>Du kan gjøre mindre endringer på rommet uten å søke, som å:</p><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><p>Vil du gjøre andre endringer på rommet?</p><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p><p>Er det plass til seng i ett av rommene som er hoveddel?</p><p>Da må du endre svaret ditt på forrige spørsmål, for å få riktig informasjon om søknadstype og søknadsplikt.</p><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra hoveddel til hoveddel</li><li>Det blir ikke mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Får toalett/vask men ikke plass til seng</li></ul><p>Har du svart riktig?</p><p>Bruk vår veiviser for å finne ut hvilke byggeregler du må følge for å få rommet lovlig.</p>"
+                ]
+              },
+              {
+                "id": "noToiletResultPage",
+                "type": "Result",
+                "heading": "<p>Du må ha en dass</p>",
+                "show": {
+                  "field": "toiletDetachedHouse",
+                  "operator": "eq",
+                  "value": "no"
                 }
-              ]
-            }
-          ]
+              },
+              {
+                "id": "toiletIsEntireMainPart",
+                "property": "toiletIsEntireMainPart",
+                "type": "Radio",
+                "heading": "Blir toalettet det eneste rommet som er hoveddel?",
+                "options": [{
+                    "id": "toiletIsEntireMainPart.yes",
+                    "type": "Answer",
+                    "heading": "Ja",
+                    "value": "yes"
+                  },
+                  {
+                    "id": "toiletIsEntireMainPart.no",
+                    "type": "Answer",
+                    "heading": "Nei",
+                    "value": "no"
+                  }
+                ]
+              },
+              {
+                "id": "toiletIsEntireMainPartResult",
+                "type": "Result",
+                "heading": "<p>Du må søke</p>",
+                "show": {
+                  "field": "toiletIsEntireMainPart",
+                  "operator": "eq",
+                  "value": "yes"
+                }
+              },
+              {
+                "id": "bedOrSofa",
+                "property": "bedOrSofa",
+                "type": "Radio",
+                "heading": "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                "image": {
+                  "url": "/img/tempenebolig.png",
+                  "alt": "Enebolig"
+                },
+                "options": [{
+                    "id": "bedOrSofa.yes",
+                    "type": "Answer",
+                    "heading": "Ja",
+                    "value": "yes"
+                  },
+                  {
+                    "id": "bedOrSofa.no",
+                    "type": "Answer",
+                    "heading": "Nei",
+                    "value": "no"
+                  }
+                ]
+              },
+              {
+                "id": "bedOrSofaResult",
+                "type": "Result",
+                "heading": "Du må søke om lov til å endre rommet",
+                "show": {
+                  "type": "or",
+                  "clauses": [{
+                      "field": "bedOrSofa",
+                      "operator": "eq",
+                      "value": "no"
+                    },
+                    {
+                      "field": "roomNow",
+                      "operator": "eq",
+                      "value": "secondary"
+                    }
+                  ]
+                },
+                "errorheading": "Du må søke om lov til å endre rommet",
+                "lead": "<p>Du har svart  at du får toalett og minst ett rom til som er hoveddel, men at det ikke er plass til sofa eller seng i denne delen av boligen. Du skal derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Bruk dette søknadsskjemaet:</p><a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra tilleggsdel til hoveddel</li><li>Det blir mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Du får plass til toalett/vask men ikke plass til seng</li></ul>",
+                "errorlead": "<p>Du har svart  at du får toalett og minst ett rom til som er hoveddel, men at det ikke er plass til sofa eller seng i denne delen av boligen. Du skal derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Bruk dette søknadsskjemaet:</p><a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra tilleggsdel til hoveddel</li><li>Det blir mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Du får plass til toalett/vask men ikke plass til seng</li></ul>"
+              },
+              {
+                "id": "bedOrSofaResultGoal",
+                "type": "Result",
+                "show": {
+                  "type": "or",
+                  "clauses": [{
+                      "field": "bedOrSofa",
+                      "operator": "eq",
+                      "value": "no"
+                    },
+                    {
+                      "field": "roomNow",
+                      "operator": "eq",
+                      "value": "main"
+                    }
+                  ]
+                },
+                "heading": "Du er i mål!",
+                "errorheading": "Du er i mål!",
+                "head": "<p>Du har svart at det blir bad/toalett og minst ett annet rom som er hoveddel i denne delen av boligen, men at det ikke er plass til sofa/seng i noen av rommene som er hoveddel.</p><p>Du kan gjøre mindre endringer på rommet uten å søke, som å:</p><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><p>Vil du gjøre andre endringer på rommet?</p><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p><p>Er det plass til seng i ett av rommene som er hoveddel?</p><p>Da må du endre svaret ditt på forrige spørsmål, for å få riktig informasjon om søknadstype og søknadsplikt.</p><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra hoveddel til hoveddel</li><li>Det blir ikke mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Får toalett/vask men ikke plass til seng</li></ul><p>Har du svart riktig?</p><p>Bruk vår veiviser for å finne ut hvilke byggeregler du må følge for å få rommet lovlig.</p>",
+                "errorlead": "<p>Du har svart at det blir bad/toalett og minst ett annet rom som er hoveddel i denne delen av boligen, men at det ikke er plass til sofa/seng i noen av rommene som er hoveddel.</p><p>Du kan gjøre mindre endringer på rommet uten å søke, som å:</p><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><p>Vil du gjøre andre endringer på rommet?</p><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p><p>Er det plass til seng i ett av rommene som er hoveddel?</p><p>Da må du endre svaret ditt på forrige spørsmål, for å få riktig informasjon om søknadstype og søknadsplikt.</p><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra hoveddel til hoveddel</li><li>Det blir ikke mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Får toalett/vask men ikke plass til seng</li></ul><p>Har du svart riktig?</p><p>Bruk vår veiviser for å finne ut hvilke byggeregler du må følge for å få rommet lovlig.</p>"
+              }
+            ]
+          }]
         }
       ]
     },
     {
-      "type": "Branch",
-      "branches": [
-        {
-          "test": {
-            "type": "and",
-            "clauses": [
-              {
-                "field": "roomNow",
+      "id": "page3",
+      "type": "Page",
+      "heading": "Regelverk for boligen",
+      "lead": "Denne delen av veiviseren skal gi deg en pekepinn på om bruksendringen du ønsker å gjøre er innenfor lovverket. Da slipper du eventuelt å bruke tid på en søknad til kommunen for en bruk av rommet som ikke er lovlig.",
+      "show": {
+        "type": "and",
+        "clauses": [{
+            "field": "roomNow",
+            "operator": "eq",
+            "value": "secondary"
+          },
+          {
+            "type": "or",
+            "clauses": [{
+                "field": "roomAccessAfterChange",
                 "operator": "eq",
-                "value": "secondary"
+                "value": "inside"
               },
               {
-                "type": "or",
-                "clauses": [
-                  {
-                    "field": "roomAccessAfterChange",
-                    "operator": "eq",
-                    "value": "inside"
-                  },
-                  {
-                    "field": "toiletDetachedHouse",
-                    "operator": "eq",
-                    "value": "no"
-                  }
-                ]
+                "field": "toiletDetachedHouse",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          }
+        ]
+      },
+      "children": [{
+        "id": "buildApplicationYearGroup",
+        "type": "Group",
+        "simple": true,
+        "children": [{
+            "id": "buildApplicationYear",
+            "property": "buildApplicationYear",
+            "type": "Radio",
+            "image": {
+              "url": "/img/9a@2x.png",
+              "alt": "Kalender"
+            },
+            "heading": "Når ble det søkt om å bygge boligen din?",
+            "text": "En gang i tiden er det blitt søkt om å sette opp boligen din til kommunen. Tidspunktet for søknaden er med og bestemmer hvilket regelverk som gjelder for deg. Er du i tvil kan du spørre kommunen din.",
+            "options": [{
+                "id": "buildApplicationYearBefore",
+                "type": "Answer",
+                "heading": "Før 1. juli 2011",
+                "value": "before"
+              },
+              {
+                "id": "buildApplicationYearAfter",
+                "type": "Answer",
+                "heading": "Fra og med 1. juli 2011",
+                "value": "after"
               }
             ]
           },
-          "children": [
-            {
-              "id": "page3",
-              "type": "Page",
-              "heading": "Regelverk for boligen",
-              "lead":
-                "Denne delen av veiviseren skal gi deg en pekepinn på om bruksendringen du ønsker å gjøre er innenfor lovverket. Da slipper du eventuelt å bruke tid på en søknad til kommunen for en bruk av rommet som ikke er lovlig.",
-              "children": [
+          {
+            "id": "mainReconstructionYear",
+            "property": "mainReconstructionYear",
+            "type": "Radio",
+            "heading": "Er det søkt om en hovedombygging fra og med 1. juli. 2011?",
+            "show": {
+              "field": "buildApplicationYear",
+              "operator": "eq",
+              "value": "after"
+            },
+            "image": {
+              "url": "/img/9b@2x.png",
+              "alt": "Kalender"
+            },
+            "text": "<p>En hovedombygging er oppgradering av hele bygningen slik at den fremstår som ny. Å bare pusse opp badet eller kjøkkenet er for eksempel ikke en hovedombygging.</p><p>Er du i tvil kan du spørre kommunen om det er søkt om en hovedombygging av bygningen din.</p>",
+            "options": [{
+                "id": "mainReconstructionYear.yes",
+                "type": "Answer",
+                "heading": "Ja, det har blitt søkt om en hovedombygging fra og med 1. juli 2011?",
+                "value": "yes"
+              },
+              {
+                "id": "mainReconstructionYear.no",
+                "type": "Answer",
+                "heading": "Nei",
+                "value": "no"
+              }
+            ]
+          },
+          {
+            "id": "divisionOrMerger",
+            "property": "divisionOrMerger",
+            "type": "Radio",
+            "show": {
+              "field": "mainReconstructionYear",
+              "operator": "eq",
+              "value": "no"
+            },
+            "heading": "Er det søkt om en oppdeling eller sammenslåing av boligen din etter 30. juni 2011?",
+            "text": "<p>Det som er boligen din i dag, er den et resultat av at:</p><ul><li>to boliger har blitt slått sammen til en bolig</li><li>en bolig har blitt delt opp i to mindre boliger</li></ul>",
+            "options": [{
+                "id": "divisionOrMerger.yes",
+                "type": "Answer",
+                "heading": "Ja",
+                "value": "yes"
+              },
+              {
+                "id": "divisionOrMerger.no",
+                "type": "Answer",
+                "heading": "Nei",
+                "value": "no"
+              }
+            ]
+          },
+          {
+            "id": "overUnderNextTooHovedRoom",
+            "property": "overUnderNextTooHovedRoom",
+            "type": "Radio",
+            "show": {
+              "field": "divisionOrMerger",
+              "operator": "eq",
+              "value": "no"
+            },
+            "heading": "Ligger rommet over, under eller inntil et rom som er hoveddel?",
+            "text": "<p>Er det et rom som er godkjent som hoveddel enten rett over,  under eller ved siden av rommet du vil endre på?</p><p>Hoveddel i en bolig er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring, som en bod.</p>",
+            "options": [{
+                "id": "overUnderNextTooHovedRoom.yes",
+                "type": "Answer",
+                "heading": "Ja, rommet ligger vegg-i-vegg, over eller under et rom som er hoveddel i dag.",
+                "value": "yes"
+              },
+              {
+                "id": "overUnderNextTooHovedRoom.no",
+                "type": "Answer",
+                "heading": "Nei, rommet grenser kun mot tilleggsdel",
+                "value": "no"
+              }
+            ]
+          },
+          {
+            "id": "overUnderNextTooHovedRoomResult",
+            "type": "Result",
+            "heading": "Du må følge byggereglene i TEK17",
+            "errorheading": "Du må følge byggereglene i TEK17",
+            "lead": "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
+            "errorlead": "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
+            "show": {
+              "type": "or",
+              "clauses": [{
+                  "field": "buildApplicationYear",
+                  "operator": "eq",
+                  "value": "after"
+                },
                 {
-                  "id": "buildApplicationYearGroup",
-                  "type": "Group",
-                  "simple": true,
-                  "children": [
-                    {
-                      "id": "buildApplicationYear",
-                      "property": "buildApplicationYear",
-                      "type": "Radio",
-                      "image": {
-                        "url": "/img/9a@2x.png",
-                        "alt": "Kalender"
-                      },
-                      "heading": "Når ble det søkt om å bygge boligen din?",
-                      "text":
-                        "En gang i tiden er det blitt søkt om å sette opp boligen din til kommunen. Tidspunktet for søknaden er med og bestemmer hvilket regelverk som gjelder for deg. Er du i tvil kan du spørre kommunen din.",
-                      "options": [
-                        {
-                          "id": "buildApplicationYearBefore",
-                          "type": "Answer",
-                          "heading": "Før 1. juli 2011",
-                          "value": "before"
-                        },
-                        {
-                          "id": "buildApplicationYearAfter",
-                          "type": "Answer",
-                          "heading": "Fra og med 1. juli 2011",
-                          "value": "after"
-                        }
-                      ]
-                    },
-                    {
-                      "id": "mainReconstructionYear",
-                      "property": "mainReconstructionYear",
-                      "type": "Radio",
-                      "heading": "Er det søkt om en hovedombygging fra og med 1. juli. 2011?",
-                      "show": {
-                        "field": "buildApplicationYear",
-                        "operator": "eq",
-                        "value": "after"
-                      },
-                      "image": {
-                        "url": "/img/9b@2x.png",
-                        "alt": "Kalender"
-                      },
-                      "text":
-                        "<p>En hovedombygging er oppgradering av hele bygningen slik at den fremstår som ny. Å bare pusse opp badet eller kjøkkenet er for eksempel ikke en hovedombygging.</p><p>Er du i tvil kan du spørre kommunen om det er søkt om en hovedombygging av bygningen din.</p>",
-                      "options": [
-                        {
-                          "id": "mainReconstructionYear.yes",
-                          "type": "Answer",
-                          "heading":
-                            "Ja, det har blitt søkt om en hovedombygging fra og med 1. juli 2011?",
-                          "value": "yes"
-                        },
-                        {
-                          "id": "mainReconstructionYear.no",
-                          "type": "Answer",
-                          "heading": "Nei",
-                          "value": "no"
-                        }
-                      ]
-                    },
-                    {
-                      "id": "divisionOrMerger",
-                      "property": "divisionOrMerger",
-                      "type": "Radio",
-                      "show": {
-                        "field": "mainReconstructionYear",
-                        "operator": "eq",
-                        "value": "no"
-                      },
-                      "heading":
-                        "Er det søkt om en oppdeling eller sammenslåing av boligen din etter 30. juni 2011?",
-                      "text":
-                        "<p>Det som er boligen din i dag, er den et resultat av at:</p><ul><li>to boliger har blitt slått sammen til en bolig</li><li>en bolig har blitt delt opp i to mindre boliger</li></ul>",
-                      "options": [
-                        {
-                          "id": "divisionOrMerger.yes",
-                          "type": "Answer",
-                          "heading": "Ja",
-                          "value": "yes"
-                        },
-                        {
-                          "id": "divisionOrMerger.no",
-                          "type": "Answer",
-                          "heading": "Nei",
-                          "value": "no"
-                        }
-                      ]
-                    },
-                    {
-                      "id": "overUnderNextTooHovedRoom",
-                      "property": "overUnderNextTooHovedRoom",
-                      "type": "Radio",
-                      "show": {
-                        "field": "divisionOrMerger",
-                        "operator": "eq",
-                        "value": "no"
-                      },
-                      "heading": "Ligger rommet over, under eller inntil et rom som er hoveddel?",
-                      "text":
-                        "<p>Er det et rom som er godkjent som hoveddel enten rett over,  under eller ved siden av rommet du vil endre på?</p><p>Hoveddel i en bolig er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring, som en bod.</p>",
-                      "options": [
-                        {
-                          "id": "overUnderNextTooHovedRoom.yes",
-                          "type": "Answer",
-                          "heading":
-                            "Ja, rommet ligger vegg-i-vegg, over eller under et rom som er hoveddel i dag.",
-                          "value": "yes"
-                        },
-                        {
-                          "id": "overUnderNextTooHovedRoom.no",
-                          "type": "Answer",
-                          "heading": "Nei, rommet grenser kun mot tilleggsdel",
-                          "value": "no"
-                        }
-                      ]
-                    },
-                    {
-                      "id": "overUnderNextTooHovedRoomResult",
-                      "type": "Result",
-                      "heading": "Du må følge byggereglene i TEK17",
-                      "errorheading": "Du må følge byggereglene i TEK17",
-                      "lead":
-                        "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
-                      "errorlead":
-                        "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
-                      "show": {
-                        "type": "or",
-                        "clauses": [
-                          {
-                            "field": "buildApplicationYear",
-                            "operator": "eq",
-                            "value": "after"
-                          },
-                          {
-                            "field": "mainReconstructionYear",
-                            "operator": "eq",
-                            "value": "yes"
-                          },
-                          {
-                            "field": "divisionOrMerger",
-                            "operator": "eq",
-                            "value": "yes"
-                          },
-                          {
-                            "field": "overUnderNextTooHovedRoom",
-                            "operator": "eq",
-                            "value": "no"
-                          }
-                        ]
-                      }
-                    }
-                  ]
+                  "field": "mainReconstructionYear",
+                  "operator": "eq",
+                  "value": "yes"
+                },
+                {
+                  "field": "divisionOrMerger",
+                  "operator": "eq",
+                  "value": "yes"
+                },
+                {
+                  "field": "overUnderNextTooHovedRoom",
+                  "operator": "eq",
+                  "value": "no"
                 }
               ]
             }
-          ]
-        }
-      ]
+          }
+        ]
+      }]
     },
     {
       "id": "page4",
       "type": "Page",
       "heading": "Boligen din",
-      "lead":
-        "<p>Du har sagt du vil bruksendre et rom som:<p><ul><li>er søkt oppført før 1. juli 2011</li><li>ligger inntil hoveddel fra før</li></ul><p>På grunn av dette, trenger du kun å følge noen utvalgte tekniske krav. For å finne ut om det er mulig for rommet å oppfylle kravene, kan du ta resten av veiviseren.</p><p>Har du tenkt til å bruke en fagperson til å gjøre jobben? Da kan du si til fagpersonen at hun/han kan følge de forenklede reglene for bruksendring. Disse finnes i byggteknisk forskrift (TEK17) <a href=\"https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/1/1-2/\">paragraf 1-2 åttende ledd</a>",
-      "children": [
-        {
+      "lead": "<p>Du har sagt du vil bruksendre et rom som:<p><ul><li>er søkt oppført før 1. juli 2011</li><li>ligger inntil hoveddel fra før</li></ul><p>På grunn av dette, trenger du kun å følge noen utvalgte tekniske krav. For å finne ut om det er mulig for rommet å oppfylle kravene, kan du ta resten av veiviseren.</p><p>Har du tenkt til å bruke en fagperson til å gjøre jobben? Da kan du si til fagpersonen at hun/han kan følge de forenklede reglene for bruksendring. Disse finnes i byggteknisk forskrift (TEK17) <a href=\"https://dibk.no/byggereglene/byggteknisk-forskrift-tek17/1/1-2/\">paragraf 1-2 åttende ledd</a>",
+      "children": [{
           "id": "naturalDisasterArea",
           "property": "naturalDisasterArea",
           "type": "Radio",
@@ -847,21 +796,17 @@
             "url": "/img/12b@2x.png",
             "alt": "Fareskilt med utropstegn"
           },
-          "text":
-            "<p>Det er ditt ansvar å sørge for at bygningen plasseres på sikker grunn. Du må derfor undersøke om det er fare for ras, flom, stormflo og skred, inklusive kvikkleireskred, der du skal bygge.<p></p>Er du i tvil om grunnen er sikker, må du kontakte kommunen.</p><img src=\"/img/ras.jpeg\" alt=\"Ras\">",
-          "options": [
-            {
+          "text": "<p>Det er ditt ansvar å sørge for at bygningen plasseres på sikker grunn. Du må derfor undersøke om det er fare for ras, flom, stormflo og skred, inklusive kvikkleireskred, der du skal bygge.<p></p>Er du i tvil om grunnen er sikker, må du kontakte kommunen.</p><img src=\"/img/ras.jpeg\" alt=\"Ras\">",
+          "options": [{
               "id": "naturalDisasterArea.yes",
               "type": "Answer",
-              "heading":
-                "Ja, jeg skal bygge i et område som er flom- eller rasutsatt, eller hvor grunnen ikke er sikker",
+              "heading": "Ja, jeg skal bygge i et område som er flom- eller rasutsatt, eller hvor grunnen ikke er sikker",
               "value": "yes"
             },
             {
               "id": "naturalDisasterArea.no",
               "type": "Answer",
-              "heading":
-                "Nei, jeg skal ikke bygge i et flom- eller rasutsatt område eller område med usikker grunn",
+              "heading": "Nei, jeg skal ikke bygge i et flom- eller rasutsatt område eller område med usikker grunn",
               "value": "no"
             }
           ]
@@ -877,29 +822,23 @@
             "value": "yes"
           },
 
-          "children": [
-            {
-              "id": "naturalDisasterAreaYesError.msg",
-              "type": "Text",
-              "warning": true,
-              "text":
-                "Siden området er flom- eller rasutsatt er det ikke sikkert tekniske krav til sikkerhet er oppfylt. Snakk med kommunen for å finne ut om du kan bruksendre et rom i området på tross av flom- eller rasfaren."
-            }
-          ]
+          "children": [{
+            "id": "naturalDisasterAreaYesError.msg",
+            "type": "Text",
+            "warning": true,
+            "text": "Siden området er flom- eller rasutsatt er det ikke sikkert tekniske krav til sikkerhet er oppfylt. Snakk med kommunen for å finne ut om du kan bruksendre et rom i området på tross av flom- eller rasfaren."
+          }]
         },
         {
           "id": "alreadyApprovedMainPart",
           "property": "alreadyApprovedMainPart",
           "type": "Radio",
           "heading": "Er det godkjent hoveddel i etasjen rommet ligger i fra før?",
-          "text":
-            "Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.  Hoveddelen må være lovlig og godkjent.",
-          "options": [
-            {
+          "text": "Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.  Hoveddelen må være lovlig og godkjent.",
+          "options": [{
               "id": "alreadyApprovedMainPart.yes",
               "type": "Answer",
-              "heading":
-                "Ja, rommet jeg vil bruksendre ligger i en etasje hvor det finnes enten oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.",
+              "heading": "Ja, rommet jeg vil bruksendre ligger i en etasje hvor det finnes enten oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang/trapp mellom rom som er hoveddel.",
               "value": "yes",
               "image": {
                 "url": "/img/12.png",
@@ -909,8 +848,7 @@
             {
               "id": "alreadyApprovedMainPart.no",
               "type": "Answer",
-              "heading":
-                "Nei, rommet jeg vil bruksendre ligger i en etasje hvor det kun finnes rom som er tilleggsdel, som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.",
+              "heading": "Nei, rommet jeg vil bruksendre ligger i en etasje hvor det kun finnes rom som er tilleggsdel, som bod, oppbevaringsrom, teknisk rom eller gang/trapp mellom rom som kun er tilleggsdel.",
               "value": "no",
               "image": {
                 "url": "/img/13.png",
@@ -923,8 +861,7 @@
           "id": "basementOrAtticGroup",
           "type": "Group",
           "simple": true,
-          "children": [
-            {
+          "children": [{
               "id": "basementOrAttic",
               "property": "basementOrAttic",
               "type": "Radio",
@@ -940,12 +877,10 @@
                 "value": "no"
               },
 
-              "options": [
-                {
+              "options": [{
                   "id": "basementOrAttic.basement",
                   "type": "Answer",
-                  "heading":
-                    "Ja, i en kjeller eller underetasje (helt eller delvis under bakkenivå)",
+                  "heading": "Ja, i en kjeller eller underetasje (helt eller delvis under bakkenivå)",
                   "value": "basement"
                 },
                 {
@@ -972,10 +907,8 @@
               },
               "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
               "errorheading": "Veiviseren dekker dessverre ikke ditt tilfelle",
-              "lead":
-                "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ.",
-              "errorlead":
-                "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ."
+              "lead": "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ.",
+              "errorlead": "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ."
             },
             {
               "id": "atticLoadError",
@@ -986,15 +919,12 @@
                 "operator": "eq",
                 "value": "attic"
               },
-              "children": [
-                {
-                  "id": "atticLoadError.msg",
-                  "type": "Text",
-                  "warning": true,
-                  "text":
-                    "Du må sjekke om gulvet på loftet tåler den nye belastningen. Dette er dessverre for komplisert til at veiviseren kan hjelpe deg med det."
-                }
-              ]
+              "children": [{
+                "id": "atticLoadError.msg",
+                "type": "Text",
+                "warning": true,
+                "text": "Du må sjekke om gulvet på loftet tåler den nye belastningen. Dette er dessverre for komplisert til at veiviseren kan hjelpe deg med det."
+              }]
             }
           ]
         }
@@ -1004,13 +934,11 @@
       "id": "page5",
       "type": "Page",
       "heading": "Sikkerhet og miljø",
-      "children": [
-        {
+      "children": [{
           "id": "safetyAndEnvironment",
           "type": "Group",
           "simple": true,
-          "children": [
-            {
+          "children": [{
               "id": "numberOfLevels",
               "property": "numberOfLevels",
               "type": "Radio",
@@ -1019,10 +947,8 @@
                 "operator": "eq",
                 "value": "no"
               },
-              "heading":
-                "Inkludert eventuelle kjellere og loft, hvor mange etasjer har boligen din?",
-              "options": [
-                {
+              "heading": "Inkludert eventuelle kjellere og loft, hvor mange etasjer har boligen din?",
+              "options": [{
                   "id": "numberOfLevels.2",
                   "type": "Answer",
                   "heading": "2",
@@ -1057,91 +983,77 @@
                 "operator": "gte",
                 "value": "5"
               },
-              "children": [
-                {
-                  "id": "fireSafetyErrorText",
-                  "type": "Text",
-                  "warning": true,
-                  "text":
-                    "Bygningen din har for mange etasjer til at veiviseren kan hjelpe deg til å vurdere branntekniske krav."
-                }
-              ]
+              "children": [{
+                "id": "fireSafetyErrorText",
+                "type": "Text",
+                "warning": true,
+                "text": "Bygningen din har for mange etasjer til at veiviseren kan hjelpe deg til å vurdere branntekniske krav."
+              }]
             },
             {
               "type": "Branch",
-              "branches": [
-                {
-                  "test": {
-                    "type": "and",
-                    "clauses": [
-                      {
-                        "field": "$computed.multiUnitHouse",
-                        "operator": "eq",
-                        "value": true
+              "branches": [{
+                "test": {
+                  "type": "and",
+                  "clauses": [{
+                      "field": "$computed.multiUnitHouse",
+                      "operator": "eq",
+                      "value": true
+                    },
+                    {
+                      "field": "numberOfLevels",
+                      "operator": "eq",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "children": [{
+                    "id": "escapeAtGroundFloor",
+                    "property": "escapeAtGroundFloor",
+                    "type": "Radio",
+                    "heading": "Har alle boenhetene i bygningen utgangsdør som går rett ut på bakken?",
+                    "text": "<p>Har alle boenhetene en dør som går rett fra boligen og rett ut på bakken? Det kan være en liten utvendig trapp på maksimalt 1,5 meter fra dørstokken og ned til bakken fra døren.</p><p>Her er det viktig å tenke på alle boenheter, også eventuelle hybler og utleieboliger i bygningen du bor.</p>",
+                    "options": [{
+                        "id": "escapeAtGroundFloorYes",
+                        "type": "Answer",
+                        "heading": "Ja, alle har minst én utgang rett ut på bakken",
+                        "value": "yes"
                       },
                       {
-                        "field": "numberOfLevels",
-                        "operator": "eq",
-                        "value": "3"
+                        "id": "escapeAtGroundFloorNo",
+                        "type": "Answer",
+                        "heading": "Nei, minst én boenhet/leilighet må gå gjennom innvendig eller utvendig trapp",
+                        "value": "no"
                       }
                     ]
                   },
-                  "children": [
-                    {
-                      "id": "escapeAtGroundFloor",
-                      "property": "escapeAtGroundFloor",
-                      "type": "Radio",
-                      "heading":
-                        "Har alle boenhetene i bygningen utgangsdør som går rett ut på bakken?",
-                      "text":
-                        "<p>Har alle boenhetene en dør som går rett fra boligen og rett ut på bakken? Det kan være en liten utvendig trapp på maksimalt 1,5 meter fra dørstokken og ned til bakken fra døren.</p><p>Her er det viktig å tenke på alle boenheter, også eventuelle hybler og utleieboliger i bygningen du bor.</p>",
-                      "options": [
-                        {
-                          "id": "escapeAtGroundFloorYes",
-                          "type": "Answer",
-                          "heading": "Ja, alle har minst én utgang rett ut på bakken",
-                          "value": "yes"
-                        },
-                        {
-                          "id": "escapeAtGroundFloorNo",
-                          "type": "Answer",
-                          "heading":
-                            "Nei, minst én boenhet/leilighet må gå gjennom innvendig eller utvendig trapp",
-                          "value": "no"
-                        }
-                      ]
-                    },
-                    {
-                      "id": "temporaryIdForFloorMessage",
-                      "type": "Text",
-                      "text": "Fint og flott! Her må Elise fylle noe tekst.",
-                      "show": {
-                        "field": "escapeAtGroundFloor",
-                        "operator": "eq",
-                        "value": "yes"
-                      }
-                    },
-                    {
-                      "id": "fireSafetyReconsidered",
-                      "type": "Error",
-                      "warning": true,
-                      "show": {
-                        "field": "escapeAtGroundFloor",
-                        "operator": "eq",
-                        "value": "no"
-                      },
-                      "children": [
-                        {
-                          "id": "fireSafetyReconsideredText",
-                          "text":
-                            "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om kjelleren din regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette.",
-                          "type": "Text"
-                        }
-                      ]
+                  {
+                    "id": "temporaryIdForFloorMessage",
+                    "type": "Text",
+                    "text": "Fint og flott! Her må Elise fylle noe tekst.",
+                    "show": {
+                      "field": "escapeAtGroundFloor",
+                      "operator": "eq",
+                      "value": "yes"
                     }
-                  ]
-                }
-              ]
+                  },
+                  {
+                    "id": "fireSafetyReconsidered",
+                    "type": "Error",
+                    "warning": true,
+                    "show": {
+                      "field": "escapeAtGroundFloor",
+                      "operator": "eq",
+                      "value": "no"
+                    },
+                    "children": [{
+                      "id": "fireSafetyReconsideredText",
+                      "text": "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om kjelleren din regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette.",
+                      "type": "Text"
+                    }]
+                  }
+                ]
+              }]
             },
             {
               "id": "extraFloorWarning",
@@ -1152,14 +1064,11 @@
                 "operator": "eq",
                 "value": "4"
               },
-              "children": [
-                {
-                  "id": "extraFloorWarningText",
-                  "type": "Text",
-                  "text":
-                    "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om loftet ditt regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
-                }
-              ]
+              "children": [{
+                "id": "extraFloorWarningText",
+                "type": "Text",
+                "text": "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om loftet ditt regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
+              }]
             }
           ]
         },
@@ -1167,20 +1076,16 @@
           "id": "canInstallWindow",
           "type": "Group",
           "simple": true,
-          "children": [
-            {
+          "children": [{
               "id": "canInstallWindowRadio",
               "property": "canInstallWindowRadio",
               "type": "Radio",
-              "heading":
-                "Har du eller skal du sette inn et vindu mot friluft som kan åpnes fra rommet du vil endre?",
+              "heading": "Har du eller skal du sette inn et vindu mot friluft som kan åpnes fra rommet du vil endre?",
               "text": "De fleste rom må ha et vindu for lys, luft og som rømningsvei.",
-              "options": [
-                {
+              "options": [{
                   "id": "canInstallWindowRadio.yes",
                   "type": "Answer",
-                  "heading":
-                    "Ja, rommet har eller det vil bli satt inn et vindu mot friluft som kan åpnes",
+                  "heading": "Ja, rommet har eller det vil bli satt inn et vindu mot friluft som kan åpnes",
                   "value": "yes"
                 },
                 {
@@ -1200,139 +1105,163 @@
                 "operator": "eq",
                 "value": "no"
               },
-              "children": [
-                {
-                  "id": "noWindowError.text",
-                  "type": "Text",
-                  "text":
-                    "Hvis rommet ikke har et vindu kan ikke veilederen ta stilling til om krav til lys, ventilasjon, inneklima og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
-                }
-              ]
+              "children": [{
+                "id": "noWindowError.text",
+                "type": "Text",
+                "text": "Hvis rommet ikke har et vindu kan ikke veilederen ta stilling til om krav til lys, ventilasjon, inneklima og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
+              }]
             },
             {
               "type": "Branch",
-              "branches": [
-                {
-                  "test": {
-                    "field": "canInstallWindowRadio",
-                    "operator": "eq",
-                    "value": "yes"
-                  },
-                  "children": [
-                    {
-                      "id": "bigWindow",
-                      "property": "bigWindow",
-                      "type": "Radio",
-                      "heading": "Blir åpningen på vinduet stor nok?",
-                      "image": {
-                        "url": "/img/14a@2x.png",
-                        "alt": "Dimensjoner på vinduer"
+              "branches": [{
+                "test": {
+                  "field": "canInstallWindowRadio",
+                  "operator": "eq",
+                  "value": "yes"
+                },
+                "children": [{
+                    "id": "bigWindow",
+                    "property": "bigWindow",
+                    "type": "Radio",
+                    "heading": "Blir åpningen på vinduet stor nok?",
+                    "image": {
+                      "url": "/img/14a@2x.png",
+                      "alt": "Dimensjoner på vinduer"
+                    },
+                    "text": "<p>Høyden og bredden må være minst 150 cm til sammen og i tillegg må:</p><ul><li>minst 50 cm bred (men da må høyden være minst 100 cm)</li><li>minst 60 cm høy (men da må bredden være minst 90 cm)</li></ul><p>Det forutsetter at vinduet kan åpnes helt opp, og at vinduet er hengslet på siden eller i toppen. Om du skal ha en annen type vindu, må du passe på at vinduet er godkjent som rømningsvindu.</p><p>Målingen av vinduet må gjøres på innsiden av innerkarmen på vinduet.</p>",
+                    "options": [{
+                        "id": "bigWindowYes",
+                        "type": "Answer",
+                        "heading": "Ja, åpningen er eller blir stor nok",
+                        "value": "yes"
                       },
-                      "text":
-                        "<p>Høyden og bredden må være minst 150 cm til sammen og i tillegg må:</p><ul><li>minst 50 cm bred (men da må høyden være minst 100 cm)</li><li>minst 60 cm høy (men da må bredden være minst 90 cm)</li></ul><p>Det forutsetter at vinduet kan åpnes helt opp, og at vinduet er hengslet på siden eller i toppen. Om du skal ha en annen type vindu, må du passe på at vinduet er godkjent som rømningsvindu.</p><p>Målingen av vinduet må gjøres på innsiden av innerkarmen på vinduet.</p>",
-                      "options": [
-                        {
-                          "id": "bigWindowYes",
-                          "type": "Answer",
-                          "heading": "Ja, åpningen er eller blir stor nok",
+                      {
+                        "id": "bigWindowNo",
+                        "type": "Answer",
+                        "heading": "Nei",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "bigWindowError",
+                    "type": "Error",
+                    "warning": true,
+                    "show": {
+                      "field": "bigWindow",
+                      "operator": "eq",
+                      "value": "no"
+                    },
+                    "children": [{
+                      "id": "bigWindowError.msg",
+                      "type": "Text",
+                      "text": "Hvis rommet ikke har et stort nok vindu kan ikke veilederen ta stilling til om krav til lys og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
+                    }]
+                  },
+                  {
+                    "id": "escapeUnkownFloor",
+                    "property": "escapeUnkownFloor",
+                    "type": "Radio",
+                    "heading": "Vil det bli mulig å rømme ut av vinduet?",
+                    "image": {
+                      "url": "/img/combi.png",
+                      "alt": "Lysgrav eller høyde på loft"
+                    },
+                    "text": "<p>Er det enkelt å komme seg ut av vinduet fra innsiden?</p><p>For at det skal være mulig å rømme ut av vinduet kan det maksimalt være 1 meter opp fra gulvet til undersiden av karmen på vinduet</p><p>For at rømningsmuligheten skal være god nok nok rommet ligger i en kjeller, må lysgraven være stor nok til at det er mulig å rømme ut av den.<ul><li>Vinduer som er helt eller delvis gravd ned under bakkenivå, i lysgrav, må være enkle å komme ut av</li><li>Det må være sikret at lysgraven aldri blir fylt av snø om vinteren, med for eksempel varmekabler (måking holder ikke)</li></ul></p><p>Det kan være maksimalt 5 meter fra nedre karm av vinduet og til bakken på utsiden av vinduet.</p>",
+                    "show": {
+                      "type": "and",
+                      "clauses": [{
+                          "field": "bigWindow",
+                          "operator": "eq",
                           "value": "yes"
                         },
                         {
-                          "id": "bigWindowNo",
-                          "type": "Answer",
-                          "heading": "Nei",
+                          "field": "alreadyApprovedMainPart",
+                          "operator": "eq",
                           "value": "no"
                         }
                       ]
                     },
-                    {
-                      "id": "bigWindowError",
-                      "type": "Error",
-                      "warning": true,
-                      "show": {
-                        "field": "bigWindow",
-                        "operator": "eq",
+                    "options": [{
+                        "id": "escapeUnkownFloorYes",
+                        "type": "Answer",
+                        "heading": "Ja",
+                        "value": "yes"
+                      },
+                      {
+                        "id": "escapeUnkownFloorNo",
+                        "type": "Answer",
+                        "heading": "Nei",
                         "value": "no"
-                      },
-                      "children": [
-                        {
-                          "id": "bigWindowError.msg",
-                          "type": "Text",
-                          "text":
-                            "Hvis rommet ikke har et stort nok vindu kan ikke veilederen ta stilling til om krav til lys og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
-                        }
-                      ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "maxOneMeterToWindowWarning",
+                    "type": "Error",
+                    "warning": true,
+                    "show": {
+                      "field": "escapeUnkownFloor",
+                      "operator": "eq",
+                      "value": "no"
                     },
-                    {
-                      "id": "escapeUnkownFloor",
-                      "property": "escapeUnkownFloor",
-                      "type": "Radio",
-                      "heading": "Vil det bli mulig å rømme ut av vinduet?",
-                      "image": {
-                        "url": "/img/combi.png",
-                        "alt": "Lysgrav eller høyde på loft"
-                      },
-                      "text":
-                        "<p>Er det enkelt å komme seg ut av vinduet fra innsiden?</p><p>For at det skal være mulig å rømme ut av vinduet kan det maksimalt være 1 meter opp fra gulvet til undersiden av karmen på vinduet</p><p>For at rømningsmuligheten skal være god nok nok rommet ligger i en kjeller, må lysgraven være stor nok til at det er mulig å rømme ut av den.<ul><li>Vinduer som er helt eller delvis gravd ned under bakkenivå, i lysgrav, må være enkle å komme ut av</li><li>Det må være sikret at lysgraven aldri blir fylt av snø om vinteren, med for eksempel varmekabler (måking holder ikke)</li></ul></p><p>Det kan være maksimalt 5 meter fra nedre karm av vinduet og til bakken på utsiden av vinduet.</p>",
-                      "show": {
-                        "type": "and",
-                        "clauses": [
-                          {
-                            "field": "bigWindow",
+                    "children": [{
+                      "id": "maxOneMeterToWindowWarning.text",
+                      "type": "Text",
+                      "text": "For å kunne rømme ut av et vindu må det maks være én meter opp fra vinduet. Det kan eventuelt tilrettelegges for noe å klatre opp på."
+                    }]
+                  },
+                  {
+                    "type": "Branch",
+                    "branches": [{
+                      "test": {
+                        "type": "or",
+                        "clauses": [{
+                            "field": "basementOrAttic",
                             "operator": "eq",
-                            "value": "yes"
+                            "value": "basement"
                           },
                           {
-                            "field": "alreadyApprovedMainPart",
+                            "field": "basementOrAttic",
                             "operator": "eq",
-                            "value": "no"
+                            "value": "attic"
                           }
                         ]
                       },
-                      "options": [
-                        {
-                          "id": "escapeUnkownFloorYes",
-                          "type": "Answer",
-                          "heading": "Ja",
-                          "value": "yes"
+                      "children": [{
+                          "id": "escapeBasementOutside",
+                          "property": "escapeBasementOutside",
+                          "type": "Radio",
+                          "heading": "Er det enkelt å komme seg ut av vinduet fra utsiden?",
+                          "image": {
+                            "url": "/img/lysgrav.png",
+                            "alt": "Lysgrav"
+                          },
+                          "text": "For at rømningsmuligheten skal være god nok, må lysgraven være stor nok til at det er mulig å rømme ut av den.<ul><li>må vinduer som er helt eller delvis gravd ned under bakkenivå, i lysgrav, være enkle å komme ut av</li><li>må det være sikret at lysgraven aldri blir fylt av snø om vinteren, med for eksempel varmekabler (måking holder ikke)</li></ul>",
+                          "options": [{
+                              "id": "escapeBasementOutside.yes",
+                              "type": "Answer",
+                              "heading": "Ja",
+                              "value": "yes"
+                            },
+                            {
+                              "id": "escapeBasementOutside.no",
+                              "type": "Answer",
+                              "heading": "Nei",
+                              "value": "no"
+                            }
+                          ]
                         },
                         {
-                          "id": "escapeUnkownFloorNo",
-                          "type": "Answer",
-                          "heading": "Nei",
-                          "value": "no"
-                        }
-                      ]
-                    },
-                    {
-                      "id": "maxOneMeterToWindowWarning",
-                      "type": "Error",
-                      "warning": true,
-                      "show": {
-                        "field": "escapeUnkownFloor",
-                        "operator": "eq",
-                        "value": "no"
-                      },
-                      "children": [
-                        {
-                          "id": "maxOneMeterToWindowWarning.text",
-                          "type": "Text",
-                          "text":
-                            "For å kunne rømme ut av et vindu må det maks være én meter opp fra vinduet. Det kan eventuelt tilrettelegges for noe å klatre opp på."
-                        }
-                      ]
-                    },
-                    {
-                      "type": "Branch",
-                      "branches": [
-                        {
-                          "test": {
-                            "type": "or",
-                            "clauses": [
-                              {
-                                "field": "basementOrAttic",
+                          "id": "escapeWindowError",
+                          "type": "Error",
+                          "warning": true,
+                          "show": {
+                            "type": "and",
+                            "clauses": [{
+                                "field": "escapeBasementOutside",
                                 "operator": "eq",
-                                "value": "basement"
+                                "value": "no"
                               },
                               {
                                 "field": "basementOrAttic",
@@ -1341,138 +1270,77 @@
                               }
                             ]
                           },
-                          "children": [
-                            {
-                              "id": "escapeBasementOutside",
-                              "property": "escapeBasementOutside",
-                              "type": "Radio",
-                              "heading": "Er det enkelt å komme seg ut av vinduet fra utsiden?",
-                              "image": {
-                                "url": "/img/lysgrav.png",
-                                "alt": "Lysgrav"
-                              },
-                              "text":
-                                "For at rømningsmuligheten skal være god nok, må lysgraven være stor nok til at det er mulig å rømme ut av den.<ul><li>må vinduer som er helt eller delvis gravd ned under bakkenivå, i lysgrav, være enkle å komme ut av</li><li>må det være sikret at lysgraven aldri blir fylt av snø om vinteren, med for eksempel varmekabler (måking holder ikke)</li></ul>",
-                              "options": [
-                                {
-                                  "id": "escapeBasementOutside.yes",
-                                  "type": "Answer",
-                                  "heading": "Ja",
-                                  "value": "yes"
-                                },
-                                {
-                                  "id": "escapeBasementOutside.no",
-                                  "type": "Answer",
-                                  "heading": "Nei",
-                                  "value": "no"
-                                }
-                              ]
-                            },
-                            {
-                              "id": "escapeWindowError",
-                              "type": "Error",
-                              "warning": true,
-                              "show": {
-                                "type": "and",
-                                "clauses": [
-                                  {
-                                    "field": "escapeBasementOutside",
-                                    "operator": "eq",
-                                    "value": "no"
-                                  },
-                                  {
-                                    "field": "basementOrAttic",
-                                    "operator": "eq",
-                                    "value": "attic"
-                                  }
-                                ]
-                              },
-                              "children": [
-                                {
-                                  "id": "escapeWindowError.text",
-                                  "type": "Text",
-                                  "text":
-                                    "Vinduet er for høyt til at veilederen kan vurdere om krav til rømning er oppfylt."
-                                }
-                              ]
-                            },
-                            {
-                              "id": "escapeBasementOutsideError",
-                              "type": "Error",
-                              "warning": true,
-                              "show": {
-                                "type": "and",
-                                "clauses": [
-                                  {
-                                    "field": "escapeBasementOutside",
-                                    "operator": "eq",
-                                    "value": "no"
-                                  },
-                                  {
-                                    "field": "basementOrAttic",
-                                    "operator": "eq",
-                                    "value": "basement"
-                                  }
-                                ]
-                              },
-                              "children": [
-                                {
-                                  "id": "escapeBasementOutsideError.msg",
-                                  "type": "Text",
-                                  "warning": true,
-                                  "text":
-                                    "Når det ikke er mulig å komme seg ut av vinduet kan ikke veiviseren vurder om krav til rømning er oppfylt."
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "id": "ventilation",
-                      "property": "ventilation",
-                      "type": "Radio",
-                      "heading":
-                        "Har du eller skal du sette inn en lufteventil i rommet, i tillegg til vindu?",
-                      "options": [
-                        {
-                          "id": "ventilation.yes",
-                          "type": "Answer",
-                          "heading":
-                            "Ja, rommet har allerede eller det skal settes inn lufteventil på rommet",
-                          "value": "yes"
+                          "children": [{
+                            "id": "escapeWindowError.text",
+                            "type": "Text",
+                            "text": "Vinduet er for høyt til at veilederen kan vurdere om krav til rømning er oppfylt."
+                          }]
                         },
                         {
-                          "id": "ventilation.no",
-                          "type": "Answer",
-                          "heading": "Nei",
-                          "value": "no"
+                          "id": "escapeBasementOutsideError",
+                          "type": "Error",
+                          "warning": true,
+                          "show": {
+                            "type": "and",
+                            "clauses": [{
+                                "field": "escapeBasementOutside",
+                                "operator": "eq",
+                                "value": "no"
+                              },
+                              {
+                                "field": "basementOrAttic",
+                                "operator": "eq",
+                                "value": "basement"
+                              }
+                            ]
+                          },
+                          "children": [{
+                            "id": "escapeBasementOutsideError.msg",
+                            "type": "Text",
+                            "warning": true,
+                            "text": "Når det ikke er mulig å komme seg ut av vinduet kan ikke veiviseren vurder om krav til rømning er oppfylt."
+                          }]
                         }
                       ]
-                    },
-                    {
-                      "id": "ventilationError",
-                      "property": "ventilationError",
-                      "type": "Error",
-                      "warning": true,
-                      "show": {
-                        "field": "ventilation",
-                        "operator": "eq",
-                        "value": "no"
+                    }]
+                  },
+                  {
+                    "id": "ventilation",
+                    "property": "ventilation",
+                    "type": "Radio",
+                    "heading": "Har du eller skal du sette inn en lufteventil i rommet, i tillegg til vindu?",
+                    "options": [{
+                        "id": "ventilation.yes",
+                        "type": "Answer",
+                        "heading": "Ja, rommet har allerede eller det skal settes inn lufteventil på rommet",
+                        "value": "yes"
                       },
-                      "children": [
-                        {
-                          "id": "ventilationError.msg",
-                          "type": "Text",
-                          "text":
-                            "Når det ikke er lufteventil kan ikke veilederen vurdere om krav til ventilasjon er oppfylt."
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
+                      {
+                        "id": "ventilation.no",
+                        "type": "Answer",
+                        "heading": "Nei",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "ventilationError",
+                    "property": "ventilationError",
+                    "type": "Error",
+                    "warning": true,
+                    "show": {
+                      "field": "ventilation",
+                      "operator": "eq",
+                      "value": "no"
+                    },
+                    "children": [{
+                      "id": "ventilationError.msg",
+                      "type": "Text",
+                      "text": "Når det ikke er lufteventil kan ikke veilederen vurdere om krav til ventilasjon er oppfylt."
+                    }]
+                  }
+                ]
+              }]
             }
           ]
         },
@@ -1480,8 +1348,7 @@
           "id": "radonGroup",
           "type": "Group",
           "simple": true,
-          "children": [
-            {
+          "children": [{
               "id": "measureRadon",
               "property": "measureRadon",
               "type": "Radio",
@@ -1490,8 +1357,7 @@
                 "url": "/img/20a@2x.png",
                 "alt": "Hus med radioaktivitetssymbol"
               },
-              "options": [
-                {
+              "options": [{
                   "id": "measureRadon.yes",
                   "type": "Answer",
                   "heading": "Ja",
@@ -1508,8 +1374,7 @@
             {
               "id": "mesuredRadonText",
               "type": "Text",
-              "text":
-                "Du oppgir at du ikke har målt radonnivået i boligen din. Det er ikke et krav at du skal gjøre det, men vi anbefaler at du gjør det fordi høye radon-nivåer er helseskadelig. Radon-gassene kommer fra bakken, derfor er det spesielt viktig å ha kontroll på radonnivået i boligen din om du skal endre noe i kjelleren din.",
+              "text": "Du oppgir at du ikke har målt radonnivået i boligen din. Det er ikke et krav at du skal gjøre det, men vi anbefaler at du gjør det fordi høye radon-nivåer er helseskadelig. Radon-gassene kommer fra bakken, derfor er det spesielt viktig å ha kontroll på radonnivået i boligen din om du skal endre noe i kjelleren din.",
               "show": {
                 "field": "measureRadon",
                 "operator": "eq",
@@ -1519,88 +1384,79 @@
             {
               "id": "radonMeasureBranch",
               "type": "Branch",
-              "branches": [
-                {
-                  "test": {
-                    "field": "measureRadon",
-                    "operator": "eq",
-                    "value": "yes"
-                  },
-                  "children": [
-                    {
-                      "id": "radonLevel",
-                      "property": "radonLevel",
-                      "type": "Radio",
-                      "heading": "Hva var radonnivået i boligen din?",
-                      "image": {
-                        "url": "/img/20b@2x.png",
-                        "alt": "Hus med radioaktivitetssymbol"
-                      },
-                      "options": [
-                        {
-                          "id": "radonLevel.100",
-                          "type": "Answer",
-                          "heading": "Under 100 Bq/m<sup>3</sup>",
-                          "value": "100"
-                        },
-                        {
-                          "id": "radonLevel.200",
-                          "type": "Answer",
-                          "heading": "100-200 Bq/m<sup>3</sup>",
-                          "value": "200"
-                        },
-                        {
-                          "id": "radonLevel.201",
-                          "type": "Answer",
-                          "heading": "Over 200 Bq/m<sup>3</sup>",
-                          "value": "201"
-                        }
-                      ]
+              "branches": [{
+                "test": {
+                  "field": "measureRadon",
+                  "operator": "eq",
+                  "value": "yes"
+                },
+                "children": [{
+                    "id": "radonLevel",
+                    "property": "radonLevel",
+                    "type": "Radio",
+                    "heading": "Hva var radonnivået i boligen din?",
+                    "image": {
+                      "url": "/img/20b@2x.png",
+                      "alt": "Hus med radioaktivitetssymbol"
                     },
-                    {
-                      "id": "radonInfo201",
-                      "type": "Error",
-                      "warning": true,
-                      "show": {
-                        "field": "radonLevel",
-                        "operator": "eq",
-                        "value": "201"
-                      },
-                      "children": [
-                        {
-                          "id": "radonError.msg",
-                          "type": "Text",
-                          "warning": true,
-                          "text":
-                            "Radonnivået er høyere enn tillatt. Du må gjøre tiltak som senker radonnivået til under 200 Bq/m<sup>3</sup> før du bruksendrer."
-                        }
-                      ]
-                    },
-                    {
-                      "id": "radonInfo200",
-                      "type": "Text",
-                      "text":
-                        "Radonnivået er litt høyt og du bør sette igang tiltak mot radon. Det er ikke et krav at du gjør dette før bruksendring, men vær klar over at en bruksendring kan gjøre radonproblemet verre.",
-                      "show": {
-                        "field": "radonLevel",
-                        "operator": "eq",
-                        "value": "200"
-                      }
-                    },
-                    {
-                      "id": "radonInfo100",
-                      "type": "Text",
-                      "text":
-                        "Randonnivået er greit - under 100 Bq/m<sup>3</sup> er det ikke nødvendig å gjøre tiltak mot radon.",
-                      "show": {
-                        "field": "radonLevel",
-                        "operator": "eq",
+                    "options": [{
+                        "id": "radonLevel.100",
+                        "type": "Answer",
+                        "heading": "Under 100 Bq/m<sup>3</sup>",
                         "value": "100"
+                      },
+                      {
+                        "id": "radonLevel.200",
+                        "type": "Answer",
+                        "heading": "100-200 Bq/m<sup>3</sup>",
+                        "value": "200"
+                      },
+                      {
+                        "id": "radonLevel.201",
+                        "type": "Answer",
+                        "heading": "Over 200 Bq/m<sup>3</sup>",
+                        "value": "201"
                       }
+                    ]
+                  },
+                  {
+                    "id": "radonInfo201",
+                    "type": "Error",
+                    "warning": true,
+                    "show": {
+                      "field": "radonLevel",
+                      "operator": "eq",
+                      "value": "201"
+                    },
+                    "children": [{
+                      "id": "radonError.msg",
+                      "type": "Text",
+                      "warning": true,
+                      "text": "Radonnivået er høyere enn tillatt. Du må gjøre tiltak som senker radonnivået til under 200 Bq/m<sup>3</sup> før du bruksendrer."
+                    }]
+                  },
+                  {
+                    "id": "radonInfo200",
+                    "type": "Text",
+                    "text": "Radonnivået er litt høyt og du bør sette igang tiltak mot radon. Det er ikke et krav at du gjør dette før bruksendring, men vær klar over at en bruksendring kan gjøre radonproblemet verre.",
+                    "show": {
+                      "field": "radonLevel",
+                      "operator": "eq",
+                      "value": "200"
                     }
-                  ]
-                }
-              ]
+                  },
+                  {
+                    "id": "radonInfo100",
+                    "type": "Text",
+                    "text": "Randonnivået er greit - under 100 Bq/m<sup>3</sup> er det ikke nødvendig å gjøre tiltak mot radon.",
+                    "show": {
+                      "field": "radonLevel",
+                      "operator": "eq",
+                      "value": "100"
+                    }
+                  }
+                ]
+              }]
             }
           ]
         },
@@ -1613,12 +1469,10 @@
             "url": "/img/21a@2x.png",
             "alt": "Hus med gradestokk på 19 grader"
           },
-          "options": [
-            {
+          "options": [{
               "id": "warmRoomYes",
               "type": "Answer",
-              "heading":
-                "Ja, rommet er godt nok isolert eller jeg skal isolere rommet så det vil holde minst 19 grader gjennom vinteren",
+              "heading": "Ja, rommet er godt nok isolert eller jeg skal isolere rommet så det vil holde minst 19 grader gjennom vinteren",
               "value": "yes"
             },
             {
@@ -1638,14 +1492,11 @@
             "operator": "eq",
             "value": "no"
           },
-          "children": [
-            {
-              "id": "warmRoomError.msg",
-              "type": "Text",
-              "text":
-                "Rommet blir for kaldt til å bruke det til boligrom. Du må isolere rommet mer hvis du skal bruksendre."
-            }
-          ]
+          "children": [{
+            "id": "warmRoomError.msg",
+            "type": "Text",
+            "text": "Rommet blir for kaldt til å bruke det til boligrom. Du må isolere rommet mer hvis du skal bruksendre."
+          }]
         }
       ]
     },
@@ -1654,10 +1505,8 @@
       "type": "Result",
       "heading": "Resultatsiden",
       "errorheading": "Du har ikke svart på alle spørsmålene",
-      "lead":
-        "<p>Sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine.</p>",
-      "errorlead":
-        "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
+      "lead": "<p>Sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine.</p>",
+      "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
       "exporter": "dataExport"
     }
   ]
