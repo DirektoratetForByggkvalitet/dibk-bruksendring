@@ -68,7 +68,8 @@
       "children": [{
           "id": "houseTypeGroup",
           "type": "Group",
-          "simple": true,
+          "simple": false,
+          "heading": "Om din bolig",
           "children": [{
               "id": "houseType",
               "property": "houseType",
@@ -324,13 +325,14 @@
                   "operator": "eq",
                   "value": "yes"
                 },
-                "simple": true,
+                "simple": false,
+                "heading": "Hva slags del skal rommet endres til/fra?",
+                "text": "<p>Vi deler boliger inn i hoveddel og tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.</p>",
                 "children": [{
                     "id": "roomNow",
                     "property": "roomNow",
                     "type": "Radio",
                     "heading": "Hva er rommet ditt nå?",
-                    "text": "<p>Vi deler boliger inn i hoveddel og tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.</p>",
                     "options": [{
                         "id": "roomNow.main",
                         "type": "Answer",
