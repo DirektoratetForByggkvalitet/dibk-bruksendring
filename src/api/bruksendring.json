@@ -727,158 +727,152 @@
       },
       "children": [
         {
-          "id": "buildApplicationYearGroup",
-          "type": "Group",
-          "children": [
+          "id": "buildApplicationYear",
+          "property": "buildApplicationYear",
+          "type": "Radio",
+          "image": {
+            "url": "/img/9a@2x.png",
+            "alt": "Kalender"
+          },
+          "heading": "Når ble det søkt om å bygge boligen din?",
+          "text":
+            "En gang i tiden er det blitt søkt om å sette opp boligen din til kommunen. Tidspunktet for søknaden er med og bestemmer hvilket regelverk som gjelder for deg. Er du i tvil kan du spørre kommunen din.",
+          "options": [
             {
-              "id": "buildApplicationYear",
-              "property": "buildApplicationYear",
-              "type": "Radio",
-              "image": {
-                "url": "/img/9a@2x.png",
-                "alt": "Kalender"
-              },
-              "heading": "Når ble det søkt om å bygge boligen din?",
-              "text":
-                "En gang i tiden er det blitt søkt om å sette opp boligen din til kommunen. Tidspunktet for søknaden er med og bestemmer hvilket regelverk som gjelder for deg. Er du i tvil kan du spørre kommunen din.",
-              "options": [
-                {
-                  "id": "buildApplicationYearBefore",
-                  "type": "Answer",
-                  "heading": "Før 1. juli 2011",
-                  "value": "before"
-                },
-                {
-                  "id": "buildApplicationYearAfter",
-                  "type": "Answer",
-                  "heading": "Fra og med 1. juli 2011",
-                  "value": "after"
-                }
-              ]
+              "id": "buildApplicationYearBefore",
+              "type": "Answer",
+              "heading": "Før 1. juli 2011",
+              "value": "before"
             },
             {
-              "id": "mainReconstructionYear",
-              "property": "mainReconstructionYear",
-              "type": "Radio",
-              "heading": "Er det søkt om en hovedombygging fra og med 1. juli. 2011?",
-              "text":
-                "<p>En hovedombygging er oppgradering av hele bygningen slik at den fremstår som ny. Å bare pusse opp badet eller kjøkkenet er for eksempel ikke en hovedombygging.</p><p>Er du i tvil kan du spørre kommunen om det er søkt om en hovedombygging av bygningen din.</p>",
-              "show": {
-                "field": "buildApplicationYear",
-                "operator": "eq",
-                "value": "before"
-              },
-              "image": {
-                "url": "/img/9b@2x.png",
-                "alt": "Kalender"
-              },
-              "options": [
-                {
-                  "id": "mainReconstructionYear.yes",
-                  "type": "Answer",
-                  "heading": "Ja, det har blitt søkt om en hovedombygging fra og med 1. juli 2011?",
-                  "value": "yes"
-                },
-                {
-                  "id": "mainReconstructionYear.no",
-                  "type": "Answer",
-                  "heading": "Nei",
-                  "value": "no"
-                }
-              ]
-            },
-            {
-              "id": "divisionOrMerger",
-              "property": "divisionOrMerger",
-              "type": "Radio",
-              "show": {
-                "field": "mainReconstructionYear",
-                "operator": "eq",
-                "value": "no"
-              },
-              "heading":
-                "Er det søkt om en oppdeling eller sammenslåing av boligen din etter 30. juni 2011?",
-              "text":
-                "<p>Det som er boligen din i dag, er den et resultat av at:</p><ul><li>to boliger har blitt slått sammen til en bolig</li><li>en bolig har blitt delt opp i to mindre boliger</li></ul>",
-              "options": [
-                {
-                  "id": "divisionOrMerger.yes",
-                  "type": "Answer",
-                  "heading": "Ja",
-                  "value": "yes"
-                },
-                {
-                  "id": "divisionOrMerger.no",
-                  "type": "Answer",
-                  "heading": "Nei",
-                  "value": "no"
-                }
-              ]
-            },
-            {
-              "id": "overUnderNextTooHovedRoom",
-              "property": "overUnderNextTooHovedRoom",
-              "type": "Radio",
-              "show": {
-                "field": "divisionOrMerger",
-                "operator": "eq",
-                "value": "no"
-              },
-              "heading": "Ligger rommet over, under eller inntil et rom som er hoveddel?",
-              "text":
-                "<p>Er det et rom som er godkjent som hoveddel enten rett over,  under eller ved siden av rommet du vil endre på?</p><p>Hoveddel i en bolig er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring, som en bod.</p>",
-              "options": [
-                {
-                  "id": "overUnderNextTooHovedRoom.yes",
-                  "type": "Answer",
-                  "heading":
-                    "Ja, rommet ligger vegg-i-vegg, over eller under et rom som er hoveddel i dag.",
-                  "value": "yes"
-                },
-                {
-                  "id": "overUnderNextTooHovedRoom.no",
-                  "type": "Answer",
-                  "heading": "Nei, rommet grenser kun mot tilleggsdel",
-                  "value": "no"
-                }
-              ]
-            },
-            {
-              "id": "overUnderNextTooHovedRoomResult",
-              "type": "Result",
-              "heading": "Du må følge byggereglene i TEK17",
-              "errorheading": "Du må følge byggereglene i TEK17",
-              "lead":
-                "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
-              "errorlead":
-                "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
-              "show": {
-                "type": "or",
-                "clauses": [
-                  {
-                    "field": "buildApplicationYear",
-                    "operator": "eq",
-                    "value": "after"
-                  },
-                  {
-                    "field": "mainReconstructionYear",
-                    "operator": "eq",
-                    "value": "yes"
-                  },
-                  {
-                    "field": "divisionOrMerger",
-                    "operator": "eq",
-                    "value": "yes"
-                  },
-                  {
-                    "field": "overUnderNextTooHovedRoom",
-                    "operator": "eq",
-                    "value": "no"
-                  }
-                ]
-              }
+              "id": "buildApplicationYearAfter",
+              "type": "Answer",
+              "heading": "Fra og med 1. juli 2011",
+              "value": "after"
             }
           ]
+        },
+        {
+          "id": "mainReconstructionYear",
+          "property": "mainReconstructionYear",
+          "type": "Radio",
+          "heading": "Er det søkt om en hovedombygging fra og med 1. juli. 2011?",
+          "text":
+            "<p>En hovedombygging er oppgradering av hele bygningen slik at den fremstår som ny. Å bare pusse opp badet eller kjøkkenet er for eksempel ikke en hovedombygging.</p><p>Er du i tvil kan du spørre kommunen om det er søkt om en hovedombygging av bygningen din.</p>",
+          "show": {
+            "field": "buildApplicationYear",
+            "operator": "eq",
+            "value": "before"
+          },
+          "image": {
+            "url": "/img/9b@2x.png",
+            "alt": "Kalender"
+          },
+          "options": [
+            {
+              "id": "mainReconstructionYear.yes",
+              "type": "Answer",
+              "heading": "Ja, det har blitt søkt om en hovedombygging fra og med 1. juli 2011?",
+              "value": "yes"
+            },
+            {
+              "id": "mainReconstructionYear.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "divisionOrMerger",
+          "property": "divisionOrMerger",
+          "type": "Radio",
+          "show": {
+            "field": "mainReconstructionYear",
+            "operator": "eq",
+            "value": "no"
+          },
+          "heading":
+            "Er det søkt om en oppdeling eller sammenslåing av boligen din etter 30. juni 2011?",
+          "text":
+            "<p>Det som er boligen din i dag, er den et resultat av at:</p><ul><li>to boliger har blitt slått sammen til en bolig</li><li>en bolig har blitt delt opp i to mindre boliger</li></ul>",
+          "options": [
+            {
+              "id": "divisionOrMerger.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "divisionOrMerger.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "overUnderNextTooHovedRoom",
+          "property": "overUnderNextTooHovedRoom",
+          "type": "Radio",
+          "show": {
+            "field": "divisionOrMerger",
+            "operator": "eq",
+            "value": "no"
+          },
+          "heading": "Ligger rommet over, under eller inntil et rom som er hoveddel?",
+          "text":
+            "<p>Er det et rom som er godkjent som hoveddel enten rett over,  under eller ved siden av rommet du vil endre på?</p><p>Hoveddel i en bolig er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring, som en bod.</p>",
+          "options": [
+            {
+              "id": "overUnderNextTooHovedRoom.yes",
+              "type": "Answer",
+              "heading":
+                "Ja, rommet ligger vegg-i-vegg, over eller under et rom som er hoveddel i dag.",
+              "value": "yes"
+            },
+            {
+              "id": "overUnderNextTooHovedRoom.no",
+              "type": "Answer",
+              "heading": "Nei, rommet grenser kun mot tilleggsdel",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "id": "overUnderNextTooHovedRoomResult",
+          "type": "Result",
+          "heading": "Du må følge byggereglene i TEK17",
+          "errorheading": "Du må følge byggereglene i TEK17",
+          "lead":
+            "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
+          "errorlead":
+            "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke dette søknadsskjemaet: <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf</a></p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
+          "show": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "buildApplicationYear",
+                "operator": "eq",
+                "value": "after"
+              },
+              {
+                "field": "mainReconstructionYear",
+                "operator": "eq",
+                "value": "yes"
+              },
+              {
+                "field": "divisionOrMerger",
+                "operator": "eq",
+                "value": "yes"
+              },
+              {
+                "field": "overUnderNextTooHovedRoom",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          }
         }
       ]
     },
