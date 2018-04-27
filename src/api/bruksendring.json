@@ -310,11 +310,6 @@
           "type": "Radio",
           "heading": "Er rommet du vil endre på 2 meter eller høyere?",
           "text": "<img src=\"/img/minst2meter.png\" alt=\"Minst 2 meter\" />",
-          "show": {
-            "field": "commonArea",
-            "operator": "eq",
-            "value": "no"
-          },
           "options": [
             {
               "id": "roomHeight.yes",
@@ -1086,59 +1081,58 @@
               },
               "children": [
                 {
-                  "id": "numberOfLevels",
-                  "property": "numberOfLevels",
-                  "type": "Radio",
-                  "show": {
-                    "field": "alreadyApprovedMainPart",
-                    "operator": "eq",
-                    "value": "no"
-                  },
-                  "heading":
-                    "Inkludert eventuelle kjellere og loft, hvor mange etasjer har boligen din?",
-                  "options": [
-                    {
-                      "id": "numberOfLevels.2",
-                      "type": "Answer",
-                      "heading": "2",
-                      "value": "2"
-                    },
-                    {
-                      "id": "numberOfLevels.3",
-                      "type": "Answer",
-                      "heading": "3",
-                      "value": "3"
-                    },
-                    {
-                      "id": "numberOfLevels.4",
-                      "type": "Answer",
-                      "heading": "4",
-                      "value": "4"
-                    },
-                    {
-                      "id": "numberOfLevels.5",
-                      "type": "Answer",
-                      "heading": "5 eller flere",
-                      "value": "5"
-                    }
-                  ]
-                },
-                {
-                  "id": "fireSafetyError",
-                  "property": "fireSafetyError",
-                  "type": "Error",
-                  "show": {
-                    "field": "numberOfLevels",
-                    "operator": "gte",
-                    "value": "5"
-                  },
+                  "id": "numberOfLevelsGroup",
+                  "type": "Group",
                   "children": [
                     {
-                      "id": "fireSafetyErrorText",
-                      "type": "Text",
-                      "warning": true,
+                      "id": "numberOfLevels",
+                      "property": "numberOfLevels",
+                      "type": "Radio",
+                      "show": {
+                        "field": "alreadyApprovedMainPart",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      "heading":
+                        "Inkludert eventuelle kjellere og loft, hvor mange etasjer har boligen din?",
+                      "options": [
+                        {
+                          "id": "numberOfLevels.2",
+                          "type": "Answer",
+                          "heading": "2",
+                          "value": "2"
+                        },
+                        {
+                          "id": "numberOfLevels.3",
+                          "type": "Answer",
+                          "heading": "3",
+                          "value": "3"
+                        },
+                        {
+                          "id": "numberOfLevels.4",
+                          "type": "Answer",
+                          "heading": "4",
+                          "value": "4"
+                        },
+                        {
+                          "id": "numberOfLevels.5",
+                          "type": "Answer",
+                          "heading": "5 eller flere",
+                          "value": "5"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "fireSafetyError",
+                      "property": "fireSafetyError",
+                      "type": "Error",
                       "text":
-                        "Bygningen din har for mange etasjer til at veiviseren kan hjelpe deg til å vurdere branntekniske krav."
+                        "Bygningen din har for mange etasjer til at veiviseren kan hjelpe deg til å vurdere branntekniske krav.",
+                      "show": {
+                        "field": "numberOfLevels",
+                        "operator": "gte",
+                        "value": "5"
+                      }
                     }
                   ]
                 },
@@ -1243,6 +1237,7 @@
         {
           "id": "canInstallWindow",
           "type": "Group",
+          "heading": "Vindu på rommet",
           "children": [
             {
               "id": "canInstallWindowRadio",
@@ -1328,7 +1323,7 @@
                       "show": {
                         "field": "bigWindow",
                         "operator": "eq",
-                        "value": "no"
+                        "value": "yes"
                       },
                       "children": [
                         {
@@ -1338,12 +1333,6 @@
                             "Hvis rommet ikke har et stort nok vindu kan ikke veilederen ta stilling til om krav til lys og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
                         }
                       ]
-                    },
-                    {
-                      "id": "bigWindowResult",
-                      "type": "Result",
-                      "heading": "",
-                      "lead": ""
                     },
                     {
                       "id": "escapeUnkownFloor",
@@ -1409,17 +1398,27 @@
                       "branches": [
                         {
                           "test": {
-                            "type": "or",
+                            "type": "and",
                             "clauses": [
                               {
-                                "field": "basementOrAttic",
-                                "operator": "eq",
-                                "value": "basement"
+                                "type": "or",
+                                "clauses": [
+                                  {
+                                    "field": "basementOrAttic",
+                                    "operator": "eq",
+                                    "value": "basement"
+                                  },
+                                  {
+                                    "field": "basementOrAttic",
+                                    "operator": "eq",
+                                    "value": "attic"
+                                  }
+                                ]
                               },
                               {
-                                "field": "basementOrAttic",
+                                "field": "bigWindow",
                                 "operator": "eq",
-                                "value": "attic"
+                                "value": "yes"
                               }
                             ]
                           },
@@ -1506,49 +1505,49 @@
                                     "Når det ikke er mulig å komme seg ut av vinduet kan ikke veiviseren vurder om krav til rømning er oppfylt."
                                 }
                               ]
+                            },
+                            {
+                              "id": "ventilation",
+                              "property": "ventilation",
+                              "type": "Radio",
+                              "heading":
+                                "Har du eller skal du sette inn en lufteventil i rommet, i tillegg til vindu?",
+                              "options": [
+                                {
+                                  "id": "ventilation.yes",
+                                  "type": "Answer",
+                                  "heading":
+                                    "Ja, rommet har allerede eller det skal settes inn lufteventil på rommet",
+                                  "value": "yes"
+                                },
+                                {
+                                  "id": "ventilation.no",
+                                  "type": "Answer",
+                                  "heading": "Nei",
+                                  "value": "no"
+                                }
+                              ]
+                            },
+                            {
+                              "id": "ventilationError",
+                              "property": "ventilationError",
+                              "type": "Error",
+                              "warning": true,
+                              "show": {
+                                "field": "ventilation",
+                                "operator": "eq",
+                                "value": "no"
+                              },
+                              "children": [
+                                {
+                                  "id": "ventilationError.msg",
+                                  "type": "Text",
+                                  "text":
+                                    "Når det ikke er lufteventil kan ikke veilederen vurdere om krav til ventilasjon er oppfylt."
+                                }
+                              ]
                             }
                           ]
-                        }
-                      ]
-                    },
-                    {
-                      "id": "ventilation",
-                      "property": "ventilation",
-                      "type": "Radio",
-                      "heading":
-                        "Har du eller skal du sette inn en lufteventil i rommet, i tillegg til vindu?",
-                      "options": [
-                        {
-                          "id": "ventilation.yes",
-                          "type": "Answer",
-                          "heading":
-                            "Ja, rommet har allerede eller det skal settes inn lufteventil på rommet",
-                          "value": "yes"
-                        },
-                        {
-                          "id": "ventilation.no",
-                          "type": "Answer",
-                          "heading": "Nei",
-                          "value": "no"
-                        }
-                      ]
-                    },
-                    {
-                      "id": "ventilationError",
-                      "property": "ventilationError",
-                      "type": "Error",
-                      "warning": true,
-                      "show": {
-                        "field": "ventilation",
-                        "operator": "eq",
-                        "value": "no"
-                      },
-                      "children": [
-                        {
-                          "id": "ventilationError.msg",
-                          "type": "Text",
-                          "text":
-                            "Når det ikke er lufteventil kan ikke veilederen vurdere om krav til ventilasjon er oppfylt."
                         }
                       ]
                     }
