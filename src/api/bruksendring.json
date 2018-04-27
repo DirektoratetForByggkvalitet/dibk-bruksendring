@@ -146,36 +146,20 @@
                 "value": "garasje"
               },
               "heading": "Frittliggende garasje",
-              "lead": "<h2>blablabla</h2>",
-
-              "beforeResult": [
-                {
-                  "id": "garageResultId",
-                  "children": [
-                    {
-                      "id": "garageToLiveIn",
-                      "type": "Text",
-                      "heading":
-                        "Har du tenkt gjøre om garasjen slik at noen kan bo eller sove der?",
-                      "text":
-                        "Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det. "
-                    },
-                    {
-                      "id": "garageToLiveIn",
-                      "type": "Text",
-                      "heading": "Skal du gjøre om garasjen til bod?",
-                      "text":
-                        "Hvis du kun gjør innvendige endringer i garasjen trenger du ikke å søke, og du kan ta i bruk garasjen din som bod med en gang."
-                    },
-                    {
-                      "id": "garageToLiveIn",
-                      "type": "Text",
-                      "heading": "Skal du gjøre andre endringer?",
-                      "text": "Ta kontakt med kommunen din for å finne ut om du må søke."
-                    }
-                  ]
-                }
-              ]
+              "lead":
+                "<h4>Har du tenkt gjøre om garasjen slik at noen kan bo eller sove der?</h4><p>Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det. </p><h4>Skal du gjøre om garasjen til bod?</h4><p>Hvis du kun gjør innvendige endringer i garasjen trenger du ikke å søke, og du kan ta i bruk garasjen din som bod med en gang.</p><h4>Skal du gjøre andre endringer?</h4><p>Ta kontakt med kommunen din for å finne ut om du må søke.</p>"
+            },
+            {
+              "id": "boothResult",
+              "type": "Result",
+              "show": {
+                "field": "houseType",
+                "operator": "eq",
+                "value": "bod"
+              },
+              "heading": "Frittliggende garasje",
+              "lead":
+                "<h4>Har du tenkt gjøre om garasjen slik at noen kan bo eller sove der?</h4><p>Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det. </p><h4>Skal du gjøre om garasjen til bod?</h4><p>Hvis du kun gjør innvendige endringer i garasjen trenger du ikke å søke, og du kan ta i bruk garasjen din som bod med en gang.</p><h4>Skal du gjøre andre endringer?</h4><p>Ta kontakt med kommunen din for å finne ut om du må søke.</p>"
             },
             {
               "id": "multiEnebolig",
@@ -270,7 +254,7 @@
               },
               "heading": "Veiviseren dekker ikke dette",
               "lead":
-                "Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel."
+                "<h4>Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel.</h4>"
             },
             {
               "id": "commonArea",
@@ -316,9 +300,9 @@
           "heading": "Du vil gjøre en endring i fellesarealet",
           "errorheading": "Du vil gjøre en endring i fellesarealet",
           "lead":
-            "Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren!",
+            "<p>Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren!</p>",
           "errorlead":
-            "Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren!"
+            "<p>Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig. Takk for at du brukte veiviseren!</p>"
         },
         {
           "id": "roomHeight",
@@ -720,7 +704,7 @@
       "type": "Page",
       "heading": "Regelverk for boligen",
       "lead":
-        "Denne delen av veiviseren skal gi deg en pekepinn på om bruksendringen du ønsker å gjøre er innenfor lovverket. Da slipper du eventuelt å bruke tid på en søknad til kommunen for en bruk av rommet som ikke er lovlig.",
+        "<p>Denne delen av veiviseren skal gi deg en pekepinn på om bruksendringen du ønsker å gjøre er innenfor lovverket. Da slipper du eventuelt å bruke tid på en søknad til kommunen for en bruk av rommet som ikke er lovlig.</p>",
       "show": {
         "type": "and",
         "clauses": [
@@ -782,6 +766,8 @@
               "property": "mainReconstructionYear",
               "type": "Radio",
               "heading": "Er det søkt om en hovedombygging fra og med 1. juli. 2011?",
+              "text":
+                "<p>En hovedombygging er oppgradering av hele bygningen slik at den fremstår som ny. Å bare pusse opp badet eller kjøkkenet er for eksempel ikke en hovedombygging.</p><p>Er du i tvil kan du spørre kommunen om det er søkt om en hovedombygging av bygningen din.</p>",
               "show": {
                 "field": "buildApplicationYear",
                 "operator": "eq",
@@ -791,8 +777,6 @@
                 "url": "/img/9b@2x.png",
                 "alt": "Kalender"
               },
-              "text":
-                "<p>En hovedombygging er oppgradering av hele bygningen slik at den fremstår som ny. Å bare pusse opp badet eller kjøkkenet er for eksempel ikke en hovedombygging.</p><p>Er du i tvil kan du spørre kommunen om det er søkt om en hovedombygging av bygningen din.</p>",
               "options": [
                 {
                   "id": "mainReconstructionYear.yes",
@@ -1043,9 +1027,9 @@
               "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
               "errorheading": "Veiviseren dekker dessverre ikke ditt tilfelle",
               "lead":
-                "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ.",
+                "<p>Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ.</p>",
               "errorlead":
-                "Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ."
+                "<p>Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ.</p>"
             },
             {
               "id": "atticLoadError",
@@ -1077,157 +1061,180 @@
       "children": [
         {
           "id": "safetyAndEnvironment",
-          "type": "Group",
-          "simple": true,
-          "children": [
+          "type": "Branch",
+          "branches": [
             {
-              "id": "numberOfLevels",
-              "property": "numberOfLevels",
-              "type": "Radio",
-              "show": {
-                "field": "alreadyApprovedMainPart",
-                "operator": "eq",
-                "value": "no"
-              },
-              "heading":
-                "Inkludert eventuelle kjellere og loft, hvor mange etasjer har boligen din?",
-              "options": [
-                {
-                  "id": "numberOfLevels.2",
-                  "type": "Answer",
-                  "heading": "2",
-                  "value": "2"
-                },
-                {
-                  "id": "numberOfLevels.3",
-                  "type": "Answer",
-                  "heading": "3",
-                  "value": "3"
-                },
-                {
-                  "id": "numberOfLevels.4",
-                  "type": "Answer",
-                  "heading": "4",
-                  "value": "4"
-                },
-                {
-                  "id": "numberOfLevels.5",
-                  "type": "Answer",
-                  "heading": "5 eller flere",
-                  "value": "5"
-                }
-              ]
-            },
-            {
-              "id": "fireSafetyError",
-              "property": "fireSafetyError",
-              "type": "Error",
-              "show": {
-                "field": "numberOfLevels",
-                "operator": "gte",
-                "value": "5"
+              "test": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "toiletDetachedHouse",
+                    "operator": "eq",
+                    "value": "yes"
+                  },
+                  {
+                    "field": "basementOrAttic",
+                    "operator": "eq",
+                    "value": "basement"
+                  },
+                  {
+                    "field": "basementOrAttic",
+                    "operator": "eq",
+                    "value": "attic"
+                  }
+                ]
               },
               "children": [
                 {
-                  "id": "fireSafetyErrorText",
-                  "type": "Text",
-                  "warning": true,
-                  "text":
-                    "Bygningen din har for mange etasjer til at veiviseren kan hjelpe deg til å vurdere branntekniske krav."
-                }
-              ]
-            },
-            {
-              "type": "Branch",
-              "branches": [
+                  "id": "numberOfLevels",
+                  "property": "numberOfLevels",
+                  "type": "Radio",
+                  "show": {
+                    "field": "alreadyApprovedMainPart",
+                    "operator": "eq",
+                    "value": "no"
+                  },
+                  "heading":
+                    "Inkludert eventuelle kjellere og loft, hvor mange etasjer har boligen din?",
+                  "options": [
+                    {
+                      "id": "numberOfLevels.2",
+                      "type": "Answer",
+                      "heading": "2",
+                      "value": "2"
+                    },
+                    {
+                      "id": "numberOfLevels.3",
+                      "type": "Answer",
+                      "heading": "3",
+                      "value": "3"
+                    },
+                    {
+                      "id": "numberOfLevels.4",
+                      "type": "Answer",
+                      "heading": "4",
+                      "value": "4"
+                    },
+                    {
+                      "id": "numberOfLevels.5",
+                      "type": "Answer",
+                      "heading": "5 eller flere",
+                      "value": "5"
+                    }
+                  ]
+                },
                 {
-                  "test": {
-                    "type": "and",
-                    "clauses": [
-                      {
-                        "field": "$computed.multiUnitHouse",
-                        "operator": "eq",
-                        "value": true
-                      },
-                      {
-                        "field": "numberOfLevels",
-                        "operator": "eq",
-                        "value": "3"
-                      }
-                    ]
+                  "id": "fireSafetyError",
+                  "property": "fireSafetyError",
+                  "type": "Error",
+                  "show": {
+                    "field": "numberOfLevels",
+                    "operator": "gte",
+                    "value": "5"
                   },
                   "children": [
                     {
-                      "id": "escapeAtGroundFloor",
-                      "property": "escapeAtGroundFloor",
-                      "type": "Radio",
-                      "heading":
-                        "Har alle boenhetene i bygningen utgangsdør som går rett ut på bakken?",
-                      "text":
-                        "<p>Har alle boenhetene en dør som går rett fra boligen og rett ut på bakken? Det kan være en liten utvendig trapp på maksimalt 1,5 meter fra dørstokken og ned til bakken fra døren.</p><p>Her er det viktig å tenke på alle boenheter, også eventuelle hybler og utleieboliger i bygningen du bor.</p>",
-                      "options": [
-                        {
-                          "id": "escapeAtGroundFloorYes",
-                          "type": "Answer",
-                          "heading": "Ja, alle har minst én utgang rett ut på bakken",
-                          "value": "yes"
-                        },
-                        {
-                          "id": "escapeAtGroundFloorNo",
-                          "type": "Answer",
-                          "heading":
-                            "Nei, minst én boenhet/leilighet må gå gjennom innvendig eller utvendig trapp",
-                          "value": "no"
-                        }
-                      ]
-                    },
-                    {
-                      "id": "temporaryIdForFloorMessage",
+                      "id": "fireSafetyErrorText",
                       "type": "Text",
-                      "text": "Fint og flott! Her må Elise fylle noe tekst.",
-                      "show": {
-                        "field": "escapeAtGroundFloor",
-                        "operator": "eq",
-                        "value": "yes"
-                      }
-                    },
-                    {
-                      "id": "fireSafetyReconsidered",
-                      "type": "Error",
                       "warning": true,
-                      "show": {
-                        "field": "escapeAtGroundFloor",
-                        "operator": "eq",
-                        "value": "no"
+                      "text":
+                        "Bygningen din har for mange etasjer til at veiviseren kan hjelpe deg til å vurdere branntekniske krav."
+                    }
+                  ]
+                },
+                {
+                  "type": "Branch",
+                  "branches": [
+                    {
+                      "test": {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "$computed.multiUnitHouse",
+                            "operator": "eq",
+                            "value": true
+                          },
+                          {
+                            "field": "numberOfLevels",
+                            "operator": "eq",
+                            "value": "3"
+                          }
+                        ]
                       },
                       "children": [
                         {
-                          "id": "fireSafetyReconsideredText",
+                          "id": "escapeAtGroundFloor",
+                          "property": "escapeAtGroundFloor",
+                          "type": "Radio",
+                          "heading":
+                            "Har alle boenhetene i bygningen utgangsdør som går rett ut på bakken?",
                           "text":
-                            "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om kjelleren din regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette.",
-                          "type": "Text"
+                            "<p>Har alle boenhetene en dør som går rett fra boligen og rett ut på bakken? Det kan være en liten utvendig trapp på maksimalt 1,5 meter fra dørstokken og ned til bakken fra døren.</p><p>Her er det viktig å tenke på alle boenheter, også eventuelle hybler og utleieboliger i bygningen du bor.</p>",
+                          "options": [
+                            {
+                              "id": "escapeAtGroundFloorYes",
+                              "type": "Answer",
+                              "heading": "Ja, alle har minst én utgang rett ut på bakken",
+                              "value": "yes"
+                            },
+                            {
+                              "id": "escapeAtGroundFloorNo",
+                              "type": "Answer",
+                              "heading":
+                                "Nei, minst én boenhet/leilighet må gå gjennom innvendig eller utvendig trapp",
+                              "value": "no"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "temporaryIdForFloorMessage",
+                          "type": "Text",
+                          "text": "Fint og flott! Her må Elise fylle noe tekst.",
+                          "show": {
+                            "field": "escapeAtGroundFloor",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        },
+                        {
+                          "id": "fireSafetyReconsidered",
+                          "type": "Error",
+                          "warning": true,
+                          "show": {
+                            "field": "escapeAtGroundFloor",
+                            "operator": "eq",
+                            "value": "no"
+                          },
+                          "children": [
+                            {
+                              "id": "fireSafetyReconsideredText",
+                              "text":
+                                "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om kjelleren din regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette.",
+                              "type": "Text"
+                            }
+                          ]
                         }
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "id": "extraFloorWarning",
-              "type": "Error",
-              "warning": true,
-              "show": {
-                "field": "numberOfLevels",
-                "operator": "eq",
-                "value": "4"
-              },
-              "children": [
+                },
                 {
-                  "id": "extraFloorWarningText",
-                  "type": "Text",
-                  "text":
-                    "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om loftet ditt regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
+                  "id": "extraFloorWarning",
+                  "type": "Error",
+                  "warning": true,
+                  "show": {
+                    "field": "numberOfLevels",
+                    "operator": "eq",
+                    "value": "4"
+                  },
+                  "children": [
+                    {
+                      "id": "extraFloorWarningText",
+                      "type": "Text",
+                      "text":
+                        "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om loftet ditt regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
+                    }
+                  ]
                 }
               ]
             }
@@ -1236,7 +1243,6 @@
         {
           "id": "canInstallWindow",
           "type": "Group",
-          "simple": true,
           "children": [
             {
               "id": "canInstallWindowRadio",
@@ -1302,13 +1308,13 @@
                         "<p>Høyden og bredden må være minst 150 cm til sammen og i tillegg må:</p><ul><li>minst 50 cm bred (men da må høyden være minst 100 cm)</li><li>minst 60 cm høy (men da må bredden være minst 90 cm)</li></ul><p>Det forutsetter at vinduet kan åpnes helt opp, og at vinduet er hengslet på siden eller i toppen. Om du skal ha en annen type vindu, må du passe på at vinduet er godkjent som rømningsvindu.</p><p>Målingen av vinduet må gjøres på innsiden av innerkarmen på vinduet.</p>",
                       "options": [
                         {
-                          "id": "bigWindowYes",
+                          "id": "bigWindow.yes",
                           "type": "Answer",
                           "heading": "Ja, åpningen er eller blir stor nok",
                           "value": "yes"
                         },
                         {
-                          "id": "bigWindowNo",
+                          "id": "bigWindow.no",
                           "type": "Answer",
                           "heading": "Nei",
                           "value": "no"
@@ -1332,6 +1338,12 @@
                             "Hvis rommet ikke har et stort nok vindu kan ikke veilederen ta stilling til om krav til lys og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
                         }
                       ]
+                    },
+                    {
+                      "id": "bigWindowResult",
+                      "type": "Result",
+                      "heading": "",
+                      "lead": ""
                     },
                     {
                       "id": "escapeUnkownFloor",
