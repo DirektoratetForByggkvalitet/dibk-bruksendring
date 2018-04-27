@@ -547,13 +547,14 @@
               "children": [
                 {
                   "type": "Group",
-                  "simple": true,
+                  "heading": "Tilgang til toalett og håndvask",
                   "children": [
                     {
                       "id": "toiletDetachedHouse",
                       "property": "toiletDetachedHouse",
                       "type": "Radio",
-                      "heading": "Tilgang til toalett og håndvask",
+                      "heading":
+                        "Blir det toalett og vask i den delen av boligen hvor rommet ligger?",
                       "options": [
                         {
                           "id": "toiletDetachedHouse.yes",
@@ -568,16 +569,6 @@
                           "value": "no"
                         }
                       ]
-                    },
-                    {
-                      "id": "noToiletResultPage",
-                      "type": "Result",
-                      "heading": "Du må ha en dass",
-                      "show": {
-                        "field": "toiletDetachedHouse",
-                        "operator": "eq",
-                        "value": "no"
-                      }
                     },
                     {
                       "type": "Branch",
@@ -660,19 +651,9 @@
                   "type": "Result",
                   "heading": "Du må søke om lov til å endre rommet",
                   "show": {
-                    "type": "or",
-                    "clauses": [
-                      {
-                        "field": "bedOrSofa",
-                        "operator": "eq",
-                        "value": "no"
-                      },
-                      {
-                        "field": "roomNow",
-                        "operator": "eq",
-                        "value": "secondary"
-                      }
-                    ]
+                    "field": "bedOrSofa",
+                    "operator": "eq",
+                    "value": "yes"
                   },
                   "errorheading": "Du må søke om lov til å endre rommet",
                   "lead":
@@ -684,7 +665,7 @@
                   "id": "bedOrSofaResultGoal",
                   "type": "Result",
                   "show": {
-                    "type": "or",
+                    "type": "and",
                     "clauses": [
                       {
                         "field": "bedOrSofa",
@@ -698,10 +679,33 @@
                       }
                     ]
                   },
-                  "heading": "Du er i mål!",
-                  "errorheading": "Du er i mål!",
+                  "heading": "Det kan hende du får en ny boenhet",
                   "head":
-                    "<p>Du har svart at det blir bad/toalett og minst ett annet rom som er hoveddel i denne delen av boligen, men at det ikke er plass til sofa/seng i noen av rommene som er hoveddel.</p><p>Du kan gjøre mindre endringer på rommet uten å søke, som å:</p><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><p>Vil du gjøre andre endringer på rommet?</p><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p><p>Er det plass til seng i ett av rommene som er hoveddel?</p><p>Da må du endre svaret ditt på forrige spørsmål, for å få riktig informasjon om søknadstype og søknadsplikt.</p><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra hoveddel til hoveddel</li><li>Det blir ikke mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Får toalett/vask men ikke plass til seng</li></ul><p>Har du svart riktig?</p><p>Bruk vår veiviser for å finne ut hvilke byggeregler du må følge for å få rommet lovlig.</p>",
+                    "<p>Endringene du planlegger gjør at det kanskje oppstår en ny boenhet. Dette skjer når en del av din bolig kan brukes som en separat bolig med separat inngangsdør.</p><p>Her anbefaler vi deg å be om en forhåndskonferanse med kommunen din. Her kan du legge fram planene dine og høre hvilke muligheter du har.  <p>Hvis du får en ny boenhet er det lovpålagt å bruke profesjonelle foretak både til å sende inn byggesøknaden og til å utføre dette arbeidet. I tillegg må du følge alle byggeregler for nye boliger, og andre krav din kommune kan stille. </p>",
+                  "errorlead":
+                    "<p>Du har svart at det blir bad/toalett og minst ett annet rom som er hoveddel i denne delen av boligen, men at det ikke er plass til sofa/seng i noen av rommene som er hoveddel.</p><p>Du kan gjøre mindre endringer på rommet uten å søke, som å:</p><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><p>Vil du gjøre andre endringer på rommet?</p><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p><p>Er det plass til seng i ett av rommene som er hoveddel?</p><p>Da må du endre svaret ditt på forrige spørsmål, for å få riktig informasjon om søknadstype og søknadsplikt.</p><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra hoveddel til hoveddel</li><li>Det blir ikke mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Får toalett/vask men ikke plass til seng</li></ul><p>Har du svart riktig?</p><p>Bruk vår veiviser for å finne ut hvilke byggeregler du må følge for å få rommet lovlig.</p>"
+                },
+                {
+                  "id": "bedOrSofaResultGoal",
+                  "type": "Result",
+                  "show": {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "bedOrSofa",
+                        "operator": "eq",
+                        "value": "no"
+                      },
+                      {
+                        "field": "roomNow",
+                        "operator": "eq",
+                        "value": "secondary"
+                      }
+                    ]
+                  },
+                  "heading": "Du må søke om lov til å endre rommet",
+                  "head":
+                    "<p>Endringene du planlegger gjør at det kanskje oppstår en ny boenhet. Dette skjer når en del av din bolig kan brukes som en separat bolig med separat inngangsdør.</p><p>Her anbefaler vi deg å be om en forhåndskonferanse med kommunen din. Her kan du legge fram planene dine og høre hvilke muligheter du har.  <p>Hvis du får en ny boenhet er det lovpålagt å bruke profesjonelle foretak både til å sende inn byggesøknaden og til å utføre dette arbeidet. I tillegg må du følge alle byggeregler for nye boliger, og andre krav din kommune kan stille. </p>",
                   "errorlead":
                     "<p>Du har svart at det blir bad/toalett og minst ett annet rom som er hoveddel i denne delen av boligen, men at det ikke er plass til sofa/seng i noen av rommene som er hoveddel.</p><p>Du kan gjøre mindre endringer på rommet uten å søke, som å:</p><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><p>Vil du gjøre andre endringer på rommet?</p><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller  legge nye rør- eller luftekanaler.</p><p>Er det plass til seng i ett av rommene som er hoveddel?</p><p>Da må du endre svaret ditt på forrige spørsmål, for å få riktig informasjon om søknadstype og søknadsplikt.</p><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra hoveddel til hoveddel</li><li>Det blir ikke mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Får toalett/vask men ikke plass til seng</li></ul><p>Har du svart riktig?</p><p>Bruk vår veiviser for å finne ut hvilke byggeregler du må følge for å få rommet lovlig.</p>"
                 }
@@ -746,7 +750,6 @@
         {
           "id": "buildApplicationYearGroup",
           "type": "Group",
-          "simple": true,
           "children": [
             {
               "id": "buildApplicationYear",
@@ -782,7 +785,7 @@
               "show": {
                 "field": "buildApplicationYear",
                 "operator": "eq",
-                "value": "after"
+                "value": "before"
               },
               "image": {
                 "url": "/img/9b@2x.png",
