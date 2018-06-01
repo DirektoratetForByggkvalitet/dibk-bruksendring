@@ -73,6 +73,7 @@
       "children": [
         {
           "id": "houseTypeGroup",
+          "property": "houseTypeGroup",
           "type": "Group",
           "simple": false,
           "heading": "Om din bolig",
@@ -345,6 +346,7 @@
         {
           "id": "roomNowGroup",
           "type": "Group",
+          "property": "roomNowGroup",
           "heading": "Hva slags del skal rommet endres til/fra?",
           "text":
             "<p>Vi deler boliger inn i hoveddel og tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring.</p>",
@@ -533,7 +535,9 @@
               },
               "children": [
                 {
+                  "id": "toiletGroup",
                   "type": "Group",
+                  "property": "toiletGroup",
                   "heading": "Tilgang til toalett og håndvask",
                   "children": [
                     {
@@ -582,7 +586,7 @@
                                     "url": "/img/png/9.png",
                                     "alt": "Rom med inngangsdør utenfra"
                                   }
-                                  
+
                                 },
                                 {
                                   "id": "toiletIsEntireMainPart.no",
@@ -894,6 +898,7 @@
       "children": [
         {
           "id": "naturalDisasterGroup",
+          "property": "naturalDisasterGroup",
           "type": "Group",
           "simple": true,
           "heading": "Ligger boligen din i et flom- eller skredutsatt område?",
@@ -976,6 +981,7 @@
         },
         {
           "id": "basementOrAtticGroup",
+          "propery": "basementOrAtticGroup",
           "type": "Group",
           "simple": true,
           "show": {
@@ -1087,6 +1093,7 @@
                 {
                   "id": "numberOfLevelsGroup",
                   "type": "Group",
+                  "property": "numberOfLevelsGroup",
                   "heading": "Etasjer i boligen",
                   "children": [
                     {
@@ -1242,6 +1249,7 @@
         {
           "id": "canInstallWindow",
           "type": "Group",
+          "property": "canInstallWindow",
           "heading": "Vindu på rommet",
           "text": "De fleste rom må ha et vindu for lys, luft og som rømningsvei.",
           "children": [
@@ -1571,6 +1579,7 @@
         {
           "id": "radonGroup",
           "type": "Group",
+          "property": "radonGroup",
           "simple": false,
           "heading": "Radonnivået i boligen",
           "children": [
@@ -1699,6 +1708,7 @@
         {
           "id": "warmRoomGroup",
           "type": "Group",
+          "property": "warmRoomGroup",
           "simple": false,
           "heading": "Isolasjon og temperatur",
           "children": [
