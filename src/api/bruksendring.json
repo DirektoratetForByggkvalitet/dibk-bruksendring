@@ -1650,19 +1650,22 @@
                         {
                           "id": "radonLevel.100",
                           "type": "Answer",
-                          "heading": "Under 100 Bq/m<sup>3</sup>",
+                          "heading": "",
+                          "text": "Under 100 Bq/m<sup>3</sup>",
                           "value": "100"
                         },
                         {
                           "id": "radonLevel.200",
                           "type": "Answer",
-                          "heading": "100-200 Bq/m<sup>3</sup>",
+                          "heading": "",
+                          "text": "100-200 Bq/m<sup>3</sup>",
                           "value": "200"
                         },
                         {
                           "id": "radonLevel.201",
                           "type": "Answer",
-                          "heading": "Over 200 Bq/m<sup>3</sup>",
+                          "heading": "",
+                          "text": "Over 200 Bq/m<sup>3</sup>",
                           "value": "201"
                         }
                       ]
