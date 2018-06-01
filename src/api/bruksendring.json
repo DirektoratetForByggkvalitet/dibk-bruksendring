@@ -329,7 +329,6 @@
         {
           "id": "roomHeightLessThan2",
           "type": "Result",
-
           "show": {
             "field": "roomHeight",
             "operator": "eq",
@@ -613,32 +612,42 @@
                           ]
                         }
                       ]
-                    }
-                  ]
-                },
-                {
-                  "id": "bedOrSofa",
-                  "property": "bedOrSofa",
-                  "type": "Radio",
-                  "heading":
-                    "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
-                  "show": {
-                    "field": "toiletIsEntireMainPart",
-                    "operator": "eq",
-                    "value": "no"
-                  },
-                  "options": [
-                    {
-                      "id": "bedOrSofa.yes",
-                      "type": "Answer",
-                      "heading": "Ja",
-                      "value": "yes"
                     },
                     {
-                      "id": "bedOrSofa.no",
-                      "type": "Answer",
-                      "heading": "Nei",
-                      "value": "no"
+                      "id": "bedOrSofa",
+                      "property": "bedOrSofa",
+                      "type": "Radio",
+                      "heading":
+                        "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
+                      "show": {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "toiletIsEntireMainPart",
+                            "operator": "eq",
+                            "value": "no"
+                          },
+                          {
+                            "field": "toiletDetachedHouse",
+                            "operator": "eq",
+                            "value": "yes"
+                          }
+                        ]
+                      },
+                      "options": [
+                        {
+                          "id": "bedOrSofa.yes",
+                          "type": "Answer",
+                          "heading": "Ja",
+                          "value": "yes"
+                        },
+                        {
+                          "id": "bedOrSofa.no",
+                          "type": "Answer",
+                          "heading": "Nei",
+                          "value": "no"
+                        }
+                      ]
                     }
                   ]
                 },
