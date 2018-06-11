@@ -261,35 +261,76 @@
                 "<p>Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel.</p>"
             },
             {
-              "id": "commonArea",
-              "property": "commonArea",
-              "type": "Radio",
+              "id": "hvilkenBoenhetInfoBoth",
+              "type": "Error",
+              "warning": true,
               "show": {
-                "field": "$computed.multiUnitHouse",
+                "field": "hvilkenBoenhet",
                 "operator": "eq",
-                "value": true
+                "value": "both"
               },
-              "heading": "Kommer endringene til å påvirke fellesareal?",
-              "image": {
-                "url": "/img/fellesareal.png",
-                "alt": "Hus"
-              },
-              "text":
-                "Dette kan være tilfelle hvis du skal endre på for eksempel kjellerbod eller loftsbod i fellesareal.",
-              "options": [
+              "children": [
                 {
-                  "id": "commonArea.yes",
-                  "type": "Answer",
-                  "heading": "Ja, det blir endringer i fellesareal.",
-                  "value": "yes"
-                },
-                {
-                  "id": "commonArea.no",
-                  "type": "Answer",
-                  "heading": "Nei, det blir kun endringer inne i boenheten.",
-                  "value": "no"
+                  "id": "hvilkenBoenhetInfoBoth.msg",
+                  "type": "Text",
+                  "warning": true,
+                  "text":
+                    "Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel. "
                 }
               ]
+            },
+            {
+              "id": "hvilkenBoenhetInfoOther",
+              "type": "Text",
+              "text":
+                "På resten av spørsmålene skal du svare med utgangspunkt i utleiedelen/hybelen og ikke resten av boligen.",
+              "show": {
+                "field": "hvilkenBoenhet",
+                "operator": "eq",
+                "value": "other"
+              }
+            },
+            {
+              "id": "hvilkenBoenhetInfoOwn",
+              "type": "Text",
+              "text":
+                "På resten av spørsmålene må du svare med utgangspunkt i den delen du selv bor i, og ikke resten av boligen (hybel/utleiedel).",
+              "show": {
+                "field": "hvilkenBoenhet",
+                "operator": "eq",
+                "value": "own"
+              }
+            }
+          ]
+        },
+        {
+          "id": "commonArea",
+          "property": "commonArea",
+          "type": "Radio",
+          "show": {
+            "field": "$computed.multiUnitHouse",
+            "operator": "eq",
+            "value": true
+          },
+          "heading": "Kommer endringene til å påvirke fellesareal?",
+          "image": {
+            "url": "/img/fellesareal.png",
+            "alt": "Hus"
+          },
+          "text":
+            "Dette kan være tilfelle hvis du skal endre på for eksempel kjellerbod eller loftsbod i fellesareal.",
+          "options": [
+            {
+              "id": "commonArea.yes",
+              "type": "Answer",
+              "heading": "Ja, det blir endringer i fellesareal.",
+              "value": "yes"
+            },
+            {
+              "id": "commonArea.no",
+              "type": "Answer",
+              "heading": "Nei, det blir kun endringer inne i boenheten.",
+              "value": "no"
             }
           ]
         },
@@ -1083,7 +1124,7 @@
                       "property": "fireSafetyError",
                       "type": "Error",
                       "text":
-                        "Bygningen din har for mange etasjer til at veiviseren kan hjelpe deg til å vurdere branntekniske krav.",
+                        "Etasjeantallet gjør at du må undersøke om bruksendringen utløser nye krav til brannsikring for hele bygget. Ta kontakt med byggmester eller takstmann. Du kan fortsette veiviseren for å se om det er andre hindringer.",
                       "show": {
                         "field": "numberOfLevels",
                         "operator": "gte",
@@ -1181,7 +1222,7 @@
                           "id": "extraFloorWarningText",
                           "type": "Text",
                           "text":
-                            "Du får en ekstra tellende etasje på grunn av endringen. Dette kan gjøre at krav til brannsikkerhet må vurderes på nytt for boligen, hvis loftet ditt også telles som en etasje. Du må derfor avklare om loftet ditt regnes som en etasje. Reglene for hva som telles som en etasje er dessverre for kompliserte for at veilederen kan hjelpe deg med dette."
+                            "Etasjeantallet gjør at du må undersøke om bruksendringen utløser nye krav til brannsikring for hele bygget. Ta kontakt med byggmester eller takstmann. Du kan fortsette veiviseren for å se om det er andre hindringer."
                         }
                       ]
                     }
@@ -1196,7 +1237,7 @@
           "type": "Group",
           "property": "canInstallWindow",
           "heading": "Vindu på rommet",
-          "text": "For å sjekke om rommet du skal endre oppfyller krav til lys, luft og rømning, vil vi nå stille deg noen spørsmål om vindu.",
+          "text": "<p>For å sjekke om rommet du skal endre oppfyller krav til lys, luft og rømning, vil vi nå stille deg noen spørsmål om vindu.</p>",
           "children": [
             {
               "id": "canInstallWindowRadio",
@@ -1513,6 +1554,62 @@
           ]
         },
         {
+          "id": "warmRoomGroup",
+          "type": "Group",
+          "property": "warmRoomGroup",
+          "simple": false,
+          "heading": "Isolasjon og temperatur",
+          "children": [
+            {
+              "type": "Image",
+              "image": {
+                "url": "/img/png/21a.png",
+                "alt": "Hus med gradestokk på 19 grader"
+              }
+            },
+            {
+              "id": "warmRoom",
+              "property": "warmRoom",
+              "type": "Radio",
+              "heading": "Vil rommet kunne holde minst 19 grader gjennom vinteren?",
+              "text": "<p>Rommet må kunne holde minst 19 grader gjennom vinteren med den oppvarmingen du planlegger.</p>",
+              "options": [
+                {
+                  "id": "warmRoomYes",
+                  "type": "Answer",
+                  "heading":
+                    "Ja",
+                  "value": "yes"
+                },
+                {
+                  "id": "warmRoomNo",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "no"
+                }
+              ]
+            },
+            {
+              "id": "warmRoomError",
+              "type": "Error",
+              "warning": true,
+              "show": {
+                "field": "warmRoom",
+                "operator": "eq",
+                "value": "no"
+              },
+              "children": [
+                {
+                  "id": "warmRoomError.msg",
+                  "type": "Text",
+                  "text":
+                    "Du må isolere rommet slik at det kan holde høy nok innetemperatur gjennom vinteren."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "id": "radonGroup",
           "type": "Group",
           "property": "radonGroup",
@@ -1550,7 +1647,7 @@
               "id": "mesuredRadonText",
               "type": "Text",
               "text":
-                "Du oppgir at du ikke har målt radonnivået i boligen din. Det er ikke et krav at du skal gjøre det, men vi anbefaler at du gjør det fordi høye radon-nivåer er helseskadelig. Radon-gassene kommer fra bakken, derfor er det spesielt viktig å ha kontroll på radonnivået i boligen din om du skal endre noe i kjelleren din.",
+                "Høye radon-nivåer er helseskadelig, så det kan være lurt å måle radon-nivået. Det er krav å måle radon i bolig som leies ut, men ikke i en bolig du bor i selv.",
               "show": {
                 "field": "measureRadon",
                 "operator": "eq",
@@ -1612,7 +1709,7 @@
                           "type": "Text",
                           "warning": true,
                           "text":
-                            "Radonnivået er høyere enn tillatt. Du må gjøre tiltak som senker radonnivået til under 200 Bq/m<sup>3</sup> før du bruksendrer."
+                            "Du kan ikke bruksendre rommet før du har fått redusert radon-nivået i boligen din. Nivået må være under 200 Bq/m3, men det er anbefalt å redusere det til under 100 Bq/m3. Vær klar over at en bruksendring i kjeller  kan øke radon-nivået ytterligere."
                         }
                       ]
                     },
@@ -1620,7 +1717,7 @@
                       "id": "radonInfo200",
                       "type": "Text",
                       "text":
-                        "Radonnivået er litt høyt og du bør sette igang tiltak mot radon. Det er ikke et krav at du gjør dette før bruksendring, men vær klar over at en bruksendring kan gjøre radonproblemet verre.",
+                        "Radon-nivået er ikke ulovlig høyt. Du bør vurdere å gjøre noe for å redusere radon-nivået, særlig hvis du skal endre rom i kjeller.",
                       "show": {
                         "field": "radonLevel",
                         "operator": "eq",
@@ -1631,7 +1728,7 @@
                       "id": "radonInfo100",
                       "type": "Text",
                       "text":
-                        "Randonnivået er greit - under 100 Bq/m<sup>3</sup> er det ikke nødvendig å gjøre tiltak mot radon.",
+                        "Radon-nivå under 100 Bq/m3 anses som trygt.",
                       "show": {
                         "field": "radonLevel",
                         "operator": "eq",
@@ -1639,62 +1736,6 @@
                       }
                     }
                   ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "warmRoomGroup",
-          "type": "Group",
-          "property": "warmRoomGroup",
-          "simple": false,
-          "heading": "Isolasjon og temperatur",
-          "children": [
-            {
-              "type": "Image",
-              "image": {
-                "url": "/img/png/21a.png",
-                "alt": "Hus med gradestokk på 19 grader"
-              }
-            },
-            {
-              "id": "warmRoom",
-              "property": "warmRoom",
-              "type": "Radio",
-              "heading": "Vil rommet kunne holde minst 19 grader gjennom vinteren?",
-              "text": "<p>Rommet må kunne holde minst 19 grader gjennom vinteren med den oppvarmingen du planlegger.</p>",
-              "options": [
-                {
-                  "id": "warmRoomYes",
-                  "type": "Answer",
-                  "heading":
-                    "Ja",
-                  "value": "yes"
-                },
-                {
-                  "id": "warmRoomNo",
-                  "type": "Answer",
-                  "heading": "Nei",
-                  "value": "no"
-                }
-              ]
-            },
-            {
-              "id": "warmRoomError",
-              "type": "Error",
-              "warning": true,
-              "show": {
-                "field": "warmRoom",
-                "operator": "eq",
-                "value": "no"
-              },
-              "children": [
-                {
-                  "id": "warmRoomError.msg",
-                  "type": "Text",
-                  "text":
-                    "Du må isolere rommet slik at det kan holde høy nok innetemperatur gjennom vinteren."
                 }
               ]
             }
