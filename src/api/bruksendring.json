@@ -573,12 +573,10 @@
               }
             ]
           },
-          "heading": "Du er i mål!",
-          "errorheading": "Du er i mål!",
-          "lead":
-            "<p>Du har svart at rommet er godkjent som hoveddel, og at du fortsatt ønsker å bruke det som hoveddel. Beholder du rommet som det er, står du fritt til å endre bruken fra for eksempel soverom til stue uten å søke. Du kan gjøre mindre endringer på rommmet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering. Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p>",
-          "errorlead":
-            "<p>Du har svart at rommet er godkjent som hoveddel, og at du fortsatt ønsker å bruke det som hoveddel. Beholder du rommet som det er, står du fritt til å endre bruken fra for eksempel soverom til stue uten å søke. Du kan gjøre mindre endringer på rommmet uten å søke, som å: pusse opp vegger, tak og gulv i rommet bytte interiør og fast møblering. Vil du gjøre andre endringer på rommet? Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p>"
+          "heading": "Fra hoveddel til hoveddel",
+          "errorheading": "Fra hoveddel til hoveddel",
+          "lead": "<p>Dine svar viser at du ikke må søke, så lenge du beholder rommet som det er. Du kan se hva du har svart nederst på denne siden.</p><h4>Du kan gjøre mindre endringer i rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Vil du gjøre andre endringer i rommet?</h4><p>Da må du sjekke med kommunen om du må søke.</p><h3>Takk for at du brukte veiviseren!</h3>",
+          "errorlead": "<p>Dine svar viser at du ikke må søke, så lenge du beholder rommet som det er. Du kan se hva du har svart nederst på denne siden.</p><h4>Du kan gjøre mindre endringer i rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Vil du gjøre andre endringer i rommet?</h4><p>Da må du sjekke med kommunen om du må søke.</p><h3>Takk for at du brukte veiviseren!</h3>"
         },
         {
           "id": "toiletDetachedBranch",
@@ -651,6 +649,17 @@
                           ]
                         }
                       ]
+                    },
+                    {
+                      "id": "toiletlsEntireMainPartResultat",
+                      "type": "Result",
+                      "heading": "Du må søke og det kan hende du får en ny boenhet",
+                      "lead": "<h4>Dine svar viser at du må søke. Det kan også hende får en ny boenhet. Dette skyldes at du får en adskilt del av boligen med bad og toalett.</h4><br><h4>Er du usikker på om du får en ny boenhet?</h4><p>Da anbefaler vi deg å be om en forhåndskonferanse med kommunen din. Dette er et møte hvor du kan legge fram planene dine og finne ut hva du må søke om.</p><h4>Får du en ny boenhet?</h4><p>Da må du bruke fagpersoner i hele byggeprosessen. I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker)</li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende)</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. En liste over disse finner du her: <a href=\"https://sgregister.dibk.no/\">https://sgregister.dibk.no/</a></p><h3>Takk for at du brukte veiviseren!</h3>",
+                      "show": {
+                        "field": "toiletIsEntireMainPart",
+                        "operator": "eq",
+                        "value": "yes"
+                      }
                     }
                   ]
                 }
