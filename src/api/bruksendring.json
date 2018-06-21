@@ -658,56 +658,8 @@
                           ]
                         }
                       ]
-                    },
-                    {
-                      "id": "bedOrSofa",
-                      "property": "bedOrSofa",
-                      "type": "Radio",
-                      "heading":
-                        "Er det plass til seng eller sofa i ett eller flere av rommene som er hoveddel?",
-                      "show": {
-                        "type": "and",
-                        "clauses": [
-                          {
-                            "field": "toiletIsEntireMainPart",
-                            "operator": "eq",
-                            "value": "no"
-                          },
-                          {
-                            "field": "toiletDetachedHouse",
-                            "operator": "eq",
-                            "value": "yes"
-                          }
-                        ]
-                      },
-                      "options": [
-                        {
-                          "id": "bedOrSofa.yes",
-                          "type": "Answer",
-                          "heading": "Ja",
-                          "value": "yes"
-                        },
-                        {
-                          "id": "bedOrSofa.no",
-                          "type": "Answer",
-                          "heading": "Nei",
-                          "value": "no"
-                        }
-                      ]
                     }
                   ]
-                },
-                {
-                  "id": "bedOrSofaResult",
-                  "type": "Result",
-                  "heading": "Du må søke om lov til å endre rommet",
-                  "show": {
-                    "field": "bedOrSofa",
-                    "operator": "eq",
-                    "value": "no"
-                  },
-                  "lead":
-                    "<p>Du har svart at du får toalett og minst ett rom til som er hoveddel, men at det ikke er plass til sofa eller seng i denne delen av boligen. Du skal derfor søke kommunen om lov til  å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Bruk <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">dette søknadsskjemaet</a>.</p><p>Resultatet er basert på dine svar om at:</p><ul><li>Du vil endre rommet fra tilleggsdel til hoveddel</li><li>Det blir mulig å komme seg til rommet innvendig, fra resten av boligen din</li><li>Du får plass til toalett/vask men ikke plass til seng</li></ul>"
                 },
                 {
                   "id": "bedOrSofaResultGoal",
@@ -715,11 +667,6 @@
                   "show": {
                     "type": "and",
                     "clauses": [
-                      {
-                        "field": "bedOrSofa",
-                        "operator": "eq",
-                        "value": "yes"
-                      },
                       {
                         "field": "roomNow",
                         "operator": "eq",
@@ -737,11 +684,6 @@
                   "show": {
                     "type": "and",
                     "clauses": [
-                      {
-                        "field": "bedOrSofa",
-                        "operator": "eq",
-                        "value": "no"
-                      },
                       {
                         "field": "roomNow",
                         "operator": "eq",
