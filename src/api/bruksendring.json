@@ -517,7 +517,7 @@
             {
               "id": "roomAccessAfterChange.commonAreaOrOutside",
               "type": "Answer",
-              "heading": "Jeg kan kun komme til rommet fra fellesareal eller inngangsdør utenfra.",
+              "heading": "Jeg kan KUN komme til rommet fra fellesareal eller inngangsdør utenfra.",
               "value": "outside",
               "show": {
                 "field": "$computed.multiUnitHouse",
@@ -602,58 +602,6 @@
                           "type": "Answer",
                           "heading": "Nei",
                           "value": "no"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "Branch",
-                      "branches": [
-                        {
-                          "test": {
-                            "field": "toiletDetachedHouse",
-                            "operator": "eq",
-                            "value": "yes"
-                          },
-                          "children": [
-                            {
-                              "id": "toiletIsEntireMainPart",
-                              "property": "toiletIsEntireMainPart",
-                              "type": "Radio",
-                              "heading": "Blir toalettet det eneste rommet som er hoveddel?",
-                              "options": [
-                                {
-                                  "id": "toiletIsEntireMainPart.yes",
-                                  "type": "Answer",
-                                  "heading": "Ja",
-                                  "value": "yes",
-                                  "image": {
-                                    "url": "/img/png/9.png",
-                                    "alt": "Rom med inngangsdør utenfra"
-                                  }
-                                },
-                                {
-                                  "id": "toiletIsEntireMainPart.no",
-                                  "type": "Answer",
-                                  "heading": "Nei",
-                                  "value": "no",
-                                  "image": {
-                                    "url": "/img/png/8.png",
-                                    "alt": "Rom med inngangsdør utenfra"
-                                  }
-                                }
-                              ]
-                            },
-                            {
-                              "id": "toiletIsEntireMainPartResult",
-                              "type": "Result",
-                              "heading": "<p>Du må søke</p>",
-                              "show": {
-                                "field": "toiletIsEntireMainPart",
-                                "operator": "eq",
-                                "value": "yes"
-                              }
-                            }
-                          ]
                         }
                       ]
                     }
