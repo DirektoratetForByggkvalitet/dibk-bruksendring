@@ -604,6 +604,18 @@
                           "value": "no"
                         }
                       ]
+                    },
+                    {
+                      "id": "toiletsEntireMainPartResult",
+                      "type": "Result",
+                      "heading": "Du må søke og det kan hende du får en ny boenhet",
+                      "lead":
+                        "<p>Dine svar viser at du må søke. Det kan også hende får en ny boenhet. Dette skyldes at du får en adskilt del av boligen med bad og toalett.</p><p><b>Er du usikker på om du får en ny boenhet?</b><br>Da anbefaler vi deg å be om en forhåndskonferanse med kommunen din. Dette er et møte hvor du kan legge fram planene dine og finne ut hva du må søke om.</p><p><b>Får du en ny boenhet?</b><br>Da må du bruke fagpersoner i hele byggeprosessen. I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:<ul><li>å sende inn byggesøknaden for deg (ansvarlig søker).</li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende)</li><li>å bygge (ansvarlig utførende)</li></ul></p><p>Vi anbefaler å bruke foretak med sentral godkjenning. <a href='https://sgregister.dibk.no/'>En liste over disse finner du her</a></p>",
+                      "show": {
+                        "field": "toiletDetachedHouse",
+                        "operator": "eq",
+                        "value": "yes"
+                      }
                     }
                   ]
                 }
@@ -705,21 +717,36 @@
       "lead":
         "<p>Endringen du ønsker å gjøre er søknadspliktig. Du må derfor søke kommunen om å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>De fleste boliger er bygget etter eldre regelverk. For mange av disse gjelder færre og enklere tekniske krav enn for nyere boliger. Fortsett veiviseren for å finne ut om det gjelder deg!</p>",
       "show": {
-        "type": "and",
+        "type": "or",
         "clauses": [
           {
-            "field": "roomNow",
-            "operator": "eq",
-            "value": "secondary"
-          },
-          {
-            "type": "or",
+            "type": "and",
             "clauses": [
               {
-                "field": "roomAccessAfterChange",
+                "field": "roomNow",
                 "operator": "eq",
-                "value": "inside"
+                "value": "secondary"
               },
+              {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "roomAccessAfterChange",
+                    "operator": "eq",
+                    "value": "inside"
+                  },
+                  {
+                    "field": "toiletDetachedHouse",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [
               {
                 "field": "toiletDetachedHouse",
                 "operator": "eq",
