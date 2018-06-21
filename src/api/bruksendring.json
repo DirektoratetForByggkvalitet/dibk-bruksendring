@@ -756,6 +756,59 @@
               ]
             }
           ]
+        },
+        {
+          "id": "overUnderNextTooHovedRoom",
+          "property": "overUnderNextTooHovedRoom",
+          "type": "Radio",
+          "show": {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "roomNow",
+                "operator": "eq",
+                "value": "secondary"
+              },
+              {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "roomAccessAfterChange",
+                    "operator": "eq",
+                    "value": "inside"
+                  },
+                  {
+                    "field": "toiletDetachedHouse",
+                    "operator": "eq",
+                    "value": "no"
+                  }
+                ]
+              }
+            ]
+          },
+          "heading":
+            "Ligger rommet du vil endre på over, under eller vegg-i-vegg med et rom som allerede er hoveddel?",
+          "text":
+            "<p>Rommene må ligge i din egen bolig og være godkjente til bruk som hoveddel. Hoveddel er for eksempel rom du kan bo og sove i. Tilleggsdel er rom for oppbevaring.</p>",
+          "image": {
+            "url": "/img/png/10a.png",
+            "alt": "Room"
+          },
+          "options": [
+            {
+              "id": "overUnderNextTooHovedRoom.yes",
+              "type": "Answer",
+              "heading":
+                "Ja, rommet ligger over, under eller vegg-i-vegg med et rom som er hoveddel",
+              "value": "yes"
+            },
+            {
+              "id": "overUnderNextTooHovedRoom.no",
+              "type": "Answer",
+              "heading": "Nei, rommet grenser kun mot tilleggsdel eller nabo",
+              "value": "no"
+            }
+          ]
         }
       ]
     },
@@ -869,38 +922,6 @@
           ]
         },
         {
-          "id": "overUnderNextTooHovedRoom",
-          "property": "overUnderNextTooHovedRoom",
-          "type": "Radio",
-          "show": {
-            "field": "divisionOrMerger",
-            "operator": "eq",
-            "value": "no"
-          },
-          "heading": "Ligger rommet du vil endre på over, under eller vegg-i-vegg med et rom som allerede er hoveddel?",
-          "text":
-            "<p>Rommene må ligge i din egen bolig og være godkjente til bruk som hoveddel. Hoveddel er for eksempel rom du kan bo og sove i. Tilleggsdel er rom for oppbevaring.</p>",
-          "image": {
-            "url": "/img/png/10a.png",
-            "alt": "Room"
-          },
-          "options": [
-            {
-              "id": "overUnderNextTooHovedRoom.yes",
-              "type": "Answer",
-              "heading":
-                "Ja, rommet ligger over, under eller vegg-i-vegg med et rom som er hoveddel",
-              "value": "yes"
-            },
-            {
-              "id": "overUnderNextTooHovedRoom.no",
-              "type": "Answer",
-              "heading": "Nei, rommet grenser kun mot tilleggsdel eller nabo",
-              "value": "no"
-            }
-          ]
-        },
-        {
           "id": "overUnderNextTooHovedRoomResult",
           "type": "Result",
           "heading": "Du må følge byggereglene i TEK17",
@@ -989,7 +1010,8 @@
               "property": "basementOrAttic",
               "type": "Radio",
               "heading": "Ligger rommet du skal endre, i en kjeller eller på et loft?",
-              "text": "<p>Dette kan påvirke konstruksjonssikkerhet, brannsikring og rømingsveier.</p>",
+              "text":
+                "<p>Dette kan påvirke konstruksjonssikkerhet, brannsikring og rømingsveier.</p>",
               "image": {
                 "url": "/img/png/13a.png",
                 "alt": "Loft eller kjeller illustrert"
@@ -1169,8 +1191,7 @@
                                 {
                                   "id": "escapeAtGroundFloorNo",
                                   "type": "Answer",
-                                  "heading":
-                                    "Nei",
+                                  "heading": "Nei",
                                   "value": "no"
                                 }
                               ]
@@ -1237,14 +1258,14 @@
           "type": "Group",
           "property": "canInstallWindow",
           "heading": "Vindu på rommet",
-          "text": "<p>For å sjekke om rommet du skal endre oppfyller krav til lys, luft og rømning, vil vi nå stille deg noen spørsmål om vindu.</p>",
+          "text":
+            "<p>For å sjekke om rommet du skal endre oppfyller krav til lys, luft og rømning, vil vi nå stille deg noen spørsmål om vindu.</p>",
           "children": [
             {
               "id": "canInstallWindowRadio",
               "property": "canInstallWindowRadio",
               "type": "Radio",
-              "heading":
-                "Har du eller skal du sette inn et vindu mot friluft som kan åpnes?",
+              "heading": "Har du eller skal du sette inn et vindu mot friluft som kan åpnes?",
               "options": [
                 {
                   "id": "canInstallWindowRadio.yes",
@@ -1512,8 +1533,7 @@
                                 {
                                   "id": "ventilation.yes",
                                   "type": "Answer",
-                                  "heading":
-                                    "Ja, det blir lufteventil på rommet",
+                                  "heading": "Ja, det blir lufteventil på rommet",
                                   "value": "yes"
                                 },
                                 {
@@ -1572,13 +1592,13 @@
               "property": "warmRoom",
               "type": "Radio",
               "heading": "Vil rommet kunne holde minst 19 grader gjennom vinteren?",
-              "text": "<p>Rommet må kunne holde minst 19 grader gjennom vinteren med den oppvarmingen du planlegger.</p>",
+              "text":
+                "<p>Rommet må kunne holde minst 19 grader gjennom vinteren med den oppvarmingen du planlegger.</p>",
               "options": [
                 {
                   "id": "warmRoomYes",
                   "type": "Answer",
-                  "heading":
-                    "Ja",
+                  "heading": "Ja",
                   "value": "yes"
                 },
                 {
@@ -1727,8 +1747,7 @@
                     {
                       "id": "radonInfo100",
                       "type": "Text",
-                      "text":
-                        "Radon-nivå under 100 Bq/m3 anses som trygt.",
+                      "text": "Radon-nivå under 100 Bq/m3 anses som trygt.",
                       "show": {
                         "field": "radonLevel",
                         "operator": "eq",
