@@ -11,6 +11,10 @@ import Intro from './pages/Intro';
 import store from './store';
 
 export default class App extends Component {
+  static trackIntro() {
+    track(data.meta.name, 'intro', 'Bruksendring!');
+  }
+
   static propTypes = {
     translations: PropTypes.object,
   };
@@ -18,10 +22,6 @@ export default class App extends Component {
   static defaultProps = {
     translations: {},
   };
-
-  static trackIntro() {
-    track(data.meta.name, 'intro', 'Bruksendring!');
-  }
 
   constructor(props) {
     super(props);

@@ -164,7 +164,6 @@
               "id": "multiEnebolig",
               "property": "multiEnebolig",
               "type": "Radio",
-
               "show": {
                 "field": "houseType",
                 "operator": "eq",
@@ -385,7 +384,6 @@
             "operator": "eq",
             "value": "no"
           },
-
           "heading": "Rommet er lavere enn to meter",
           "lead":
             "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden.</p><h4>Kan du øke romhøyden?</h4><p>Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil.</p><p>Takk for at du brukte veilederen!</p>"
@@ -717,6 +715,38 @@
               "value": "no"
             }
           ]
+        },
+        {
+          "id": "overUnderNextTooHovedRoomResult",
+          "type": "Result",
+          "heading": "Du må følge byggereglene i TEK17",
+          "lead":
+            "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">dette søknadsskjemaet</a>.</p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
+          "show": {
+            "type": "or",
+            "clauses": [
+              {
+                "field": "buildApplicationYear",
+                "operator": "eq",
+                "value": "after"
+              },
+              {
+                "field": "mainReconstructionYear",
+                "operator": "eq",
+                "value": "yes"
+              },
+              {
+                "field": "divisionOrMerger",
+                "operator": "eq",
+                "value": "yes"
+              },
+              {
+                "field": "overUnderNextTooHovedRoom",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          }
         }
       ]
     },
@@ -828,38 +858,6 @@
               "value": "no"
             }
           ]
-        },
-        {
-          "id": "overUnderNextTooHovedRoomResult",
-          "type": "Result",
-          "heading": "Du må følge byggereglene i TEK17",
-          "lead":
-            "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">dette søknadsskjemaet</a>.</p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
-          "show": {
-            "type": "or",
-            "clauses": [
-              {
-                "field": "buildApplicationYear",
-                "operator": "eq",
-                "value": "after"
-              },
-              {
-                "field": "mainReconstructionYear",
-                "operator": "eq",
-                "value": "yes"
-              },
-              {
-                "field": "divisionOrMerger",
-                "operator": "eq",
-                "value": "yes"
-              },
-              {
-                "field": "overUnderNextTooHovedRoom",
-                "operator": "eq",
-                "value": "no"
-              }
-            ]
-          }
         }
       ]
     },
@@ -869,6 +867,11 @@
       "heading": "Tekniske krav",
       "lead":
         "<p>Dine svar viser at boligen din er bygget etter eldre regelverk. Da gjelder færre og enklere tekniske krav enn for nyere boliger. Fortsett veiviseren for å finne ut det er mulig å oppfylle de vanligste tekniske kravene som gjelder rom i eldre boliger.</p>",
+      "show": {
+        "field": "toiletDetachedHouse",
+        "operator": "eq",
+        "value": "yes"
+      },
       "children": [
         {
           "id": "alreadyApprovedMainPart",
@@ -1225,11 +1228,13 @@
                   },
                   "children": [
                     {
+                      "id": "noWindowErrorText",
                       "type": "Text",
                       "text":
                         "<p>Et godkjent rømningsvindu må ha en total lengde og bredde på minst 150 cm. Vinduet må i tillegg være minst 50 cm bredt og minst 60 cm høyt. Mål på innsiden av innerkarmen på vinduet.</p><p>Vinduet må kunne åpnes helt opp. Har du midthengslet vindu? Da må vinduet ha en åpning du kan komme deg ut av, som oppfyller målene over.</p>"
                     },
                     {
+                      "id": "imageDimensions",
                       "type": "Image",
                       "image": {
                         "url": "/img/png/14b.png",
@@ -1496,6 +1501,7 @@
           "heading": "Isolasjon og temperatur",
           "children": [
             {
+              "id": "noWindowErrorText",
               "type": "Image",
               "image": {
                 "url": "/img/png/21a.png",
@@ -1680,10 +1686,10 @@
     {
       "id": "hoorays",
       "type": "Result",
-      "heading": "Du har fullført veiviseren",
-      "errorheading": "Du har ikke svart på alle spørsmålene",
+      "heading": "Rommet ditt kan bruksendres!",
       "lead":
-        "<p>Sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine.</p>",
+        "<p>Svarene dine viser at det er mulig å bruksendre rommet, og at rommet oppfyller de vanligste tekniske kravene som gjelder rom i eldre boliger.  Du kan se hva du har svart nederst på denne siden.</p><p><b>Hva gjør jeg nå?</b><ul><li>Du må søke kommunen og få tillatelse før du starter arbeidene</li><li>Du har lov å gjøre arbeidene selv</li><li>Du kan bruke en fagperson, for eksempel en byggmester, hvis du er usikker på hvordan å gjøre endringene</li><li>Det er ditt ansvar at alle relevante tekniske krav blir fulgt for både rommet og boligen</li></ul></p><p><b>Hvilket søknadsskjema kan jeg bruke?</b><br>Du kan bruke søknadsskjemaet “Søknad om tillatelse til tiltak uten ansvarsrett”. Kryss av i feltet for bruksendring.</p><p><b>Hvilke andre krav kan gjelde?</b><ul><li>Skal du ha innlagt vann? Da gjelder egne krav om fuktsikring, og vi anbefaler bruk av rørlegger</li><li>Skal du ha ny skorstein eller nytt ildsted? Da gjelder egne krav om sikkerhet og ventilasjon, og vi anbefaler bruk av kvalifisert installatør.</li><li>Det kan finnes begrensninger på hva du kan gjøre på eiendommen i kommunale planer, f eks på grunn av flom- og skredfare. Det er viktig å sette seg inn i planene før du søker.</li></ul></p><p><b>Takk for at du brukte veiviseren!</b></p>",
+      "errorheading": "Du har ikke svart på alle spørsmålene",
       "errorlead":
         "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
       "exporter": "dataExport"
