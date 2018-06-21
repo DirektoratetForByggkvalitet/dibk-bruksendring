@@ -14,11 +14,7 @@
   },
   "dependencies": {
     "lodash.get": "^4.4.2",
-<<<<<<< HEAD
-    "losen": "^2.2.1",
-=======
-    "losen": "^2.2.0",
->>>>>>> df113e8499ba733ffa637c8a26f510edadd9efbf
+    "losen": "3.0.0-beta.0",
     "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-autobind": "^1.0.6",
