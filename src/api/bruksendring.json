@@ -937,6 +937,13 @@
           ]
         },
         {
+          "id": "alreadyApprovedMainPartInfo",
+          "type": "Information",
+          "heading": "Informasjon, når skal denne vises?",
+          "text":
+            "Siden du har godkjent hoveddel i etasjen fra før, skal brannsikring og konstruksjonssikkerhet allerede være ivaretatt."
+        },
+        {
           "id": "basementOrAtticGroup",
           "propery": "basementOrAtticGroup",
           "type": "Group",
