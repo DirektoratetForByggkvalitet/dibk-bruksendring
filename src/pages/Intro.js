@@ -9,7 +9,7 @@ function Intro({ close, data }) {
 
   // close / hide intro page if user has begun schema journey
   // TODO: a better approach might be to exclude the $computed prop if
-  // it's values is non-existent, in losen.
+  // it’s values is non-existent, in losen.
   if (
     arrayWithData.length !== 0 &&
     !(arrayWithData.length === 1 && !arrayWithData[0] !== '$computed')
