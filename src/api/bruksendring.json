@@ -396,7 +396,7 @@
           "property": "roomNowGroup",
           "heading": "Hoveddel og tilleggsdel",
           "text":
-            "<p>Rom er enten godkjent som hoveddel eller tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring. Usikker på hva rommmet er godkjent som i dag? Spør kommunen om de har en godkjent plantegning av boligen din.</p>",
+            "<p>Rom er enten godkjent som hoveddel eller tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring. Usikker på hva rommet er godkjent som i dag? Spør kommunen om de har en godkjent plantegning av boligen din.</p>",
           "show": {
             "field": "roomHeight",
             "operator": "eq",
