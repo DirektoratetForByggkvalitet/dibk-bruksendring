@@ -1262,11 +1262,13 @@
                   },
                   "children": [
                     {
+                      "id": "noWindowErrorText",
                       "type": "Text",
                       "text":
                         "<p>Et godkjent rømningsvindu må ha en total lengde og bredde på minst 150 cm. Vinduet må i tillegg være minst 50 cm bredt og minst 60 cm høyt. Mål på innsiden av innerkarmen på vinduet.</p><p>Vinduet må kunne åpnes helt opp. Har du midthengslet vindu? Da må vinduet ha en åpning du kan komme deg ut av, som oppfyller målene over.</p>"
                     },
                     {
+                      "id": "imageDimensions",
                       "type": "Image",
                       "image": {
                         "url": "/img/png/14b.png",
@@ -1533,6 +1535,7 @@
           "heading": "Isolasjon og temperatur",
           "children": [
             {
+              "id": "noWindowErrorText",
               "type": "Image",
               "image": {
                 "url": "/img/png/21a.png",
