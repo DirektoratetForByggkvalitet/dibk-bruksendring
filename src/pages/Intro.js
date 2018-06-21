@@ -16,6 +16,7 @@ function Intro({ close, data }) {
   ) {
     close();
   }
+
   return (
     <Primitives.Wizard>
       <IntroMain>

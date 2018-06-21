@@ -164,7 +164,6 @@
               "id": "multiEnebolig",
               "property": "multiEnebolig",
               "type": "Radio",
-
               "show": {
                 "field": "houseType",
                 "operator": "eq",
@@ -385,7 +384,6 @@
             "operator": "eq",
             "value": "no"
           },
-
           "heading": "Rommet er lavere enn to meter",
           "lead":
             "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden.</p><h4>Kan du øke romhøyden?</h4><p>Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil.</p><p>Takk for at du brukte veilederen!</p>"
@@ -869,6 +867,11 @@
       "heading": "Tekniske krav",
       "lead":
         "<p>Dine svar viser at boligen din er bygget etter eldre regelverk. Da gjelder færre og enklere tekniske krav enn for nyere boliger. Fortsett veiviseren for å finne ut det er mulig å oppfylle de vanligste tekniske kravene som gjelder rom i eldre boliger.</p>",
+      "show": {
+        "field": "toiletDetachedHouse",
+        "operator": "eq",
+        "value": "yes"
+      },
       "children": [
         {
           "id": "alreadyApprovedMainPart",
@@ -1225,11 +1228,13 @@
                   },
                   "children": [
                     {
+                      "id": "noWindowErrorText",
                       "type": "Text",
                       "text":
                         "<p>Et godkjent rømningsvindu må ha en total lengde og bredde på minst 150 cm. Vinduet må i tillegg være minst 50 cm bredt og minst 60 cm høyt. Mål på innsiden av innerkarmen på vinduet.</p><p>Vinduet må kunne åpnes helt opp. Har du midthengslet vindu? Da må vinduet ha en åpning du kan komme deg ut av, som oppfyller målene over.</p>"
                     },
                     {
+                      "id": "imageDimensions",
                       "type": "Image",
                       "image": {
                         "url": "/img/png/14b.png",
@@ -1496,6 +1501,7 @@
           "heading": "Isolasjon og temperatur",
           "children": [
             {
+              "id": "noWindowErrorText",
               "type": "Image",
               "image": {
                 "url": "/img/png/21a.png",
