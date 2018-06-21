@@ -566,9 +566,9 @@
               }
             ]
           },
-          "heading": "Du er i mål!",
+          "heading": "Fra hoveddel til hoveddel",
           "lead":
-            "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være hoveddel. Beholder du rommet som det er, står du fritt til å endre bruken fra for eksempel soverom til stue uten å søke.</p><h4>Du kan gjøre mindre endringer på rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Ønsker du få rommet godkjent som tilleggsdel?</h4><p>Da må du søke kommunen.</p><h4>Vil du gjøre andre endringer på rommet?</h4><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p>"
+            "<p>Dine svar viser at du ikke må søke, så lenge du beholder rommet som det er. Du kan se hva du har svart nederst på denne siden.</p><p>Du kan gjøre mindre endringer i rommet uten å søke, som å:<ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul></p><p><b>Vil du gjøre andre endringer i rommet?</b><br>Da må du sjekke med kommunen om du kan søke.</p><p>Takk for at du brukte veiviseren!</p>"
         },
         {
           "type": "Branch",
@@ -660,40 +660,6 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "id": "bedOrSofaResultGoal",
-                  "type": "Result",
-                  "show": {
-                    "type": "and",
-                    "clauses": [
-                      {
-                        "field": "roomNow",
-                        "operator": "eq",
-                        "value": "main"
-                      }
-                    ]
-                  },
-                  "heading": "Det kan hende du får en ny boenhet",
-                  "lead":
-                    "<p>Endringene du planlegger gjør at det kanskje oppstår en ny boenhet. Dette skjer når en del av din bolig kan brukes som en separat bolig med separat inngangsdør.</p><p>Her anbefaler vi deg å be om en forhåndskonferanse med kommunen din. Her kan du legge fram planene dine og høre hvilke muligheter du har.</p><p>Hvis du får en ny boenhet er det lovpålagt å bruke profesjonelle foretak både til å sende inn byggesøknaden og til å utføre dette arbeidet. I tillegg må du følge alle byggeregler for nye boliger, og andre krav din kommune kan stille.</p>"
-                },
-                {
-                  "id": "bedOrSofaResultGoal",
-                  "type": "Result",
-                  "show": {
-                    "type": "and",
-                    "clauses": [
-                      {
-                        "field": "roomNow",
-                        "operator": "eq",
-                        "value": "secondary"
-                      }
-                    ]
-                  },
-                  "heading": "Du må søke om lov til å endre rommet",
-                  "head":
-                    "<p>Endringene du planlegger gjør at det kanskje oppstår en ny boenhet. Dette skjer når en del av din bolig kan brukes som en separat bolig med separat inngangsdør.</p><p>Her anbefaler vi deg å be om en forhåndskonferanse med kommunen din. Her kan du legge fram planene dine og høre hvilke muligheter du har.</p><p>Hvis du får en ny boenhet er det lovpålagt å bruke profesjonelle foretak både til å sende inn byggesøknaden og til å utføre dette arbeidet. I tillegg må du følge alle byggeregler for nye boliger, og andre krav din kommune kan stille.</p>"
                 }
               ]
             }
@@ -997,7 +963,7 @@
               },
               "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
               "lead":
-                "<p>Skal du bygge i en underetasje, kjeller eller loft? Da kan du velge et annet svaralternativ.</p>"
+                "<p>Du kan se hva du har svart under. Der kan du også endre dine svar.</p><p>Takk for at du brukte veiviseren!</p>"
             },
             {
               "id": "atticLoadError",
