@@ -1589,7 +1589,7 @@
             {
               "id": "warmRoomError",
               "type": "Error",
-              "warning": true,
+              "simple": true,
               "show": {
                 "field": "warmRoom",
                 "operator": "eq",
@@ -1599,6 +1599,7 @@
                 {
                   "id": "warmRoomError.msg",
                   "type": "Text",
+                  "warning": true,
                   "text":
                     "Du må isolere rommet slik at det kan holde høy nok innetemperatur gjennom vinteren."
                 }
