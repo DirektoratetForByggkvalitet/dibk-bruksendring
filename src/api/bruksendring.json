@@ -90,7 +90,7 @@
                   "heading": "Enebolig",
                   "value": "enebolig",
                   "image": {
-                    "url": "/img/enebolig.png",
+                    "url": "/images/enebolig.png",
                     "alt": "Enebolig"
                   }
                 },
@@ -100,7 +100,7 @@
                   "heading": "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig",
                   "value": "multibolig",
                   "image": {
-                    "url": "/img/multibolig.png",
+                    "url": "/images/multibolig.png",
                     "alt": "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig"
                   }
                 },
@@ -110,7 +110,7 @@
                   "heading": "Leilighet",
                   "value": "leilighet",
                   "image": {
-                    "url": "/img/leilighet.png",
+                    "url": "/images/leilighet.png",
                     "alt": "Leilighet"
                   }
                 },
@@ -120,7 +120,7 @@
                   "heading": "Frittliggende garasje",
                   "value": "garasje",
                   "image": {
-                    "url": "/img/garasje.png",
+                    "url": "/images/garasje.png",
                     "alt": "Frittliggende garasje"
                   }
                 },
@@ -130,7 +130,7 @@
                   "heading": "Frittliggende bod eller lekestue",
                   "value": "bod",
                   "image": {
-                    "url": "/img/bod.png",
+                    "url": "/images/bod.png",
                     "alt": "Frittliggende bod eller lekestue"
                   }
                 }
@@ -171,7 +171,7 @@
               },
               "heading": "Er det flere boenheter i huset ditt?",
               "image": {
-                "url": "/img/png/1c.png",
+                "url": "/images/png/1c.png",
                 "alt": "Hus med hybel"
               },
               "text":
@@ -313,7 +313,7 @@
           },
           "heading": "Kommer endringene til å påvirke fellesareal?",
           "image": {
-            "url": "/img/fellesareal.png",
+            "url": "/images/fellesareal.png",
             "alt": "Hus"
           },
           "text":
@@ -360,7 +360,7 @@
           "property": "roomHeight",
           "type": "Radio",
           "heading": "Er rommet du vil endre på 2 meter eller høyere?",
-          "text": "<img src=\"/img/minst2meter.png\" alt=\"Minst 2 meter\" />",
+          "text": "<img src=\"/images/minst2meter.png\" alt=\"Minst 2 meter\" />",
           "options": [
             {
               "id": "roomHeight.yes",
@@ -411,7 +411,7 @@
                   "id": "roomNow.main",
                   "type": "Answer",
                   "image": {
-                    "url": "/img/hoveddel.png",
+                    "url": "/images/hoveddel.png",
                     "alt": "Hoveddel"
                   },
                   "heading": "Hoveddel",
@@ -423,7 +423,7 @@
                   "id": "roomNow.secondary",
                   "type": "Answer",
                   "image": {
-                    "url": "/img/tilleggsdel.png",
+                    "url": "/images/tilleggsdel.png",
                     "alt": "Tilleggsdel"
                   },
                   "heading": "Tilleggsdel",
@@ -443,7 +443,7 @@
                   "id": "roomChange.main",
                   "type": "Answer",
                   "image": {
-                    "url": "/img/hoveddel.png",
+                    "url": "/images/hoveddel.png",
                     "alt": "Hoveddel"
                   },
                   "heading": "Hoveddel",
@@ -455,7 +455,7 @@
                   "id": "roomChange.secondary",
                   "type": "Answer",
                   "image": {
-                    "url": "/img/tilleggsdel.png",
+                    "url": "/images/tilleggsdel.png",
                     "alt": "Tilleggsdel"
                   },
                   "heading": "Tilleggsdel",
@@ -510,7 +510,7 @@
               "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
               "value": "inside",
               "image": {
-                "url": "/img/png/3c.png",
+                "url": "/images/png/3c.png",
                 "alt": "ROm med inngangsdør innenfra"
               }
             },
@@ -525,7 +525,7 @@
                 "value": true
               },
               "image": {
-                "url": "/img/png/3b.png",
+                "url": "/images/png/3b.png",
                 "alt": "Rom med inngangsdør utenfra"
               }
             },
@@ -540,7 +540,7 @@
                 "value": false
               },
               "image": {
-                "url": "/img/png/3b.png",
+                "url": "/images/png/3b.png",
                 "alt": "Rom med inngangsdør utenfra"
               }
             }
@@ -657,7 +657,7 @@
           "text":
             "<p>Rommene må ligge i din egen bolig og være godkjente til bruk som hoveddel. Hoveddel er for eksempel rom du kan bo og sove i. Tilleggsdel er rom for oppbevaring.</p>",
           "image": {
-            "url": "/img/png/10a.png",
+            "url": "/images/png/10a.png",
             "alt": "Room"
           },
           "options": [
@@ -863,7 +863,7 @@
                 "Ja, i etasjen finnes det fra før enten godkjent oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang mellom rom som er hoveddel.",
               "value": "yes",
               "image": {
-                "url": "/img/12.png",
+                "url": "/images/12.png",
                 "alt": "Room"
               }
             },
@@ -874,7 +874,7 @@
                 "Nei, i etasjen finnes det fra før kun rom godkjent som enten bod, oppbevaringsrom, teknisk rom eller er en gang mellom rom som kun er tilleggsdel.",
               "value": "no",
               "image": {
-                "url": "/img/13.png",
+                "url": "/images/13.png",
                 "alt": "Room"
               }
             }
@@ -906,7 +906,7 @@
               "text":
                 "<p>Dette kan påvirke konstruksjonssikkerhet, brannsikring og rømingsveier.</p>",
               "image": {
-                "url": "/img/png/13a.png",
+                "url": "/images/png/13a.png",
                 "alt": "Loft eller kjeller illustrert"
               },
               "options": [
@@ -1212,7 +1212,7 @@
                       "id": "imageDimensions",
                       "type": "Image",
                       "image": {
-                        "url": "/img/png/14b.png",
+                        "url": "/images/png/14b.png",
                         "alt": "Dimensjoner på vinduer"
                       }
                     },
@@ -1479,7 +1479,7 @@
               "id": "noWindowErrorText",
               "type": "Image",
               "image": {
-                "url": "/img/png/21a.png",
+                "url": "/images/png/21a.png",
                 "alt": "Hus med gradestokk på 19 grader"
               }
             },
@@ -1535,7 +1535,7 @@
             {
               "type": "Image",
               "image": {
-                "url": "/img/png/20b.png",
+                "url": "/images/png/20b.png",
                 "alt": "Hus med radioaktivitetssymbol"
               }
             },
