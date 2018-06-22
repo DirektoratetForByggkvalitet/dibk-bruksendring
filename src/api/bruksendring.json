@@ -1614,6 +1614,7 @@
           "heading": "Radonnivået i boligen",
           "children": [
             {
+              "id": "husMedRadonImage",
               "type": "Image",
               "image": {
                 "url": "/images/png/20b.png",
