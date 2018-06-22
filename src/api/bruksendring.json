@@ -148,7 +148,8 @@
               "lead":
                 "<h4>Skal du gjøre om garasjen slik at noen kan bo eller sove der?</h4><p>Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det.</p><h4>Skal du gjøre om garasjen til bod?</h4><p>Hvis du kun gjør innvendige endringer i garasjen trenger du ikke å søke, og du kan ta i bruk garasjen din som bod med en gang.</p><h4>Skal du gjøre andre endringer?</h4><p>Ta kontakt med kommunen din for å finne ut om du må søke.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
               "errorheading": "Du har ikke svart på alle spørsmålene",
-              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+              "errorlead":
+                "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
             },
             {
               "id": "boothResult",
@@ -162,7 +163,8 @@
               "lead":
                 "<h4>Skal du gjøre om bygningen slik at noen kan bo eller sove der?</h4><p>Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det.</p><h4>Skal du gjøre om bygningen fra lekestue til bod eller omvendt?</h4><p>Hvis du kun gjør innvendige endringer trenger du ikke å søke, og du kan ta i bruk lekestuen som bod eller omvendt med én gang.</p><h4>Skal du gjøre om boden eller lekestuen til noe annet?</h4><p>Ta kontakt med kommunen din for å finne ut om du må søke.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
               "errorheading": "Du har ikke svart på alle spørsmålene",
-              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+              "errorlead":
+                "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
             },
             {
               "id": "multiEnebolig",
@@ -263,7 +265,8 @@
               "lead":
                 "<p>Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
               "errorheading": "Du har ikke svart på alle spørsmålene",
-              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+              "errorlead":
+                "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
             },
             {
               "id": "hvilkenBoenhetInfoBoth",
@@ -361,7 +364,8 @@
           "lead":
             "<p>Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig.<p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
           "errorheading": "Du har ikke svart på alle spørsmålene",
-          "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+          "errorlead":
+            "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
         },
         {
           "id": "roomHeight",
@@ -396,7 +400,8 @@
           "lead":
             "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden.</p><h4>Kan du øke romhøyden?</h4><p>Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
           "errorheading": "Du har ikke svart på alle spørsmålene",
-          "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+          "errorlead":
+            "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
         },
         {
           "id": "roomNowGroup",
@@ -482,7 +487,8 @@
               "lead":
                 "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke.</p><h4>Du kan gjøre mindre endringer på rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Ønsker du få rommet godkjent som tilleggsdel?</h4><p>Da må du søke kommunen.</p><h4>Vil du gjøre andre endringer på rommet?</h4><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
               "errorheading": "Du har ikke svart på alle spørsmålene",
-              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
+              "errorlead":
+                "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
               "show": {
                 "field": "$computed.mainToSecondary",
                 "operator": "eq",
@@ -496,7 +502,8 @@
               "lead":
                 "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke.</p><h4>Du kan gjøre mindre endringer på rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Vil du gjøre andre endringer på rommet?</h4>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
               "errorheading": "Du har ikke svart på alle spørsmålene",
-              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
+              "errorlead":
+                "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
               "show": {
                 "field": "$computed.secondaryToSecondary",
                 "operator": "eq",
@@ -582,7 +589,8 @@
           "lead":
             "<p>Dine svar viser at du ikke må søke, så lenge du beholder rommet som det er. Du kan se hva du har svart nederst på denne siden.</p><p>Du kan gjøre mindre endringer i rommet uten å søke, som å:<ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul></p><p><b>Vil du gjøre andre endringer i rommet?</b><br>Da må du sjekke med kommunen om du kan søke.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
           "errorheading": "Du har ikke svart på alle spørsmålene",
-          "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+          "errorlead":
+            "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
         },
         {
           "type": "Branch",
@@ -628,7 +636,8 @@
                       "lead":
                         "<p>Dine svar viser at du må søke. Det kan også hende får en ny boenhet. Dette skyldes at du får en adskilt del av boligen med bad og toalett.</p><p><b>Er du usikker på om du får en ny boenhet?</b><br>Da anbefaler vi deg å be om en forhåndskonferanse med kommunen din. Dette er et møte hvor du kan legge fram planene dine og finne ut hva du må søke om.</p><p><b>Får du en ny boenhet?</b><br>Da må du bruke fagpersoner i hele byggeprosessen. I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:<ul><li>å sende inn byggesøknaden for deg (ansvarlig søker).</li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende)</li><li>å bygge (ansvarlig utførende)</li></ul></p><p>Vi anbefaler å bruke foretak med sentral godkjenning. <a href='https://sgregister.dibk.no/'>En liste over disse finner du her</a></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
                       "errorheading": "Du har ikke svart på alle spørsmålene",
-                      "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
+                      "errorlead":
+                        "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
                       "show": {
                         "field": "toiletDetachedHouse",
                         "operator": "eq",
@@ -906,43 +915,55 @@
       },
       "children": [
         {
-          "id": "alreadyApprovedMainPart",
-          "property": "alreadyApprovedMainPart",
-          "type": "Radio",
-          "heading": "Er det godkjent hoveddel i etasjen rommet ligger i fra før?",
-          "text":
-            "En bruksendring kan utløse nye krav til konstruksjonssikkerhet og brannsikring for hele bygget. Usikker på om det godkjent hoveddel i etasjen? Spør kommunen om de har en godkjent plantegning av boligen din.",
-          "options": [
+          "id": "alreadyApprovedMainPartGroup",
+          "type": "Group",
+          "simple": true,
+          "children": [
             {
-              "id": "alreadyApprovedMainPart.yes",
-              "type": "Answer",
-              "heading":
-                "Ja, i etasjen finnes det fra før enten godkjent oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang mellom rom som er hoveddel.",
-              "value": "yes",
-              "image": {
-                "url": "/images/12.png",
-                "alt": "Room"
-              }
+              "id": "alreadyApprovedMainPart",
+              "property": "alreadyApprovedMainPart",
+              "type": "Radio",
+              "heading": "Er det godkjent hoveddel i etasjen rommet ligger i fra før?",
+              "text":
+                "En bruksendring kan utløse nye krav til konstruksjonssikkerhet og brannsikring for hele bygget. Usikker på om det godkjent hoveddel i etasjen? Spør kommunen om de har en godkjent plantegning av boligen din.",
+              "options": [
+                {
+                  "id": "alreadyApprovedMainPart.yes",
+                  "type": "Answer",
+                  "heading":
+                    "Ja, i etasjen finnes det fra før enten godkjent oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang mellom rom som er hoveddel.",
+                  "value": "yes",
+                  "image": {
+                    "url": "/images/12.png",
+                    "alt": "Room"
+                  }
+                },
+                {
+                  "id": "alreadyApprovedMainPart.no",
+                  "type": "Answer",
+                  "heading":
+                    "Nei, i etasjen finnes det fra før kun rom godkjent som enten bod, oppbevaringsrom, teknisk rom eller er en gang mellom rom som kun er tilleggsdel.",
+                  "value": "no",
+                  "image": {
+                    "url": "/images/13.png",
+                    "alt": "Room"
+                  }
+                }
+              ]
             },
             {
-              "id": "alreadyApprovedMainPart.no",
-              "type": "Answer",
-              "heading":
-                "Nei, i etasjen finnes det fra før kun rom godkjent som enten bod, oppbevaringsrom, teknisk rom eller er en gang mellom rom som kun er tilleggsdel.",
-              "value": "no",
-              "image": {
-                "url": "/images/13.png",
-                "alt": "Room"
+              "id": "alreadyApprovedMainPartInfo",
+              "type": "Information",
+              "heading": "",
+              "text":
+                "Siden du har godkjent hoveddel i etasjen fra før, skal brannsikring og konstruksjonssikkerhet allerede være ivaretatt.",
+              "show": {
+                "field": "alreadyApprovedMainPart",
+                "operator": "eq",
+                "value": "yes"
               }
             }
           ]
-        },
-        {
-          "id": "alreadyApprovedMainPartInfo",
-          "type": "Information",
-          "heading": "Informasjon, når skal denne vises?",
-          "text":
-            "Siden du har godkjent hoveddel i etasjen fra før, skal brannsikring og konstruksjonssikkerhet allerede være ivaretatt."
         },
         {
           "id": "basementOrAtticGroup",
@@ -1000,7 +1021,8 @@
               "lead":
                 "<p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
               "errorheading": "Du har ikke svart på alle spørsmålene",
-              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+              "errorlead":
+                "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
             },
             {
               "id": "atticLoadError",
