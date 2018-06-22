@@ -146,7 +146,9 @@
               },
               "heading": "Frittliggende garasje",
               "lead":
-                "<h4>Skal du gjøre om garasjen slik at noen kan bo eller sove der?</h4><p>Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det.</p><h4>Skal du gjøre om garasjen til bod?</h4><p>Hvis du kun gjør innvendige endringer i garasjen trenger du ikke å søke, og du kan ta i bruk garasjen din som bod med en gang.</p><h4>Skal du gjøre andre endringer?</h4><p>Ta kontakt med kommunen din for å finne ut om du må søke.</p>"
+                "<h4>Skal du gjøre om garasjen slik at noen kan bo eller sove der?</h4><p>Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det.</p><h4>Skal du gjøre om garasjen til bod?</h4><p>Hvis du kun gjør innvendige endringer i garasjen trenger du ikke å søke, og du kan ta i bruk garasjen din som bod med en gang.</p><h4>Skal du gjøre andre endringer?</h4><p>Ta kontakt med kommunen din for å finne ut om du må søke.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+              "errorheading": "Du har ikke svart på alle spørsmålene",
+              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
             },
             {
               "id": "boothResult",
@@ -158,7 +160,9 @@
               },
               "heading": "Frittliggende bod eller lekestue",
               "lead":
-                "<h4>Skal du gjøre om bygningen slik at noen kan bo eller sove der?</h4><p>Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det.</p><h4>Skal du gjøre om bygningen fra lekestue til bod eller omvendt?</h4><p>Hvis du kun gjør innvendige endringer trenger du ikke å søke, og du kan ta i bruk lekestuen som bod eller omvendt med én gang.</p><h4>Skal du gjøre om boden eller lekestuen til noe annet?</h4><p>Ta kontakt med kommunen din for å finne ut om du må søke.</p>"
+                "<h4>Skal du gjøre om bygningen slik at noen kan bo eller sove der?</h4><p>Da må du søke om endringen. Ta kontakt med kommunen din for å finne ut hva du skal søke om og hvordan du gjør det.</p><h4>Skal du gjøre om bygningen fra lekestue til bod eller omvendt?</h4><p>Hvis du kun gjør innvendige endringer trenger du ikke å søke, og du kan ta i bruk lekestuen som bod eller omvendt med én gang.</p><h4>Skal du gjøre om boden eller lekestuen til noe annet?</h4><p>Ta kontakt med kommunen din for å finne ut om du må søke.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+              "errorheading": "Du har ikke svart på alle spørsmålene",
+              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
             },
             {
               "id": "multiEnebolig",
@@ -257,7 +261,9 @@
               },
               "heading": "Veiviseren dekker ikke dette",
               "lead":
-                "<p>Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel.</p>"
+                "<p>Veiviseren dekker dessverre ikke når du vil gjøre endringer i både din del av boligen og i utleiedel.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+              "errorheading": "Du har ikke svart på alle spørsmålene",
+              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
             },
             {
               "id": "hvilkenBoenhetInfoBoth",
@@ -353,7 +359,9 @@
           },
           "heading": "Du vil gjøre en endring i fellesarealet",
           "lead":
-            "<p>Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig.<p></p>Takk for at du brukte veiviseren!</p>"
+            "<p>Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig.<p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+          "errorheading": "Du har ikke svart på alle spørsmålene",
+          "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
         },
         {
           "id": "roomHeight",
@@ -386,7 +394,9 @@
           },
           "heading": "Rommet er lavere enn to meter",
           "lead":
-            "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden.</p><h4>Kan du øke romhøyden?</h4><p>Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil.</p><p>Takk for at du brukte veilederen!</p>"
+            "<p>Da er rommet du vil endre i utgangspunktet for lavt til å kunne godkjennes som en del av boligen. Fordi romhøyden din er for lav kan vi dessverre ikke ta stilling til om endringen du skal gjøre er mulig, og om den er søknadspliktig. Det kan være at du kan endre bruken av rommet hvis du kan øke romhøyden.</p><h4>Kan du øke romhøyden?</h4><p>Hvis du kan bygge om slik at rommet blir høyere kan det være mulig å få det godkjent. Som regel vil du måtte bruke ansvarlige foretak som søker og bygger for deg til å gjøre dette. Snakk med kommunen om du er i tvil.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+          "errorheading": "Du har ikke svart på alle spørsmålene",
+          "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
         },
         {
           "id": "roomNowGroup",
@@ -470,7 +480,9 @@
               "type": "Result",
               "heading": "Fra hoveddel til tilleggsdel",
               "lead":
-                "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke.</p><h4>Du kan gjøre mindre endringer på rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Ønsker du få rommet godkjent som tilleggsdel?</h4><p>Da må du søke kommunen.</p><h4>Vil du gjøre andre endringer på rommet?</h4><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p>",
+                "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke.</p><h4>Du kan gjøre mindre endringer på rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Ønsker du få rommet godkjent som tilleggsdel?</h4><p>Da må du søke kommunen.</p><h4>Vil du gjøre andre endringer på rommet?</h4><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+              "errorheading": "Du har ikke svart på alle spørsmålene",
+              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
               "show": {
                 "field": "$computed.mainToSecondary",
                 "operator": "eq",
@@ -482,7 +494,9 @@
               "type": "Result",
               "heading": "Fra tilleggsdel til tilleggsdel",
               "lead":
-                "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke.</p><h4>Du kan gjøre mindre endringer på rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Vil du gjøre andre endringer på rommet?</h4>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p>",
+                "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke.</p><h4>Du kan gjøre mindre endringer på rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Vil du gjøre andre endringer på rommet?</h4>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+              "errorheading": "Du har ikke svart på alle spørsmålene",
+              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
               "show": {
                 "field": "$computed.secondaryToSecondary",
                 "operator": "eq",
@@ -566,7 +580,9 @@
           },
           "heading": "Fra hoveddel til hoveddel",
           "lead":
-            "<p>Dine svar viser at du ikke må søke, så lenge du beholder rommet som det er. Du kan se hva du har svart nederst på denne siden.</p><p>Du kan gjøre mindre endringer i rommet uten å søke, som å:<ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul></p><p><b>Vil du gjøre andre endringer i rommet?</b><br>Da må du sjekke med kommunen om du kan søke.</p><p>Takk for at du brukte veiviseren!</p>"
+            "<p>Dine svar viser at du ikke må søke, så lenge du beholder rommet som det er. Du kan se hva du har svart nederst på denne siden.</p><p>Du kan gjøre mindre endringer i rommet uten å søke, som å:<ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul></p><p><b>Vil du gjøre andre endringer i rommet?</b><br>Da må du sjekke med kommunen om du kan søke.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+          "errorheading": "Du har ikke svart på alle spørsmålene",
+          "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
         },
         {
           "type": "Branch",
@@ -610,7 +626,9 @@
                       "type": "Result",
                       "heading": "Du må søke og det kan hende du får en ny boenhet",
                       "lead":
-                        "<p>Dine svar viser at du må søke. Det kan også hende får en ny boenhet. Dette skyldes at du får en adskilt del av boligen med bad og toalett.</p><p><b>Er du usikker på om du får en ny boenhet?</b><br>Da anbefaler vi deg å be om en forhåndskonferanse med kommunen din. Dette er et møte hvor du kan legge fram planene dine og finne ut hva du må søke om.</p><p><b>Får du en ny boenhet?</b><br>Da må du bruke fagpersoner i hele byggeprosessen. I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:<ul><li>å sende inn byggesøknaden for deg (ansvarlig søker).</li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende)</li><li>å bygge (ansvarlig utførende)</li></ul></p><p>Vi anbefaler å bruke foretak med sentral godkjenning. <a href='https://sgregister.dibk.no/'>En liste over disse finner du her</a></p>",
+                        "<p>Dine svar viser at du må søke. Det kan også hende får en ny boenhet. Dette skyldes at du får en adskilt del av boligen med bad og toalett.</p><p><b>Er du usikker på om du får en ny boenhet?</b><br>Da anbefaler vi deg å be om en forhåndskonferanse med kommunen din. Dette er et møte hvor du kan legge fram planene dine og finne ut hva du må søke om.</p><p><b>Får du en ny boenhet?</b><br>Da må du bruke fagpersoner i hele byggeprosessen. I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:<ul><li>å sende inn byggesøknaden for deg (ansvarlig søker).</li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende)</li><li>å bygge (ansvarlig utførende)</li></ul></p><p>Vi anbefaler å bruke foretak med sentral godkjenning. <a href='https://sgregister.dibk.no/'>En liste over disse finner du her</a></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+                      "errorheading": "Du har ikke svart på alle spørsmålene",
+                      "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
                       "show": {
                         "field": "toiletDetachedHouse",
                         "operator": "eq",
@@ -681,7 +699,9 @@
           "type": "Result",
           "heading": "Du må følge byggereglene i TEK17",
           "lead":
-            "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">dette søknadsskjemaet</a>.</p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p>",
+            "<p>Siden rommet du vil endre ikke ligger inntil en hoveddel, kan du i utgangspunktet ikke få unntak fra å følge dagens byggeregler. Du må følge byggereglene i byggteknisk forskrift (TEK17).</p><p>Etter disse reglene må du tenke på at:</p><ul><li>Det blir minst 220 cm opp til taket i rommet</li><li>Det blir brannsikret etter nye regler</li><li>Det blir gode nok rømningsveier ut fra rommet</li><li>Rommet blir godt nok isolert</li><li>Det blir god nok ventilasjon på rommet</li><li>Det blir nok dagslys på rommet</li></ul><p>I forrige del av veiviseren fikk du vite at du må søke om bruksendringen av rommet ditt.</p><p>Det er ditt ansvar at rommet blir bygget lovlig. Snakk med en fagperson, som en byggmester eller en arkitekt, for å høre hva du eventuelt må gjøre med rommet ditt.</p><p>For å søke om endringen kan du bruke <a href=\"https://dibk.no/globalassets/brukertesting-digital-byggesoknad/soknadsblankett_5153.pdf\">dette søknadsskjemaet</a>.</p><p>Har du flere tilleggsdeler som ligger inntil hverandre?</p><p>Rommet du skal endre på bør i utgangspunktet dele enten gulv, tak eller vegg med eksisterende hoveddel i boligen din. Da kan du også få enkelte unntak fra dagens byggeregler.</p><p>Det kan være lurt å ta en ekstra kikk på plantegningen for boligen din, for å undersøke om for eksempel tilgrensende rom, gang eller trapperom allerede er hoveddel, eller kan gjøres om til hoveddel. Da vil det også bli enklere å oppfylle en del byggtekniske krav.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+          "errorheading": "Du har ikke svart på alle spørsmålene",
+          "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
           "show": {
             "type": "or",
             "clauses": [
@@ -941,7 +961,9 @@
               },
               "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
               "lead":
-                "<p>Du kan se hva du har svart under. Der kan du også endre dine svar.</p><p>Takk for at du brukte veiviseren!</p>"
+                "<p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+              "errorheading": "Du har ikke svart på alle spørsmålene",
+              "errorlead": "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
             },
             {
               "id": "atticLoadError",
@@ -958,7 +980,7 @@
                   "type": "Text",
                   "warning": true,
                   "text":
-                    "Sjekk om gulv, vegger og tak på loftet tåler endringene. Det er lurt å bruke en fagperson, for eksempel en byggmester eller takstmann."
+                    "Sjekk om gulv, vegger og tak på loftet tåler endringene. Det er lurt å bruke en fagperson, for eksempel en byggmester eller takstmann. Du kan fortsette veiviseren for å se om det er andre hindringer."
                 }
               ]
             }
@@ -1250,7 +1272,7 @@
                           "id": "bigWindowError.msg",
                           "type": "Text",
                           "text":
-                            "Hvis rommet ikke har et stort nok vindu kan ikke veilederen ta stilling til om krav til lys og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv."
+                            "Hvis rommet ikke har et stort nok vindu kan ikke veilederen ta stilling til om krav til lys og rømning er oppfylt. Kravene kan være oppfylt på annet vis, men dette må du undersøke selv. Du kan fortsette veiviseren for å se om det er andre hindringer."
                         }
                       ]
                     },
@@ -1305,7 +1327,7 @@
                           "id": "maxOneMeterToWindowWarning.text",
                           "type": "Text",
                           "text":
-                            "Det kan finnes andre rømningsveier fra samme etasje som er tilstrekkelige, men dette må du undersøke selv med en fagperson."
+                            "Det kan finnes andre rømningsveier fra samme etasje som er tilstrekkelige, men dette må du undersøke selv med en fagperson. Du kan fortsette veiviseren for å se om det er andre hindringer."
                         }
                       ]
                     },
@@ -1454,7 +1476,7 @@
                                   "id": "ventilationError.msg",
                                   "type": "Text",
                                   "text":
-                                    "Rommet må ha tilførsel av luft utenfra i tillegg til vindu. Lufteventil er enkleste måte å løse dette på."
+                                    "Rommet må ha tilførsel av luft utenfra i tillegg til vindu. Lufteventil er enkleste måte å løse dette på. Du kan fortsette veiviseren for å se om det er andre hindringer."
                                 }
                               ]
                             }
@@ -1663,7 +1685,7 @@
       "type": "Result",
       "heading": "Rommet ditt kan bruksendres!",
       "lead":
-        "<p>Svarene dine viser at det er mulig å bruksendre rommet, og at rommet oppfyller de vanligste tekniske kravene som gjelder rom i eldre boliger.  Du kan se hva du har svart nederst på denne siden.</p><p><b>Hva gjør jeg nå?</b><ul><li>Du må søke kommunen og få tillatelse før du starter arbeidene</li><li>Du har lov å gjøre arbeidene selv</li><li>Du kan bruke en fagperson, for eksempel en byggmester, hvis du er usikker på hvordan å gjøre endringene</li><li>Det er ditt ansvar at alle relevante tekniske krav blir fulgt for både rommet og boligen</li></ul></p><p><b>Hvilket søknadsskjema kan jeg bruke?</b><br>Du kan bruke søknadsskjemaet “Søknad om tillatelse til tiltak uten ansvarsrett”. Kryss av i feltet for bruksendring.</p><p><b>Hvilke andre krav kan gjelde?</b><ul><li>Skal du ha innlagt vann? Da gjelder egne krav om fuktsikring, og vi anbefaler bruk av rørlegger</li><li>Skal du ha ny skorstein eller nytt ildsted? Da gjelder egne krav om sikkerhet og ventilasjon, og vi anbefaler bruk av kvalifisert installatør.</li><li>Det kan finnes begrensninger på hva du kan gjøre på eiendommen i kommunale planer, f eks på grunn av flom- og skredfare. Det er viktig å sette seg inn i planene før du søker.</li></ul></p><p><b>Takk for at du brukte veiviseren!</b></p>",
+        "<p>Svarene dine viser at det er mulig å bruksendre rommet, og at rommet oppfyller de vanligste tekniske kravene som gjelder rom i eldre boliger.  Du kan se hva du har svart nederst på denne siden.</p><p><b>Hva gjør jeg nå?</b><ul><li>Du må søke kommunen og få tillatelse før du starter arbeidene</li><li>Du har lov å gjøre arbeidene selv</li><li>Du kan bruke en fagperson, for eksempel en byggmester, hvis du er usikker på hvordan å gjøre endringene</li><li>Det er ditt ansvar at alle relevante tekniske krav blir fulgt for både rommet og boligen</li></ul></p><p><b>Hvilket søknadsskjema kan jeg bruke?</b><br>Du kan bruke søknadsskjemaet “Søknad om tillatelse til tiltak uten ansvarsrett”. Kryss av i feltet for bruksendring.</p><p><b>Hvilke andre krav kan gjelde?</b><ul><li>Skal du ha innlagt vann? Da gjelder egne krav om fuktsikring, og vi anbefaler bruk av rørlegger</li><li>Skal du ha ny skorstein eller nytt ildsted? Da gjelder egne krav om sikkerhet og ventilasjon, og vi anbefaler bruk av kvalifisert installatør.</li><li>Det kan finnes begrensninger på hva du kan gjøre på eiendommen i kommunale planer, for eksempel på grunn av flom- og skredfare. Det er viktig å sette seg inn i planene før du søker.</li></ul></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
       "errorheading": "Du har ikke svart på alle spørsmålene",
       "errorlead":
         "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
