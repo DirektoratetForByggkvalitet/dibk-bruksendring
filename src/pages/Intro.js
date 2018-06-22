@@ -31,18 +31,20 @@ function Intro({ close, data }) {
         <Primitives.Paragraphs.P>
           Før du tar veiviseren bør du sjekke om det finnes begresninger for hva du kan gjøre med
           boligen din. Dette kan du finne informasjon om i kommunale dokumenter som reguleringsplan,
-          kommuneplanens arealdel eller situasjonskart.<br />Eksempler på slike begrensninger er:
+          kommuneplanens arealdel eller situasjonskart. Eksempler på slike begrensninger er:
           <ul>
             <li>flom- og skredsområde</li>
             <li>avstand til kraftlinjer</li>
             <li>fredet eller vernestatus</li>
           </ul>
         </Primitives.Paragraphs.P>
+        <br />
         <Primitives.Heading.H2>Start nå og fullfør senere</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
           Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere.
           Nettleseren husker hvor du var.
         </Primitives.Paragraphs.P>
+        <br />
         <Primitives.Heading.H2>Har du funnet ut det du trenger?</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
           Da er det bare å sette i gang med veiviseren - du får hjelp til hvert spørsmål underveis.
