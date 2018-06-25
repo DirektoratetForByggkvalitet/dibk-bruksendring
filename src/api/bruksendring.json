@@ -1643,10 +1643,12 @@
     {
       "id": "hooray-but",
       "type": "Result",
-      "heading": "Hooray but",
-      "lead": "Yeeee?",
-      "errorheading": "What?",
-      "errorlead": "What?",
+      "heading": "Takk for at du brukte veiviseren!",
+      "errorheading": "Du har ikke svart på alle spørsmålene",
+      "errorlead":
+        "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
+      "lead":
+        "<p>Noe kan komme i veien for å endre rommet slik du ønsker. Du kan se hva dette gjelder i svarene dine nederst på denne siden.</p><p><b>Hva gjør jeg nå?</b><br>Vi anbefaler at du kontakter en fagperson, for eksempel en byggmester. Vedkommende kan finne ut om det likevel er mulig å gjennomføre planene dine</p><p><b>Hvilke krav har veiviseren sjekket?</b><br>Veiviseren har sjekket om rommet oppfyller de vanligste tekniske kravene som gjelder stue og soverom i eldre boliger. Det kan gjelde flere eller færre krav for andre typer rom.</p><p><b>Hvilke andre krav kan gjelde?</b><br><ul><li>Skal du ha innlagt vann? Da gjelder egne krav om fuktsikring, og vi anbefaler bruk av rørlegger</li><li>Skal du ha ny skorstein eller nytt ildsted? Da gjelder egne krav om sikkerhet og ventilasjon, og vi anbefaler bruk av kvalifisert installatør.</li><li>Det kan finnes begrensninger på hva du kan gjøre på eiendommen i kommunale planer, f eks på grunn av flom- og skredfare. Det er viktig å sette seg inn i planene før du søker.</li></ul></p>",
       "show": {
         "type": "or",
         "clauses": [
