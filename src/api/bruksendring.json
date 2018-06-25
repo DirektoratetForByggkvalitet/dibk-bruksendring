@@ -762,7 +762,7 @@
       "type": "Page",
       "heading": "Du må søke",
       "lead":
-        "<p>Endringen du ønsker å gjøre er søknadspliktig. Du må derfor søke kommunen om å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>De fleste boliger er bygget etter eldre regelverk. For mange av disse gjelder færre og enklere tekniske krav enn for nyere boliger.</p><p>Fortsett veiviseren for å finne ut om det gjelder deg!</p>",
+        "<p>Du må søke kommunen når du vil endre et rom fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Når du bruksendrer må du følge dagens byggeregler. For eldre boliger gjelder færre og enklere krav enn for nyere boliger.</p><p>Fortsett veiviseren for å finne ut om det gjelder deg!</p>",
       "show": {
         "type": "or",
         "clauses": [
