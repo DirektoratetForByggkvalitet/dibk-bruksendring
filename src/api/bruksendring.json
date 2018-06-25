@@ -73,7 +73,6 @@
       "children": [
         {
           "id": "houseTypeGroup",
-          "property": "houseTypeGroup",
           "type": "Group",
           "simple": false,
           "heading": "Hva slags bolig skal du endre rom i?",
@@ -406,7 +405,6 @@
         {
           "id": "roomNowGroup",
           "type": "Group",
-          "property": "roomNowGroup",
           "heading": "Hoveddel og tilleggsdel",
           "text":
             "<p>Rom er enten godkjent som hoveddel eller tilleggsdel. Hoveddel er rom du har lov til å bo og sove i. Tilleggsdel er stort sett rom for oppbevaring. Usikker på hva rommet er godkjent som i dag? Spør kommunen om de har en godkjent plantegning av boligen din.</p>",
@@ -605,7 +603,6 @@
                 {
                   "id": "toiletGroup",
                   "type": "Group",
-                  "property": "toiletGroup",
                   "heading": "Toalett og håndvask",
                   "children": [
                     {
@@ -654,6 +651,29 @@
           "id": "overUnderNextTooHovedRoom",
           "property": "overUnderNextTooHovedRoom",
           "type": "Radio",
+          "heading":
+            "Ligger rommet du vil endre på over, under eller vegg-i-vegg med et rom som allerede er hoveddel?",
+          "text":
+            "<p>Rommene må ligge i din egen bolig og være godkjente til bruk som hoveddel. Hoveddel er for eksempel rom du kan bo og sove i. Tilleggsdel er rom for oppbevaring.</p>",
+          "image": {
+            "url": "/images/png/10a.png",
+            "alt": "Room"
+          },
+          "options": [
+            {
+              "id": "overUnderNextTooHovedRoom.yes",
+              "type": "Answer",
+              "heading":
+                "Ja, rommet ligger over, under eller vegg-i-vegg med et rom som er hoveddel",
+              "value": "yes"
+            },
+            {
+              "id": "overUnderNextTooHovedRoom.no",
+              "type": "Answer",
+              "heading": "Nei, rommet grenser kun mot tilleggsdel eller nabo",
+              "value": "no"
+            }
+          ],
           "show": {
             "type": "and",
             "clauses": [
@@ -678,33 +698,10 @@
                 ]
               }
             ]
-          },
-          "heading":
-            "Ligger rommet du vil endre på over, under eller vegg-i-vegg med et rom som allerede er hoveddel?",
-          "text":
-            "<p>Rommene må ligge i din egen bolig og være godkjente til bruk som hoveddel. Hoveddel er for eksempel rom du kan bo og sove i. Tilleggsdel er rom for oppbevaring.</p>",
-          "image": {
-            "url": "/images/png/10a.png",
-            "alt": "Room"
-          },
-          "options": [
-            {
-              "id": "overUnderNextTooHovedRoom.yes",
-              "type": "Answer",
-              "heading":
-                "Ja, rommet ligger over, under eller vegg-i-vegg med et rom som er hoveddel",
-              "value": "yes"
-            },
-            {
-              "id": "overUnderNextTooHovedRoom.no",
-              "type": "Answer",
-              "heading": "Nei, rommet grenser kun mot tilleggsdel eller nabo",
-              "value": "no"
-            }
-          ]
+          }
         },
         {
-          "id": "branch",
+          "id": "overNextTooHovedRoomBranch",
           "type": "Branch",
           "branches": [
             {
@@ -967,7 +964,6 @@
         },
         {
           "id": "basementOrAtticGroup",
-          "propery": "basementOrAtticGroup",
           "type": "Group",
           "simple": true,
           "show": {
@@ -1074,7 +1070,6 @@
                 {
                   "id": "numberOfLevelsGroup",
                   "type": "Group",
-                  "property": "numberOfLevelsGroup",
                   "heading": "Etasjer i boligen",
                   "children": [
                     {
@@ -1230,7 +1225,6 @@
         {
           "id": "canInstallWindow",
           "type": "Group",
-          "property": "canInstallWindow",
           "heading": "Vindu på rommet",
           "text":
             "<p>For å sjekke om rommet du skal endre oppfyller krav til lys, luft og rømning, vil vi nå stille deg noen spørsmål om vindu.</p>",
@@ -1421,85 +1415,6 @@
                           },
                           "children": [
                             {
-                              "id": "escapeBasementOutside",
-                              "property": "escapeBasementOutside",
-                              "type": "Radio",
-                              "heading": "Er det enkelt å komme seg ut av vinduet fra utsiden?",
-                              "text":
-                                "For at rømningsmuligheten skal være god nok, må lysgraven være stor nok til at det er mulig å rømme ut av den.<ul><li>må vinduer som er helt eller delvis gravd ned under bakkenivå, i lysgrav, være enkle å komme ut av</li><li>må det være sikret at lysgraven aldri blir fylt av snø om vinteren, med for eksempel varmekabler (måking holder ikke)</li></ul>",
-                              "options": [
-                                {
-                                  "id": "escapeBasementOutside.yes",
-                                  "type": "Answer",
-                                  "heading": "Ja",
-                                  "value": "yes"
-                                },
-                                {
-                                  "id": "escapeBasementOutside.no",
-                                  "type": "Answer",
-                                  "heading": "Nei",
-                                  "value": "no"
-                                }
-                              ]
-                            },
-                            {
-                              "id": "escapeWindowError",
-                              "type": "Error",
-                              "warning": true,
-                              "show": {
-                                "type": "and",
-                                "clauses": [
-                                  {
-                                    "field": "escapeBasementOutside",
-                                    "operator": "eq",
-                                    "value": "no"
-                                  },
-                                  {
-                                    "field": "basementOrAttic",
-                                    "operator": "eq",
-                                    "value": "attic"
-                                  }
-                                ]
-                              },
-                              "children": [
-                                {
-                                  "id": "escapeWindowError.text",
-                                  "type": "Text",
-                                  "text":
-                                    "Vinduet er for høyt til at veilederen kan vurdere om krav til rømning er oppfylt."
-                                }
-                              ]
-                            },
-                            {
-                              "id": "escapeBasementOutsideError",
-                              "type": "Error",
-                              "warning": true,
-                              "show": {
-                                "type": "and",
-                                "clauses": [
-                                  {
-                                    "field": "escapeBasementOutside",
-                                    "operator": "eq",
-                                    "value": "no"
-                                  },
-                                  {
-                                    "field": "basementOrAttic",
-                                    "operator": "eq",
-                                    "value": "basement"
-                                  }
-                                ]
-                              },
-                              "children": [
-                                {
-                                  "id": "escapeBasementOutsideError.msg",
-                                  "type": "Text",
-                                  "warning": true,
-                                  "text":
-                                    "Når det ikke er mulig å komme seg ut av vinduet kan ikke veiviseren vurder om krav til rømning er oppfylt."
-                                }
-                              ]
-                            },
-                            {
                               "id": "ventilation",
                               "property": "ventilation",
                               "type": "Radio",
@@ -1552,7 +1467,6 @@
         {
           "id": "warmRoomGroup",
           "type": "Group",
-          "property": "warmRoomGroup",
           "simple": false,
           "heading": "Isolasjon og temperatur",
           "children": [
@@ -1610,7 +1524,6 @@
         {
           "id": "radonGroup",
           "type": "Group",
-          "property": "radonGroup",
           "simple": false,
           "heading": "Radonnivået i boligen",
           "children": [
@@ -1740,6 +1653,129 @@
           ]
         }
       ]
+    },
+    {
+      "id": "hooray-but",
+      "type": "Result",
+      "heading": "Hooray but",
+      "lead": "Yeeee?",
+      "errorheading": "What?",
+      "errorlead": "What?",
+      "show": {
+        "type": "or",
+        "clauses": [
+          {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "hvilkenBoenhet",
+                "operator": "eq",
+                "value": "both"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "basementOrAttic",
+                "operator": "eq",
+                "value": "attic"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "numberOfLevels",
+                "operator": "gte",
+                "value": "5"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "escapeAtGroundFloor",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "numberOfLevels",
+                "operator": "eq",
+                "value": "4"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "canInstallWindowRadio",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "bigWindow",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "escapeUnkownFloor",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "ventilation",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "warmRoom",
+                "operator": "eq",
+                "value": "no"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [
+              {
+                "field": "radonLevel",
+                "operator": "eq",
+                "value": "201"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "hoorays",
