@@ -27,23 +27,33 @@ function Intro({ close, data }) {
           regler du må følge.<br />Veiviseren gjelder for deg som ønsker å endre på ett enkelt rom
           uten å flytte vegger eller dører.
         </Primitives.Paragraphs.Lead>
-        <Primitives.Heading.H2>Før du begynner</Primitives.Heading.H2>
-        <Primitives.Paragraphs.P>
-          Før du tar veiviseren bør du sjekke om det finnes begresninger for hva du kan gjøre med
-          boligen din. Dette kan du finne informasjon om i kommunale dokumenter som reguleringsplan,
-          kommuneplanens arealdel eller situasjonskart. Eksempler på slike begrensninger er:
-          <ul>
-            <li>flom- og skredsområde</li>
-            <li>avstand til kraftlinjer</li>
-            <li>fredet eller vernestatus</li>
-          </ul>
-        </Primitives.Paragraphs.P>
-        <br />
-        <Primitives.Heading.H2>Start nå og fullfør senere</Primitives.Heading.H2>
-        <Primitives.Paragraphs.P>
-          Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere.
-          Nettleseren husker hvor du var.
-        </Primitives.Paragraphs.P>
+        <section>
+          <div>
+            <Primitives.Heading.H2>Før du begynner</Primitives.Heading.H2>
+            <Primitives.Paragraphs.P>
+              Før du tar veiviseren bør du sjekke om det finnes begresninger for hva du kan gjøre med
+              boligen din. Dette kan du finne informasjon om i kommunale dokumenter som reguleringsplan,
+              kommuneplanens arealdel eller situasjonskart. Eksempler på slike begrensninger er:
+            </Primitives.Paragraphs.P>
+            <ul>
+              <li>flom- og skredsområde</li>
+              <li>avstand til kraftlinjer</li>
+              <li>fredet eller vernestatus</li>
+            </ul>
+            <br />
+            <Primitives.Heading.H2>Start nå og fullfør senere</Primitives.Heading.H2>
+            <Primitives.Paragraphs.P>
+              Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere.
+              Nettleseren husker hvor du var.
+            </Primitives.Paragraphs.P>
+          </div>
+          <div>
+            <Primitives.Figure>
+              <img src="/images/intro.png" alt="Rom med to ulike bruksområder, en bod og en spisestue" />
+            </Primitives.Figure>
+          </div>
+        </section>
+
         <br />
         <Primitives.Heading.H2>Har du funnet ut det du trenger?</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
