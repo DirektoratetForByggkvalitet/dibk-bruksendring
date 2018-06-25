@@ -640,6 +640,36 @@
                         "operator": "eq",
                         "value": "yes"
                       }
+                    },
+                    {
+                      "id": "roomAcceptedAsMainPartResult2",
+                      "type": "Result",
+                      "heading": "Fra hoveddel til hoveddel",
+                      "lead":
+                        "<p>Dine svar viser at du ikke må søke, så lenge du beholder rommet som det er. Du kan se hva du har svart nederst på denne siden.</p><p>Du kan gjøre mindre endringer i rommet uten å søke, som å:<ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul></p><p><b>Vil du gjøre andre endringer i rommet?</b><br>Da må du sjekke med kommunen om du kan søke.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+                      "errorheading": "Du har ikke svart på alle spørsmålene",
+                      "errorlead":
+                        "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
+                      "show": {
+                        "type": "and",
+                        "clauses": [
+                          {
+                            "field": "toiletDetachedHouse",
+                            "operator": "eq",
+                            "value": "no"
+                          },
+                          {
+                            "field": "roomNow",
+                            "operator": "eq",
+                            "value": "main"
+                          },
+                          {
+                            "field": "roomChange",
+                            "operator": "eq",
+                            "value": "main"
+                          }
+                        ]
+                      }
                     }
                   ]
                 }
@@ -729,7 +759,7 @@
       "type": "Page",
       "heading": "Du må søke",
       "lead":
-        "<p>Endringen du ønsker å gjøre er søknadspliktig. Du må derfor søke kommunen om å endre rommet fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>De fleste boliger er bygget etter eldre regelverk. For mange av disse gjelder færre og enklere tekniske krav enn for nyere boliger. Fortsett veiviseren for å finne ut om det gjelder deg!</p>",
+        "<p>Du må søke kommunen når du vil endre et rom fra tilleggsdel til hoveddel. Dette kalles en bruksendring.</p><p>Når du bruksendrer må du følge dagens byggeregler. For eldre boliger gjelder færre og enklere krav enn for nyere boliger.</p><p>Fortsett veiviseren for å finne ut om det gjelder deg!</p>",
       "show": {
         "type": "or",
         "clauses": [
@@ -1367,7 +1397,7 @@
                           "id": "maxOneMeterToWindowWarning.text",
                           "type": "Text",
                           "text":
-                            "Det kan finnes andre rømningsveier fra samme etasje som er tilstrekkelige, men dette må du undersøke selv med en fagperson. Du kan fortsette veiviseren for å se om det er andre hindringer."
+                            "Vinduet oppfyller ikke kravene til rømning. Det kan hende rømning er ivaretatt på annen måte, men det må du undersøke med en fagperson. Du kan fortsette veiviseren for å se om det er andre hindringer."
                         }
                       ]
                     },

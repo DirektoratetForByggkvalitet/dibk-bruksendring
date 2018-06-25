@@ -22,32 +22,36 @@ function Intro({ close, data }) {
       <IntroMain>
         <Primitives.Heading.H1>Bruksendring</Primitives.Heading.H1>
         <Primitives.Paragraphs.Lead>
-          Vil du endre hva du bruker et rom i boligen din til? Svar på spørsmålene i denne
-          veiviseren for å finne ut om du må sende byggesøknad til kommunen. Du får også vite hvilke
-          regler du må følge.<br />Veiviseren gjelder for deg som ønsker å endre på ett enkelt rom
-          uten å flytte vegger eller dører.
+        Vil du endre hva du bruker et rom i boligen din til? Finn ut om du må sende byggesøknad til kommunen, eller om du kan slippe å søke. Du får også vite hvilke byggeregler du må følge.<br /><br />Veiviseren gjelder for deg som ønsker å endre på ett enkelt rom uten å flytte vegger eller dører.
         </Primitives.Paragraphs.Lead>
-        <Primitives.Heading.H2>Før du begynner</Primitives.Heading.H2>
-        <Primitives.Paragraphs.P>
-          Før du tar veiviseren bør du sjekke om det finnes begresninger for hva du kan gjøre med
-          boligen din. Dette kan du finne informasjon om i kommunale dokumenter som reguleringsplan,
-          kommuneplanens arealdel eller situasjonskart. Eksempler på slike begrensninger er:
-          <ul>
-            <li>flom- og skredsområde</li>
-            <li>avstand til kraftlinjer</li>
-            <li>fredet eller vernestatus</li>
-          </ul>
-        </Primitives.Paragraphs.P>
-        <br />
-        <Primitives.Heading.H2>Start nå og fullfør senere</Primitives.Heading.H2>
-        <Primitives.Paragraphs.P>
-          Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere.
-          Nettleseren husker hvor du var.
-        </Primitives.Paragraphs.P>
+        <section>
+          <div>
+            <Primitives.Heading.H2>Før du begynner</Primitives.Heading.H2>
+            <Primitives.Paragraphs.P>
+              Før du tar veiviseren bør du spørre kommunen om å få nyeste godkjente plantegning av boligen din. Denne viser hva du har lov å bruke rommene til. Skaff også kommunale dokumenter som reguleringsplan, kommuneplanens arealdel eller situasjonskart. Der kan det finnes begrensninger som:
+            </Primitives.Paragraphs.P>
+            <ul>
+              <li>flom- og skredsområde</li>
+              <li>avstand til kraftlinjer</li>
+              <li>fredet eller vernestatus</li>
+            </ul>
+            <br />
+            <Primitives.Heading.H2>Start nå og fullfør senere</Primitives.Heading.H2>
+            <Primitives.Paragraphs.P>
+              Det er du som er ansvarlig for at alle lover og regler blir fulgt når du bygger. Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere. Nettleseren husker hvor du var.
+            </Primitives.Paragraphs.P>
+          </div>
+          <div>
+            <Primitives.Figure>
+              <img src="/images/intro.png" alt="Rom med to ulike bruksområder, en bod og en spisestue" />
+            </Primitives.Figure>
+          </div>
+        </section>
+
         <br />
         <Primitives.Heading.H2>Har du funnet ut det du trenger?</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
-          Da er det bare å sette i gang med veiviseren - du får hjelp til hvert spørsmål underveis.
+          Da er det bare å sette i gang med veiviseren! Du får hjelp til hvert spørsmål underveis.
         </Primitives.Paragraphs.P>
         <Primitives.Button.MainButton type="button" onClick={() => close()}>
           Start veiviseren
