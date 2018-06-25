@@ -947,18 +947,6 @@
                   }
                 }
               ]
-            },
-            {
-              "id": "alreadyApprovedMainPartInfo",
-              "type": "Information",
-              "heading": "",
-              "text":
-                "Siden du har godkjent hoveddel i etasjen fra før, skal brannsikring og konstruksjonssikkerhet allerede være ivaretatt.",
-              "show": {
-                "field": "alreadyApprovedMainPart",
-                "operator": "eq",
-                "value": "yes"
-              }
             }
           ]
         },
@@ -1112,7 +1100,6 @@
                     },
                     {
                       "id": "fireSafetyError",
-                      "property": "fireSafetyError",
                       "type": "Error",
                       "text":
                         "Etasjeantallet gjør at du må undersøke om bruksendringen utløser nye krav til brannsikring for hele bygget. Ta kontakt med byggmester eller takstmann. Du kan fortsette veiviseren for å se om det er andre hindringer.",
@@ -1437,7 +1424,6 @@
                             },
                             {
                               "id": "ventilationError",
-                              "property": "ventilationError",
                               "type": "Error",
                               "warning": true,
                               "show": {
