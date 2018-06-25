@@ -365,7 +365,14 @@
           "errorheading": "Du har ikke svart på alle spørsmålene",
           "errorlead":
             "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
-        },
+        }
+      ]
+    },
+    {
+      "id": "page2",
+      "type": "Page",
+      "heading": "Rommet ditt",
+      "children": [
         {
           "id": "roomHeight",
           "property": "roomHeight",
@@ -509,14 +516,7 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "page2",
-      "type": "Page",
-      "heading": "Rommet ditt",
-      "children": [
+        },
         {
           "id": "roomAccessAfterChange",
           "property": "roomAccessAfterChange",
