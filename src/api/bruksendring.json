@@ -1386,7 +1386,7 @@
                           "id": "maxOneMeterToWindowWarning.text",
                           "type": "Text",
                           "text":
-                            "Det kan finnes andre rømningsveier fra samme etasje som er tilstrekkelige, men dette må du undersøke selv med en fagperson. Du kan fortsette veiviseren for å se om det er andre hindringer."
+                            "Vinduet oppfyller ikke kravene til rømning. Det kan hende rømning er ivaretatt på annen måte, men det må du undersøke med en fagperson. Du kan fortsette veiviseren for å se om det er andre hindringer."
                         }
                       ]
                     },
