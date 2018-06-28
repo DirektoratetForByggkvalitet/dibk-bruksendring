@@ -378,7 +378,10 @@
           "property": "roomHeight",
           "type": "Radio",
           "heading": "Er rommet du vil endre på 2 meter eller høyere?",
-          "text": "<img src=\"/images/minst2meter.png\" alt=\"Minst 2 meter\" />",
+          "image": {
+            "url": "/images/minst2meter.png",
+            "alt": "Hus med hybel"
+          },
           "options": [
             {
               "id": "roomHeight.yes",
