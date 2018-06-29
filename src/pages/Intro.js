@@ -41,11 +41,6 @@ function Intro({ close, data }) {
               Det er du som er ansvarlig for at alle lover og regler blir fulgt når du bygger. Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere. Nettleseren husker hvor du var.
             </Primitives.Paragraphs.P>
           </div>
-          <div>
-            <Primitives.Figure>
-              <img src="/images/intro.png" alt="Rom med to ulike bruksområder, en bod og en spisestue" />
-            </Primitives.Figure>
-          </div>
         </section>
 
         <br />

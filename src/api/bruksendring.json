@@ -533,7 +533,7 @@
               "value": "inside",
               "image": {
                 "url": "/images/png/3c.png",
-                "alt": "ROm med inngangsdør innenfra"
+                "alt": "Rom med inngangsdør innenfra"
               }
             },
             {
@@ -690,7 +690,7 @@
             "<p>Rommene må ligge i din egen bolig og være godkjente til bruk som hoveddel. Hoveddel er for eksempel rom du kan bo og sove i. Tilleggsdel er rom for oppbevaring.</p>",
           "image": {
             "url": "/images/png/10a.png",
-            "alt": "Room"
+            "alt": "Rom"
           },
           "options": [
             {
@@ -965,7 +965,7 @@
                   "value": "yes",
                   "image": {
                     "url": "/images/12.png",
-                    "alt": "Room"
+                    "alt": "Rom"
                   }
                 },
                 {
@@ -976,7 +976,7 @@
                   "value": "no",
                   "image": {
                     "url": "/images/13.png",
-                    "alt": "Room"
+                    "alt": "Rom"
                   }
                 }
               ]
