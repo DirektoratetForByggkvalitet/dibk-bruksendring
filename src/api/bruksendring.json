@@ -1409,29 +1409,9 @@
                       "branches": [
                         {
                           "test": {
-                            "type": "and",
-                            "clauses": [
-                              {
-                                "type": "or",
-                                "clauses": [
-                                  {
-                                    "field": "basementOrAttic",
-                                    "operator": "eq",
-                                    "value": "basement"
-                                  },
-                                  {
-                                    "field": "basementOrAttic",
-                                    "operator": "eq",
-                                    "value": "attic"
-                                  }
-                                ]
-                              },
-                              {
-                                "field": "bigWindow",
-                                "operator": "eq",
-                                "value": "yes"
-                              }
-                            ]
+                            "field": "canInstallWindowRadio",
+                            "operator": "eq",
+                            "value": "yes"
                           },
                           "children": [
                             {
