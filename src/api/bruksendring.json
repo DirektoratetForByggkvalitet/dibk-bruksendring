@@ -325,7 +325,7 @@
             "alt": "Hus"
           },
           "text":
-            "Dette gjelder for eksempel hvis du vil endre på en kjellerbod eller loftsbod i fellesarealet. Det gjelder også hvis boden din ikke har brannskille mot boder som eies av andre, eller mot fellesareal som trapp eller gang.",
+            "Dette gjelder for eksempel om du vil endre en kjellerbod eller loftsbod i fellesarealet, eller vil gjøre andre endringer som kan påvirke fellesareal som for eksempel trapp eller gang.",
           "options": [
             {
               "id": "commonArea.yes",
@@ -336,7 +336,7 @@
             {
               "id": "commonArea.no",
               "type": "Answer",
-              "heading": "Nei, det blir kun endringer inne i boenheten.",
+              "heading": "Nei, det blir kun endringer inne i boenheten min.",
               "value": "no"
             }
           ]
@@ -361,7 +361,7 @@
           },
           "heading": "Du vil gjøre en endring i fellesarealet",
           "lead":
-            "<p>Om du vil endre noe knytta til fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig.<p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+            "<p>Om du vil endre noe som påvirker fellesarealet, må du snakke med borettslaget/sameiet ditt for å finne ut hva du kan gjøre. Tillater borettslaget/sameiet deg å gjøre endringer, må du undersøke med kommunen om det du skal gjøre er søknadspliktig.<p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
           "errorheading": "Du har ikke svart på alle spørsmålene",
           "errorlead":
             "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
