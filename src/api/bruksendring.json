@@ -89,7 +89,7 @@
                   "heading": "Enebolig",
                   "value": "enebolig",
                   "image": {
-                    "url": "/images/enebolig.png",
+                    "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/enebolig.png",
                     "alt": "Enebolig"
                   }
                 },
@@ -99,7 +99,7 @@
                   "heading": "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig",
                   "value": "multibolig",
                   "image": {
-                    "url": "/images/multibolig.png",
+                    "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/multibolig.png",
                     "alt": "Rekkehus, tomannsbolig, firemannsbolig eller flermannsbolig"
                   }
                 },
@@ -109,7 +109,7 @@
                   "heading": "Leilighet",
                   "value": "leilighet",
                   "image": {
-                    "url": "/images/leilighet.png",
+                    "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/leilighet.png",
                     "alt": "Leilighet"
                   }
                 },
@@ -119,7 +119,7 @@
                   "heading": "Frittliggende garasje",
                   "value": "garasje",
                   "image": {
-                    "url": "/images/garasje.png",
+                    "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/garasje.png",
                     "alt": "Frittliggende garasje"
                   }
                 },
@@ -129,7 +129,7 @@
                   "heading": "Frittliggende bod eller lekestue",
                   "value": "bod",
                   "image": {
-                    "url": "/images/bod.png",
+                    "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/bod.png",
                     "alt": "Frittliggende bod eller lekestue"
                   }
                 }
@@ -176,8 +176,8 @@
               },
               "heading": "Er det flere boenheter i huset ditt?",
               "image": {
-                "url": "/images/png/1c.png",
-                "alt": "Hus med hybel"
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/1c.png",
+                "alt": "Bilde av flere boenheter"
               },
               "text":
                 "<p>Huset kan for eksempel ha flere boenheter hvis det har en hybel eller utleiedel. Er du usikker må du sjekke med kommunen din.</p>",
@@ -321,7 +321,7 @@
           },
           "heading": "Kommer endringene til å påvirke fellesareal?",
           "image": {
-            "url": "/images/fellesareal.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/fellesareal.png",
             "alt": "Hus"
           },
           "text":
@@ -379,7 +379,7 @@
           "type": "Radio",
           "heading": "Er rommet du vil endre på 2 meter eller høyere?",
           "image": {
-            "url": "/images/minst2meter.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/minst2meter.png",
             "alt": "Hus med hybel"
           },
           "options": [
@@ -434,7 +434,7 @@
                   "id": "roomNow.main",
                   "type": "Answer",
                   "image": {
-                    "url": "/images/hoveddel.png",
+                    "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/hoveddel.png",
                     "alt": "Hoveddel"
                   },
                   "heading": "Hoveddel",
@@ -446,7 +446,7 @@
                   "id": "roomNow.secondary",
                   "type": "Answer",
                   "image": {
-                    "url": "/images/tilleggsdel.png",
+                    "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/tilleggsdel.png",
                     "alt": "Tilleggsdel"
                   },
                   "heading": "Tilleggsdel",
@@ -466,7 +466,7 @@
                   "id": "roomChange.main",
                   "type": "Answer",
                   "image": {
-                    "url": "/images/hoveddel.png",
+                    "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/hoveddel.png",
                     "alt": "Hoveddel"
                   },
                   "heading": "Hoveddel",
@@ -478,7 +478,7 @@
                   "id": "roomChange.secondary",
                   "type": "Answer",
                   "image": {
-                    "url": "/images/tilleggsdel.png",
+                    "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/tilleggsdel.png",
                     "alt": "Tilleggsdel"
                   },
                   "heading": "Tilleggsdel",
@@ -534,7 +534,7 @@
               "heading": "Jeg kommer meg til rommet innvendig fra resten av boligen min.",
               "value": "inside",
               "image": {
-                "url": "/images/png/3c.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/3c.png",
                 "alt": "Rom med inngangsdør innenfra"
               }
             },
@@ -549,7 +549,7 @@
                 "value": true
               },
               "image": {
-                "url": "/images/png/3b.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/3b.png",
                 "alt": "Rom med inngangsdør utenfra"
               }
             },
@@ -564,7 +564,7 @@
                 "value": false
               },
               "image": {
-                "url": "/images/png/3b.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/3b.png",
                 "alt": "Rom med inngangsdør utenfra"
               }
             }
@@ -689,7 +689,7 @@
           "text":
             "<p>Rommene må ligge i din egen bolig og være godkjente til bruk som hoveddel. Hoveddel er for eksempel rom du kan bo og sove i. Tilleggsdel er rom for oppbevaring.</p>",
           "image": {
-            "url": "/images/png/10a.png",
+            "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/10a.png",
             "alt": "Rom"
           },
           "options": [
@@ -964,7 +964,7 @@
                     "Ja, i etasjen finnes det fra før enten godkjent oppholdsrom, stue, soverom, kjøkken, entré, bad, vaskerom, badstue, hobbyrom, arbeidsrom, hjemmekontor, isolert vinterhage eller gang mellom rom som er hoveddel.",
                   "value": "yes",
                   "image": {
-                    "url": "/images/12.png",
+                    "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/12.png",
                     "alt": "Rom"
                   }
                 },
@@ -975,7 +975,7 @@
                     "Nei, i etasjen finnes det fra før kun rom godkjent som enten bod, oppbevaringsrom, teknisk rom eller er en gang mellom rom som kun er tilleggsdel.",
                   "value": "no",
                   "image": {
-                    "url": "/images/13.png",
+                    "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/13.png",
                     "alt": "Rom"
                   }
                 }
@@ -1001,7 +1001,7 @@
               "text":
                 "<p>Dette kan påvirke konstruksjonssikkerhet, brannsikring og rømingsveier.</p>",
               "image": {
-                "url": "/images/png/13a.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/13a.png",
                 "alt": "Loft eller kjeller illustrert"
               },
               "options": [
@@ -1307,7 +1307,7 @@
                       "id": "imageDimensions",
                       "type": "Image",
                       "image": {
-                        "url": "/images/png/14b.png",
+                        "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/14b.png",
                         "alt": "Dimensjoner på vinduer"
                       }
                     },
@@ -1473,7 +1473,7 @@
               "id": "noWindowErrorText",
               "type": "Image",
               "image": {
-                "url": "/images/png/21a.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/21a.png",
                 "alt": "Hus med gradestokk på 19 grader"
               }
             },
@@ -1530,7 +1530,7 @@
               "id": "husMedRadonImage",
               "type": "Image",
               "image": {
-                "url": "/images/png/20b.png",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bruksendring/20b.png",
                 "alt": "Hus med radioaktivitetssymbol"
               }
             },
