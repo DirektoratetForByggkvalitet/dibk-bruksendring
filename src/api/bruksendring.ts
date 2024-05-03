@@ -300,6 +300,8 @@ const schema: WizardDefinition = {
             },
             {
               id: 'hvilkenBoenhetInfoBoth',
+              heading:
+                'Du har valgt å gjøre endringer i både din del av boligen og i utleiedel.',
               type: 'Error',
               show: {
                 field: 'hvilkenBoenhet',
@@ -1151,6 +1153,8 @@ const schema: WizardDefinition = {
             {
               id: 'atticLoadError',
               type: 'Error',
+              heading:
+                'Sjekk om gulv, vegger og tak på loftet tåler endringene',
               show: {
                 field: 'basementOrAttic',
                 operator: 'eq',
@@ -1239,6 +1243,8 @@ const schema: WizardDefinition = {
                     {
                       id: 'fireSafetyError',
                       type: 'Error',
+                      heading:
+                        'Sjekk om bruksendringen utløser nye krav til brannsikring',
                       show: {
                         field: 'numberOfLevels',
                         operator: 'gte',
@@ -1308,6 +1314,8 @@ const schema: WizardDefinition = {
                             },
                             {
                               id: 'fireSafetyReconsidered',
+                              heading:
+                                'Sjekk om bruksendringen utløser nye krav til brannsikring',
                               type: 'Error',
                               show: {
                                 field: 'escapeAtGroundFloor',
@@ -1328,6 +1336,8 @@ const schema: WizardDefinition = {
                     },
                     {
                       id: 'extraFloorWarning',
+                      heading:
+                        'Sjekk om bruksendringen utløser nye krav til brannsikring',
                       type: 'Error',
                       show: {
                         field: 'numberOfLevels',
@@ -1377,6 +1387,7 @@ const schema: WizardDefinition = {
             },
             {
               id: 'noWindowError',
+              heading: 'Vinduet oppfyller ikke kravene til lys og rømning',
               type: 'Error',
               show: {
                 field: 'canInstallWindowRadio',
@@ -1437,6 +1448,8 @@ const schema: WizardDefinition = {
                     },
                     {
                       id: 'bigWindowError',
+                      heading:
+                        'Vinduet oppfyller ikke kravene til lys og rømning',
                       type: 'Error',
                       show: {
                         field: 'bigWindow',
@@ -1490,6 +1503,7 @@ const schema: WizardDefinition = {
                     },
                     {
                       id: 'maxOneMeterToWindowWarning',
+                      heading: 'Vinduet oppfyller ikke kravene til rømning',
                       type: 'Error',
                       show: {
                         field: 'escapeUnkownFloor',
@@ -1538,6 +1552,7 @@ const schema: WizardDefinition = {
                             },
                             {
                               id: 'ventilationError',
+                              heading: 'Rommet er for dårlig ventilert',
                               type: 'Error',
                               show: {
                                 field: 'ventilation',
@@ -1599,6 +1614,7 @@ const schema: WizardDefinition = {
             },
             {
               id: 'warmRoomError',
+              heading: 'Rommet er for kaldt',
               type: 'Error',
               show: {
                 field: 'warmRoom',
@@ -1701,6 +1717,7 @@ const schema: WizardDefinition = {
                     },
                     {
                       id: 'radonInfo201',
+                      heading: 'Radon-nivået er for høyt',
                       type: 'Error',
                       show: {
                         field: 'radonLevel',
