@@ -57,7 +57,11 @@ const App = ({ translations = {} }) => {
   );
 };
 
-const mapStateToProps = ({ [state.NAME]: { $computed, ...wizardData } }) => ({
+const mapStateToProps = ({
+  [state.NAME]: { $computed, ...wizardData },
+}: {
+  [state.NAME]: { $computed: any; [key: string]: any };
+}) => ({
   hasData: !!Object.keys(wizardData).length,
 });
 
