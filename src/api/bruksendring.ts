@@ -148,8 +148,9 @@ const schema: WizardDefinition = {
               heading: {
                 complete: 'Frittliggende garasje',
                 incomplete: 'Du har ikke svart på alle spørsmålene',
-                incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-                completeWithError: 'Du har ikke svart på alle spørsmålene',
+                incompleteWithError:
+                  'Du har ikke svart på alle spørsmålene og det er feil i svarene dine',
+                completeWithError: 'Du har feil i svarene dine',
               },
               lead: {
                 complete:
@@ -159,7 +160,7 @@ const schema: WizardDefinition = {
                 incompleteWithError:
                   '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                 completeWithError:
-                  '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                  '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
               },
             },
             {
@@ -173,8 +174,9 @@ const schema: WizardDefinition = {
               heading: {
                 complete: 'Frittliggende bod eller lekestue',
                 incomplete: 'Du har ikke svart på alle spørsmålene',
-                incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-                completeWithError: 'Du har ikke svart på alle spørsmålene',
+                incompleteWithError:
+                  'Du har ikke svart på alle spørsmålene og det er feil i svarene dine',
+                completeWithError: 'Du har feil i svarene dine',
               },
               lead: {
                 complete:
@@ -184,7 +186,7 @@ const schema: WizardDefinition = {
                 incompleteWithError:
                   '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                 completeWithError:
-                  '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                  '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
               },
             },
             {
@@ -284,8 +286,9 @@ const schema: WizardDefinition = {
               heading: {
                 complete: 'Du må søke og bruke fagpersoner',
                 incomplete: 'Du har ikke svart på alle spørsmålene',
-                incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-                completeWithError: 'Du har ikke svart på alle spørsmålene',
+                incompleteWithError:
+                  'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+                completeWithError: 'Du har feil i svarene dine',
               },
               lead: {
                 complete:
@@ -295,7 +298,7 @@ const schema: WizardDefinition = {
                 incompleteWithError:
                   '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                 completeWithError:
-                  '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                  '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
               },
             },
             {
@@ -390,8 +393,9 @@ const schema: WizardDefinition = {
           heading: {
             complete: 'Du vil gjøre en endring i fellesarealet',
             incomplete: 'Du har ikke svart på alle spørsmålene',
-            incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-            completeWithError: 'Du har ikke svart på alle spørsmålene',
+            incompleteWithError:
+              'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+            completeWithError: 'Du har feil i svarene dine',
           },
           lead: {
             complete:
@@ -401,7 +405,7 @@ const schema: WizardDefinition = {
             incompleteWithError:
               '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
             completeWithError:
-              '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+              '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
           },
         },
       ],
@@ -445,10 +449,10 @@ const schema: WizardDefinition = {
           },
           heading: {
             complete: 'Du må søke og bruke fagpersoner',
-
             incomplete: 'Du har ikke svart på alle spørsmålene',
-            incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-            completeWithError: 'Du har ikke svart på alle spørsmålene',
+            incompleteWithError:
+              'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+            completeWithError: 'Du har feil i svarene dine',
           },
           lead: {
             complete:
@@ -459,7 +463,7 @@ const schema: WizardDefinition = {
             incompleteWithError:
               '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
             completeWithError:
-              '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+              '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
           },
         },
         {
@@ -539,8 +543,9 @@ const schema: WizardDefinition = {
               heading: {
                 complete: 'Fra hoveddel til tilleggsdel',
                 incomplete: 'Du har ikke svart på alle spørsmålene',
-                incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-                completeWithError: 'Du har ikke svart på alle spørsmålene',
+                incompleteWithError:
+                  'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+                completeWithError: 'Du har feil i svarene dine',
               },
               lead: {
                 complete:
@@ -550,7 +555,7 @@ const schema: WizardDefinition = {
                 incompleteWithError:
                   '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                 completeWithError:
-                  '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                  '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
               },
               show: {
                 field: '$computed.mainToSecondary',
@@ -564,8 +569,9 @@ const schema: WizardDefinition = {
               heading: {
                 complete: 'Fra tilleggsdel til tilleggsdel',
                 incomplete: 'Du har ikke svart på alle spørsmålene',
-                incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-                completeWithError: 'Du har ikke svart på alle spørsmålene',
+                incompleteWithError:
+                  'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+                completeWithError: 'Du har feil i svarene dine',
               },
               lead: {
                 complete:
@@ -575,7 +581,7 @@ const schema: WizardDefinition = {
                 incompleteWithError:
                   '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                 completeWithError:
-                  '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                  '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
               },
               show: {
                 field: '$computed.secondaryToSecondary',
@@ -658,8 +664,9 @@ const schema: WizardDefinition = {
           heading: {
             complete: 'Fra hoveddel til hoveddel',
             incomplete: 'Du har ikke svart på alle spørsmålene',
-            incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-            completeWithError: 'Du har ikke svart på alle spørsmålene',
+            incompleteWithError:
+              'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+            completeWithError: 'Du har feil i svarene dine',
           },
           lead: {
             complete:
@@ -669,7 +676,7 @@ const schema: WizardDefinition = {
             incompleteWithError:
               '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
             completeWithError:
-              '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+              '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
           },
         },
         {
@@ -717,9 +724,8 @@ const schema: WizardDefinition = {
                           'Du må søke og det kan hende du får en ny boenhet',
                         incomplete: 'Du har ikke svart på alle spørsmålene',
                         incompleteWithError:
-                          'Du har ikke svart på alle spørsmålene',
-                        completeWithError:
-                          'Du har ikke svart på alle spørsmålene',
+                          'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+                        completeWithError: 'Du har feil i svarene dine',
                       },
                       lead: {
                         complete:
@@ -729,7 +735,7 @@ const schema: WizardDefinition = {
                         incompleteWithError:
                           '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                         completeWithError:
-                          '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                          '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                       },
                       show: {
                         field: 'toiletDetachedHouse',
@@ -744,9 +750,8 @@ const schema: WizardDefinition = {
                         complete: 'Fra hoveddel til hoveddel',
                         incomplete: 'Du har ikke svart på alle spørsmålene',
                         incompleteWithError:
-                          'Du har ikke svart på alle spørsmålene',
-                        completeWithError:
-                          'Du har ikke svart på alle spørsmålene',
+                          'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+                        completeWithError: 'Du har feil i svarene dine',
                       },
                       lead: {
                         complete:
@@ -756,7 +761,7 @@ const schema: WizardDefinition = {
                         incompleteWithError:
                           '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                         completeWithError:
-                          '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                          '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                       },
 
                       show: {
@@ -1136,8 +1141,9 @@ const schema: WizardDefinition = {
               heading: {
                 complete: 'Veiviseren dekker dessverre ikke ditt tilfelle',
                 incomplete: 'Du har ikke svart på alle spørsmålene',
-                incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-                completeWithError: 'Du har ikke svart på alle spørsmålene',
+                incompleteWithError:
+                  'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+                completeWithError: 'Du har feil i svarene dine',
               },
               lead: {
                 complete:
@@ -1147,7 +1153,7 @@ const schema: WizardDefinition = {
                 incompleteWithError:
                   '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                 completeWithError:
-                  '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                  '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
               },
             },
             {
@@ -1767,8 +1773,9 @@ const schema: WizardDefinition = {
       heading: {
         complete: 'Takk for at du brukte veiviseren!',
         incomplete: 'Du har ikke svart på alle spørsmålene',
-        incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-        completeWithError: 'Du har ikke svart på alle spørsmålene',
+        incompleteWithError:
+          'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+        completeWithError: 'Du har feil i svarene dine',
       },
       lead: {
         complete:
@@ -1778,7 +1785,7 @@ const schema: WizardDefinition = {
         incompleteWithError:
           '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
         completeWithError:
-          '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+          '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
       },
       show: {
         type: 'or',
@@ -1902,8 +1909,9 @@ const schema: WizardDefinition = {
       heading: {
         complete: 'Rommet ditt kan bruksendres!',
         incomplete: 'Du har ikke svart på alle spørsmålene',
-        incompleteWithError: 'Du har ikke svart på alle spørsmålene',
-        completeWithError: 'Du har ikke svart på alle spørsmålene',
+        incompleteWithError:
+          'Du har ikke svart på alle spørsmålene og har feil i svarene dine',
+        completeWithError: 'Du har feil i svarene dine',
       },
       lead: {
         complete:
@@ -1913,7 +1921,7 @@ const schema: WizardDefinition = {
         incompleteWithError:
           '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
         completeWithError:
-          '<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+          '<p>Du har svart feil på noen spørsmål. Du kan se hvilke spørsmål du har svart feil på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
       },
       exporter: 'dataExport',
     },
