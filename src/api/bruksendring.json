@@ -262,7 +262,7 @@
               },
               "heading": "Du må søke og bruke fagpersoner",
               "lead":
-                "<p>Det er søknadspliktig å bygge det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. <a href='https://sgregister.dibk.no/'>En oversikt over disse finner du her</a>. For hjelp til søknadsprosessen, kan du bruke vår veiledning <a href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“.</a></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+                "<p>Det er søknadspliktig å gjøre det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. <a href='https://sgregister.dibk.no/'>En oversikt over disse finner du her</a>. For hjelp til søknadsprosessen, kan du bruke vår veiledning <a href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“.</a></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
               "errorheading": "Du har ikke svart på alle spørsmålene",
               "errorlead":
                 "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
@@ -371,7 +371,7 @@
     {
       "id": "page2",
       "type": "Page",
-      "heading": "Rommet ditt",
+      "heading": "Rommet du vil endre på",
       "children": [
         {
           "id": "roomHeight",
@@ -405,9 +405,46 @@
             "operator": "eq",
             "value": "no"
           },
+          
           "heading": "Du må søke og bruke fagpersoner",
           "lead":
-            "<p>Det er søknadspliktig å bygge det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. <a href='https://sgregister.dibk.no/'>En oversikt over disse finner du her.</a> For hjelp til søknadsprosessen, kan du bruke vår veiledning <a href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“.</a></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+            "<p>Det er søknadspliktig å gjøre det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. <a href='https://sgregister.dibk.no/'>En oversikt over disse finner du her.</a> For hjelp til søknadsprosessen, kan du bruke vår veiledning <a href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“.</a></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+          "errorheading": "Du har ikke svart på alle spørsmålene",
+          "errorlead":
+            "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+        },
+        {
+          "id": "roomChimney",
+          "property": "roomChimney",
+          "type": "Radio",
+          "heading": "Skal du sette inn ny skorstein eller pipe?",
+          "options": [
+            {
+              "id": "roomChimney.ja",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "ja"
+            },
+            {
+              "id": "roomChimney.nei",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "roomChimney.ja",
+          "type": "Result",
+          "show": {
+            "field": "roomChimney",
+            "operator": "eq",
+            "value": "ja"
+          },
+          
+          "heading": "Du må søke og bruke fagpersoner",
+          "lead":
+            "<p>Det er søknadspliktig å gjøre det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. <a href='https://sgregister.dibk.no/'>En oversikt over disse finner du her.</a> For hjelp til søknadsprosessen, kan du bruke vår veiledning <a href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“.</a></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
           "errorheading": "Du har ikke svart på alle spørsmålene",
           "errorlead":
             "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
@@ -493,7 +530,7 @@
               "type": "Result",
               "heading": "Fra hoveddel til tilleggsdel",
               "lead":
-                "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke.</p><h4>Du kan gjøre mindre endringer på rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Ønsker du få rommet godkjent som tilleggsdel?</h4><p>Da må du søke kommunen.</p><h4>Vil du gjøre andre endringer på rommet?</h4><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør eller luftekanaler.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+                "<p>Du har svart at rommet er godkjent som hoveddel, og at det nye rommet skal være tilleggsdel. Beholder du rommet som det er, står du fritt til å bruke for eksempel et soverom eller en stue til bod/oppbevaring uten å søke.</p><h4>Du kan gjøre mindre endringer på rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Ønsker du få rommet godkjent som tilleggsdel?</h4><p>Da må du søke kommunen.</p><h4>Vil du gjøre andre endringer på rommet?</h4><p>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller, sette inn skorstein eller legge nye rør eller luftekanaler.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
               "errorheading": "Du har ikke svart på alle spørsmålene",
               "errorlead":
                 "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
@@ -508,7 +545,7 @@
               "type": "Result",
               "heading": "Fra tilleggsdel til tilleggsdel",
               "lead":
-                "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke.</p><h4>Du kan gjøre mindre endringer på rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Vil du gjøre andre endringer på rommet?</h4>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller eller legge nye rør- eller luftekanaler.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+                "<p>Du har svart at rommet er godkjent som tilleggsdel, og at du ønsker å bruke det som tilleggsdel. Beholder du rommet som det er, står du fritt til å ta i bruk for eksempel en bod som et teknisk rom uten å søke.</p><h4>Du kan gjøre mindre endringer på rommet uten å søke, som å:</h4><ul><li>pusse opp vegger, tak og gulv i rommet</li><li>bytte interiør og fast møblering</li></ul><h4>Vil du gjøre andre endringer på rommet?</h4>Da må du sjekke med kommunen om du må søke. For eksempel må du alltid søke hvis du skal endre på brannskiller, sette inn skorstein eller legge nye rør- eller luftekanaler.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
               "errorheading": "Du har ikke svart på alle spørsmålene",
               "errorlead":
                 "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
@@ -749,7 +786,7 @@
                   "type": "Result",
                   "heading": "Du må søke!",
                   "lead":
-                    "<p>Dine svar viser at du må søke. Du kan se hva du har svart nederst på denne siden.</p><p>Før du søker må du sjekke at rommet kan oppfylle alle relevante teknisk krav i byggteknisk forskrift (TEK17). Hvilke krav som er relevante kommer an på hva du skal bruke rommet til. Eksempler på krav du må følge er:<ul><li>Romhøyde på minst 220 cm fra gulv til tak</li><li>Krav til rømningsveier</li><li>Krav til isolasjon av rommet</li><li>Krav til ventilasjon</li><li>Krav til dagslys og utsyn</li><li>Krav til at både gulv, vegger og tak tåler endringene du planlegger</li></ul></p><p>Er du usikker på hvilke krav du må følge? Da kan det være lurt å bruke en fagperson som for eksempel en byggmester. Det er spesielt viktig hvis du vil gjøre endringer på loftet.</p> <p><b>Hvordan søker jeg?</b><br>Du kan bruke søknadsskjemaet “Søknad om bruksendring“ som du finner på siden <a href=\"https://dibk.no/bygge-selv/soknadsskjema-for-mindre-byggeprosjekter-pa-boligeiendom/\">“Søknadsskjemaer for mindre byggeprosjekter på boligeiendom“</a>. For hjelp til søknadsprosessen, kan du bruke vår veiledning <a href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“.</a>. </p><p><b>Hvilke andre krav kan gjelde?</b><ul><li>Skal du ha innlagt vann? Da gjelder egne krav om fuktsikring, og vi anbefaler bruk av rørlegger</li><li>Skal du ha ny skorstein eller nytt ildsted? Da gjelder egne krav om sikkerhet og ventilasjon, og vi anbefaler bruk av kvalifisert installatør.</li><li>Det kan finnes begrensninger på hva du kan gjøre på eiendommen i kommunale planer, for eksempel på grunn av flom- og skredfare. Det er viktig å sette seg inn i planene før du søker.</li></ul></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>"
+                    "<p>Dine svar viser at du må søke. Du kan se hva du har svart nederst på denne siden.</p><p>Før du søker må du sjekke at rommet kan oppfylle alle relevante teknisk krav i byggteknisk forskrift (TEK17). Hvilke krav som er relevante kommer an på hva du skal bruke rommet til. Eksempler på krav du må følge er:<ul><li>Romhøyde på minst 220 cm fra gulv til tak</li><li>Krav til rømningsveier</li><li>Krav til isolasjon av rommet</li><li>Krav til ventilasjon</li><li>Krav til dagslys og utsyn</li><li>Krav til at både gulv, vegger og tak tåler endringene du planlegger</li></ul></p><p>Er du usikker på hvilke krav du må følge? Da kan det være lurt å bruke en fagperson som for eksempel en byggmester. Det er spesielt viktig hvis du vil gjøre endringer på loftet.</p> <p><b>Hvordan søker jeg?</b><br>Du kan bruke søknadsskjemaet “Søknad om bruksendring“ som du finner på siden <a href=\"https://dibk.no/bygge-selv/soknadsskjema-for-mindre-byggeprosjekter-pa-boligeiendom/\">“Søknadsskjemaer for mindre byggeprosjekter på boligeiendom“</a>. For hjelp til søknadsprosessen, kan du bruke vår veiledning <a href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“.</a>. </p><p><b>Hvilke andre krav kan gjelde?</b><ul><li>Det kan finnes begrensninger på hva du kan gjøre på eiendommen i kommunale planer, for eksempel på grunn av flom- og skredfare. Det kan også være regler for hva du har lov å gjøre av endringer som blir synlige for andre. Det er derfor viktig å sette seg inn i planene før du søker.</li></ul></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>"
                 }
               ]
             }
@@ -1661,7 +1698,7 @@
       "errorlead":
         "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
       "lead":
-        "<p>Noe kan komme i veien for å endre rommet slik du ønsker. Du kan se hva dette gjelder i svarene dine nederst på denne siden.</p><p><b>Hva gjør jeg nå?</b><br>Vi anbefaler at du kontakter en fagperson, for eksempel en byggmester. Vedkommende kan finne ut om det likevel er mulig å gjennomføre planene dine</p><p><b>Hvilke krav har veiviseren sjekket?</b><br>Veiviseren har sjekket om rommet oppfyller de vanligste tekniske kravene som gjelder stue og soverom i eldre boliger. Det kan gjelde flere eller færre krav for andre typer rom.</p><p><b>Hvilke andre krav kan gjelde?</b><br><ul><li>Skal du ha innlagt vann? Da gjelder egne krav om fuktsikring, og vi anbefaler bruk av rørlegger</li><li>Skal du ha ny skorstein eller nytt ildsted? Da gjelder egne krav om sikkerhet og ventilasjon, og vi anbefaler bruk av kvalifisert installatør.</li><li>Det kan finnes begrensninger på hva du kan gjøre på eiendommen i kommunale planer, f eks på grunn av flom- og skredfare. Det er viktig å sette seg inn i planene før du søker.</li></ul></p>",
+        "<p>Noe kan komme i veien for å endre rommet slik du ønsker. Du kan se hva dette gjelder i svarene dine nederst på denne siden.</p><p><b>Hva gjør jeg nå?</b><br>Vi anbefaler at du kontakter en fagperson, for eksempel en byggmester. Vedkommende kan finne ut om det likevel er mulig å gjennomføre planene dine</p><p><b>Hvilke krav har veiviseren sjekket?</b><br>Veiviseren har sjekket om rommet oppfyller de vanligste tekniske kravene som gjelder stue og soverom i eldre boliger. Det kan gjelde flere eller færre krav for andre typer rom. </p><p><b>Hvilke andre krav kan gjelde?</b><ul><li>Det kan finnes begrensninger på hva du kan gjøre på eiendommen i kommunale planer, for eksempel på grunn av flom- og skredfare. Det kan også være regler for hva du har lov å gjøre av endringer som blir synlige for andre. Det er derfor viktig å sette seg inn i planene før du søker.</li></ul></p>",
       "show": {
         "type": "or",
         "clauses": [
@@ -1783,7 +1820,7 @@
       "type": "Result",
       "heading": "Rommet ditt kan bruksendres!",
       "lead":
-        "<p>Svarene dine viser at det er mulig å bruksendre rommet, og at rommet kan oppfylle de vanligste tekniske kravene som gjelder rom i eldre boliger.  Du kan se hva du har svart nederst på denne siden.</p><p><b>Hva gjør jeg nå?</b><ul><li>Du må søke kommunen og få tillatelse før du starter arbeidene</li><li>Du har lov å gjøre arbeidene selv</li><li>Du kan bruke en fagperson, for eksempel en byggmester, hvis du er usikker på hvordan å gjøre endringene</li><li>Det er ditt ansvar at alle relevante tekniske krav blir fulgt for både rommet og boligen</li></ul></p><p><b>Hvordan søker jeg?</b><br>Du kan bruke søknadsskjemaet “Søknad om bruksendring“ som du finner på siden <a href=\"https://dibk.no/bygge-selv/soknadsskjema-for-mindre-byggeprosjekter-pa-boligeiendom/\">“Søknadsskjemaer for mindre byggeprosjekter på boligeiendom“</a>. For hjelp til søknadsprosessen, kan du bruke vår veiledning <a href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“</a>.</p><p><b>Hvilke andre krav kan gjelde?</b><ul><li>Skal du ha innlagt vann? Da gjelder egne krav om fuktsikring, og vi anbefaler bruk av rørlegger</li><li>Skal du ha ny skorstein eller nytt ildsted? Da gjelder egne krav om sikkerhet og ventilasjon, og vi anbefaler bruk av kvalifisert installatør.</li><li>Det kan finnes begrensninger på hva du kan gjøre på eiendommen i kommunale planer, for eksempel på grunn av flom- og skredfare. Det er viktig å sette seg inn i planene før du søker.</li></ul></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+        "<p>Svarene dine viser at det er mulig å bruksendre rommet, og at rommet kan oppfylle de vanligste tekniske kravene som gjelder rom i eldre boliger.  Du kan se hva du har svart nederst på denne siden.</p><p><b>Hva gjør jeg nå?</b><ul><li>Du må søke kommunen og få tillatelse før du starter arbeidene</li><li>Du har lov å gjøre arbeidene selv</li><li>Du kan leie inn en fagperson, for eksempel en byggmester, hvis du er usikker på hvordan å endre rommet slik at alle relevante tekniske krav blir oppfylt.</li></ul></p><p><b>Hvordan søker jeg?</b><br>Du kan bruke søknadsskjemaet “Søknad om bruksendring“ som du finner på siden <a href=\"https://dibk.no/bygge-selv/soknadsskjema-for-mindre-byggeprosjekter-pa-boligeiendom/\">“Søknadsskjemaer for mindre byggeprosjekter på boligeiendom“</a>. For hjelp til søknadsprosessen, kan du bruke vår veiledning <a href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“</a> </p><p><b>Hvilke andre krav kan gjelde?</b><ul><li>Det kan finnes begrensninger på hva du kan gjøre på eiendommen i kommunale planer, for eksempel på grunn av flom- og skredfare. Det kan også være regler for hva du har lov å gjøre av endringer som blir synlige for andre. Det er derfor viktig å sette seg inn i planene før du søker.</li></ul></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
       "errorheading": "Du har ikke svart på alle spørsmålene",
       "errorlead":
         "<p>Vi kan derfor ikke gi deg et resultat ennå. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
