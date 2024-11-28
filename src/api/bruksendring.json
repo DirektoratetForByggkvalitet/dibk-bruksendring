@@ -845,9 +845,9 @@
           "id": "buildApplicationYear",
           "property": "buildApplicationYear",
           "type": "Radio",
-          "heading": "Er det søkt om å bygge boligen din 1. juli 2011 eller senere?",
+          "heading": "Er det søkt om å oppføre boligen din 1. juli 2011 eller senere?",
           "text":
-            "<p>Søknadstidspunktet bestemmer hvilket regelverk som gjelder for boligen din. Er du i tvil kan du sjekke med kommunen</p>",
+            "<p>Søknadstidspunktet bestemmer hvilket regelverk som gjelder for boligen din. Er du i tvil kan du sjekke med kommunen.</p>",
           "options": [
             {
               "id": "buildApplicationYearAfter",
@@ -864,61 +864,6 @@
           ]
         },
         {
-          "id": "mainReconstructionYear",
-          "property": "mainReconstructionYear",
-          "type": "Radio",
-          "heading": "Er det søkt om hovedombygging av boligen din 1. juli. 2011 eller senere?",
-          "text":
-            "<p>Er du i tvil om boligen har hatt en hovedombygging, må du sjekke med kommunen.</p>",
-          "show": {
-            "field": "buildApplicationYear",
-            "operator": "eq",
-            "value": "before"
-          },
-          "options": [
-            {
-              "id": "mainReconstructionYear.yes",
-              "type": "Answer",
-              "heading": "Ja",
-              "value": "yes"
-            },
-            {
-              "id": "mainReconstructionYear.no",
-              "type": "Answer",
-              "heading": "Nei",
-              "value": "no"
-            }
-          ]
-        },
-        {
-          "id": "divisionOrMerger",
-          "property": "divisionOrMerger",
-          "type": "Radio",
-          "show": {
-            "field": "mainReconstructionYear",
-            "operator": "eq",
-            "value": "no"
-          },
-          "heading":
-            "Er det søkt om en oppdeling eller sammenslåing av boligen din 1. juli 2011 eller senere?",
-          "text":
-            "<p>Er du i tvil om boligen din har blitt oppdelt eller sammenslått, må du sjekke med kommunen.</p>",
-          "options": [
-            {
-              "id": "divisionOrMerger.yes",
-              "type": "Answer",
-              "heading": "Ja",
-              "value": "yes"
-            },
-            {
-              "id": "divisionOrMerger.no",
-              "type": "Answer",
-              "heading": "Nei",
-              "value": "no"
-            }
-          ]
-        },
-        {
           "id": "overUnderNextTooHovedRoomResultBranch",
           "type": "Branch",
           "branches": [
@@ -930,16 +875,6 @@
                     "field": "buildApplicationYear",
                     "operator": "eq",
                     "value": "after"
-                  },
-                  {
-                    "field": "mainReconstructionYear",
-                    "operator": "eq",
-                    "value": "yes"
-                  },
-                  {
-                    "field": "divisionOrMerger",
-                    "operator": "eq",
-                    "value": "yes"
                   }
                 ]
               },
@@ -967,16 +902,6 @@
             "field": "buildApplicationYear",
             "operator": "eq",
             "value": "before"
-          },
-          {
-            "field": "mainReconstructionYear",
-            "operator": "eq",
-            "value": "no"
-          },
-          {
-            "field": "divisionOrMerger",
-            "operator": "eq",
-            "value": "no"
           }
         ]
       },
